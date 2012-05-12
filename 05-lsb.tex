@@ -28,9 +28,9 @@
 In Chapter FIXME, we introduced the salient features of the Low Swirl Burner (LSB) flow field and discussed the mechanisms by which the LSB flame is stabilized.
 Further, various characteristics of the LSB flame that can be measured from flame images were outlined.
 To recapitulate, these are the flame location, flame shape and the flame structure.
-The first two are quantified by the flame standoff distance, \(X_f\) and the flame angle, \(\theta_f\), respectively.
+The first two are quantified by the flame standoff distance, \(X_f\), and the flame angle, \(\theta_f\), respectively.
 
-In the same chapter, we introduced the four flow parameters that describe an operating condition for the LSB --- the combustor pressure, \(p\), the preheat temperature, \(T\), the mass-averaged inlet velocity (also called the reference velocity, \(U_0\) and the equivalence ratio of the premixed reactants, \(\phi\).
+In the same chapter, we introduced the four flow parameters that describe an operating condition for the LSB --- the combustor pressure, \(p\), the preheat temperature, \(T\), the mass-averaged inlet velocity (also called the reference velocity, \(U_0\), and the equivalence ratio of the premixed reactants, \(\phi\).
 We further introduced a geometric parameter --- the angle of the vanes of the swirler, \(\alpha\), which affects the amount of swirl present in the flow field.
 
 The LSB flame is imaged over a range of operating conditions and the effect of flow and geometric parameters on the reacting flow field is investigated.
@@ -38,20 +38,33 @@ This results of the investigation are presented in this chapter.
 
 \section{Effect of reference velocity}
 
-Generally, in gas turbine applications, the reference velocity is not expected to be varied with loading.
-However, its effect on the flame characteristics has implications for the design of future LSB-based gas turbines.
+In typical gas turbine applications, varying the loading on the engine does not affect the reference velocity.
+However, since the reference velocity is a design parameter, the effect it has on the flame characteristics has implications for the design of future LSB-based gas turbine engines.
 
-% The first question relates to how the flame stabilization model works at high pressure conditions.
-% So, we need to talk about the effect of velocity on the flame standoff location.
-% There is little effect at low velocities.
-% This seems to be in agreement with the model.
-% At high velocities, there may be a discernible effect.
-% This implies that the earlier model linking laminar flame speed to the turbulent flame speed may be too simplistic.
-% The model derives from assuming that turbulent flames are simply laminar flames that are folded.
-% We may need to talk about the Borghi diagram and talk about what regions this assumption may be valid in.
-% Perhaps as we increase the velocity, keeping everything else constant, we move into a region where this model is not necessarily true.
-% On the Borghi diagram, we should move up, by the way for increasing reference velocity.
-% Note that the flame speed model is insufficient to explain this behavior.
+One of the key objectives of this thesis is to investigate how the LSB flame stabilization operates at high pressure conditions.
+The simple model described earlier predicts a self-similar flow field for the LSB at all reference velocities.
+This implies that the reference velocity will have no discernible impact on the flame standoff distance.
+This result is very desirable for gas turbine designers, since the flame location and shape can be assumed to be constant.
+Limited testing conducted in earlier works confirms this behavior at atmospheric pressure conditions with no preheat.
+
+In order to verify the validity of this model at high pressure conditions in the presence of substantial preheat, the LSB was operated at a pressure of 6 atm over a range of reference velocities from 10 m/s to 40 m/s. For these tests, the \(S_{37^\circ}\) swirler was used.
+In a parallel series of tests, the \(S_{45^\circ}\) swirler was tested at a pressure of 3 atm at a reference velocities of 40 and 80 m/s.
+The location of the flame was measured from CH* chemiluminescence images and the results are presented in Figure FIXME.
+
+There is essentially no systematic variation in the flame standoff distance or the flame angle for the low velocity, \(S_{37^\circ}\) tests.
+The increase in reference velocity continues to produces a concomitant increase in the turbulent flame speed at the flame stabilization location, negating any change in the flame's location.
+In other words, the flow field appears to retain its self-similarity, even at elevated pressures and temperatures.
+
+However, when the \(S_{45^\circ}\) swirler was tested at higher reference velocities, the flame location shifted downstream sharply.
+This indicates potential limitations to the simple flame stabilization model that may not predict the behavior of the LSB flame at elevated pressures and temperatures, particularly at high reference velocities.
+
+To examine the probable cause of this limitation more closely, consider the effect of increasing the reference velocity on the turbulent combustion regime where the LSB combustor operates.
+Previous studies have primarily operated the LSB in the flamelet regime where the modified Damk\"ohler model predicts the behavior of the turbulent flame speed with reasonable fidelity.
+At elevated pressures, both the laminar flame speed of the reactants, \(S_L\) and the flame thickness, \(\delta_f\) are diminished.
+This places the operating regime higher and more to the right on a Borghi diagram, as shown in Figure FIXME.
+While previously, increasing the reference velocity did not affect the turbulent combustion regime, at elevated pressures, the flame is more likely to transition into the thin reaction zone.
+This transition causes a drop-off in the \(S_T/S_L\) plot and the turbulent flame speed no longer increases in step with the increased levels of turbulence.
+This results in the observed downstream shift of the high pressure LSB flame at high reference velocities.
 
 \section{Effect of preheat temperature}
 % Chapter 2 (background) should have presented the LDV investigation of the LSB flow field and by now, we know what it generally looks like.
