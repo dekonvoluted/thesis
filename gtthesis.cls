@@ -60,7 +60,8 @@
 %%%%%%%%%%%%%%%%%%
 \RequirePackage{fixltx2e} % Patches for LaTeX2e
 \RequirePackage[right]{lineno} % Draft mode option to number lines
-\RequirePackage[colorlinks,linkcolor=black,citecolor=black]{hyperref} % Links within document
+%\RequirePackage[colorlinks,linkcolor=black,citecolor=black]{hyperref} % Links within document
+\RequirePackage[colorlinks]{hyperref} % Colored links. 
 \AtBeginDocument{
   \hypersetup{
     pdftitle={\@title},
