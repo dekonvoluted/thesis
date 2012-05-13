@@ -1,8 +1,5 @@
 \chapter{LSB Flame Characteristics}
 
-% We've already talked about what the LSB is and how its flow field looks like in Chapter 2.
-% Now, we discuss results from LSB flame imaging experiments.
-
 % The primary goal is as follows:
 
 % Investigate the behavior of the LSB at GT conditions.
@@ -25,7 +22,7 @@
 %    Does this provide any insight into the flame behavior at these conditions?
 %    What physical processes may be responsible for that?
 
-In Chapter FIXME, we introduced the salient features of the Low Swirl Burner (LSB) flow field and discussed the mechanisms by which the LSB flame is stabilized.
+In Chapter FIXME 2, we introduced the salient features of the Low Swirl Burner (LSB) flow field and discussed the mechanisms by which the LSB flame is stabilized.
 Further, various characteristics of the LSB flame that can be measured from flame images were outlined.
 To recapitulate, these are the flame location, flame shape and the flame structure.
 The first two are quantified by the flame standoff distance, \(X_f\), and the flame angle, \(\theta_f\), respectively.
@@ -81,30 +78,51 @@ This results in the observed downstream shift of the high pressure LSB flame at 
 % Since the pressure section segues into the CH PLIF imaging section, we could talk about equivalence ratio and swirler angle here.
 % Alternately, these two sections could come after the pressure discussion, too.
 
+\section{Effect of swirler vane angle}
+
+As described in Chapter FIXME 3, the LSB swirlers tested for this study are designed to have the same mass flow splits.
+The \(S_{45^\circ}\) swirler has a higher vane angle, resulting in greater blockage to the flow passing through the annular section.
+In order to compensate for this, the perforated plate covering the central section has slightly smaller holes.
+The net effect retains the same mass flow split as in the \(S_{37^\circ}\) swirler.
+
+Earlier, in Chapter FIXME 2, we discussed how the swirler vane angle relates to the amount of swirl imparted to the incoming flow.
+According to Equation FIXME, a swirler with a higher vane angle will produce greater swirl in the reactants.
+Previous work in swirl combustion\cite{} has pointed out that increased swirl shortens the flame by enhancing the swirl-induced radial pressure gradients.
+The data acquired in the present investigation is in agreement with this observation.
+Operated at identical inlet conditions, the \(S_{45^\circ}\) swirler stabilizes a flame closer to the dump plane and with a larger flame angle compared to the \(S_{37^\circ}\) swirler.
+
+This result highlights an interesting trade-off for the designers of LSB-based gas turbine engines.
+The \(S_{45^\circ}\) flame is located further upstream and has a more concentrated region of heat release.
+This enhances the strength of the toroidal recirculation zone near the dump plane, which may be powerful enough under certain conditions (as we shall see in the Section FIXME) to even cause the flame to attach itself to the lip of the inlet.
+All of this means that the \(S_{45^\circ}\) flame is more stable and will resist perturbations in the incoming flow better than the \(S_{37^\circ}\) flame.
+However, the presence of a strong recirculation zone in the flow field of the \(S_{45^\circ}\) swirler will entrain more hot products and retain them longer near the zone of heat release.
+This is a recipe for the production of thermal \ce{NO_x}.
+While no emission measurements were made as part of this study, it may be reasonably anticipated that the \ce{NO_x} performance of the \(S_{45^\circ}\) swirler is worse than the \(S_{37^\circ}\) swirler.
+The trade-off for gas turbine engine designers is thus between flame stability and emissions performance.
+
 \section{Effect of equivalence ratio}
 
 The LSB is primarily intended for fuel-lean operation in order to utilize its low \ce{NO_x} emission performance.
 As a result, most of the testing was done as close to the target \(\phi\) of 0.56 as possible.
 However, limited testing was done at 12 atm at both a slightly rich (\(\phi \approx 0.58\)) and a slightly lean (\(\phi \approx 0.53\)) condition to explore the sensitivity of the lSB flame to limited changes in equivalence ratio.
+The \(S_{45^\circ}\) swirler was used for these tests.
 The corresponding averaged and Abel-deconvoluted flame images are presented in Figure FIXME.
 
 Two characteristics of the flame are immediately obvious from these images.
+
 First, the zone of heat release, marked by the region from which CH* chemiluminescence is observed, is increasingly compact at fuel-rich conditions.
 Virtually all other flame images acquired at a leaner condition show a long flame, with the heat release distributed over the entire visible area of the combustor.
 The compactness of the heat release zone indicates potentially poor \ce{NO_x} performance at these conditions.
+
 Second, the fuel-rich flame brush can be observed to wrap around and anchor itself on the dump plane.
 This is particularly observable in the Abel-deconvoluted image.
 The attached region is not as bright as the rest of the flame brush, indicating that the flame may be attaching itself intermittently.
 This intermittent behavior can be confirmed from the instantaneous images where it is visible on some of the acquired images, but not others.
+This behavior was alluded to in Section FIXME as being the result of the enhanced toroidal recirculation zone produced by this swirler.
+Thus, the intermittent attachment of the flame to the inlet indicates the increased importance of the toroidal recirculation zone in stabilizing the flame.
 
-A traditional swirl combustor anchors an attached flame at the base aided by the feedback of heat and radicals from the flame through the toroidal recirculation zone.
-The behavior of the fuel-rich LSB flame at high pressure thus indicates the increased importance of the toroidal recirculation zone in stabilizing the flame.
-
-\section{Effect of swirler vane angle}
-% As expected, based on literature, larger swirler vane angles means more swirl.
-% Flame angles are wider.
-% Flame is located closer to dump plane.
-% All this is expected based on literature\cite{starner}, etc.
+It should be noted that the reliance on a toroidal recirculation zone to anchor the flame to the inlet is one of the primary flame stabilization mechanisms used by traditional swirl combustors.
+Thus, LSB swirlers with high vane angles tend to behave like traditional swirl combustors at fuel-rich conditions.
 
 \section{Effect of pressure}
 % discuss the effect of pressure on a reacting flow field in terms of its effect on Re and on flame speed.
