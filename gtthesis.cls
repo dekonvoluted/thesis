@@ -60,6 +60,8 @@
 %%%%%%%%%%%%%%%%%%
 \RequirePackage{fixltx2e} % Patches for LaTeX2e
 \RequirePackage[right]{lineno} % Draft mode option to number lines
+\RequirePackage[intoc]{nomencl}
+  \makenomenclature
 %\RequirePackage[colorlinks,linkcolor=black,citecolor=black]{hyperref} % Links within document
 \RequirePackage[colorlinks]{hyperref} % Colored links. 
 \AtBeginDocument{
@@ -71,5 +73,6 @@
 \renewcommand{\contentsname}{Table of Contents} % default: "Contents"
 \setcounter{tocdepth}{3} % Show subsubsections in table of contents
 \renewcommand{\bibname}{References} % default: "Bibliography"
+\renewcommand{\nomname}{List of Symbols} % default: "Nomenclature"
 \setcounter{secnumdepth}{3} % Number Chapters, Sections, Subsections and Subsubsections
 
