@@ -3,6 +3,8 @@
 \usepackage{lmodern}
 %\usepackage{mathptmx}
 \usepackage[version=3]{mhchem} % For chemical formulae
+\usepackage{amsmath} % For align, gather environments
+\usepackage{amssymb} % For therefore symbol
 \usepackage{tikz} % For figures
   \usetikzlibrary{patterns, arrows} % Use shadings, arrows
 
@@ -59,7 +61,7 @@
 %\input{01-introduction}
 %\input{02-background}
 %\input{03-experimental}
-%\input{04-chplif}
+\input{04-chplif}
 \input{05-lsb}
 %\input{06-conclusions}
 
@@ -68,7 +70,7 @@
 \phantomsection
 \addcontentsline{toc}{chapter}{References}
 \bibliographystyle{ieeetr}
-\bibliography{lsb-journals,lsb-conferences}
+\bibliography{lsb-journals,lsb-conferences,chplif-quenching}
 
 \end{document}
 

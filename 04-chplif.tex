@@ -1,0 +1,174 @@
+\chapter{CH PLIF Signal Modeling and Validation}
+
+% This chapter covers the modeling of the CH PLIF signal and contains the following sections:
+
+% 1. Signal modeling
+%     1.1 Quenching models
+% 2. Methane + air flames
+%     2.1 subsection comparison with experiments
+% 3. C1-C3 alkanes flames
+% 4. Syngas mixtures
+% 5. Syngas + C1-C3 alkanes
+% 6. Effect of strain
+
+% Questions to be answered (from proposal):
+
+% 1. Detailing the development of a CH PLIF system (covered in Chapter 2,3 and here)
+% 2. Demonstration on an atmospheric pressure laminar flame
+% 3. Validate with quenching models
+% 4. Model signal for strained flames
+% 5. Model signal for fuel mixtures
+
+\section{Fluorescence Signal Intensity}
+
+As described in Chapter FIXME 2, the excitation scheme used in this study produces fluorescence through a three-step process.
+First, the CH radicals in the ground state \(X^2\Pi, v=0\) are excited by the incident radiation to the second electronically excited state \(B^2\Sigma^-, v=0\).
+This excitation occurs near the R-bandhead and targets the ground state CH radicals present in the rotational energy levels, \(N=5\) through 9.
+The upper electronic state \(B^2\Sigma^-, v=0\) is nearly degenerate with the \(A^2\Delta, v=1\) energy level.
+This leads to the population of the \(A^2\Delta, v=0,1\) energy levels due to collisional energy transfer.
+The resulting fluorescence collected is primarily the result of three spontaneous transitions --- \(A\rightarrow X(1,1)\), \(A\rightarrow X(0,0)\) and \(B\rightarrow X(0,1)\).
+These transitions are shown in Figure FIXME.
+
+The primary goal of this exercise of modeling the CH fluorescence signal intensity is to gage the feasibility of using CH PLIF to study various premixed flames, rather than to quantitatively calculate the amount of CH present in the flames.
+As such, we are more interested in the order of magnitude of the PLIF signal, rather than the absolute value of it.
+
+The intensity of the CH fluorescence signal may be written as a function of the amount of CH radicals present in the excited state and the probability of spontaneous emission from said state.
+Symbolically, this may be written as shown in Equation \ref{eqn:signalIntensity}.
+
+\begin{equation}
+S=nVA
+\label{eqn:signalIntensity}
+\end{equation}
+
+In Equation \ref{eqn:signalIntensity}, \(S\) is the total number of photons emitted per unit time, \(n\) is the number of excited CH radicals in a unit volume, \(V\) is the volume from which the signal is observed.
+The Einstein coefficient for spontaneous emission, \(A\) represents the probability of spontaneous emission between the two involved energy states.
+The predicted signal intensity represents the total number of photons emitted in all directions.
+In reality, only a fraction of these emitted photons will be recorded by the collection system.
+This fraction is a function of the experimental setup and depends on the collection angle, the efficiency of the optics and the detector used to record the signal.
+This fraction is left out because our objective is only to predict the relative variation in the signal between various premixed flames.
+
+This formulation of the signal intensity implicitly makes the following assumptions.
+\begin{enumerate}
+\item The fluorescence emission is predicted at steady state.
+\item The collection volume is optically thin and an emitted photon is not reabsorbed within the flame itself.
+This is a reasonable assumption to make, since the flame thickness and the thickness of the laser sheet are both typically quite small.
+\end{enumerate}
+
+As described earlier, an accurate model of the CH system should involve five energy levels --- \(X(0)\), \(B(0)\), \(A(1)\), \(A(0)\), and \(X(1)\)\footnote{In this notation, the letter represents the electronic energy level and the number in the parentheses represents the vibrational quantum number of the energy level}.
+Such a model would also have to account for collisional transfers between each of these levels, in addition to spontaneous and stimulated transitions.
+The mathematical solution quickly becomes complicated and tedious.
+Further, it would involve several rate coefficients that have not been measured in experiments done so far.
+
+As a result, it is necessary to introduce simplifying assumptions to this picture.
+Previous studies\cite{2000-luque,1996-luque-c} have indicated that the off-diagonal \(B\rightarrow X\)(0,1) transition plays a relatively minor role accounting for only 3.5\% of the total fluorescence collected.
+Further, the \(A\rightarrow X\) transitions are known to be strongly diagonal, with little or no interaction\cite{1985-garland-b} between the two states.
+The net result of these two assertions is that we can treat the two \(B\rightarrow A\rightarrow X\) pathways to be disjoint and parallel.
+This results in a pseudo-three-level model as shown in Figure FIXME.
+
+The rates of the various transition processes are indicated in Figure FIXME.
+The subscripts 0, 1 and 2 represent the electronic energy levels \(X\), \(A\) and \(B\) respectively.
+Processes involving the \(A(0)\) state are differentiated from those involving the \(A(1)\) state by a prime (').
+With the exception of the nearly degenerate \(A(1)\) and \(B(0)\) states, most collisional excitation steps are neglected due to their low probability.
+Equations \ref{eqn:rates1}--\ref{eqn:rates3} describe the time variation of the number density of CH radicals in each excited state.
+
+\begin{align}
+\frac{dn_1}{dt} &= -( A_{10} + Q_{10} + R_{12} )n_1 + R_{21}n_2
+\label{eqn:rates1}\\
+\frac{dn'_1}{dt} &= -( A'_{10} + Q'_{10} )n'_1 + R'_{21}n_2
+\label{eqn:rates2}\\
+\frac{dn_2}{dt} &= W_{02}n_0 + R_{12}n_1 - ( A_{20} + Q_{20} + R_{21} + R'_{21} )n_2
+\label{eqn:rates3}
+\end{align}
+
+At steady state, the rate of change of the number density is minimal.
+Under this assumption, the LHS of Equations \ref{eqn:rates1}--\ref{eqn:rates3} can be set to zero.
+This results in a closed set of linear equations in terms of the populations of the upper states.
+This set of equations is presented in Equation \ref{eqn:closedForm}.
+
+\begin{equation}
+  \left[
+    \begin{matrix}
+      A_{10} + Q_{10} + R_{12} & 0 & -R_{21}\\
+      0 & A'_{10} + Q'_{10} & -R'_{21}\\
+      -R_{12} & 0 & A_{20} + Q_{20} + R_{21} + R'_{21}
+    \end{matrix}
+  \right]\left[
+    \begin{matrix}
+      n_1\\
+      n'_1\\
+      n_2
+    \end{matrix}
+  \right] = \left[
+    \begin{matrix}
+      0\\
+      0\\
+      W_{02}n_0
+    \end{matrix}
+  \right]
+  \label{eqn:closedForm}
+\end{equation}
+
+The solution to Equation \ref{eqn:closedForm} is shown in Equations \ref{eqn:solution1}--\ref{eqn:solution3}.
+
+\begin{align}
+  n_1 &= \frac{ R_{21} }{ ( A_{10} + Q_{10} + R_{12} )( A_{20} + Q_{20} + R_{21} + R'_{21} ) - R_{12}R_{21} }W_{02}n_0
+  \label{eqn:solution1}\\
+  n'_1 &= \frac{ ( A_{10} + Q_{10} + R_{12} )R'_{21} }{ ( A'_{10} + Q'_{10} ) ( ( A_{10} + Q_{10} + R_{12} )( A_{20} + Q_{20} + R_{21} + R'_{21} ) - R_{12}R_{21} ) }W_{02}n_0
+  \label{eqn:solution2}\\
+  n_2 &= \frac{ ( A_{10} + Q_{10} + R_{12} ) }{ ( A_{10} + Q_{10} + R_{12} )( A_{20} + Q_{20} + R_{21} + R'_{21} ) - R_{12}R_{21} }W_{02}n_0
+  \label{eqn:solution3}
+\end{align}
+
+These expressions can be further simplified by noting various observations made in studies of the CH system.
+For instance, previous work\cite{1984-cool,1985-garland-b} has reported that the \(B\) state is slightly (about 1.3 times) more prone to quenching compared to the \(A\) state.
+We can thus make the following assumptions.
+
+\begin{gather}
+  Q_{10} = Q'_{10} = Q
+  \label{eqn:quenchingAssumption1}\\
+  Q_{20} = 1.3Q
+  \label{eqn:quenchingAssumption2}
+\end{gather}
+
+Next, it has been reported\cite{2000-luque} that the electronic energy transfer rate from \(B\) to \(A\) state accounts for 0.24 times the total collisional removal from the \(B\) state.
+
+\begin{gather}
+  \frac{ R_{21} + R'_{21} - R_{12} }{ Q_{20} + R_{21} + R'_{21} - R_{12} } = 0.24\\
+  \therefore \frac{ R_{21} + R'_{21} - R_{12} }{ Q } = 0.4105
+  \label{eqn:REquation1}
+\end{gather}
+
+We further know\cite{1985-garland-b, 2000-luque} that the collisional transfer from the \(B(0)\) energy level populates the nearly degenerate \(A(1)\) level about four times faster than the \(A(0)\) level.
+
+\begin{equation}
+  \frac{ R_{21} - R_{12} }{ R'_{21} } = 4
+  \label{eqn:REquation2}
+\end{equation}
+
+Finally, it was observed\cite{1985-garland-b} that the rate of forward transfer from \(B(0)\) to \(A(1)\) is about 1.6 times the reverse process.
+
+\begin{equation}
+  \frac{R_{21}}{R_{12}} = 1.6
+  \label{eqn:REquation3}
+\end{equation}
+
+Collating Equations \ref{eqn:REquation1}--\ref{eqn:REquation3}, we obtain a closed set of linear equations.
+This can be solved to eliminate \(R_{21}\), \(R_{12}\) and \(R'{21}\) in terms of \(Q\) as shown in Equation \ref{eqn:RSolution}.
+
+\begin{equation}
+  \left[
+    \begin{matrix}
+      R_{21}\\
+      R'_{21}\\
+      R_{12}
+    \end{matrix}
+  \right] = \left[
+    \begin{matrix}
+      5.1966\\
+      0.4872\\
+      3.2479
+    \end{matrix}
+  \right] Q
+  \label{eqn:RSolution}
+\end{equation}
+
