@@ -1,0 +1,283 @@
+\chapter{CH PLIF Quenching Model}
+\label{app:quenchingmodel}
+
+In order to calculate the intensity of the quenched CH PLIF signal in a flame, an improved model of the CH system was constructed and analyzed.
+According to this new model, CH radicals from the \(X\) ground state are excited to the \(B(0)\) upper state.
+This is followed by collisional transfer to the \(A(1)\) and \(A(0)\) states.
+The transfer between the nearly degenerate \(A(1)\) and \(B(0)\) states is partially reversible.
+The transfer between \(B(0)\) and \(A(0)\) is not reversible.
+This is followed by spontaneous emission as CH radicals transition from the \(A\) states to the \(X\) state.
+This results in a pseudo-three-level model as shown in Figure FIXME.
+
+Figure FIXME indicates the rates of the various processes discussed.
+The subscripts 0, 1 and 2 represent the electronic energy levels \(X\), \(A\) and \(B\) respectively.
+Processes involving the \(A(0)\) state are differentiated from those involving the \(A(1)\) state by a prime (').
+With the exception of the nearly degenerate \(A(1)\) and \(B(0)\) states, most collisional excitation steps are neglected due to their low probability.
+
+In this formulation, the signal intensity of the CH PLIF emission is given by Equation \ref{eqn:signalIntensity}.
+
+\begin{equation}
+S = ( n_1A_{10} + n'_1A'_{10} + n_2A_{20} )V
+\label{eqn:signalIntensity}
+\end{equation}
+
+The spontaneous emission coefficients, \(A_{10}\), \(A'_{10}\) and \(A_{20}\) are obtained from various published papers\cite{1985-garland-a,1996-luque-b,2005-richmond}.
+The values used for this analysis are presented in Table \ref{tab:emissionCoefficients}.
+
+\begin{table}
+  \caption[Einstein A coefficients]{The coefficients of spontaneous emission for transitions in the CH system are provided.}
+  \begin{center}
+    \begin{tabular}{lcr}
+      Transition & Symbol & A, s\(^{-1}\) \tabularnewline
+      \hline\hline
+      \(B\rightarrow X(0,0)\) & \(A_{20}\) & \(2.963 \times 10^6\) \tabularnewline
+      \(A\rightarrow X(1,1)\) & \(A_{10}\) & \(1.676 \times 10^6\) \tabularnewline
+      \(A\rightarrow X(0,0)\) & \(A'_{10}\) & \(1.832 \times 10^6\) \tabularnewline
+    \end{tabular}
+  \end{center}
+  \label{tab:emissionCoefficients}
+\end{table}
+
+Equations \ref{eqn:rates1}--\ref{eqn:rates3} describe the time variation of the number density of CH radicals in each excited state.
+
+\begin{align}
+\frac{dn_1}{dt} &= -( A_{10} + Q_{10} + R_{12} )n_1 + R_{21}n_2
+\label{eqn:rates1}\\
+\frac{dn'_1}{dt} &= -( A'_{10} + Q'_{10} )n'_1 + R'_{21}n_2
+\label{eqn:rates2}\\
+\frac{dn_2}{dt} &= W_{02}n_0 + R_{12}n_1 - ( A_{20} + Q_{20} + R_{21} + R'_{21} )n_2
+\label{eqn:rates3}
+\end{align}
+
+At steady state, the rate of change of the number density is minimal.
+Under this assumption, the LHS of Equations \ref{eqn:rates1}--\ref{eqn:rates3} can be set to zero.
+This results in a closed set of linear equations in terms of the populations of the upper states.
+This set of equations is presented in Equation \ref{eqn:closedForm}.
+
+\begin{equation}
+  \left[
+    \begin{matrix}
+      A_{10} + Q_{10} + R_{12} & 0 & -R_{21}\\
+      0 & A'_{10} + Q'_{10} & -R'_{21}\\
+      -R_{12} & 0 & A_{20} + Q_{20} + R_{21} + R'_{21}
+    \end{matrix}
+  \right]\left[
+    \begin{matrix}
+      n_1\\
+      n'_1\\
+      n_2
+    \end{matrix}
+  \right] = \left[
+    \begin{matrix}
+      0\\
+      0\\
+      W_{02}n_0
+    \end{matrix}
+  \right]
+  \label{eqn:closedForm}
+\end{equation}
+
+The solution to Equation \ref{eqn:closedForm} is shown in Equations \ref{eqn:solution1}--\ref{eqn:solution3}.
+
+\begin{align}
+  n_1 &= \frac{ R_{21} }{ ( A_{10} + Q_{10} + R_{12} )( A_{20} + Q_{20} + R_{21} + R'_{21} ) - R_{12}R_{21} }W_{02}n_0
+  \label{eqn:solution1}\\
+  n'_1 &= \frac{ ( A_{10} + Q_{10} + R_{12} )R'_{21} }{ ( A'_{10} + Q'_{10} ) ( ( A_{10} + Q_{10} + R_{12} )( A_{20} + Q_{20} + R_{21} + R'_{21} ) - R_{12}R_{21} ) }W_{02}n_0
+  \label{eqn:solution2}\\
+  n_2 &= \frac{ ( A_{10} + Q_{10} + R_{12} ) }{ ( A_{10} + Q_{10} + R_{12} )( A_{20} + Q_{20} + R_{21} + R'_{21} ) - R_{12}R_{21} }W_{02}n_0
+  \label{eqn:solution3}
+\end{align}
+
+These expressions can be further simplified by noting various observations made in studies of the CH system.
+For instance, previous work\cite{1984-cool,1985-garland-b} has reported that the \(B\) state is slightly (about 1.3 times) more prone to quenching compared to the \(A\) state.
+We can thus make the following assumptions.
+
+\begin{gather}
+  Q_{10} = Q'_{10} = Q
+  \label{eqn:quenchingAssumption1}\\
+  Q_{20} = 1.3Q
+  \label{eqn:quenchingAssumption2}
+\end{gather}
+
+Next, it has been reported\cite{2000-luque} that the electronic energy transfer rate from \(B\) to \(A\) state accounts for 0.24 times the total collisional removal from the \(B\) state.
+
+\begin{gather}
+  \frac{ R_{21} + R'_{21} - R_{12} }{ Q_{20} + R_{21} + R'_{21} - R_{12} } = 0.24\\
+  \therefore \frac{ R_{21} + R'_{21} - R_{12} }{ Q } = 0.4105
+  \label{eqn:REquation1}
+\end{gather}
+
+We further know\cite{1985-garland-b, 2000-luque} that the collisional transfer from the \(B(0)\) energy level populates the nearly degenerate \(A(1)\) level about four times faster than the \(A(0)\) level.
+
+\begin{equation}
+  \frac{ R_{21} - R_{12} }{ R'_{21} } = 4
+  \label{eqn:REquation2}
+\end{equation}
+
+Finally, it was observed\cite{1985-garland-b} that the rate of forward transfer from \(B(0)\) to \(A(1)\) is about 1.6 times the reverse process.
+
+\begin{equation}
+  \frac{R_{21}}{R_{12}} = 1.6
+  \label{eqn:REquation3}
+\end{equation}
+
+Collating Equations \ref{eqn:REquation1}--\ref{eqn:REquation3}, we obtain a closed set of linear equations.
+This can be solved to eliminate \(R_{21}\), \(R_{12}\) and \(R'_{21}\) in terms of \(Q\) as shown in Equation \ref{eqn:RSolution}.
+
+\begin{equation}
+  \left[
+    \begin{matrix}
+      R_{21}\\
+      R'_{21}\\
+      R_{12}
+    \end{matrix}
+  \right] = \left[
+    \begin{matrix}
+      5.1966\\
+      0.4872\\
+      3.2479
+    \end{matrix}
+  \right] Q
+  \label{eqn:RSolution}
+\end{equation}
+
+Substituting Equations \ref{eqn:quenchingAssumption1}, \ref{eqn:quenchingAssumption2} and \ref{eqn:RSolution} into Equations \ref{eqn:solution1}--\ref{eqn:solution2} leads to simplified expressions for the populations of the upper electronic states purely as a function of the respective Einstein coefficients and the collisional quenching rate.
+These are presented in the following Equations \ref{eqn:simplifiedSolution1}--\ref{eqn:simplifiedSolution3}.
+
+\begin{align}
+  n_1 &= \frac{ 5.1966Q }{ ( A_{10} + 4.2479Q )( A_{20} + 6.9838Q ) - 16.8780Q } W_{02}n_0
+  \label{eqn:simplifiedSolution1}\\
+  n'_1 &= \frac{ 0.4872Q( A_{10} + 4.2479Q ) }{ ( A'_{10} + Q ) \left( ( A_{10} + 4.2479Q )( A_{20} + 6.9838Q ) - 16.8780Q \right) } W_{02}n_0
+  \label{eqn:simplifiedSolution2}\\
+  n_2 &= \frac{ ( A_{10} + 4.2479Q ) }{ ( A_{10} + 4.2479Q )( A_{20} + 6.9838Q ) - 16.8780Q } W_{02}n_0
+  \label{eqn:simplifiedSolution3}
+\end{align}
+
+The quenching rate, \(Q\) of excited CH radicals is calculated by using the quenching cross-sections of various species.
+The quenching cross-sections are measures of the effectiveness of each collision between a given species and an excited CH radical.
+The effectiveness of the collision also depends on the velocity of collision between the two species, \(g_j\) and the abundance of the species, \(n_j\).
+This relationship is formalized in Equation \ref{eqn:quenchingRate}.
+
+\begin{align}
+  Q & =\sum_j g_j \sigma_j n_j \nonumber \\
+  Q & = \sum_j \sqrt{\frac{ 8kT }{ \pi\mu_j }} \sigma_j \frac{ pN_A }{ RT } X_j
+  \label{eqn:quenchingRate}
+\end{align}
+
+In Equation \ref{eqn:quenchingRate}, \(\mu_j\) represents the reduced mass of the colliding CH-\(j\) molecules,\(p\) is the pressure, \(N_A\) is Avogadro's Number, \(R\) is the Universal Gas Constant, \(T\) is the temperature, and \(X_j\) is the mole fraction of species \(j\).
+The mole fractions of the various species in the flame, as well as the temperature across the flame are obtained from Chemkin simulations.
+The expression for the reduced mass is given in Equation \ref{eqn:reducedMass}.
+
+\begin{equation}
+  \mu_j = \frac{ m_j m_{CH} }{ m_j + m_{CH} }
+  \label{eqn:reducedMass}
+\end{equation}
+
+The quenching cross-sections of various species are obtained from various published papers\cite{1994-chen,1998-tamura,2002-renfro} and are functions of temperature.
+The functional forms used in this study are presented in Table \ref{tab:quenchingCrossSections}.
+
+\begin{table}
+  \caption[Quenching Cross-sections]{The functional form of the quenching cross-sections of various species with CH are provided.}
+  \begin{center}
+    \begin{tabular}{lr}
+      Species & \(\sigma\), \AA\(^2\) \tabularnewline
+      \hline\hline
+      \ce{H2} & \(6.1 \exp{ \left(-686 / T \right)}\) \tabularnewline
+      \ce{H} & \(221 T^{-0.5} \exp{ \left( -686 / T \right)}\) \tabularnewline
+      \ce{O2} & \(8.61 \times 10^{-6} T^{1.64} \exp{ \left( 867 / T \right)}\) \tabularnewline
+      \ce{OH} & \(221 T^{-0.5} \exp{ \left( -686 / T \right)}\) \tabularnewline
+      \ce{H2O} & 9.6 \tabularnewline
+      \ce{CH4} & \(52.8 T^{-0.5} \exp{ \left( -84 / T \right)}\) \tabularnewline
+      \ce{CO} & 8.31 \tabularnewline
+      \ce{CO2} & \(8.67 \times 10^{-13} T^{3.8} \exp{ \left( 854 / T \right)}\) \tabularnewline
+      \ce{C2H6} & 13.4 \tabularnewline
+      \ce{N2} & \(1.53 \times 10^{-4} T^{1.23} \exp{ \left( -522.1 / T \right)}\) \tabularnewline
+      \ce{C3H8} & 22 \tabularnewline
+    \end{tabular}
+  \end{center}
+  \label{tab:quenchingCrossSections}
+\end{table}
+
+The term \(W_{02}n_0\) in Equations \ref{eqn:simplifiedSolution1}--\ref{eqn:simplifiedSolution3} represents the rate of pumping of the ground state CH radicals.
+The current excitation scheme targets multiple transitions in the R-bandhead.
+The pumping rate for each transition is the product of the number of CH radicals present in the appropriate level, the Einstein absorption coefficient for that energy level, \(B_i\) and the amount of laser energy available at the appropriate frequency, \(E_i\).
+As a result, the term is actually a summation over the individual energy levels.
+Equation \ref{eqn:pumpingRate} presents this symbolically.
+
+\begin{align}
+  W_{02}n_0 &= \sum_i B_i I_i n_i \nonumber \\
+  W_{02}n_0 &= \sum_i B_i \frac{ E_i }{ A_c } \frac{ pN_A X_{CH} }{ RT } f_i
+  \label{eqn:pumpingRate}
+\end{align}
+
+Table \ref{tab:absorptionCoefficients} presents the values of \(B_i\) for the transitions targeted by the current excitation scheme.\cite{1996-luque-c}
+Assuming a Gaussian line shape for the laser, and using the line strengths from LIFBASE, the relative amount of energy absorbed by each transition can be calculated.
+These values are also presented in Table \ref{tab:absorptionCoefficients}.
+
+\begin{table}
+  \caption[Einstein B coefficients]{The coefficients of absorption for selected transitions in the CH \(X(v=0)\) system are provided.}
+  \begin{center}
+    \begin{tabular}{lrrr}
+      \(N''\) & \(\lambda\), nm & \(B\), m\(^2\)J\(^{-1}\)s\(^{-1}\) & \(E\) (normalized) \tabularnewline
+      \hline\hline
+      R1 & & & \tabularnewline
+      5 & 387.2698 & \(7.677 \times 10^9\) & 0.0568 \tabularnewline
+      6 & 387.1899 & \(7.665 \times 10^9\) & 0.1706 \tabularnewline
+      7 & 387.1677 & \(7.610 \times 10^9\) & 0.1483 \tabularnewline
+      8 & 387.206  & \(7.519 \times 10^9\) & 0.1479 \tabularnewline
+      9 & 387.308  & \(7.397 \times 10^9\) & 0.0126 \tabularnewline
+      R2 & & & \tabularnewline
+      5 & 387.2289 & \(7.539 \times 10^9\) & 0.1080 \tabularnewline
+      6 & 387.1549 & \(7.569 \times 10^9\) & 0.1128 \tabularnewline
+      7 & 387.1371 & \(7.539 \times 10^9\) & 0.0841 \tabularnewline
+      8 & 387.1786 & \(7.464 \times 10^9\) & 0.1311 \tabularnewline
+      9 & 387.283  & \(7.354 \times 10^9\) & 0.0279 \tabularnewline
+    \end{tabular}
+  \end{center}
+  \label{tab:absorptionCoefficients}
+\end{table}
+
+In Equation \ref{eqn:pumpingRate}, \(A_c\) is the area of cross-section of the laser beam and \(f_i\) is the Boltzmann fraction of the population at the energy level \(i\).
+The expression for the Boltzmann fraction at the energy level corresponding to the vibrational quantum number \(v\) and rotational quantum number \(J\) is given in Equation \ref{eqn:BoltzmannFraction}.
+
+\begin{equation}
+  f(v,J) = \frac{ \exp{\left(\dfrac{-hcE_v(v)}{kT}\right)} (2J + 1)\exp{\left(\dfrac{-hcE_r(v, J)}{kT}\right)} }{ Q_{rv} }
+  \label{eqn:BoltzmannFraction}
+\end{equation}
+
+The vibrational energy, \(E_v(v)\) of a level is calculated according to Equation \ref{eqn:vibrationalEnergy}, while the rotational energy, \(E_r(v, J)\) is calculated according to Equation \ref{eqn:rotationalEnergy}.
+
+\begin{align}
+  E_v(v) &= \omega_e \left(v+\frac{1}{2}\right) - \omega_ex_e \left(v+\frac{1}{2}\right)^2 + \omega_ey_e \left(v+\frac{1}{2}\right)^3 - \omega_ez_e \left(v+\frac{1}{2}\right)^4
+  \label{eqn:vibrationalEnergy}\\
+  E_r(v, J) &= \left\{B_e - \alpha_e \left(v+\frac{1}{2}\right)\right\}J(J+1) - \left\{D_e + \beta_e \left(v+\frac{1}{2}\right)\right\}J^2(J+1)^2
+  \label{eqn:rotationalEnergy}
+\end{align}
+
+The spectroscopic constants in Equations \ref{eqn:vibrationalEnergy} and \ref{eqn:rotationalEnergy} are found in literature\cite{1995-zachwieja} and are provided here in Table \ref{tab:spectroscopicConstants}.
+
+\begin{table}
+  \caption[Spectroscopic constants]{Spectroscopic constants for the CH \(X^2\Pi\) level are presented.}
+  \begin{center}
+    \begin{tabular}{lr}
+      Constant & Value, cm\(^{-1}\) \tabularnewline
+      \hline\hline
+      \(\omega_e\) & 2860.7508 \tabularnewline
+      \(\omega_ex_e\) & 64.4387 \tabularnewline
+      \(\omega_ey_e\) & 0.36345 \tabularnewline
+      \(\omega_ez_e\) & \(-1.5378 \times 10^{-2}\) \tabularnewline
+      \(B_e\) & 14.459883 \tabularnewline
+      \(\alpha_e\) & 0.536541 \tabularnewline
+      \(D_e\) & \(1.47436 \times 10^{-3}\) \tabularnewline
+      \(\beta_e\) & \(-2.530 \times 10^{-5}\) \tabularnewline
+    \end{tabular}
+  \end{center}
+  \label{tab:spectroscopicConstants}
+\end{table}
+
+The rovibrational partition function, \(Q_{rv}\) is a summation over all available vibrational and rotational levels in the particular electronic state.
+For the ground state of the CH molecule, there are five available vibrational quantum numbers, \(v = 0\) to \(v = 4\).
+The CH system falls under Hund's Case b and hence, the appropriate rotational quantum number to use is \(N\).
+Each vibrational level has twenty-two possible values for \(N\) from \(N = 1\) to \(N = 22\).
+For each rotational quantum number \(N\), there are two possible values of \(J\) given by \(N \pm \frac{1}{2}\).
+
