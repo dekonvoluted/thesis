@@ -1,0 +1,112 @@
+\chapter{Experimental Methods and Considerations}
+
+The current chapter details the facilities and apparatus used to study the flame characteristics in a Low Swirl Burner.
+The selection and implementation of diagnostic techniques used in this study are explained, as are data analysis methods used to process the acquired data.
+
+\section{LSB configuration}
+
+Two LSB configurations, A and B are tested for this study.
+Each LSB configuration is built around a swirler with an outer diameter, \(d_s\) of 38 mm (1.5 in).
+Other key dimensions of the swirlers tested for this work are presented in Table \ref{tab:swirlerdimensions}.
+
+\begin{table}
+
+\caption[Swirler Dimensions]{The dimensions of the swirlers used and the respective perforated plates are presented. Each swirler is referred to by its vane angle (as in ``\(S_{37^\circ}\)'').}
+
+\begin{center}
+\begin{tabular}{lcc}
+  Geometric parameter & \multicolumn{2}{c}{Swirler} \tabularnewline
+  & \(S_{37^\circ}\) & \(S_{45^\circ}\) \tabularnewline
+  \hline \hline
+  \textbf{Swirler data} & & \tabularnewline
+  Outer diameter, \(d_s\), mm & 38 & 38 \tabularnewline
+  Diameter ratio, \(\frac{d_i}{d_s}\) & 0.66 & 0.66 \tabularnewline
+  Vane angle, \(\alpha\) & 37\(^\circ\) & 45\(^\circ\) \tabularnewline
+  Theoretical Swirl Number, \(S\) & 0.48 & 0.64 \tabularnewline
+  & & \tabularnewline
+  \textbf{Perforated plate data} & & \tabularnewline
+  Open area, mm\(^2\) & 155.97 & 156.98 \tabularnewline
+  Blockage, \% & 71.54 & 71.36 \tabularnewline
+  Plate thickness, mm & 1.27 & 1.27 \tabularnewline
+  Hole pattern & 1 - 8 - 16 & 1 - 8 - 16 \tabularnewline
+  Hole location (dia), mm & 0 - 10.2 - 19.1 & 0 - 10.2 - 19.1 \tabularnewline
+  Hole diameter, mm & 2.79 - 2.79 - 2.84 & 2.82 - 2.82 - 2.83 \tabularnewline
+\end{tabular}
+\end{center}
+
+\label{tab:swirlerdimensions}
+
+\end{table}
+
+Initial testing aimed at velocity field mapping and flame imaging is conducted on Configuration A, while Configuration B is used for a later series of tests aimed at visualizing the flame structure.
+The design of these two configurations is discussed in further detail in what follows.
+
+\subsection{Configuration A}
+
+In this configuration, the reactants reach the swirler through a converging nozzle that decreases linearly in diameter from from the inlet diameter of 102 mm (4 in) to the outer diameter of the swirler, 38 mm (1.5 in).
+The swirler leads to a constant area nozzle, and is located one diameter upstream of an abrupt area change.
+At the area change, the reactants expand from the 38 mm (1.5 in) diameter nozzle into a 115 mm (4.5 in) diameter combustion zone.
+The expansion ratio is chosen so as to avoid confinement effects on the centerline flame flow field.\cite{1998-yegian}
+
+The main combustion zone begins at the dump plane and is enclosed by a GE 214 quartz tube.
+The quartz tube is 300 mm (12 in) long and 115 mm (4.5 in) in diameter.
+The thickness of the quartz tube is 2.5 mm (0.1 in).
+Configuration A is illustrated in Figure FIXME.
+
+\subsection{Configuration B}
+
+In this configuration, the reactants approach the swirler through a smoothly contoured nozzle with a high contraction ratio designed to inhibit the formation of thick boundary layers.
+The swirler again leads to a constant area nozzle which is FIXME diameters in length.
+Following this, the reactants enter the combustion zone.
+
+Unlike in Configuration A, there is no dump plane or quartz tube to provide confinement to the combustion zone.
+Further, in this configuration, the annular flow is separately controlled from the central flow, which allows one to control the mass flow split directly, if needed.
+Finally, this configuration allows for adjusting the level of turbulence present in the inlet flow by use of a turbulence generator located upstream.
+
+The details of Configuration B are shown in Figure FIXME.
+
+\section{High Pressure Test Rig}
+
+Each of the two configurations is housed in a separate high pressure testing rig with optical access to study the flame.
+These rigs consist of an air and fuel supply system, a pressure vessel with adequate optical access and an exhaust system.
+The details of each rig are discussed in the following sub-sections.
+
+\subsection{Test Rig A}
+
+Preliminary experiments involving velocity field mapping and flame imaging are conducted in Test Rig A, shown in Figure FIXME.
+Preheated air at about 500 K is drawn from external tanks and metered through an orifice flow meter.
+The air enters the inlet nozzle of the LSB through a 1.8 m (6 ft) long, 102 mm (4 in) diameter straight pipe section.
+Fuel (natural gas) is metered using another orifice flow meter and injected at the head of the straight pipe section.
+The straight pipe section allows for the flow to be fully developed, and fully premixed before the reactants enter the burner.
+The combustor pressure and temperature are measured at the head of the inlet nozzle by a pressure transducer and a thermocouple respectively.
+In addition, the upstream pressure and the pressure differential are measured at the air and fuel orifice flow meters.
+For the preheated air stream, the upstream temperature is also measured.
+The measurements are used to calculate the four primary flow parameters (combustor pressure, preheat temperature, reference velocity and equivalence ratio) for the LSB in real time.
+All measurements are monitored and recorded during the course of the experiment by a LabView VI.
+
+The pressure vessel enclosing the combustor is designed to withstand pressures of up to 30 atm and is insulated from the combustor by a ceramic liner.
+Cooling for the pressure vessel and the quartz tube is provided by a flow of cold air introduced at the head of the pressure vessel.
+Optical access to the combustor is provided through four 150 mm (6 in) \(\times\) 75 mm (3 in) quartz windows located \(90^\circ\) apart azimuthally.
+The view ports allow the combustor to be imaged from the dump plane to an axial distance of 150 mm (6 in) downstream.
+
+The exhaust from the combustor is cooled by circulating cold water through a water jacket enclosing the exhaust pipe section.
+The length of the exhaust pipe section is about FIXME.
+The exhaust pipe section terminates in an orifice plug to provide the back pressure to the combustion chamber.
+Different diameter orifices are used for each reference velocity condition to be tested.
+The exiting products are finally released to the building exhaust system.
+
+\subsection{Test Rig B}
+
+FIXME
+
+\section{Diagnostics}
+
+\subsection{Laser Doppler Velocimetry}
+
+\subsection{CH* chemiluminescence}
+
+\subsubsection{Image Processing}
+
+\subsection{CH Planar Laser Induced Fluorescence}
+
+\subsubsection{Excitation scan}
