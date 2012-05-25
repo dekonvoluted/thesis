@@ -103,6 +103,24 @@ FIXME
 
 \subsection{Laser Doppler Velocimetry}
 
+The velocity field of the LSB is mapped using a TSI 3-component LDV system.
+Three wavelengths (514 nm, 488 nm and 476 nm) are separated from the output of a 5 W Argon ion laser by an FBL-3 multicolor beam generator.
+The individual beams are split into two coherent beams which are then focused to intersect and produce interference fringes within an ellipsoidal measurement volume with dimensions of the order of 100 \(\mu\)m.
+For this purpose, two transceiver probes are mounted \(90^\circ\) apart about the axis of the LSB.
+One transceiver probe focuses the 514 nm and 488 nm beams in planes perpendicular to each other, while the second probe focuses the 476 nm beams orthogonal to the other two beams.
+Particles in the flow field crossing the interference fringes scatter the laser light elastically and produce a sinusoidal signal whose frequency is proportional to the velocity of the particle.
+The transceiver probes collect this scattered light and each wavelength is detected separately by a PDM-1000-3 three-channel photodetector module.
+The output from the photodetector is processed by an FSA-3500-3 signal processor.
+The resulting three components of the particle/flow velocity are recorded by the FlowSizer software.
+
+Since the airflow is very sparsely populated by particles, the flow needs to be artificially seeded to facilitate LDV measurements in a reasonable amount of time.
+The seeding particles to be used and their mean diameter are decided by the characteristics of the flow to be imaged.
+Since the LSB flow field is a reacting one, the particles need to have high melting points.
+Further, the particles need to be small enough to follow the flow closely and large enough or reflective enough to scatter light efficiently in the measurement volume.
+Based on these requirements, commercially available alumina particles with a mean particle diameter of 5 \(\mu\)m were chosen for this study.
+In order to uniformly seed the flow, a novel seeding generator was designed as described in Appendix \ref{app:seeder}.
+The seeding particles were introduced slightly upstream of the 1.8 m (6 ft) long straight pipe section in Test Rig A.
+
 \subsection{CH* chemiluminescence}
 
 \subsubsection{Image Processing}
