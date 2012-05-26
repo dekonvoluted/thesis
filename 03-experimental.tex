@@ -121,7 +121,24 @@ Based on these requirements, commercially available alumina particles with a mea
 In order to uniformly seed the flow, a novel seeding generator was designed as described in Appendix \ref{app:seeder}.
 The seeding particles were introduced slightly upstream of the 1.8 m (6 ft) long straight pipe section in Test Rig A.
 
+LDV data is only acquired at atmospheric pressure conditions.
+At high pressure conditions, the reacting LSB flow field produces sharp refractive index gradients that rapidly shift in the turbulent flow field.
+This causes strong beam steering effects making it very difficult for the laser beams to reliably intersect within such a small measurement volume.
+The long distance traveled by the beams in the test rig further exacerbated this problem, making LDV data nearly impossible to acquire at such conditions.
+
 \subsection{CH* chemiluminescence}
+
+The LSB flame is imaged using one of two 16-bit intensified CCD cameras --- PI Acton 1024\(\times\)256 or 512\(\times\)512 pixels --- with a 28 mm f/2.8 camera lens.
+CH* chemiluminescence is filtered using a bandpass filter centered on 430 nm with a FWHM of 10 nm.
+At each operating condition, 100 instantaneous images are acquired with an exposure of 1 ms.
+An additional 100 instantaneous images are acquired with no flame and averaged to yield the background for correcting the flame images.
+
+CH* chemiluminescence has several advantages over flame chemiluminescence from other radicals such as OH*, \ce{C2}*, etc.
+First, the CH* emission occurs around 430 nm and is not affected by blackbody radiation from the walls of the combustor.
+\ce{C2}*, on the other hand, emits around 514 nm and is significantly affected by this issue.
+Second, the intensity of the chemiluminescence from CH* is known to scale well with heat release in the combustor\cite{2006-hardalupas}, unlike \ce{C2}*.
+Third, the emitted light can be gathered with high quantum efficiency by the intensified CCD cameras used for this study.
+The quantum efficiency of the 18 mm Gen III filmless HBf intensifier used by the 512\(\times\)512 camera is about 45\% at 430 nm, compared to about 10\% at 310 nm, where OH* chemiluminescence peaks.
 
 \subsubsection{Image Processing}
 
