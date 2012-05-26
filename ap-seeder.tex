@@ -1,4 +1,33 @@
 \chapter{Seeder Design}
 \label{app:seeder}
 
-This appendix describes the design of a new seeder used for this study.
+A new seeder was designed for use in high pressure implementations of diagnostic techniques like Laser Doppler Velocimetry (LDV), Particle Image Velocimetry (PIV), etc.
+
+The previous design, as shown in Figure FIXME, was a fluidized bed seeding generator.
+Seeding particles in a cylindrical vessel are fluidized by an air-turbine vibrator.
+Air is introduced into the vessel in the form of two opposing jets directed tangentially to produce a small amount of swirl in the flow field.
+Particles are picked up by the air flow and the swirl aids in separating the heavy/coagulated clumps of seeding particles by centrifugal acceleration.
+
+This design had several shortcomings.
+First, it is observed that the seeding density of the seeded flow generally decreases over time, even if the seeding particles have not been depleted.
+The seeding particles tend to coagulate over time, due to the buildup of moisture, static charge, etc.
+In such cases, the vibrator can no longer effectively fluidize the particles.
+Further, the tangential introduction of the air flow preferentially depletes particles near the walls of the container, leaving the center relatively undisturbed.
+The cumulative effect of these phenomena diminishes the effectiveness of the seeder.
+
+Second, the fluidized bed requires a minimum amount of seeding particles to function effectively.
+This requires the seeder to be refilled even before all the seeding particles are consumed.
+
+Third, when designed for high pressure applications, the seeder will become quite heavy due to flanges and other fittings.
+Such a setup cannot be easily fluidized using a reasonable-sized air-turbine vibrator.
+
+The new seeder design is shown in Figure FIXME, and resembles a funnel with a swirler located halfway up the stem.
+A perforated base plate holds the swirler and the seeding particles in the conical section of the swirler.
+Due to the steep angle of the sides of the conical section, the seeding particles continuously collapse into the central section.
+This negates any need for vibrating the system.
+Air is introduced from the bottom of the seeder and enters the vessel by passing through the swirler.
+Since all the air enters this way, there is a considerable amount of swirl in the resulting flow field,
+Heavy/coagulated seeding particles are flung outward, while lighter particles are carried with the air.
+After a sufficient distance to allow for the cyclonic separation to be effective, the seeded air passes through another perforated plate which further limits the presence of large clumps of particles.
+The exiting air is now spatially and temporally uniformly seeded.
+
