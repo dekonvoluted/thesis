@@ -1,5 +1,15 @@
 \chapter{Experimental Methods and Considerations}
 
+% It might be interesting to break up the chapter like this:
+% 1. Experimental Facilities
+%   a. LSB Test Rig A
+%   b. LSB Test Rig B
+%   c. Bunsen flame?
+% 2. Diagnostic Techniques
+%   a. LDV
+%   b. CH* chemiluminescence
+%   c. CH PLIF
+
 The current chapter details the facilities and apparatus used to study the flame characteristics in a Low Swirl Burner.
 The selection and implementation of diagnostic techniques used in this study are explained, as are data analysis methods used to process the acquired data.
 
@@ -114,7 +124,7 @@ The output from the photodetector is processed by an FSA-3500-3 signal processor
 The resulting three components of the particle/flow velocity are recorded by the FlowSizer software.
 
 Since the airflow is very sparsely populated by particles, the flow needs to be artificially seeded to facilitate LDV measurements in a reasonable amount of time.
-The seeding particles to be used and their mean diameter are decided by the characteristics of the flow to be imaged.
+The seeding particles to be used and their mean diameter are decided by the characteristics of the flow to be imaged.\cite{1997-melling}
 Since the LSB flow field is a reacting one, the particles need to have high melting points.
 Further, the particles need to be small enough to follow the flow closely and large enough or reflective enough to scatter light efficiently in the measurement volume.
 Based on these requirements, commercially available alumina particles with a mean particle diameter of 5 \(\mu\)m were chosen for this study.
@@ -138,10 +148,93 @@ First, the CH* emission occurs around 430 nm and is not affected by blackbody ra
 \ce{C2}*, on the other hand, emits around 514 nm and is significantly affected by this issue.
 Second, the intensity of the chemiluminescence from CH* is known to scale well with heat release in the combustor\cite{2006-hardalupas}, unlike \ce{C2}*.
 Third, the emitted light can be gathered with high quantum efficiency by the intensified CCD cameras used for this study.
-The quantum efficiency of the 18 mm Gen III filmless HBf intensifier used by the 512\(\times\)512 camera is about 45\% at 430 nm, compared to about 10\% at 310 nm, where OH* chemiluminescence peaks.
+The quantum efficiency of the 18 mm Gen III HB filmless intensifier used by the 512\(\times\)512 camera is about 45\% at 430 nm, compared to about 10\% at 310 nm, where OH* chemiluminescence peaks.
 
 \subsubsection{Image Processing}
 
+The flame chemiluminescence images acquired are background-corrected and averaged.
+The resulting mean is the line-of-sight integrated, time-averaged image of the flame.
+Strictly speaking, this is not the same as a real average obtained from a long exposure image.
+The instantaneous images are obtained through a periodic sampling process and hence, are prone to statistical errors and aliasing.
+However, the behaviour of the flame can be assumed to be sufficiently random, and the mean obtained is adequately representative of the true average.
+Figure FIXME shows a typical mean CH* chemiluminescence image prepared in this manner.
+
+% what can you do with the average image?
+Even when background-corrected, the walls of the combustor are not at zero intensity in the average chemiluminescence image.
+This is particularly visible near the dump plane where there is no flame present and yet the walls are reasonably visible.
+This is caused mostly by scattered chemiluminescence from the flame itself, and to a lesser degree, by blackbody radiation from the heated walls.
+The averaged chemiluminescence image allows us to measure the flame standoff distance by following the intensity profile along the centerline of the combustor.
+The intensity profile rises sharply when passing the flame standoff location.
+Thus, the flame standoff location can be ascertained by finding the inflection point in the intensity profile.
+
+The profile of the average chemiluminescence intensity along the centerline of the sample case from Figure FIXME is shown in Figure FIXME, showing the flame standoff distance.
+The distance from the dump plane, measured in number of pixels on the image and scaled by the appropriate magnification factor yields the flame standoff distance, \(X_f\).
+The determination of the flame standoff location by this method provides a suitable and deterministic means to locating the leading edge of the flame front.
+\nomenclature{\(X_f\)}{Flame standoff distance}
+
+The average image can be processed further to yield more spatially resolved information about the flame brush.
+Under the reasonable assumption that the average LSB flame is axially symmetric about the centerline of the combustor, a tomographic deconvolution technique called the Abel deconvolution\cite{1992-dasch} can be used to convert the line-of-sight integrated image to a radial map of chemiluminescence intensity.
+In effect, this shows the shape and structure of the average flame brush.
+The Abel deconvolution of the sample data from Figure FIXME is shown in Figure FIXME.
+
+The Abel-deconvoluted image provides an relatively easy means to determining the angle of the flame brush.
+A straight line joining two points located at the center of the flame brush intersects the axis of the combustor at this angle.
+The angle of the flame is denoted by \(\theta_f\).
+
+Using the Abel deconvolution to study the flame brush suffers from two main drawbacks.
+First, the system of equations describing the Abel deconvolution is only valid as long as the entirety of the flame is visible.
+This is only satisfied in the initial region of the LSB where the diameter of the flame brush is smaller than the height of the optical viewport.
+At further downstream locations, the flame is not imaged in its entirety.
+This causes the spurious bright regions near the top of the window in Figure FIXME.
+The second limitation of the Abel deconvolution technique stems from the high incidence of errors along the centerline (where \(r \to 0\)).
+Due to this, any study of the flame brush thickness at the flame stabilization point --- a metric of considerable importance --- is all but impossible using this tomographic technique.
+
 \subsection{CH Planar Laser Induced Fluorescence}
 
+The CH PLIF setup uses the frequency-doubled output of a Light Age PAL 101 alexandrite laser tuned to \(\lambda \approx 387.2\) nm to pump the R-bandhead of the CH \(B^2\Sigma^- \leftarrow X^2\Pi\) (0,0) system.
+This populates the \(A^2\Delta\) state through fast electronic energy transfer from the \(B^2\Sigma^-\) state.
+The resulting broadband fluorescence observed between \(\lambda\) = 420--440 nm is due to the \(A^2\Delta \rightarrow X^2\Pi\) (1,1), \(A^2\Delta \rightarrow X^2\Pi\) (0,0) and \(B^2\Sigma^- \rightarrow X^2\Pi\) (0,1) bands.
+The CH PLIF signal is collected using an intensified PI Acton 512\(\times\)512 camera equipped with an 18 mm Gen III HB filmless intensifier with a quantum efficiency of about 45\% in the 420--440 nm range.
+Elastic scattering from the laser beam is attenuated by a 3 mm thick GG 420 Schott Glass filter.
+
+\subsubsection{Laser Wavelength Calibration}
+
+The output of the PAL 101 alexandrite laser is controlled using a micrometer-coupled frequency selection element in the laser cavity.
+The manufacturer-supplied calibration for the micrometer was found to be incorrect.
+This required the recalibration of the laser in order to know the correspondence of the micrometer settings to the output wavelength.
+
+The laser output was calibrated using an Ocean Optics HR 2000 spectrometer.
+The spectrometer is calibrated using 50 wavelengths in the 400--850 nm range from output of an Neon discharge lamp source.
+The spectrometer is also intensity corrected over this range using a black body source.
+The estimated error in the resolution of the device is about 0.1 nm.
+
+The laser micrometer was traversed from 0.600 in to 0.626 in and back in steps of 0.001 in.
+Spectra were recorded for these settings integrated over 512 ms and averaged over 10 acquisitions.
+The calibration was performed using the fundamental wavelength of the laser.
+
+Each acquired spectrum was modeled as a Gaussian profile and the location of the center wavelength was noted.
+The variation of the wavelength is verified to be linear against the micrometer setting (as specified by the manufacturer) and the correct calibration equation is obtained by doing a linear curve fit of the data.
+The results are shown in Figure FIXME.
+
 \subsubsection{Excitation scan}
+
+% This section needs a rewrite.
+
+For this analysis, a premixed, stoichiometric, laminar methane-air flame is imaged by the CH PLIF imaging system.
+The laminar flame is stabilized on a Bunsen burner with an inner diameter of 10.16 mm (0.4 in).
+The alexandrite laser is operated at 10 Hz, with a power of 16 mJ/pulse.
+The optics form the second harmonic beam into a sheet about 25 mm tall with a thickness on the order of 100 \(\mu\)m passing through the center of the flame.
+The edges of the sheet are blocked by razor blades.
+The excitation scan is performed by tuning the output of the laser from \(\lambda\) = 387.077 nm to 387.260 nm.
+
+The induced fluorescence is imaged perpendicularly by the intensified camera using an 85 mm f/1.8 Nikon AF Nikkor lens and the intensifier is gated over 300 ns.
+100 instantaneous images are acquired for each case.
+The resolution of the imaging system is approximately 62 \(\mu\)m per pixel.
+
+Figure FIXME shows a sample CH PLIF image from this dataset.
+The images are background-corrected and the signal statistics are measured at the midpoint of the flame.
+The CH PLIF signal mean is thresholded and scaled to match the normalized value of the simulation profile at the peak.
+The results agree extremely well with the simulated profile of the R-bandhead.
+This validates our calibration of the laser wavelength and our calculation of the laser linewidth.
+Finally, this shows that the optimal excitation wavelength is about 387.2 nm.
+
