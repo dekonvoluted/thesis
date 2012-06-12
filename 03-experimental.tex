@@ -15,38 +15,13 @@ The selection and implementation of diagnostic techniques used in this study are
 
 \section{LSB configuration}
 
-Two LSB configurations, A and B are tested for this study.
-Each LSB configuration is built around a swirler with an outer diameter, \(d_s\) of 38 mm (1.5 in).
+Two configurations of the Low Swirl Burner were tested for this study.
+There are referred to in what follows as Configurations A and B.
+Each configuration is built around a swirler with an outer diameter, \(d_s\) of 38 mm (1.5 in).
 Other key dimensions of the swirlers tested for this work are presented in Table \ref{tab:swirlerdimensions}.
 
-\begin{table}
-
-\caption[Swirler Dimensions]{The dimensions of the swirlers used and the respective perforated plates are presented. Each swirler is referred to by its vane angle (as in ``\(S_{37^\circ}\)'').}
-
-\begin{center}
-\begin{tabular}{lcc}
-  Geometric parameter & \multicolumn{2}{c}{Swirler} \tabularnewline
-  & \(S_{37^\circ}\) & \(S_{45^\circ}\) \tabularnewline
-  \hline \hline
-  \textbf{Swirler data} & & \tabularnewline
-  Outer diameter, \(d_s\), mm & 38 & 38 \tabularnewline
-  Diameter ratio, \(\frac{d_i}{d_s}\) & 0.66 & 0.66 \tabularnewline
-  Vane angle, \(\alpha\) & 37\(^\circ\) & 45\(^\circ\) \tabularnewline
-  Theoretical Swirl Number, \(S\) & 0.48 & 0.64 \tabularnewline
-  & & \tabularnewline
-  \textbf{Perforated plate data} & & \tabularnewline
-  Open area, mm\(^2\) & 155.97 & 156.98 \tabularnewline
-  Blockage, \% & 71.54 & 71.36 \tabularnewline
-  Plate thickness, mm & 1.27 & 1.27 \tabularnewline
-  Hole pattern & 1 - 8 - 16 & 1 - 8 - 16 \tabularnewline
-  Hole location (dia), mm & 0 - 10.2 - 19.1 & 0 - 10.2 - 19.1 \tabularnewline
-  Hole diameter, mm & 2.79 - 2.79 - 2.84 & 2.82 - 2.82 - 2.83 \tabularnewline
-\end{tabular}
-\end{center}
-
-\label{tab:swirlerdimensions}
-
-\end{table}
+% TODO: Add dimensions for configuration B
+\input{tables/swirlerdimensions}
 
 Initial testing aimed at velocity field mapping and flame imaging is conducted on Configuration A, while Configuration B is used for a later series of tests aimed at visualizing the flame structure.
 The design of these two configurations is discussed in further detail in what follows.
@@ -65,13 +40,19 @@ Configuration A is illustrated in Figure FIXME.
 
 \subsection{Configuration B}
 
-In this configuration, the reactants approach the swirler through a smoothly contoured nozzle with a high contraction ratio designed to inhibit the formation of thick boundary layers.
-The swirler again leads to a constant area nozzle which is FIXME diameters in length.
-Following this, the reactants enter the combustion zone.
+In configuration B, the reactants reach the swirler through two separate streams.
+The core stream passes through a layer of ball bearings before passing through a smoothly contoured nozzle with a high contraction ratio.
+The annular stream passes directly through a smoothly contoured nozzle.
+The contractions are designed to inhibit the formation of thick boundary layers.
+The core stream passes through the central section of the swirler, while the annular stream picks up swirl by passing through the vanes of the swirler.
+
+The swirler is located upstream of a constant area nozzle which is FIXME in length.
+The reactants then expand into the combustion zone.
 
 Unlike in Configuration A, there is no dump plane or quartz tube to provide confinement to the combustion zone.
-Further, in this configuration, the annular flow is separately controlled from the central flow, which allows one to control the mass flow split directly, if needed.
-Finally, this configuration allows for adjusting the level of turbulence present in the inlet flow by use of a turbulence generator located upstream.
+The walls of the pressure vessel are insulated from the combustion zone by a co-flow of cold air.
+Further, in this configuration, the annular flow is separately controlled from the central flow, which allows one to control the mass flow split directly, if necessary.
+Finally, this configuration allows for adjusting the level of turbulence present in the inlet flow by use of a turbulence generator located upstream in the plenum chamber.
 
 The details of Configuration B are shown in Figure FIXME.
 
@@ -88,6 +69,7 @@ Preheated air at about 500 K is drawn from external tanks and metered through an
 The air enters the inlet nozzle of the LSB through a 1.8 m (6 ft) long, 102 mm (4 in) diameter straight pipe section.
 Fuel (natural gas) is metered using another orifice flow meter and injected at the head of the straight pipe section.
 The straight pipe section allows for the flow to be fully developed, and fully premixed before the reactants enter the burner.
+
 The combustor pressure and temperature are measured at the head of the inlet nozzle by a pressure transducer and a thermocouple respectively.
 In addition, the upstream pressure and the pressure differential are measured at the air and fuel orifice flow meters.
 For the preheated air stream, the upstream temperature is also measured.
@@ -96,7 +78,7 @@ All measurements are monitored and recorded during the course of the experiment 
 
 The pressure vessel enclosing the combustor is designed to withstand pressures of up to 30 atm and is insulated from the combustor by a ceramic liner.
 Cooling for the pressure vessel and the quartz tube is provided by a flow of cold air introduced at the head of the pressure vessel.
-Optical access to the combustor is provided through four 150 mm (6 in) \(\times\) 75 mm (3 in) quartz windows located \(90^\circ\) apart azimuthally.
+Optical access to the combustor is provided through four 25 mm (1 in) thick, 150 mm (6 in) \(\times\) 75 mm (3 in) quartz windows located \(90^\circ\) apart azimuthally.
 The view ports allow the combustor to be imaged from the dump plane to an axial distance of 150 mm (6 in) downstream.
 
 The exhaust from the combustor is cooled by circulating cold water through a water jacket enclosing the exhaust pipe section.
@@ -107,7 +89,24 @@ The exiting products are finally released to the building exhaust system.
 
 \subsection{Test Rig B}
 
-FIXME
+% TODO: Expand this subsection
+A schematic of Test Rig B is shown in Figure FIXME.
+Both test rigs share the same upstream supply of preheated air, cold air and natural gas.
+The preheated air splits into two separate streams a short distance after mixing with the natural gas fuel.
+Orifice flow meters are used to meter the fuel flow and each individual reactant stream.
+Each orifice flow meter is equipped with a thermocouple, an upstream pressure transducer and a differential pressure transducer.
+The cooling air for the co-flow is not metered.
+All measurements are monitored and recorded by a LabView VI.
+
+The pressure vessel is rated for pressures in excess of 30 atm and is insulated from the combustor by a flow of cold air.
+The cold air enters the pressure vessel through two inlet ports and passes through a layer of steel ball bearings which renders the flow uniform spatially.
+The pressure vessel has four viewports located \(90^\circ\) apart for optical access.
+Each viewport is covered by a 25 mm (1 in) thick, 178 mm (7 in) \(\times\) 50 mm (2 in) quartz window.
+The inlet of the LSB is located approximately halfway between the top and bottom edges of the window.
+
+Similar to Test Rig A, the exhaust section is cooled by circulating cold water through an enclosing water jacket.
+An adjustable gate valve on the exhaust line provides the back pressure necessary to pressurize the combustor.
+The products are vented into the building exhaust system.
 
 \section{Diagnostics}
 
@@ -159,10 +158,9 @@ The instantaneous images are obtained through a periodic sampling process and he
 However, the behaviour of the flame can be assumed to be sufficiently random, and the mean obtained is adequately representative of the true average.
 Figure FIXME shows a typical mean CH* chemiluminescence image prepared in this manner.
 
-% what can you do with the average image?
 Even when background-corrected, the walls of the combustor are not at zero intensity in the average chemiluminescence image.
-This is particularly visible near the dump plane where there is no flame present and yet the walls are reasonably visible.
-This is caused mostly by scattered chemiluminescence from the flame itself, and to a lesser degree, by blackbody radiation from the heated walls.
+This is particularly noticeable near the dump plane where there is no flame present and yet the walls are clearly illuminated.
+The source of this illumination is mostly scattered chemiluminescence from the flame itself, and to a lesser degree, blackbody radiation from the heated walls.
 The averaged chemiluminescence image allows us to measure the flame standoff distance by following the intensity profile along the centerline of the combustor.
 The intensity profile rises sharply when passing the flame standoff location.
 Thus, the flame standoff location can be ascertained by finding the inflection point in the intensity profile.
@@ -199,33 +197,35 @@ Elastic scattering from the laser beam is attenuated by a 3 mm thick GG 420 Scho
 
 \subsubsection{Laser Wavelength Calibration}
 
-The output of the PAL 101 alexandrite laser is controlled using a micrometer-coupled frequency selection element in the laser cavity.
-The manufacturer-supplied calibration for the micrometer was found to be incorrect.
-This required the recalibration of the laser in order to know the correspondence of the micrometer settings to the output wavelength.
+The output of the PAL 101 alexandrite laser is controlled using a micrometer-coupled birefringent tuning mechanism.
+The output wavelength of the laser varies linearly with the micrometer reading.
+Initially, the manufacturer-supplied calibration for the micrometer was found to be inaccurate.
+This required the recalibration of the laser in order to know the slope and offset of the calibration curve.
 
-The laser output was calibrated using an Ocean Optics HR 2000 spectrometer.
-The spectrometer is calibrated using 50 wavelengths in the 400--850 nm range from output of an Neon discharge lamp source.
+An Ocean Optics HR 2000 spectrometer is used to get the true wavelength of the laser output.
+The spectrometer is pre-calibrated using 50 wavelengths in the 400--850 nm range from output of an Neon discharge lamp source.
 The spectrometer is also intensity corrected over this range using a black body source.
-The estimated error in the resolution of the device is about 0.1 nm.
+The estimated error in the resolution of the device is about 0.1 nm (1 \AA).
 
 The laser micrometer was traversed from 0.600 in to 0.626 in and back in steps of 0.001 in.
-Spectra were recorded for these settings integrated over 512 ms and averaged over 10 acquisitions.
 The calibration was performed using the fundamental wavelength of the laser.
-
-Each acquired spectrum was modeled as a Gaussian profile and the location of the center wavelength was noted.
-The variation of the wavelength is verified to be linear against the micrometer setting (as specified by the manufacturer) and the correct calibration equation is obtained by doing a linear curve fit of the data.
+Spectra were recorded at these conditions, integrated over 512 ms, and averaged over 10 acquisitions.
+Each acquired spectrum was modeled as a Gaussian and the location of the center wavelength was noted.
+The variation of the wavelength is verified to be linear against the micrometer setting and the correct calibration equation is obtained by doing a linear curve fit of the data.
 The results are shown in Figure FIXME.
 
 \subsubsection{Excitation scan}
 
-% This section needs a rewrite.
+An excitation scan is performed by tuning the output of the laser from \(\lambda\) = 387.077 nm to 387.260 nm.
+This serves two purposes.
+First, it locates the optimal wavelength to excite the CH radicals that results in the highest fluorescence yield.
+Second, the variation of the signal intensity can be compared with simulated profiles from LIFBASE and our calculation of the laser linewidth can be validated.
 
-For this analysis, a premixed, stoichiometric, laminar methane-air flame is imaged by the CH PLIF imaging system.
+In order to do this, the CH PLIF imaging system, consisting of the alexandrite laser and the intensified PI Acton 512\(\times\)512 camera is used to image a premixed, stoichiometric, laminar methane-air flame.
 The laminar flame is stabilized on a Bunsen burner with an inner diameter of 10.16 mm (0.4 in).
 The alexandrite laser is operated at 10 Hz, with a power of 16 mJ/pulse.
-The optics form the second harmonic beam into a sheet about 25 mm tall with a thickness on the order of 100 \(\mu\)m passing through the center of the flame.
+The second harmonic beam is refracted into a sheet about 25 mm tall, with a thickness on the order of 100 \(\mu\)m passing through the center of the flame.
 The edges of the sheet are blocked by razor blades.
-The excitation scan is performed by tuning the output of the laser from \(\lambda\) = 387.077 nm to 387.260 nm.
 
 The induced fluorescence is imaged perpendicularly by the intensified camera using an 85 mm f/1.8 Nikon AF Nikkor lens and the intensifier is gated over 300 ns.
 100 instantaneous images are acquired for each case.
@@ -233,8 +233,40 @@ The resolution of the imaging system is approximately 62 \(\mu\)m per pixel.
 
 Figure FIXME shows a sample CH PLIF image from this dataset.
 The images are background-corrected and the signal statistics are measured at the midpoint of the flame.
-The CH PLIF signal mean is thresholded and scaled to match the normalized value of the simulation profile at the peak.
-The results agree extremely well with the simulated profile of the R-bandhead.
-This validates our calibration of the laser wavelength and our calculation of the laser linewidth.
-Finally, this shows that the optimal excitation wavelength is about 387.2 nm.
+
+The mean of the CH PLIF signal is compared with the LIFBASE-simulated profile of CH excitation LIF output.
+The two signals are normalized by their individual maxima and plotted in Figure FIXME.
+The profiles agree extremely well, validating our calibration of the laser output and our calculation of the laser linewidth.
+The optimal excitation wavelength is found to be about 387.2 nm.
+
+\subsubsection{Linearity test}
+
+The next step is to estimate the variation of the LIF signal as a function of the operating conditions.
+However, this function depends on which LIF regime we operate in.
+Hence, it is imperative that we verify the regime of operation before attempting to model the CH PLIF signal.
+
+Under the assumption that the CH ground state population is not depleted by excitation or laser-induced chemical reactions, the LIF signal is linearly proportional to the laser intensity in the weak excitation limit.
+However, as the laser intensity is increased further, the LIF output is observed to saturate and plateau.
+This is called the strong excitation limit/saturation regime.
+In the weak excitation limit, the signal is a function of CH concentration and the rate of collisional quenching of the excited CH radicals.
+In the strong excitation limit, the signal depends only on the CH concentration is unaffected by the quenching of the excited CH species.
+
+It is difficult to ensure that the CH system is saturated spatially, temporally and spectrally at the same time.
+Further, operating with high laser intensities may bleach the energy levels being excited by inducing chemical reactions that destroy the excited CH radicals.
+Hence, it is preferred to operate in the linear regime.
+
+For this experiment, the laser beam is directed at a steady, laminar, methane-air, Bunsen flame operating at a slightly rich stoichiometry.
+The 1 mm diameter beam is passed through an aperture, but no optics are used to refract the beam otherwise.
+Varying the intensity of the laser beam by changing the flash lamp voltage or the Q-switch timing is not preferred as either would alter the pulse-width of the beam.
+Instead, quartz disks and blocks are introduced into the beam to produce an intensity loss through reflection, scattering and absorption.
+
+The flame is imaged with the PI Acton 512\(\times\)512 intensified camera equipped with a 50 mm, f/1.8 AF Nikkor lens and a 3 mm thick GG 420 filter.
+The resolution of the set up was measured to be about 44 \(\mu\)m/pixel.
+The laser power was varied from 10 mJ/pulse to 0.5 mJ/pulse in the manner described earlier.
+The LIF signal image was recorded over 150 accumulations.
+The corresponding laser scattering image was also recorded at each power for better estimating the background.
+The flame chemiluminescence was also recorded for the same purpose.
+
+The average signal per pixel is plotted in arbitrary units against the laser intensity in Figure FIXME.
+The results indicate that the linearity of the LIF signal is valid for all laser intensities under 1 J/cm\(^2\).
 
