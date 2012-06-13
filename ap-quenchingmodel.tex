@@ -24,19 +24,7 @@ S = ( n_1A_{10} + n'_1A'_{10} + n_2A_{20} )V
 The spontaneous emission coefficients, \(A_{10}\), \(A'_{10}\) and \(A_{20}\) are obtained from various published papers\cite{1985-garland-a,1996-luque-b,2005-richmond}.
 The values used for this analysis are presented in Table \ref{tab:emissionCoefficients}.
 
-\begin{table}
-  \caption[Einstein A coefficients]{The coefficients of spontaneous emission for transitions in the CH system are provided.}
-  \begin{center}
-    \begin{tabular}{lcr}
-      Transition & Symbol & A, s\(^{-1}\) \tabularnewline
-      \hline\hline
-      \(B\rightarrow X(0,0)\) & \(A_{20}\) & \(2.963 \times 10^6\) \tabularnewline
-      \(A\rightarrow X(1,1)\) & \(A_{10}\) & \(1.676 \times 10^6\) \tabularnewline
-      \(A\rightarrow X(0,0)\) & \(A'_{10}\) & \(1.832 \times 10^6\) \tabularnewline
-    \end{tabular}
-  \end{center}
-  \label{tab:emissionCoefficients}
-\end{table}
+\input{tables/emissionCoefficients}
 
 Equations \ref{eqn:rates1}--\ref{eqn:rates3} describe the time variation of the number density of CH radicals in each excited state.
 
@@ -176,27 +164,7 @@ The expression for the reduced mass is given in Equation \ref{eqn:reducedMass}.
 The quenching cross-sections of various species are obtained from various published papers\cite{1994-chen,1998-tamura,2002-renfro} and are functions of temperature.
 The functional forms used in this study are presented in Table \ref{tab:quenchingCrossSections}.
 
-\begin{table}
-  \caption[Quenching Cross-sections]{The functional form of the quenching cross-sections of various species with CH are provided.}
-  \begin{center}
-    \begin{tabular}{lr}
-      Species & \(\sigma\), \AA\(^2\) \tabularnewline
-      \hline\hline
-      \ce{H2} & \(6.1 \exp{ \left(-686 / T \right)}\) \tabularnewline
-      \ce{H} & \(221 T^{-0.5} \exp{ \left( -686 / T \right)}\) \tabularnewline
-      \ce{O2} & \(8.61 \times 10^{-6} T^{1.64} \exp{ \left( 867 / T \right)}\) \tabularnewline
-      \ce{OH} & \(221 T^{-0.5} \exp{ \left( -686 / T \right)}\) \tabularnewline
-      \ce{H2O} & 9.6 \tabularnewline
-      \ce{CH4} & \(52.8 T^{-0.5} \exp{ \left( -84 / T \right)}\) \tabularnewline
-      \ce{CO} & 8.31 \tabularnewline
-      \ce{CO2} & \(8.67 \times 10^{-13} T^{3.8} \exp{ \left( 854 / T \right)}\) \tabularnewline
-      \ce{C2H6} & 13.4 \tabularnewline
-      \ce{N2} & \(1.53 \times 10^{-4} T^{1.23} \exp{ \left( -522.1 / T \right)}\) \tabularnewline
-      \ce{C3H8} & 22 \tabularnewline
-    \end{tabular}
-  \end{center}
-  \label{tab:quenchingCrossSections}
-\end{table}
+\input{tables/quenchingCrossSections}
 
 The term \(W_{02}n_0\) in Equations \ref{eqn:simplifiedSolution1}--\ref{eqn:simplifiedSolution3} represents the rate of pumping of the ground state CH radicals.
 The current excitation scheme targets multiple transitions in the R-bandhead.
@@ -214,28 +182,7 @@ Table \ref{tab:absorptionCoefficients} presents the values of \(B_i\) for the tr
 Assuming a Gaussian line shape for the laser, and using the line strengths from LIFBASE, the relative amount of energy absorbed by each transition can be calculated.
 These values are also presented in Table \ref{tab:absorptionCoefficients}.
 
-\begin{table}
-  \caption[Einstein B coefficients]{The coefficients of absorption for selected transitions in the CH \(X(v=0)\) system are provided.}
-  \begin{center}
-    \begin{tabular}{lrrr}
-      \(N''\) & \(\lambda\), nm & \(B\), m\(^2\)J\(^{-1}\)s\(^{-1}\) & \(E\) (normalized) \tabularnewline
-      \hline\hline
-      R1 & & & \tabularnewline
-      5 & 387.2698 & \(7.677 \times 10^9\) & 0.0568 \tabularnewline
-      6 & 387.1899 & \(7.665 \times 10^9\) & 0.1706 \tabularnewline
-      7 & 387.1677 & \(7.610 \times 10^9\) & 0.1483 \tabularnewline
-      8 & 387.206  & \(7.519 \times 10^9\) & 0.1479 \tabularnewline
-      9 & 387.308  & \(7.397 \times 10^9\) & 0.0126 \tabularnewline
-      R2 & & & \tabularnewline
-      5 & 387.2289 & \(7.539 \times 10^9\) & 0.1080 \tabularnewline
-      6 & 387.1549 & \(7.569 \times 10^9\) & 0.1128 \tabularnewline
-      7 & 387.1371 & \(7.539 \times 10^9\) & 0.0841 \tabularnewline
-      8 & 387.1786 & \(7.464 \times 10^9\) & 0.1311 \tabularnewline
-      9 & 387.283  & \(7.354 \times 10^9\) & 0.0279 \tabularnewline
-    \end{tabular}
-  \end{center}
-  \label{tab:absorptionCoefficients}
-\end{table}
+\input{tables/absorptionCoefficients}
 
 In Equation \ref{eqn:pumpingRate}, \(A_c\) is the area of cross-section of the laser beam and \(f_i\) is the Boltzmann fraction of the population at the energy level \(i\).
 The expression for the Boltzmann fraction at the energy level corresponding to the vibrational quantum number \(v\) and rotational quantum number \(J\) is given in Equation \ref{eqn:BoltzmannFraction}.
@@ -256,24 +203,7 @@ The vibrational energy, \(E_v(v)\) of a level is calculated according to Equatio
 
 The spectroscopic constants in Equations \ref{eqn:vibrationalEnergy} and \ref{eqn:rotationalEnergy} are found in literature\cite{1995-zachwieja} and are provided here in Table \ref{tab:spectroscopicConstants}.
 
-\begin{table}
-  \caption[Spectroscopic constants]{Spectroscopic constants for the CH \(X^2\Pi\) level are presented.}
-  \begin{center}
-    \begin{tabular}{lr}
-      Constant & Value, cm\(^{-1}\) \tabularnewline
-      \hline\hline
-      \(\omega_e\) & 2860.7508 \tabularnewline
-      \(\omega_ex_e\) & 64.4387 \tabularnewline
-      \(\omega_ey_e\) & 0.36345 \tabularnewline
-      \(\omega_ez_e\) & \(-1.5378 \times 10^{-2}\) \tabularnewline
-      \(B_e\) & 14.459883 \tabularnewline
-      \(\alpha_e\) & 0.536541 \tabularnewline
-      \(D_e\) & \(1.47436 \times 10^{-3}\) \tabularnewline
-      \(\beta_e\) & \(-2.530 \times 10^{-5}\) \tabularnewline
-    \end{tabular}
-  \end{center}
-  \label{tab:spectroscopicConstants}
-\end{table}
+\input{tables/spectroscopicConstants}
 
 The rovibrational partition function, \(Q_{rv}\) is a summation over all available vibrational and rotational levels in the particular electronic state.
 For the ground state of the CH molecule, there are five available vibrational quantum numbers, \(v = 0\) to \(v = 4\).
