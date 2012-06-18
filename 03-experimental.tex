@@ -2,91 +2,46 @@
 %   GENERALLY - YOU ARE QUITE BRIEF IN YOUR DESCRIPTIONS - 
 % REMEMBER, YOU ARE SUPPOSED TO GIVE ENOUGH DETAILS FOR SOMEONE TO RECREATE THE EXPERIMENT AND TO UNDERSTAND HOW YOU DID IT
 
-
-% It might be interesting to break up the chapter like this:
-% 1. Experimental Facilities
-%   a. LSB Test Rig A
-%   b. LSB Test Rig B
-%   c. Bunsen flame?
-% 2. Diagnostic Techniques
-%   a. LDV
-%   b. CH* chemiluminescence
-%   c. CH PLIF
-
-The current chapter details the facilities and apparatus used to study the flame characteristics in a Low Swirl Burner.
+The current chapter describes the facilities and apparatus used to study the flame characteristics in a Low Swirl Burner.
 The selection and implementation of diagnostic techniques used in this study are explained, as are data analysis methods used to process the acquired data.
 
-\section{LSB configuration}
+\section{LSB configurations}
 
 Two configurations of the Low Swirl Burner were tested for this study.
 There are referred to in what follows as Configurations A and B.
-Each configuration is built around a swirler with an outer diameter, \(d_s\) of 38 mm (1.5 in).
-Other key dimensions of the swirlers tested for this work are presented in Table \ref{tab:swirlerdimensions}.
+Each configuration consists of the reactant flow inlet, the swirler device, the conduit to the combustion zone and the combustion zone itself.
+All swirlers tested for this work have an outer diameter, \(d_s\) of 38 mm (1.5 in).
+Other key dimensions of the swirlers tested are presented in Table \ref{tab:swirlerDimensions}.
+
+Each configuration is housed in a high pressure testing facility.
+The testing facility consists of an air and fuel supply system, a pressure vessel with adequate optical access and an exhaust system for the products.
+Each testing facility is instrumented to measure temperatures and pressures which are then used to calculate various flow parameters of interest.
+
+The design of the configurations tested, along with that of their respective test facilities are discussed in greater detail in this section.
 
 % TODO: Add dimensions for configuration B
 \input{tables/swirlerDimensions}
 
-Initial testing aimed at velocity field mapping and flame imaging was conducted on Configuration A, while Configuration B was used for a later series of tests aimed at visualizing the flame structure.
-The design of these two configurations is discussed in further detail in what follows.
-
 \subsection{Configuration A}
 
-In this configuration, the reactants reach the swirler through a converging nozzle that decreases linearly in diameter from from the inlet diameter of 102 mm (4 in) to the outer diameter of the swirler, 38 mm (1.5 in).
-The swirler leads to a constant area nozzle, and is located one diameter upstream of an abrupt area change.
-At the area change, the reactants expand from the 38 mm (1.5 in) diameter nozzle into a 115 mm (4.5 in) diameter combustion zone.
-The expansion ratio is chosen so as to avoid confinement effects on the centerline flame flow field.\cite{1998-yegian}
-%  SHOULDN'T YOU DESCRIBE THE FLOW ONLY PARTLY PASSING THRU THE SWIRLER, THE REST GOING THRU A CENTER PERF PLATE?
+Preliminary experiments involving velocity field mapping and flame imaging were performed using this configuration.
+The schematic of the high pressure test facility housing this configuration is shown in Figure FIXME, while the configuration itself is shown in greater detail in Figure FIXME.
 
-The main combustion zone begins at the dump plane and is enclosed by a GE 214 quartz tube.
-The quartz tube is 300 mm (12 in) long and 115 mm (4.5 in) in diameter.
-The thickness of the quartz tube is 2.5 mm (0.1 in).
-Configuration A is illustrated in Figure FIXME.
-%   INTRODUCE FIGURE EARLIER - E.G., AT START OF DESCRIPTION
+\subsubsection{Test Facility}
 
-\subsection{Configuration B}
-
-%   YOU KEEP KEEP DESCRIBING THE WHOLE DEVICE AS THE SWIRLER, AS OPPOSED TO SWIRLER BEING THE OUTER ANNULUS THAT CAUSES THE SWIRL...I THINK THIS IS CONFUSING
-
-In configuration B, the reactants reach the swirler through two separate streams.
-The core stream passes through a layer of ball bearings before passing through a smoothly contoured nozzle with a high contraction ratio.
-The annular stream passes directly through a smoothly contoured nozzle.
-The contractions are designed to inhibit the formation of thick boundary layers.
-The core stream passes through the central section of the swirler, while the annular stream picks up swirl by passing through the vanes of the swirler.
-
-The swirler is located upstream of a constant area nozzle which is FIXME in length.
-The reactants then expand into the combustion zone.
-
-Unlike in Configuration A, there is no dump plane or quartz tube to provide confinement to the combustion zone.
-The walls of the pressure vessel are insulated from the combustion zone by a co-flow of cold air.
-Further, in this configuration, the annular flow is separately controlled from the central flow, which allows one to control the mass flow split directly.
-Finally, this configuration allows for adjusting the level of turbulence present in the inlet flow by use of a turbulence generator located upstream in the plenum chamber.
-%   ADD REFERENCE REGARDING TURBULENCE GENERATOR
-
-The details of Configuration B are shown in Figure FIXME.
-%   INTRODUCE FIGURE EARLIER 
-
-\section{High Pressure Test Rig}
-%   THE READER MIGHT BE CONFUSED WITH THIS SEPARATION METHOD - YOU COULD ALSO DESCRIBE EXPERIMENTAL SETUP A (SWIRLER AND RIG) AND THEN SETUP B
-
-Each of the two configurations is housed in a separate high pressure testing rig with optical access to study the flame.
-These rigs consist of an air and fuel supply system, a pressure vessel with adequate optical access and an exhaust system.
-The details of each rig are discussed in the following sub-sections.
-
-\subsection{Test Rig A}
-
-Preliminary experiments involving velocity field mapping and flame imaging were conducted in Test Rig A, shown in Figure FIXME.
-%   IS THE HOT AIR DRAWN FROM TANKS - OR IS AIR DRAWN FROM EXTERNAL TANKS AND HEATED IN AN INDIRECT, GAS-FIRED HEAT EXCHANGER.... 
-Preheated air at about 500 K is drawn from external tanks and metered through an orifice flow meter.
+Pressurized air is supplied from external tanks and heated in an indirect, gas-fired heat exchanger to about 500 K.
+The flowrate of the air is metered using a sub-critical orifice flow meter.
+% TODO: Diameter, flow range of the orifice flow meter.
 The air enters the inlet nozzle of the LSB through a 1.8 m (6 ft) long, 102 mm (4 in) diameter straight pipe section.
-%   NO DETAILS ON THE SPECIFIC METER, FLOW RATE RANGE, ETC.??
 Fuel (natural gas) is metered using another orifice flow meter and injected at the head of the straight pipe section.
+% TODO: Diameter, flow range of the orifice flow meter.
 The straight pipe section allows for the flow to be fully developed, and fully premixed before the reactants enter the burner.
 
 The combustor pressure and temperature are measured at the head of the inlet nozzle by a pressure transducer and a thermocouple respectively.
-%   AGAIN - NO DETAILS ON THE TRANSDUCERS USED?
+% TODO: Details of the transducers used.
 In addition, the upstream pressure and the pressure differential are measured at the air and fuel orifice flow meters.
 For the preheated air stream, the upstream temperature is also measured.
-% HOW MEASURED??
+% TODO: Details of the pressure transducers and thermocouples
 The measurements are used to calculate the four primary flow parameters (combustor pressure, preheat temperature, reference velocity and equivalence ratio) for the LSB in real time.
 All measurements are monitored and recorded during the course of the experiment by a LabView VI.
 
@@ -101,7 +56,23 @@ The exhaust pipe section terminates in an orifice plug to provide the back press
 Different diameter orifices are used for each reference velocity condition to be tested.
 The exiting products are finally released to the building exhaust system.
 
-\subsection{Test Rig B}
+\subsubsection{Low Swirl Burner}
+
+This configuration is illustrated schematically in Figure FIXME.
+The reactants reach the swirler through a converging nozzle that decreases linearly in diameter from from the inlet diameter of 102 mm (4 in) to the outer diameter of the swirler, 38 mm (1.5 in).
+At the swirler, the flow is split into two streams---one passing through the central section and another picking up swirl by flowing over the vanes in the annular region.
+The flow split between the two streams is controlled by inducing blockage into the central flow by means of a perforated plate.
+The swirler leads to a constant area nozzle, and is located one diameter upstream of an abrupt area change.
+At the area change, the reactants expand from the 38 mm (1.5 in) diameter nozzle into a 115 mm (4.5 in) diameter combustion zone.
+The expansion ratio is chosen so as to avoid confinement effects on the centerline flame flow field.\cite{1998-yegian}
+
+The main combustion zone begins at the dump plane and is enclosed by a GE 214 quartz tube.
+The quartz tube is 300 mm (12 in) long and 115 mm (4.5 in) in diameter.
+The thickness of the quartz tube is 2.5 mm (0.1 in).
+
+\subsection{Configuration B}
+
+\subsubsection{Test Facility}
 
 A schematic of Test Rig B is shown in Figure FIXME.
 Both test rigs share the same upstream supply of preheated air, cold air and natural gas.
@@ -124,6 +95,24 @@ Similar to Test Rig A, the exhaust section is cooled by circulating cold water t
 An adjustable gate valve on the exhaust line provides the back pressure necessary to pressurize the combustor.
 The products are vented into the building exhaust system.
 % ISN'T IN THE SAME EXHAUST SYSTEM THE OTHER RIG WENT IN TO?
+
+\subsubsection{Low Swirl Burner}
+
+Figure FIXME presents a schematic of Configuration B.
+Here, the reactants reach the swirler through two separate streams.
+The core/central stream passes through plenum chamber which is filled with steel ball bearings before approaching the swirler through a smoothly contoured nozzle with a high contraction ratio.
+The annular stream passes directly through a smoothly contoured nozzle.
+The contractions are designed to inhibit the formation of thick boundary layers.
+The core stream passes through the central section of the swirler, while the annular stream picks up swirl by passing through the vanes of the swirler.
+
+The swirler is located upstream of a constant area nozzle which is FIXME in length.
+The reactants then expand into the combustion zone.
+
+Unlike in Configuration A, there is no dump plane or quartz tube to provide confinement to the combustion zone.
+The walls of the pressure vessel are insulated from the combustion zone by a co-flow of cold air.
+Further, in this configuration, the annular flow is separately controlled from the central flow, which allows one to control the mass flow split directly.
+Finally, the level of turbulence in the central flow can be adjusted by use of a turbulence generator\cite{2011-marshall} located upstream in the plenum chamber.
+
 \section{Diagnostics}
 
 \subsection{Laser Doppler Velocimetry}
