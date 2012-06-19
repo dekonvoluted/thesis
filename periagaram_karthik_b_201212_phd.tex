@@ -49,7 +49,10 @@
 \printnomenclature
 
 % Summary
-% input{00-summary}
+\clearpage
+\phantomsection
+\addcontentsline{toc}{chapter}{Summary}
+\input{00-summary}
 
 \clearpage
 \pagenumbering{arabic}
@@ -59,15 +62,15 @@
 
 % Chapters
 \input{01-introduction}
-%\input{02-background}
+\input{02-background}
 \input{03-experimental}
 \input{04-chplif}
 \input{05-lsb}
-%\input{06-conclusions}
+\input{06-conclusions}
 
+% Appendices
 \appendix
 \input{ap-seeder}
-\input{ap-quenchingmodel}
 
 % Reference
 \clearpage
