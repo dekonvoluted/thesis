@@ -1,5 +1,36 @@
 \chapter{Background}
 
+% This chapter provides the background necessary to follow the discussion to come.
+
+% 1. LSB - salient features of the flow field
+% axial velocity profile -> linear velocity decrease
+% recirculation bubble
+% weak toroidal recirculation zone
+% transverse velocity profiles, flow features
+% USE REACTING CASE ONLY
+
+% 2. LSB - Physics of flame stabilization
+% Describe how it works.
+% Describe the original model
+% Expected variation with flow parameters
+% VELOCITY, temperature, pressure, equivalence ratio?
+
+% 3. CH PLIF - Physics of electronic excitation in the CH system
+% Describe how it works
+% Explain the pathway of the excited CH radical
+% Spectrum of CH
+% Rotationally relaxed, but not vibrationally
+% Fast electronic transfer between B0 and A1
+% Frank Condon factors for the two levels are pretty low, but degeneracy wins out.
+
+% 4. CH PLIF - Signal modeling
+% Describe assumptions...
+% Describe, in brief, the two level model
+% Describe the complex model
+% Describe the effect of saturation, depletion, linearity, etc.
+% Simplified analysis of the complex model
+% Constants required to calculate the signal...
+
 \section{Linearity}
 
 In the weak excitation limit, the signal is a function of CH concentration and the rate of collisional quenching of the excited CH radicals.
@@ -11,6 +42,11 @@ Hence, it is preferred to operate in the linear regime.
 
 \section{CH PLIF Quenching Model}
 \label{sec:quenchingmodel}
+
+The near-UV beam exiting the laser is used to pump the R-bandhead of the CH \(B^2\Sigma^- \leftarrow X^2\Pi\) (0,0) system.
+This populates the \(A^2\Delta\) state through fast electronic energy transfer from the \(B^2\Sigma^-\) state.
+The resulting broadband fluorescence observed between \(\lambda\) = 420--440 nm is due to the \(A^2\Delta \rightarrow X^2\Pi\) (1,1), \(A^2\Delta \rightarrow X^2\Pi\) (0,0) and, to a lesser degree, from the \(B^2\Sigma^- \rightarrow X^2\Pi\) (0,1) bands.
+
 
 In order to calculate the intensity of the quenched CH PLIF signal in a flame, an improved model of the CH system was constructed and analyzed.
 According to this new model, CH radicals from the \(X\) ground state are excited to the \(B(0)\) upper state.
