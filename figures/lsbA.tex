@@ -1,0 +1,75 @@
+\begin{figure}
+
+\centering
+
+\begin{tikzpicture}[scale=0.9]
+
+% Upstream flange
+\draw[pattern=north west lines] ( 1, 1 ) -- ++( 1, 0 ) -- ++( 0, 0.24 ) -- ++( -0.5, 0 ) -- ++( 0, 1.76 ) -- ++( -0.5, 0 ) -- cycle;
+\draw[pattern=north west lines] ( 2, 3 ) rectangle ++( -0.4, -1.64 );
+\draw[pattern=north west lines] ( 1, -1 ) -- ++( 1, 0 ) -- ++( 0, -0.24 ) -- ++( -0.5, 0 ) -- ++( 0, -1.76 ) -- ++( -0.5, 0 ) -- cycle;
+\draw[pattern=north west lines] ( 2, -3 ) rectangle ++( -0.4, 1.64 );
+
+% Pressure vessel
+\draw[pattern=north west lines] ( 2, 2 ) -- ++( 1, 0 ) -- ++( 0, 1 ) -- ++( -0.1, 0 ) -- ++( 0, -0.9 ) -- ++ ( -0.9, 0 ) -- cycle;
+\draw ( 3, 2 ) -- ++( 3, 0 );
+\draw[pattern=north west lines] ( 6, 2 ) -- ++( 4, 0 ) -- ++( 0, 0.1 ) -- ++( -3.9, 0 ) -- ++( 0, 0.9 ) -- ++( -0.1, 0 ) -- cycle;
+\draw[pattern=north west lines] ( 2, -2 ) -- ++( 1, 0 ) -- ++( 0, -1 ) -- ++( -0.1, 0 ) -- ++( 0, 0.9 ) -- ++ ( -0.9, 0 ) -- cycle;
+\draw ( 3, -2 ) -- ++( 3, 0 );
+\draw[pattern=north west lines] ( 6, -2 ) -- ++( 4, 0 ) -- ++( 0, -0.1 ) -- ++( -3.9, 0 ) -- ++( 0, -0.9 ) -- ++( -0.1, 0 ) -- cycle;
+
+% Quartz Windows
+\draw[fill=blue!10!white] ( 3, 3 ) rectangle ++( 3, -0.5 );
+\draw[fill=blue!10!white] ( 3, -3 ) rectangle ++( 3, 0.5 );
+
+% Downstream flange
+\draw [pattern=north west lines] ( 10, 1.5 ) rectangle ++( 1, 1.5 );
+\draw [pattern=north west lines] ( 10, -1.5 ) rectangle ++( 1, -1.5 );
+\draw ( 10, 1.5 ) -- ++( 0, -3 );
+\draw ( 11, 1.5 ) -- ++( 0, -3 );
+
+% Nozzle
+\draw[pattern=north east lines] ( 0, 0.8 ) -- ++( 1.15, -0.3 ) -- ++( 1.85, 0 ) -- ++( 0, 1.025 ) -- ++( -0.05, 0 ) -- ++( 0, 0.05 ) -- ++( 0.05, 0 ) -- ++( 0, 0.025 ) -- ++ ( -0.1, 0 ) -- ++( 0, -0.6 ) -- ++( -2.9, 0 ) -- cycle;
+\draw[pattern=north east lines] ( 0, -0.8 ) -- ++( 1.15, 0.3 ) -- ++( 1.85, 0 ) -- ++( 0, -1.025 ) -- ++( -0.05, 0 ) -- ++( 0, -0.05 ) -- ++( 0.05, 0 ) -- ++( 0, -0.025 ) -- ++ ( -0.1, 0 ) -- ++( 0, 0.6 ) -- ++( -2.9, 0 ) -- cycle;
+\draw ( 0, 0.8 ) -- ++( 0, -1.6 );
+\draw ( 3, 0.5 ) -- ++( 0, -1 );
+
+% Swirler
+\draw [red] ( 1.15, 0.5 ) -- ++( 0.7, 0 ) -- ++( -0.7, -0.15 ) -- ++( 0.7, 0 ) -- ++( -0.7, 0.15 ); 
+\draw [red] ( 1.15, 0.5 ) -- ++( 0, -0.15 );
+\draw [red] ( 1.85, 0.5 ) -- ++( 0, -0.15 );
+\draw [red] ( 1, 0.35 ) rectangle ++( 1, -0.7 );
+\draw [red] ( 1.15, -0.5 ) -- ++( 0.7, 0 ) -- ++( -0.7, 0.15 ) -- ++( 0.7, 0 ) -- ++( -0.7, -0.15 ); 
+\draw [red] ( 1.15, -0.5 ) -- ++( 0, 0.15 );
+\draw [red] ( 1.85, -0.5 ) -- ++( 0, 0.15 );
+\draw[red,pattern=horizontal lines] ( 0.95, 0.35 ) rectangle ++( 0.05, -0.7 );
+
+% Quartz tube
+\draw[fill=blue!10!white] ( 2.95, 1.525 ) rectangle ++( 6.05, 0.05 );
+\draw[fill=blue!10!white] ( 2.95, -1.525 ) rectangle ++( 6.05, -0.05 );
+\draw ( 9, 1.525 ) -- ++( 0, -3.05 );
+
+% Imaged region
+\draw[thick,dashed,gray] ( 3, 0.75 ) rectangle ++( 3, -1.5 );
+
+% Labels
+\draw [->] ( -2.5, 0 ) -- ++( 2, 0 );
+\node at ( -1.5, 0 ) [above] {Reactants};
+
+\draw [->] ( 11.5, 0 ) -- ++( 2, 0 );
+\node at ( 12.5, 0 ) [above] {Products};
+
+\draw [->] ( 1.55, -4.25 ) -- ++( 0, 1 );
+\node at ( 1.55, -4.25 ) [below] {Cooling air};
+
+\node at ( 4.5, 3 ) [above] {Quartz window};
+\node at ( 4.5, 0 ) {Imaged area};
+
+\end{tikzpicture}
+
+\caption[Detail schematic of Configuration A]{A cross-sectional view of Configuration A in the pressure vessel is shown. The reactants enter from the left. The products mix with the cooling air and leave on the right. The location of the swirler in the inlet nozzle is highlighted in \textcolor{red}{red}. Also shown is the region of the combustion zone that can be imaged through the quartz windows.}
+
+\label{fig:lsbA}
+
+\end{figure}
+
