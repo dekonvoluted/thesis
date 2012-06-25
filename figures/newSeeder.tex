@@ -1,0 +1,80 @@
+\begin{figure}
+
+\centering
+
+\begin{tikzpicture}
+
+% Lower flange, vessel
+\draw [pattern=crosshatch] ( -4, 0 ) -- ++( 0.75, 0 ) -- ++( 0, 6.5 ) -- ++( -0.5, 0 ) -- ++( 0, 0.5 ) -- ++( 0.75, 0 ) -- ++( 0, -0.05 ) -- ++( 0.25, 0 ) -- ++( 0, -6.95 ) -- ++( 2.25, 0 ) -- ++( 0, -0.5 ) -- ++( -3.5, 0 ) -- cycle;
+\draw [pattern=crosshatch] ( 4, 0 ) -- ++( -0.75, 0 ) -- ++( 0, 6.5 ) -- ++( 0.5, 0 ) -- ++( 0, 0.5 ) -- ++( -0.75, 0 ) -- ++( 0, -0.05 ) -- ++( -0.25, 0 ) -- ++( 0, -6.95 ) -- ++( -2.25, 0 ) -- ++( 0, -0.5 ) -- ++( 3.5, 0 ) -- cycle;
+
+\draw ( -0.5, 0 ) -- ++( 1, 0 );
+\draw ( -0.5, -0.5 ) -- ++( 1, 0 );
+
+% Hat
+\draw [pattern=crosshatch] ( -3.75, 7 ) -- ++( 0, 0.5 ) -- ++( 0.5, 0 ) -- ++( 2.25, 3 ) -- ++( 0, 0.5 ) -- ++( 0.5, 0 ) -- ++( 0, -0.5 ) -- ++( -2.25, -3 ) -- ++( 0, -0.45 ) -- ++( -0.25, 0 ) -- ++( 0, -0.05 ) -- cycle;
+\draw [pattern=crosshatch] ( 3.75, 7 ) -- ++( 0, 0.5 ) -- ++( -0.5, 0 ) -- ++( -2.25, 3 ) -- ++( 0, 0.5 ) -- ++( -0.5, 0 ) -- ++( 0, -0.5 ) -- ++( 2.25, -3 ) -- ++( 0, -0.45 ) -- ++( 0.25, 0 ) -- ++( 0, -0.05 ) -- cycle;
+
+\draw ( -0.5, 10.5 ) -- ++( 1, 0 );
+\draw ( -0.5, 11 ) -- ++( 1, 0 );
+
+% Perforated plate
+\draw [pattern=vertical lines] ( -2.975, 6.975 ) rectangle ++( 2.975, 0.05 );
+\draw [pattern=vertical lines] ( 2.975, 6.975 ) rectangle ++( -2.975, 0.05 );
+
+% Hopper
+\draw [pattern=north east lines] ( -2.7, 5 ) -- ++( 2.2, -3 ) -- ++( 0, -0.9 ) -- ++( -1, 0 ) -- ++( 0, -0.1 ) -- ++( -1.2, 0 ) -- cycle;
+\draw [pattern=north east lines] ( 2.7, 5 ) -- ++( -2.2, -3 ) -- ++( 0, -0.9 ) -- ++( 1, 0 ) -- ++( 0, -0.1 ) -- ++( 1.2, 0 ) -- cycle;
+
+\draw ( -2.7, 5 ) -- ++( 5.4, 0 );
+\draw ( -0.5, 2 ) -- ++( 1, 0 );
+\draw ( -0.5, 1.1 ) -- ++( 1, 0 );
+
+% Base
+\draw [pattern=north west lines] ( -2.7, 0.95 ) -- ++( 2.2, 0 ) -- ++( 0, -0.9 ) -- ++( -2.2, 0 ) -- cycle;
+\draw [pattern=north west lines] ( 2.7, 0.95 ) -- ++( -2.2, 0 ) -- ++( 0, -0.9 ) -- ++( 2.2, 0 ) -- cycle;
+
+\draw ( -0.5, 0.05 ) -- ++( 1, 0 );
+
+% Perforated base plate
+\draw [blue,pattern=vertical lines] ( -1.45, 1 ) rectangle ++( 1.305, 0.05 );
+\draw [blue,pattern=vertical lines] ( 1.45, 1 ) rectangle ++( -1.305, 0.05 );
+
+% Bolt
+\draw [fill=gray] ( -0.125, 0.5 ) rectangle ++( 0.25, 1 );
+\draw [fill=gray] ( 0.125, 0.5 ) rectangle ++( -0.25, 1 );
+
+% Nut
+\draw [fill=gray] ( -0.25, 1.25 ) rectangle ++( 0.105, -0.175 );
+\draw [fill=gray] ( 0.25, 1.25 ) rectangle ++( -0.105, -0.175 );
+
+% Swirler hub
+\draw [fill=red] ( -0.25, 0.975 ) rectangle ++( 0.105, -0.2 );
+\draw [fill=red] ( 0.25, 0.975 ) rectangle ++( -0.105, -0.2 );
+
+% Swirler vanes
+\draw [red] ( -0.475, 0.975 ) rectangle ++( 0.225, -0.2 );
+\draw [red] ( -0.475, 0.975 ) -- ++( 0.225, -0.2 );
+\draw [red] ( -0.475, 0.775 ) -- ++( 0.225, 0.2 );
+\draw [red] ( 0.475, 0.975 ) rectangle ++( -0.225, -0.2 );
+\draw [red] ( 0.475, 0.975 ) -- ++( -0.225, -0.2 );
+\draw [red] ( 0.475, 0.775 ) -- ++( -0.225, 0.2 );
+
+% Labels
+\draw [->] ( 0, -2.5 ) -- ++( 0, 1.5 );
+\node at ( 0, -2.5 ) [below] {Air inlet};
+
+\draw [->] ( 0, 11.5 ) -- ++( 0, 1.5 );
+\node at ( 0, 13 ) [above] {Seeded air outlet};
+
+\node at ( 0, 4 ) {Seeding Particles};
+\node at ( 0, 7 ) [above] {Perforated Plate};
+
+\end{tikzpicture}
+
+\caption[Schematic of the new seeder design]{The improved design of the seeder is shown here in schematic form. The air enters the assembly from the inlet at the bottom, passes through the swirler (shown in \textcolor{red}{red}) and enters the seeder. The perforated plate at the bottom (shown in \textcolor{blue}{blue}) keeps the seeding particles within the seeder. The swirler hub is threaded, allowing it to be secured to the perforated plate by a short steel bolt (shown in \textcolor{gray}{gray}). After picking up the particles, a second perforated plate prevents large clumped seeding particles from passing through. The seeded air flow exits through the outlet at the top.}
+
+\label{fig:newSeeder}
+
+\end{figure}
+

@@ -2,7 +2,7 @@
 
 \centering
 
-\begin{tikzpicture}[scale=0.9]
+\begin{tikzpicture}
 
 % Left half (lower)
 \draw[pattern=north west lines] ( -1.5, 0 ) -- ++( 0, 4.65 ) -- ++( -0.5, 0 ) -- ++( 0, 0.05 ) -- ++( 0.55, 0 ) -- ++( 0, -0.2 ) -- ++( 0.45, 0 ) -- ++( 0, 0.5 ) .. controls +( 0, 1 ) and +( 0, -1 ) .. ++( 0.75, 2 ) -- ++( 0.05, 0 ) .. controls +( 0, -1 ) and +( 0, 1 ) .. ++( -0.75, -2 ) -- ++( 0, -5 ) -- ++( 0.75, 0 ) -- ++( 0, -1 ) -- ++( -1.75, 0 ) -- ++( 0, 1 ) -- cycle;
@@ -20,8 +20,7 @@
 \draw ( -0.5, 8.4 ) -- ++( 1, 0 );
 
 % Swirler
-\draw ( -0.25, 7.05 ) rectangle ++( 0.5, 0.45 );
-\draw[pattern=vertical lines] ( -0.25, 7. ) rectangle ++( 0.5, 0.05 );
+\draw ( -0.25, 7.01 ) rectangle ++( 0.5, 0.45 );
 \draw ( -0.45, 7.125 ) -- ++( 0.2, 0.25 ) -- ++( -0.2, 0 ) -- ++( 0.2, -0.25 ) -- cycle;
 \draw ( 0.45, 7.125 ) -- ++( -0.2, 0.25 ) -- ++( 0.2, 0 ) -- ++( -0.2, -0.25 ) -- cycle;
 
@@ -37,16 +36,16 @@
     \draw[fill=gray] ( \x, \y ) circle ( 0.1 );
 
 % Ball bearings (outside)
-\foreach \x in { -1.725, -1.925, ..., -2.725 }
+\foreach \x in { -1.625, -1.825, ..., -2.825 }
   \foreach \y in { 0.125, 0.325, ..., 4.125 }
     \draw[fill=gray] ( \x, \y ) circle ( 0.1 );
-\foreach \x in { 1.725, 1.925, ..., 2.725 }
+\foreach \x in { 1.625, 1.825, ..., 2.825 }
   \foreach \y in { 0.125, 0.325, ..., 4.125 }
     \draw[fill=gray] ( \x, \y ) circle ( 0.1 );
-\foreach \x in { -3.22, -3.42, -3.62 }
+\foreach \x in { -3.2, -3.4, -3.6 }
   \foreach \y in { 0.125, 0.325, ..., 4.125 }
     \draw[fill=gray] ( \x, \y ) circle ( 0.1 );
-\foreach \x in { 3.22, 3.42, 3.62 }
+\foreach \x in { 3.2, 3.4, 3.6 }
   \foreach \y in { 0.125, 0.325, ..., 4.125 }
     \draw[fill=gray] ( \x, \y ) circle ( 0.1 );
 

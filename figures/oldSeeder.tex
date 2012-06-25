@@ -1,0 +1,55 @@
+\begin{figure}
+
+\centering
+
+\begin{tikzpicture}
+
+% Lower flange, vessel
+\draw [pattern=crosshatch] ( -4, 0 ) -- ++( 0.75, 0 ) -- ++( 0, 4.5 ) -- ++( -0.5, 0 ) -- ++( 0, 0.5 ) -- ++( 1, 0 ) -- ++( 0, -5 ) -- ++( 2.75, 0 ) -- ++( 0, -0.5 ) -- ++( -4, 0 ) -- cycle;
+\draw [pattern=crosshatch] ( -3.75, 5.5 ) -- ++( 0, 0.5 ) -- ++( 0.5, 0 ) -- ++( 0, 0.5 ) -- ++( -0.5, 0 ) -- ++( 0, 0.5 ) -- ++( 1, 0 ) -- ++( 0, -1.5 ) -- cycle;
+\draw [pattern=crosshatch] ( 4, 0 ) -- ++( -0.75, 0 ) -- ++( 0, 6.5 ) -- ++( 0.5, 0 ) -- ++( 0, 0.5 ) -- ++( -0.75, 0 ) -- ++( 0, -0.05 ) -- ++( -0.25, 0 ) -- ++( 0, -6.95 ) -- ++( -2.75, 0 ) -- ++( 0, -0.5 ) -- ++( 4, 0 ) -- cycle;
+
+% Hat
+\draw [pattern=crosshatch] ( -3.75, 7 ) -- ++( 0, 0.5 ) -- ++( 0.5, 0 ) -- ++( 2.25, 3 ) -- ++( 0, 0.5 ) -- ++( 0.5, 0 ) -- ++( 0, -0.5 ) -- ++( -2.25, -3 ) -- ++( 0, -0.45 ) -- ++( -0.25, 0 ) -- ++( 0, -0.05 ) -- cycle;
+\draw [pattern=crosshatch] ( 3.75, 7 ) -- ++( 0, 0.5 ) -- ++( -0.5, 0 ) -- ++( -2.25, 3 ) -- ++( 0, 0.5 ) -- ++( -0.5, 0 ) -- ++( 0, -0.5 ) -- ++( 2.25, -3 ) -- ++( 0, -0.45 ) -- ++( 0.25, 0 ) -- ++( 0, -0.05 ) -- cycle;
+
+\draw ( -0.5, 10.5 ) -- ++( 1, 0 );
+\draw ( -0.5, 11 ) -- ++( 1, 0 );
+
+% Perforated plate
+\draw [pattern=vertical lines] ( -2.975, 6.975 ) rectangle ++( 2.975, 0.05 );
+\draw [pattern=vertical lines] ( 2.975, 6.975 ) rectangle ++( -2.975, 0.05 );
+
+% Left side
+\draw [pattern=north west lines] ( -2.5, 0.25 ) -- ++( 0.25, 0 ) -- ++( 0, 0.25 ) -- ++( -0.05, 0 ) -- ++( 0, 0.05 ) -- ++( 0.05, 0 ) -- ++( 0, 5.2 ) -- ++( -0.45, 0 ) -- ++( 0, -0.25 ) -- ++( 0.2, 0 ) -- cycle;
+\draw ( -2.25, 0.25 ) -- ++( 0, -0.2 ) -- ++( -0.25, 0 ) -- ++( 0, 0.2 ) -- ++( -0.2, 0 ) -- ++( 0, 5.3 );
+
+% Right side
+\draw [pattern=north west lines] ( 2.25, 5.75 ) -- ++( 0.45, 0 ) -- ++( 0, -5.5 ) -- ++( -0.45, 0 ) -- ++( 0, 0.25 ) -- ++( 0.05, 0 ) -- ++( 0, 0.05 ) -- ++( -0.05, 0 ) -- cycle;
+\draw ( 2.25, 0.25 ) -- ++( 0, -0.2 ) -- ++( 0.25, 0 ) -- ++( 0, 0.2 );
+
+\draw ( -2.25, 5.75 ) -- ++( 4.5, 0 );
+\draw ( -2.25, 0.05 ) -- ++( 4.5, 0 );
+
+% Perforated base plate
+\draw [pattern=vertical lines] ( -2.25, 0.5 ) rectangle ++( 4.5, 0.05 );
+
+% Labels
+\draw [->] ( -5.5, 5.25 ) -- ++( 1.5, 0 );
+\node at ( -4.75, 5.25 ) [below] {Air inlet};
+
+\draw [->] ( 0, 11.5 ) -- ++( 0, 1.5 );
+\node at ( 0, 13 ) [above] {Seeded air outlet};
+
+\node at ( 0, 0.5 ) [above] {Perforated Plate};
+\node at ( 0, 4 ) {Seeding Particles};
+\node at ( 0, 7 ) [above] {Perforated Plate};
+
+\end{tikzpicture}
+
+\caption[Schematic of the old seeder design]{A schematic of the old fluidized bed seeder is presented. The air enters the seeder through a groove along the inner vessel and is injected with a tangential velocity at the base of the seeder. The whole assembly is vibrated (vibrator not shown) to keep the particle bed fluidized. The seeded air flow exits through the outlet on the top.}
+
+\label{fig:oldSeeder}
+
+\end{figure}
+
