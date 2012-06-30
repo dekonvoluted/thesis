@@ -66,6 +66,7 @@
 \RequirePackage[colorlinks]{hyperref} % Colored links. 
 \AtBeginDocument{
   \hypersetup{
+    pdfstartview={FitH},
     pdftitle={\@title},
     pdfauthor={\@author}
   }

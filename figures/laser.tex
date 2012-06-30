@@ -1,0 +1,90 @@
+\begin{figure}
+
+\centering
+
+\begin{tikzpicture}[scale=0.75]
+
+% HR reflector
+\draw [pattern=north west lines] ( 0.1, 0 ) arc ( 180 : 210 : 1 ) -| ( 0, 0 );
+\draw [pattern=north west lines] ( 0.1, 0 ) arc ( 180 : 150 : 1 ) -| ( 0, 0 );
+
+% Active medium
+\filldraw [red!20!white, draw=red] ( 0.5, -0.1 ) rectangle ++( 2, 0.2 );
+
+% Main Beam
+\draw [very thick,red] ( 0.1, 0 ) -- ++( 12.25, 0 );
+
+% Flash lamps
+\draw ( 0.5, 0.25 ) -- ++( 0, 0.75 );
+\draw ( 2.5, 0.25 ) -- ++( 0, 0.75 );
+\draw[decorate, decoration={coil,segment length=3}] ( 0.5, 0.25 ) -- ++( 2, 0 );
+
+\draw ( 0.5, -0.25 ) -- ++( 0, -0.75 );
+\draw ( 2.5, -0.25 ) -- ++( 0, -0.75 );
+\draw[decorate, decoration={coil,segment length=3}] ( 0.5, -0.25 ) -- ++( 2, 0 );
+
+% Birefringent tuner
+\filldraw [black] ( 3, -0.5 ) rectangle ++( 1, 1 );
+\draw ( 3.4, 0.5 ) rectangle ++( 0.2, 0.75 );
+\draw ( 3.4, 1.25 ) -- ++( -0.1, 0.25 ) -- ++( 0, 0.5 ) -- ++( 0.4, 0 ) -- ++( 0, -0.5 ) -- ++( -0.1, -0.25 );
+\draw [pattern=vertical lines] ( 3.3, 2 ) rectangle ++( 0.4, 0.25 );
+\draw ( 3.5, 1.5 ) -- ++( 0, -0.4 );
+
+% Qswitch 1
+\filldraw [black] ( 4.5, -0.5 ) rectangle ++( 1, 1 );
+\filldraw [black] ( 4.75, 0.5 ) circle ( 0.05 );
+\filldraw [black] ( 5.25, 0.5 ) circle ( 0.05 );
+\draw ( 4.75, 1 ) -- ++( 0, -0.5 );
+\draw ( 5.25, 1 ) -- ++( 0, -0.5 );
+
+% Q-switch 2
+\filldraw [black] ( 6, -0.5 ) rectangle ++( 1, 1 );
+\filldraw [black] ( 6.25, 0.5 ) circle ( 0.05 );
+\filldraw [black] ( 6.75, 0.5 ) circle ( 0.05 );
+\draw ( 6.25, 1 ) -- ++( 0, -0.5 );
+\draw ( 6.75, 1 ) -- ++( 0, -0.5 );
+
+% Output coupler
+\draw [pattern=north west lines] ( 7.9, 0 ) arc ( 0 : 30 : 1 ) -| ( 8 , 0 );
+\draw [pattern=north west lines] ( 7.9, 0 ) arc ( 0 : -30 : 1 ) -| ( 8, 0 );
+
+% Converging lens
+\draw [blue] ( 9, 0.5 ) arc ( 30 : -30 : 1 );
+\draw [blue] ( 9, 0.5 ) arc ( 150: 210 : 1 );
+
+% Diverging lens
+\draw [blue] ( 10.1, 0 ) arc ( 180 : 210 : 0.5 ) -| ( 10, 0 );
+\draw [blue] ( 10.1, 0 ) arc ( 180 : 150 : 0.5 ) -| ( 10, 0 );
+
+% Doubling crystal
+\draw ( 10.9, -0.1 ) rectangle ++( 0.2, 0.2 );
+
+% Dichroic mirror
+\draw [rotate around={45:( 12, 0 )},pattern=north west lines] ( 11.5, -0.05 ) rectangle ++( 1, 0.1 );
+
+% SHG Beam
+\draw [very thick, red!50!blue] ( 11, 0 ) -- ++( 1, 0 );
+\draw [very thick, blue] ( 12, 0 ) -- ++( 0, 2 );
+
+% Housing
+\draw [dashed, very thick, blue!20!white] ( -1, -1 ) rectangle ++( 11.5, 2 );
+\draw [dashed, very thick, black!20!white] ( 10.5, -1 ) rectangle ++( 2.5, 2 );
+
+% Labels
+\node at ( 0, 0 ) [left] {HR mirror};
+\node at ( 1.5, -1 ) [below] {Flash lamps};
+\node at ( 3.5, 2.5 ) [above] {Tuner};
+\node at ( 5.75, 1 ) [above] {Q-switches};
+\node at ( 8, -1 ) [below] {Output coupler};
+\node at ( 9.5, 0.5 ) [above] {Telescope};
+\node at ( 11, -0.25 ) [below] {SHG};
+\node at ( 12.25, 0 ) [right] {Dichroic mirror};
+
+\end{tikzpicture}
+
+\caption[Schematic of the Alexandrite laser]{A schematic of the components of the PAL 101 Alexandrite laser is shown. The resonator formed by a High Reflection (HR) mirror and an output coupler is built around an alexandrite rod (\textcolor{red}{red}) pumped by flashlamps. The frequency of the output is selected by a tuner mechanism. Only one of the two Q-switches was used for this study. The laser beam is reduced in diameter by a collimating telescope (\textcolor{blue}{blue}) before passing through the Second Harmonic Generator (SHG). The UV beam is separated from the fundamental by a dichroic mirror and exits the laser. The fundamental beam terminates within the laser in a beam dump.}
+
+\label{fig:laser}
+
+\end{figure}
+
