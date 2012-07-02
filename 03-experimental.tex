@@ -32,11 +32,12 @@ Pressurized air is supplied from external tanks and heated in an indirect, gas-f
 The flowrate of the air is metered using a sub-critical orifice flow meter with a 38 mm (1.5 in) bore diameter Flow-Lin orifice plate capable of metering a maximum flow rate of 2.2 kg/s (1 lb/s).
 The orifice flow meter is instrumented with an Omega PX725A-1KGI pressure transmitter calibrated to a reduced pressure range of 0--2.758 MPa (0--400 psi), a shielded K-type thermocouple and an Omega PX771A-025GI differential pressure transmitter, calibrated to a reduced differential pressure range of 0--68.948 kPa (0--10 psid).
 The fuel (natural gas) is metered using a similar set up as the air line, with a sub-critical orifice flow meter.
-The orifice plate is a Flow-Lin orifice plate with a bore diameter of 13.46 mm (0.53 in), capable of metering a maximum flow rate of 0.22 kg/s (0.1 lb/s).
+The fuel orifice plate is a Flow-Lin orifice plate with a bore diameter of 13.46 mm (0.53 in), capable of metering a maximum flow rate of 0.22 kg/s (0.1 lb/s).
 The upstream pressure is measured using an Omega PX725A-1KGI pressure transmitter (same as the air line) and the differential pressure is measured using a PX771A-100WDC differential pressure transmitter with a pressure range of 0--2.489 kPa (100 in \ce{H2O}).
-The temperature of the fuel is assumed to be the same as the room temperature (300 K).
+The temperature of the fuel is assumed to be the same as the nominal room temperature (300 K).
 
 The air enters the inlet nozzle of the LSB through a 1.8 m (6 ft) long, 102 mm (4 in) diameter straight pipe section.
+The fuel flow is choked prior to mixing with the air flow at the head of the straight pipe section.
 The straight pipe section allows for the flow to be fully developed, and fully premixed before the reactants enter the burner.
 The combustor pressure and temperature are measured at the head of the inlet nozzle.
 The pressure is measured by an Omega PX181B-500G5V pressure transducer with a pressure range of 0--3.45 MPa (0--500 psi), while the temperature is measured using a K-type thermocouple.
@@ -47,14 +48,14 @@ All measurements are monitored and recorded during the course of the experiment 
 The pressure vessel enclosing the combustor is designed to withstand pressures of up to 30 atm and is insulated from the combustor by a ceramic liner.
 Cooling for the pressure vessel and the quartz tube is provided by a flow of cold air introduced at the head of the pressure vessel.
 The cold air is drawn from the same external tanks as the main air line, but bypassing the heating system.
-The cold air flow is not metered, but its upstream pressure is coupled to the main air line so as to ensure a stead flow of cold air into the pressure vessel at all operating conditions.
+The cold air flow is not metered, but its upstream pressure is coupled to the main air line so as to ensure a steady flow of cold air into the pressure vessel at all operating conditions.
 Optical access to the combustor is provided through four 25 mm (1 in) thick, 150 mm (6 in)\(\times\)75 mm (3 in) quartz windows located \(90^\circ\) apart azimuthally.
 The view ports allow the combustor to be imaged from the dump plane to an axial distance of 150 mm (6 in) downstream.
 
 The exhaust from the combustor is cooled by circulating cold water through a water jacket enclosing each section of the exhaust pipe.
 The length of the exhaust pipe sections is about 1.8 m (6 ft).
-The exhaust pipe section terminates in an orifice plug to provide the back pressure to the combustion chamber.
-Different diameter orifices are used for each reference velocity condition to be tested.
+The exhaust pipe section terminates in an orifice plug that provides back pressure to the combustion chamber.
+A different diameter orifice is used for each reference velocity condition tested.
 The exiting products are finally released to the building exhaust system.
 
 \subsubsection{Low Swirl Burner}
@@ -75,7 +76,7 @@ The thickness of the quartz tube is 2.5 mm (0.1 in).
 
 \subsection{Configuration B}
 
-This configuration was used to image the flame structure of the LSB flame using CH PLIF.
+This configuration is used to image the flame structure of the LSB flame using CH PLIF.
 A schematic of the flow system of the test facility is shown in Figure \ref{fig:testFacilityB}, while the LSB combustor itself is shown in greater detail in Figure \ref{fig:lsbB}.
 
 \subsubsection{Test Facility}
@@ -96,7 +97,7 @@ The central flow rate is measured using a 9.271 mm (0.365 in) diameter sub-criti
 The swirl flow rate is measured similarly, using a 11.68 mm (0.46 in) diameter sub-critical orifice, a Dwyer 626 series pressure transmitter with a range of 0--5.52 MPa (0--800 psig), a K-type thermocouple and another Omega PX771A-300WCDI with a differential pressure range of 0--74.65 kPa (0--300 in \ce{H2O}).
 The relative flow split between the two reactant streams is controlled by partially closing gate valves on the two lines.
 
-The cooling air flow line is choked, but not metered.
+The cooling air flow line is choked, but the flow rate is not metered.
 All measurements are monitored and recorded by a LabView VI.
 
 The pressure vessel is rated for pressures in excess of 30 atm and is insulated from the combustor by a flow of cold air.
@@ -121,7 +122,7 @@ The contraction ratio is chosen to inhibit the formation of thick boundary layer
 The core stream passes through the central portion of the swirler, while the annular stream picks up swirl by passing through the vanes of the swirler.
 The swirler lacks a perforated plate covering the central region as the primary function of the plate---regulating the relative mass flow split---is performed by the test facility itself.
 
-The swirler device is located at the beginning of a constant area nozzle which is FIXME in length.
+The swirler device is located at the beginning of a constant area nozzle which is 57.2 mm (2.25 in) in length.
 Following this, the reactants expand into the combustion zone.
 
 Unlike in Configuration A, there is no dump plane or quartz tube to provide confinement to the combustion zone.
@@ -146,18 +147,18 @@ The transceiver probes collect this scattered light and each wavelength is detec
 The output from the photodetector is processed by an FSA-3500-3 signal processor.
 The resulting three components of the particle/flow velocity are recorded by the FlowSizer software.
 
-Since the airflow is very sparsely populated by particles, the flow needs to be artificially seeded to facilitate LDV measurements in a reasonable amount of time.
-The seeding particles to be used and their mean diameter are decided by the characteristics of the flow to be imaged.\cite{1997-melling}
+Since the concentration of particulate matter (primarily dust particles) in the airflow is very low, the flow needs to be artificially seeded to facilitate LDV measurements in a reasonable amount of time.
+The choice of seeding particles to be used and their mean diameter are decided by the characteristics of the flow to be imaged.\cite{1997-melling}
 Since the LSB flow field is a reacting one, the particles need to have high melting points.
 Further, the particles need to be small enough to follow the flow closely and large enough or reflective enough to scatter light efficiently in the measurement volume.
 Based on these requirements, commercially available alumina particles with a mean particle diameter of 5 \(\mu\)m were chosen for this study.
 In order to uniformly seed the flow, a novel seeding generator was designed as described in Appendix \ref{app:seeder}.
 The seeding particles were introduced slightly upstream of the 1.8 m (6 ft) long straight pipe section in Test Rig A.
 
-LDV data was only acquired at atmospheric pressure conditions.
+LDV data is only acquired at atmospheric pressure conditions.
 At high pressure conditions, the reacting LSB flow field produces sharp refractive index gradients that rapidly shift in the turbulent flow field.
 This causes strong beam steering effects making it very difficult for the laser beams to reliably intersect within such a small measurement volume.
-The long distance traveled by the beams in the test rig further exacerbated this problem, making LDV data nearly impossible to acquire at such conditions.
+The long distance traveled by the beams in the test rig further exacerbate this problem, making LDV data nearly impossible to acquire at such conditions.
 
 \subsection{CH* chemiluminescence}
 \label{sec:chemiluminescence}
@@ -227,18 +228,21 @@ A birefringent tuning mechanism is placed within the resonator to allow the user
 The tuning mechanism is coupled to a micrometer whose reading relates linearly to the output wavelength.
 The tuning mechanism allows the fundamental wavelength to be varied between 720--780 nm, with peak gain at about 755 nm.
 The resonator cavity also contains two Q-switches, which allow the laser to optionally operate in double-pulsed mode.
-For this study, however, only one Q-switch was used and the laser was operated in single-pulsed mode only.
+For this study, however, only one Q-switch is used and the laser is operated in single-pulsed mode only.
 
 The diameter of the fundamental beam exiting the output coupler is reduced by a collimating telescope.
 This is done in order to increase the efficiency of conversion of the frequency-doubling crystal.
 The second harmonic portion of the beam is separated from the fundamental by a dichroic mirror and exits the laser.
 The fundamental beam is terminated at a beam dump within the laser.
+The exit beam diameter is about 1 mm.
 
 The alexandrite laser is capable of operating at frequencies of up to 15 Hz.
 Laser power is controlled primarily by varying the voltage applied to the flash lamps.
 When operating with a high flash lamp voltage, it is recommended that the frequency of pulsing be reduced to allow more time to dissipate the heat build up within the alexandrite rod.
 All experiments conducted as part of this study operated the laser at 10.0 Hz.
 
+The typical power output of the laser is about 15 mJ/pulse.
+The pulsewidth of the laser is about 60-80 ns and is observed to decrease with increasing flash lamp voltage.
 The linewidth of the fundamental beam is determined by the manufacturer to be 150 GHz at \(\lambda\) = 775 nm.
 Assuming the spectral profile of the laser to be a Gaussian, the linewidth of the frequency-doubled beam can be determined.
 The Full Width at Half Max (FWHM) of a Gaussian curve scales linearly with the standard deviation of the curve.
@@ -262,9 +266,9 @@ The choice of a laminar flame as the subject allows us to neglect effects of str
 Further, laminar flames are more readily simulated by reaction kinetics packages like Chemkin with high fidelity.
 
 These experiments are conducted on an laminar, methane-air flame stabilized on an unpiloted Bunsen burner with an inner diameter of 10.16 mm (0.4 in).
-The air flow rate was measured and regulated using a Dwyer rotameter with a range of 0--20 SCFH calibrated using a Ritter drum-type gas meter.
-The natural gas flow rate was metered using a Matheson FM 1050 602 rotameter with a range from 0--1230 SCCM.
-This flowmeter was calibrated using a Sensidyne Gilibrator 2 bubble flow meter system.
+The air flow rate is measured and regulated using a Dwyer rotameter with a range of 0--20 SCFH calibrated using a Ritter drum-type gas meter.
+The natural gas flow rate is metered using a Matheson FM 1050 602 rotameter with a range from 0--1230 SCCM.
+This flowmeter is calibrated using a Sensidyne Gilibrator 2 bubble flow meter system.
 
 \subsubsection{Laser Wavelength Calibration}
 
@@ -281,17 +285,17 @@ The spectrometer is pre-calibrated using 50 wavelengths in the 400--850 nm range
 The spectrometer is also intensity corrected over this range using a black body source.
 The estimated error in the resolution of the device is about 0.1 nm (1 \AA).
 
-The laser micrometer was traversed from 0.600 in to 0.625 in in steps of 0.001 in.
+The laser micrometer is traversed from 0.600 in to 0.625 in in steps of 0.001 in.
 The experiment is repeated by traversing the micrometer from 0.625 in back to 0.600 in along the same points to ensure repeatability and estimate the variation due to hysteresis.
-The calibration was performed using at the fundamental wavelength of the laser.
+The calibration is performed using at the fundamental wavelength of the laser as the second harmonic wavelength falls outside the spectrometer's range.
 Each spectrum recorded is integrated over 512 ms and averaged over 10 such acquisitions.
 The background-corrected peak of the spectrum is then modeled as a Gaussian and the location of the center of the Gaussian waveform is recorded.
 
 \input{figures/laserCalibrationResults}
 
 The results from this experiment are shown in Figure \ref{fig:laserCalibrationResults}.
-The plot shows that the variation of the second harmonic wavelength (obtained by halving the fundamental wavelength) with the position of the tuner micrometer is verifiably linear.
+The plot demonstrates that the variation of the second harmonic wavelength (obtained by halving the fundamental wavelength) with the position of the tuner micrometer is linear.
 Further, there is little difference between the measurements taken while increasing and decreasing the micrometer position.
 This indicates that any effects of hysteresis in the micrometer position are minimal.
-The calibration equation is obtained by applying a linear curve fit to the data points on the graph.
+The calibration equation relating the micrometer position to the output wavelength is obtained by applying a linear curve fit to the data points on the graph as shown in Figure \ref{fig:laserCalibrationResults}.
 
