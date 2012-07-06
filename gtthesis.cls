@@ -25,19 +25,16 @@
 %%%%%%%%%%%%%%%%%%%%%%
 \RequirePackage[calcwidth]{titlesec} % Customized headings for chapter, section, subsection and subsubsection
   \titleformat{\chapter}[display]{\centering\large\bfseries}{\MakeUppercase{\chaptertitlename}\ \thechapter}{0in}{\MakeUppercase}
+
   \titlespacing*{\chapter}{0in}{-0.25in}{0.5in}
+  \titleformat{\section}{\large\bfseries}{\thesection\ }{0in}{}
+  \titleformat{\subsection}{\normalsize\bfseries}{\thesubsection\ }{0in}{}
+  \titleformat{\subsubsection}{}{\thesubsubsection\ }{0in}{}
 
-  \titleformat{\section}{\normalsize\bfseries}{\thesection\ }{0in}{}
-%  \titlespacing*{\section}{0.5in}{\baselineskip}{0in} % Indent section titles by 0.5 in
-
-  \titleformat{\subsection}{\normalsize\itshape}{\thesubsection\ }{0in}{}
-  \titleformat{\subsubsection}{\normalsize}{\thesubsubsection\ }{0in}{}[\vspace{-1.6em}\rule{\titlewidth}{1pt}]
-
-
-%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%
 % Figure Options
-%%%%%%%%%%%%%%%%%%%%%
-\RequirePackage[font=small,textfont=it]{caption}
+%%%%%%%%%%%%%%%%
+\RequirePackage[font=small,textfont=it]{caption} % Format for figure and table captions
 
 %%%%%%%%%%%%%%%%%%%%%
 % Page Format Options
