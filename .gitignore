@@ -1,0 +1,13 @@
+# Plot files
+
+*.eps
+*-eps-converted-to.pdf
+
+# Specific files
+
+figures/fit.log
+figures/laserCalibrationResultsPlot.tex
+figures/sampleAbelImage.tex
+figures/sampleAverageImage.tex
+figures/sampleCenterlineIntensity.tex
+
