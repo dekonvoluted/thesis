@@ -35,13 +35,36 @@
 
 \section{LSB flame stabilization}
 
-\section{CH PLIF Physical Process}
+\section{CH PLIF Physical Description}
 
-CH is a minor species that is produced and destroyed by fast two-body reactions in the reaction zone of the flame.
-It is primarily produced by the break up of a hydrocarbon fuel and is known to play an important role in the formation of prompt \ce{NO_x}.
-CH was the first radical to be detected in a flame by Laser Induced Fluorescence and was the second radical to be imaged by planar LIF.
+% The introduction may have to go to Chapter 1
+In typical hydrocarbon-air flames, CH is produced and destroyed rapidly by fast two-body reactions, confining it to the thin heat release zone of the flame.
+This has led to the widespread use of using CH as a marker species for the flame front.\cite{2005-vagelopoulos}
+CH is formed during the breakup of hydrocarbon fuel molecules\cite{2010-kohler} and is also known to play an important role in the production of prompt \ce{NO_x}.\cite{1971-fenimore}
+Hence, it is a minor species of considerable importance to combustion research.
 
-The excitation scheme chosen for this study follows the work done by Li et al.\cite{2007-li} who used a similar laser system to excite the R-bandhead of the CH \(B^2\Sigma^- \leftarrow X^2\Pi\) (0,0) system.
+This study primarily utilizes CH PLIF as a flame visualization technique.
+Broadly speaking, flame visualiation techniques could be grouped into two categories: techniques that convey spatially integrated information about the flame and techniques that resolve the information spatially.
+Schlieren or chemiluminescence imaging of flames fall in the former category, providing line-of-sight averaged information about the flame.
+Planar LIF or typical implementations of Rayleigh/Raman scattering are examples of the second category.
+
+PLIF studies of hydrocarbon flames have hitherto focused on the OH radical.
+OH is produced in the flame zone and destroyed by relatively slow three-body reactions, causing it to persist and be transported away from the flame and into the product zone.\cite{1990-barlow}
+As a result, it does not serve as a direct marker of the flame front.
+Instead, the location of the flame is inferred from the sharp gradient in the OH signal as the reactants are converted into products.
+
+Due to the persistence of OH in the products, OH PLIF is somewhat less suited to studying flows with high product recirculation.
+In such flows, the presence of OH both in the reactants and in the products weakens the gradient at the flame.
+Further, OH radicals can be transported transverse to the flame, making it difficult to detect local flame extinctions.
+Nevertheless, researchers have been able to use OH PLIF to study such flames,\cite{1999-kaminski,2005-hult} particularly when the images are enhanced by nonlinear filtering techniques.\cite{2000-malm,2001-abu-gharbieh}
+
+Recent studies have indicated that HCO is a more reliable indicator of heat release in hydrocarbon flames than CH.\cite{1998-najm}
+This is particularly the case when the flame is heavily strained and close to extinction.
+In such flames, the dominant reaction paths shift to sidestep the production of CH, causing the CH signal to vanish, even if the flame is intact and heat release continues to occur.
+
+
+
+The excitation scheme chosen for this study follows the work done by Li et al.\cite{2007-li-a} who used a similar laser system to excite the R-bandhead of the CH \(B^2\Sigma^- \leftarrow X^2\Pi\) (0,0) system.
 The scheme primarily targets CH molecules in the ground state with rotational quantum numbers between 5--9, in both the singlet and triplet states.
 Upon absorption, these molecules transition to the second electronically excited \(B\) state.
 At this point, the molecule has the following options;

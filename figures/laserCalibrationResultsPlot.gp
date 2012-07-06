@@ -13,6 +13,7 @@ set yrange [385:388]
 set xrange [0.60:0.626]
 set key left
 
+set fit quiet
 f(x) = f0 + f1*x
 fit f(x) 'laserCalibrationResults.dat' using 1:2 via f0, f1
 
