@@ -37,56 +37,92 @@
 
 \section{CH PLIF Physical Description}
 
-% The introduction may have to go to Chapter 1
+Laser-Induced Fluorescence, or LIF, is a two-step process.
+First, a marker species molecule (in this case, CH) in a lower energy state absorbs a photon and transitions to a higher energy state.
+The photon in question is provided by a laser and is of a specific energy (or frequency) chosen to match an allowed transition in the target species.
+This is followed by several physical processes, of which one pathway of interest leads to the spontaneous deexcitation of the excited molecule, accompanied by the release of a photon.
+The dexcitation may take the molecule back to the original ground state or to another energy state.
+The choice of the spectral and temporal properties of the excitation photon and the spontaneously emitted photon, together constitute the excitation scheme.
 
+The excitation scheme chosen for this study follows the work done by Li et al.\cite{2007-li-a} who used a ring-cavity, pulsed alexandrite laser to provide excitation in the vicinity of the R-bandhead of the CH \(B^2\Sigma^- \leftarrow X^2\Pi\) (0,0) system.
+This bandhead is found at about 387.2 nm and represents transitions from a ground state rotational quantum number of \(N''=7\).
+Alexandrite lasers have relatively large bandwidths (a few cm\(^{-1}\) is not uncommon) and hence make it possible to excite several of the neighboring transitions near the bandhead.
+From simulations described later in this work, it is found that CH molecules in the ground state \(X^2\Pi\), \(v''=0\) with rotational quantum numbers \(N''\) between 5--9 account for virtually all the absorption that takes place.
 
-
-
-The excitation scheme chosen for this study follows the work done by Li et al.\cite{2007-li-a} who used a similar laser system to excite the R-bandhead of the CH \(B^2\Sigma^- \leftarrow X^2\Pi\) (0,0) system.
-The scheme primarily targets CH molecules in the ground state with rotational quantum numbers between 5--9, in both the singlet and triplet states.
-Upon absorption, these molecules transition to the second electronically excited \(B\) state.
-At this point, the molecule has the following options;
+Upon excitation, these molecules transition to the second electronically excited \(B^2\Sigma^-\) state and populate the ground state vibrational level (\(v'=0\)).
+Since these transitions are in the R-branch, the rotational quantum number increases by +1, resulting in the population of the \(N''\) levels between 6--10.
+Now, the following possibilities exist for the excited molecule:
 
 \begin{enumerate}
-\item The molecule can undergo spontaneous emission, release a photon and return to the ground state.
-\item The molecule can undergo stimulated emission, release a photon and return to the ground state.
-\item The molecule can collide elastically with other molecules and undergo relaxation in the vibrational/rotational modes.
-\item The molecule can collide inelastically with other molecules in the system and gain or lose energy.
+\item The molecule can undergo inelastic collisions with other molecules, resulting in relaxation in the rotational, vibrational or electronic manifolds.
+\item The molecule can spontaneously emit a photon and return to any of the lower energy states.
+\item The molecule can experience stimulated emission in the presence of another photon of the appropriate frequency and return to any of the lower energy states.
+\item The molecule can experience further excitation either by absorbing a photon or through collisional means.
+\item The molecule, having enough activation energy, can react chemically with another species.
 \end{enumerate}
 
-The lifetime of the excited \(B\) state, given by the reciprocal of the Einstein spontaneous emission coefficient, is long enough to allow for rotational relaxation through elastic collisions, but not long enough to allow for vibrational relaxation.
-Thus, the excited CH radicals are primarily confined to the \(B(0)\) state during the course of the LIF process.
+Let's examine these potential pathways in greater detail.
+The first pathway pertains to relaxation.
+The excitation and subsequent population of a higher energy state causes the CH population distribution to deviate from the equilbrium Boltzmann distribution.
+The degree of relaxation possible is limited by the lifetime of the energy level the excited species occupy.
+The collision-free, radiative lifetime of the \(B\) electronic state is about 300 ns\cite{1996-luque-c}---long enough for sufficient rotational relaxation to occur, but too short for vibrational relaxation.
+As a result, we may suppose that the vibrational manifold remains unaffected, while the rotational manifold is relaxed closer to an equilibrium distribution.
+The question of the electronic relaxation will be addressed later in this discussion.
 
-The probability of the excited radicals undergoing stimulated emission is quite small. Why?
+The second option available for the excited CH molecule is to spontaneously emit a photon and return to a lower energy state.
+The CH system is very strongly diagonal, meaning that transitions resulting in no change to the vibrational quantum number are extremely favored over others.
+This means the majority of this spontaneous emission will result from \(B^2\Sigma^-\rightarrow X^2\Pi\)(0,0) and \(B^2\Sigma^-\rightarrow A^2\Delta\)(0,0) deexcitations.
+The \(B\rightarrow X\) transition will be nearly resonant with the excitation wavelength, making it hard to observe, while the \(B\rightarrow A\) transition is only a few hundred wavenumbers apart, putting the emission in far IR.
+Even setting the difficulty of observing these transitions aside, it is not expected that a significant portion of the excited CH molecules would follow these pathways as it requires an excited CH molecule to remain collision-free for far too long.
 
+The third option is for the CH molecule to experience stimulated emission in the presence of a photon of an appropriate frequqncy.
+It is highly unlikely that the apposite photon would have a frequency other than the excitation laser.
+The incident laser beam with induce some stimulated emission and deexcite a portion of the CH molecules back through the \(B^2\Sigma^-\rightarrow X^2\Pi\)(0,0) transition to the ground state.
+The only other sources of light in the frequencies of interest result from other CH molecules.
+Some of these photons will originate from CH* chemiluminescence, while others still will be produced by the laser-induced fluorescence between the \(B\rightarrow X\) states.
 
+As alluded to earlier, it is highly unlikely that these will result in stimulated emission of significant proportions.
+Partly, this is due to the spatial distribution of CH in a typical combustion environment.
+As mentioned earlier in Chapter FIXME 1, CH molecules are expected to be found only in the very thin reaction zone of the flame.
+Further, CH is a minor species and not likely to be found in concentrations in excess of a few parts per million.
+This makes is rather unlikely that a spontaneously emitted photon from another CH molecule would encounter another excited CH molecule and induce a stimulated emission pathway.
+In other words, we expect the medium to be optically thin to the wavelengths of interest.
+We will return to this concept of an optically thin medium in a subsequent section while modeling the CH absorption strength.
 
+The fourth option is for the molecule to experience further excitation from absorbing another photon or through collisions with other energetic molecules.
+The \(B^2\Sigma^-\) state is very shallow, possessing only two vibrational levels before the molecule will dissociate.
+Thus, this pathway leads to predissociation of the excited CH molecule.
 
+The final option listed above is for the excited CH molecule to attack another species and participate in chemical reactions.
+Since the reaction would not have occurred had the CH molecule been in its ground state, this is referred to as a laser-induced chemical reaction.
 
+Having listed all the options, let's return to the first option and resume the discussion on the possibility of electronic energy transfer from the excited \(B^2\Sigma^-\), \(v'=0\) state.
+The spacing of the energy levels in the CH system is such that the \(B^2\Sigma^-\), \(v'=0\) state is found to be near-degenerate with the \(A^2\Delta\), \(v=1\) energy level.
+Consequently, the \(B^2\Sigma^-\leftrightarrow A^2\Delta\) (0,1) transition is reversible.
+Further, recall that CH is a strongly diagonal system with high transition probabilities for transitions involving no change to the vibrational quantum number.
+This means that the \(B^2\Sigma^-\leftrightarrow A^2\Delta\) (0,0) transition will be quite strong as well.
+Experiments performed by Garland et al.\cite{1985-garland-b} measured that the \(B^2\Sigma^-\rightarrow A^2\Delta\) electronic energy transfers account for almost a quarter of all collisional depletion of the \(B^2\Sigma^-\), \(v=0\) level.
 
-In the absence of any other physical process, these molecules would have undergone spontaneous de-excitation back to the ground state.
-
-
-
-This primarily targets CH molecules with the rotational quantum numbers 5 through 9 in both the singlet and triplet states.
-These molecules
-
-This populates the \(A^2\Delta\) state through fast electronic energy transfer from the \(B^2\Sigma^-\) state.
-The resulting broadband fluorescence observed between \(\lambda\) = 420--440 nm is due to the \(A^2\Delta \rightarrow X^2\Pi\) (1,1), \(A^2\Delta \rightarrow X^2\Pi\) (0,0) and, to a lesser degree, from the \(B^2\Sigma^- \rightarrow X^2\Pi\) (0,1) bands.
+Theoretical calculations using overlap integrals between the involved energy levels predict that a majority of these transfers will be along the diagonal (0,0) transition.\cite{2000-luque}.
+Instead, experimental data indicates that the number is closer to a fifth, with almost 80\% of the transfers following the near-degenerate (0,1) pathway.
+It is this electronic energy transfer mechanism that enables our excitation scheme to record high quality CH PLIF images.
+Having now populated the \(A^2\Delta\) states, the resulting spontaneous emission from the \(A^2\Delta\rightarrow X^2\Pi\) (0,0) and (1,1) transitions can be easily observed between 420--440 nm.
+A small portion of the fluorescence in this wavelength range also occurs from the \(B^2\Sigma^-\rightarrow X^2\Pi\), (0,1) transition.
+Since these emission wavelengths are at least 30 nm away from the excitation wavelength, a simple glass filter is sufficient to suppress any elastic scattering from the laser beam.
 
 \section{CH PLIF Signal Modeling}
+\label{sec:chplifsignalmodel}
 
-\section{Linearity}
+We now focus on developing a mathematical model to predict the signal levels obtained from CH PLIF.
+Traditionally, a simple two-level model is used for studying the behavior of a fluorescencing molecule.
+The development and steady-state solution of this model is covered in various books and review papers.\cite{1997-daily}
+Here, we'll merely present the result and limit our discussion to saturation.
 
-In the weak excitation limit, the signal is a function of CH concentration and the rate of collisional quenching of the excited CH radicals.
-In the strong excitation limit, the signal depends only on the CH concentration is unaffected by the quenching of the excited CH species.
+The steady state signal from a two-level model is typically expressed as,
 
-It is difficult to ensure that the CH system is saturated spatially, temporally and spectrally at the same time.
-Further, operating with high laser intensities may bleach the energy levels being excited by inducing chemical reactions that destroy the excited CH radicals.
-Hence, it is preferred to operate in the linear regime.
 
-\section{CH PLIF Quenching Model}
-\label{sec:quenchingmodel}
+
+
 
 
 In order to calculate the intensity of the quenched CH PLIF signal in a flame, an improved model of the CH system was constructed and analyzed.
@@ -299,3 +335,12 @@ The CH system falls under Hund's Case b and hence, the appropriate rotational qu
 Each vibrational level has twenty-two possible values for \(N\) from \(N = 1\) to \(N = 22\).
 For each rotational quantum number \(N\), there are two possible values of \(J\) given by \(N \pm \frac{1}{2}\).
 
+
+\section{Linearity}
+
+In the weak excitation limit, the signal is a function of CH concentration and the rate of collisional quenching of the excited CH radicals.
+In the strong excitation limit, the signal depends only on the CH concentration is unaffected by the quenching of the excited CH species.
+
+It is difficult to ensure that the CH system is saturated spatially, temporally and spectrally at the same time.
+Further, operating with high laser intensities may bleach the energy levels being excited by inducing chemical reactions that destroy the excited CH radicals.
+Hence, it is preferred to operate in the linear regime.
