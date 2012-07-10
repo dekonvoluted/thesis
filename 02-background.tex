@@ -54,19 +54,19 @@ Since these transitions are in the R-branch, the rotational quantum number incre
 Now, the following possibilities exist for the excited molecule:
 
 \begin{enumerate}
-\item The molecule can undergo inelastic collisions with other molecules, resulting in relaxation in the rotational, vibrational or electronic manifolds.
-\item The molecule can spontaneously emit a photon and return to any of the lower energy states.
-\item The molecule can experience stimulated emission in the presence of another photon of the appropriate frequency and return to any of the lower energy states.
-\item The molecule can experience further excitation either by absorbing a photon or through collisional means.
-\item The molecule, having enough activation energy, can react chemically with another species.
+  \item The molecule can undergo inelastic collisions with other molecules, resulting in relaxation in the rotational, vibrational or electronic manifolds.
+  \item The molecule can spontaneously emit a photon and return to any of the lower energy states.
+  \item The molecule can experience stimulated emission in the presence of another photon of the appropriate frequency and return to any of the lower energy states.
+  \item The molecule can experience further excitation either by absorbing a photon or through collisional means.
+  \item The molecule, having enough activation energy, can react chemically with another species.
 \end{enumerate}
 
-Let's examine these potential pathways in greater detail.
+Now, let us examine these potential pathways in greater detail.
 The first pathway pertains to relaxation.
 The excitation and subsequent population of a higher energy state causes the CH population distribution to deviate from the equilbrium Boltzmann distribution.
 The degree of relaxation possible is limited by the lifetime of the energy level the excited species occupy.
 The collision-free, radiative lifetime of the \(B\) electronic state is about 300 ns\cite{1996-luque-c}---long enough for sufficient rotational relaxation to occur, but too short for vibrational relaxation.
-As a result, we may suppose that the vibrational manifold remains unaffected, while the rotational manifold is relaxed closer to an equilibrium distribution.
+As a result, we may suppose that the vibrational manifold remains relatively unaffected, while the rotational manifold is relaxed closer to an equilibrium distribution.
 The question of the electronic relaxation will be addressed later in this discussion.
 
 The second option available for the excited CH molecule is to spontaneously emit a photon and return to a lower energy state.
@@ -94,7 +94,7 @@ The \(B^2\Sigma^-\) state is very shallow, possessing only two vibrational level
 Thus, this pathway leads to predissociation of the excited CH molecule.
 
 The final option listed above is for the excited CH molecule to attack another species and participate in chemical reactions.
-Since the reaction would not have occurred had the CH molecule been in its ground state, this is referred to as a laser-induced chemical reaction.
+If the reaction would not have occurred had the CH molecule been in its ground state, this is referred to as a laser-induced chemical reaction.
 
 Having listed all the options, let's return to the first option and resume the discussion on the possibility of electronic energy transfer from the excited \(B^2\Sigma^-\), \(v'=0\) state.
 The spacing of the energy levels in the CH system is such that the \(B^2\Sigma^-\), \(v'=0\) state is found to be near-degenerate with the \(A^2\Delta\), \(v=1\) energy level.
@@ -114,64 +114,278 @@ Since these emission wavelengths are at least 30 nm away from the excitation wav
 \label{sec:chplifsignalmodel}
 
 We now focus on developing a mathematical model to predict the signal levels obtained from CH PLIF.
-Traditionally, a simple two-level model is used for studying the behavior of a fluorescencing molecule.
-The development and steady-state solution of this model is covered in various books and review papers.\cite{1997-daily}
-Here, we'll merely present the result and limit our discussion to saturation.
+The intent and scope of this discussion is to be able to predict, in a semi-quantitative manner, the variation of the CH PLIF signal as a function of the thermodynamic state variables and the local composition in the reaction zone of a flame.
+It is not meant to be an accurate calculation of the number of LIF photons produced in a given experiment.
+This prediction will allow us to compare the PLIF signal intensity across various initial pressures, temperatures and reactant mixtures.
+The results will enable us to judge the feasibility of using CH PLIF as a diagnostic technique to image the flame front with high fidelity for the initial conditions and reactant mixtures in question.
 
-The steady state signal from a two-level model is typically expressed as,
+\subsection{Basic Model}
 
-
-
-
-
-
-In order to calculate the intensity of the quenched CH PLIF signal in a flame, an improved model of the CH system was constructed and analyzed.
-According to this new model, CH radicals from the \(X\) ground state are excited to the \(B(0)\) upper state.
-This is followed by collisional transfer to the \(A(1)\) and \(A(0)\) states.
-The transfer between the nearly degenerate \(A(1)\) and \(B(0)\) states is partially reversible.
-The transfer between \(B(0)\) and \(A(0)\) is not reversible.
-This is followed by spontaneous emission as CH radicals transition from the \(A\) states to the \(X\) state.
-This results in a pseudo-three-level model as shown in Figure FIXME.
-
-Figure FIXME indicates the rates of the various processes discussed.
-The subscripts 0, 1 and 2 represent the electronic energy levels \(X\), \(A\) and \(B\) respectively.
-Processes involving the \(A(0)\) state are differentiated from those involving the \(A(1)\) state by a prime (').
-With the exception of the nearly degenerate \(A(1)\) and \(B(0)\) states, most collisional excitation steps are neglected due to their low probability.
-
-In this formulation, the signal intensity of the CH PLIF emission is given by Equation \ref{eqn:signalIntensity}.
+In its most basic form, the number of fluorescence photons generated in a system, \(\Phi\) is the product of the number of emitters, \(N\) and the Einstein coefficient for spontaneous emission, \(A\).
 
 \begin{equation}
-S = ( n_1A_{10} + n'_1A'_{10} + n_2A_{20} )V
-\label{eqn:signalIntensity}
+  \Phi = N\times A
+  \label{eqn:fluorescencePhotons}
 \end{equation}
 
-The spontaneous emission coefficients, \(A_{10}\), \(A'_{10}\) and \(A_{20}\) are obtained from various published papers\cite{1985-garland-a,1996-luque-b,2005-richmond}.
-The values used for this analysis are presented in Table \ref{tab:emissionCoefficients}.
+In a simple two-level model for the fluorescing system (with the two levels labeled 0 and 1), Equation \ref{eqn:fluorescencePhotons} may be expanded in terms of the number density of the emitters, \(n\) and the volume in which the fluorescence occurs, \(V\).
 
-\input{tables/emissionCoefficients}
+\begin{equation}
+  \Phi = n_1VA_{10}
+\end{equation}
 
-Equations \ref{eqn:rates1}--\ref{eqn:rates3} describe the time variation of the number density of CH radicals in each excited state.
+% TODO: Add Eckbreth as reference
+The population of the upper state, \(n_1\) can be solved for by rate analysis.
+The mathematical treatment is not particularly complicated and is covered in detail by various textbooks and review papers.\cite{1997-daily}
+Here, we shall merely remark that the functional form of the solution has two limiting cases.
+The limits are decided by the relative magnitudes of the pumping rate, \(W_{01}\) and the relaxation rate given by the sum of the spontaneous emission rate and the collisional quenching rate, \(A_{10} + Q_{10}\).
+The former is the rate at which the upper energy level is populated through absorption.
+The latter represents the rate at which the molecules return to the lower energy state, either through spontaneous emission or by losing energy to other molecules through inelastic collisions.
+
+When the pumping rate is far lower compared to the relaxation processes (\(W_{01}\ll A_{10}+Q_{10}\)), the solution tends to the weak excitation limit.
+In this limit, the functional form of the solution is shown in Equation \ref{eqn:twoLevelModel-weak}
+
+\begin{equation}
+  \Phi = n_0 V W_{01}\overbrace{\frac{A_{10}}{A_{10}+Q_{10}}}^{\text{Fluorescence Yield}}
+  \label{eqn:twoLevelModel-weak}
+\end{equation}
+
+The \(n_0VW_{01}\) term in Equation \ref{eqn:twoLevelModel-weak} represents the number of molecules that are excited to the upper state per second, while the fluorescence yield represents the fraction of these molecules that will produce a LIF signal.
+In typical combustion environments, the fluorescence yield is usually small, since the collisional quenching rate dominates the spontaneous emission rate.
+The rate of collisional quenching of the marker species, in this case CH, by another species in the flame is proportional to the frequency of collisions between the two species.
+Further, the effectiveness of such collisions is decided by a collision cross-section, \(\sigma\), which is often a function of the temperature.
+Equation \ref{eqn:quenchingRate} presents the calculation of the collisional quenching rate by summation over all the species, \(i\), in the flame.
 
 \begin{align}
-\frac{dn_1}{dt} &= -( A_{10} + Q_{10} + R_{12} )n_1 + R_{21}n_2
-\label{eqn:rates1}\\
-\frac{dn'_1}{dt} &= -( A'_{10} + Q'_{10} )n'_1 + R'_{21}n_2
-\label{eqn:rates2}\\
-\frac{dn_2}{dt} &= W_{02}n_0 + R_{12}n_1 - ( A_{20} + Q_{20} + R_{21} + R'_{21} )n_2
-\label{eqn:rates3}
+  Q_{10} &= \sum_i n_i \times \sigma_i \times c_i \nonumber \\
+  & = \sum_i n_i \sigma_i \sqrt{\frac{8kT}{\pi\mu_i}} \nonumber \\
+  & = \sqrt{\frac{8kT}{\pi}} \sum_i \frac{n_i \sigma_i}{\sqrt{\mu_i}}
+  \label{eqn:quenchingRate}
 \end{align}
 
-At steady state, the rate of change of the number density is minimal.
-Under this assumption, the LHS of Equations \ref{eqn:rates1}--\ref{eqn:rates3} can be set to zero.
-This results in a closed set of linear equations in terms of the populations of the upper states.
-This set of equations is presented in Equation \ref{eqn:closedForm}.
+In Equation \ref{eqn:quenchingRate}, \(\mu_i\) represents the reduced mass of the colliding CH-\(i\) molecules, \(p\) is the pressure, \(N_A\) is Avogadro's Number, \(R\) is the Universal Gas Constant, \(T\) is the temperature, and \(n_i\) is the number density of species \(i\).
+The expression for the reduced mass is given in Equation \ref{eqn:reducedMass}.
+
+\begin{equation}
+  \mu_i = \frac{ m_i m_{CH} }{ m_i + m_{CH} }
+  \label{eqn:reducedMass}
+\end{equation}
+
+By probability, virtually all the collisions of the CH molecule will occur with the major species.
+As a result, the summation in Equation \ref{eqn:quenchingRate} need only be carried out over the major species in the flame.
+The values of the local number densities of the major species can be measured by techniques like Raman scattering, or can be obtained from solving chemical kinetics models.
+
+\subsubsection{Absorption Integral Calculation}
+
+Let us now examine the first term in Equation \ref{eqn:twoLevelModel-weak} in further detail.
+Let \(\phi(\nu)\) represent the normalized lineshape of the absorption line being excited, such that \(\int \phi(\nu) d\nu = 1\).
+If \(B_{01}\) is the Einstein coefficient for absorption for the line being excited, the term \(B_{01}\phi(\nu)\) represents the spectral absorptivity of the line at \(\nu\).
+\(B_{01}\) is usually presented in m\(^2\)/Js for LIF applications.
+Similarly, let \(I_\nu\) be the spectral intensity of the incident radiation, which is the intensity (power per area) of the laser beam per spectral interval.
+Let \(\psi(\nu)\) be the normalized spectral profile of the laser lineshape, such that \(I_\nu\) = \(I \psi(\nu)\) and \(\int \psi(\nu) d\nu = 1\).
+\(I_\nu\) is usually given in W/cm\(^2\)/cm\(^{-1}\) for ease of use in laser applications.
+
+The product of the spectral absorptivity and the spectral intensity integrated over the spectrum, gives the pumping rate, \(W_{01}\) as shown in Equation \ref{eqn:pumpingRate}.
+The factor \(c\) is the speed of light, which brings the units of \(W_{01}\) to s\(^{-1}\).
+
+\begin{equation}
+  W_{01} = \frac{I}{c} \int \psi(\nu) B_{01}\phi(\nu) d\nu
+\end{equation}
+
+Since our excitation scheme targets multiple lines in the R-bandhead, we actually have a summation of several absorption lines in this integral.
+
+\begin{align}
+  W_{01} & = \frac{I}{c} \int \psi(\nu) \sum_j B_j \phi_j (\nu) d\nu \nonumber \\
+        & = \frac{I}{c} \sum_j \int B_j\psi(\nu)\phi_j(\nu) d\nu
+  \label{eqn:pumpingRate}
+\end{align}
+
+In Equation \ref{eqn:pumpingRate}, the terms \(B_j\) are the absorption coefficients, \(B_{01}\), for each transition being excited.
+Consider now, each term in the above integral.
+The laser lineshape function, \(\psi(\nu)\), can be modeled as a Gaussian profile without any loss of generality.
+The linewidth of the alexandrite laser, when operated in broadband mode is of the order of a few wavenumbers.
+The effect of line broadening mechanisms, such as natural broadening, inhomogeneous broadening, etc that are commonly encountered in solid state lasers are negligible in comparison and hence, do not affect the lineshape appreciably.
+
+\begin{equation}
+  \psi(\nu) = \frac{1}{\sigma_l\sqrt{2\pi}} \exp{\left(-\dfrac{(\nu-\nu_l)^2}{2\sigma_l^2}\right)}
+  \label{eqn:laserLineShape}
+\end{equation}
+
+The mean of the lineshape profile, \(\nu_l\), is set by tuning the center wavelength of the laser.
+The Full Width at Half Max (FWHM) of the laser, \(\Delta\nu_l\), is prescribed by the manufacturer and can be used to calculate the standard deviation of the Gaussian as follows.
+
+\begin{equation}
+  \sigma_l = \frac{\Delta\nu_l}{2 \sqrt{ 2 \ln{2} } }
+\end{equation}
+
+The lineshape of the absorption line being excited, on the other hand, is primarily dictated by mechanisms associated with gas-phase media---collisional broadening and Doppler broadening being the most important ones.
+Collisional broadening is a homogeneous mechanism and produces a Lorentzian broadened lineshape.
+The FWHM of the Lorentzian profile is related to the thermodynamic conditions by the following empirical formula.
+
+\begin{equation}
+  \Delta\nu_c = 0.1 \left(\frac{p}{p_0}\right) \left(\frac{T_0}{T}\right)^{0.6}
+  \label{eqn:collisionalBroadening}
+\end{equation}
+
+In Equation \ref{eqn:collisionalBroadening}, \(p_0\) and \(T_0\) represent standard conditions of pressure and temperature (101325 Pa and 300 K) respectively.
+By contrast, Doppler broadening is an inhomogenous mechanism that results in a Gaussian lineshape.
+Its effect depends on the frequency (wavenumber) of the line being broadened, \(\nu_a\), and on the molecule's velocity.
+The FWHM of the resulting broadened lineshape is given by,
+
+\begin{equation}
+  \Delta\nu_d = \nu_a \frac{\ln 2}{c} \sqrt{\frac{8kT\ln 2}{m_CH}}
+  \label{eqn:dopplerBroadening}
+\end{equation}
+
+The combined effect of these two broadening mechanisms can be calculated by convoluting the two broadened lineshapes.
+In this case, a Lorentzian convoluted with a Gaussian results in a Voigt profile.
+In order to simplify the calculations, we assume that the collision-broadened Lorentzian profile is reasonably approximated by a Gaussian profile with the same FWHM.
+Now, the convolution of the two profiles results in another Gaussian, with the same mean and a FWHM given by,
+
+\begin{equation}
+  \Delta\nu_a = \sqrt{ { \Delta\nu_c }^2 + { \Delta\nu_d }^2 }
+  \label{eqn:broadening}
+\end{equation}
+
+Thus, the Gaussian lineshape of the broadened absorption line can be written as,
+
+\begin{equation}
+  \phi(\nu) = \frac{1}{\sigma_a\sqrt{2\pi}} \exp{\left(-\dfrac{(\nu-\nu_a)^2}{2\sigma_a^2}\right)}
+  \label{eqn:absorptionLineShape}
+\end{equation}
+
+In Equation \ref{eqn:absorptionLineShape}, \(\nu_a\) is the frequency (wavenumber) of the absorption peak being excited.
+The standard deviation of the lineshape, \(\sigma_a\), is related to the broadened FWHM, \(\Delta\nu_a\), by the following equation.
+
+\begin{equation}
+  \sigma_a = \frac{\Delta\nu_a}{2 \sqrt{ 2 \ln{2} } }
+\end{equation}
+
+With the above information, the integral in Equation \ref{eqn:pumpingRate} can be solved analytically as follows.
+
+\begin{equation}
+  \int \psi(\nu) \phi(\nu) d\nu = \frac{1}{\sqrt{2\pi ( \sigma_a^2 + \sigma_l^2 )}} \exp{-\frac{ (\nu_l - \nu_a )^2 }{2 ( \sigma_a^2 + \sigma_l^2 )}}
+  \label{eqn:absorptionIntegral}
+\end{equation}
+
+\subsubsection{Population distribution}
+
+Once again, consider Equation \ref{eqn:twoLevelModel-weak}, this time focusing on the term \(n_0\), the number density of the marker species (CH, in this case) in the lower energy state that are available for excitation to the upper state.
+This comprises only a small subset of all the available CH molecules in the flame.
+
+\begin{equation}
+  n_0 = nf_j
+  \label{eqn:boltzmannFraction}
+\end{equation}
+
+The fraction, \(f_j\), of CH molecules that populate the energy level \(j\) can be calculated from the Boltzmann distribution.
+Equation \ref{eqn:boltzmannDistribution} presents the expression for \(f_j\) in terms of the vibrational and rotational quantum numbers, (\(v\), \(J\)), of the energy level \(j\).
+
+\begin{equation}
+  f(v,J) = \frac{ \exp{\left(\dfrac{-hcE_v(v)}{kT}\right)} (2J + 1)\exp{\left(\dfrac{-hcE_r(v, J)}{kT}\right)} }{ Q_{rv} }
+  \label{eqn:boltzmannDistribution}
+\end{equation}
+
+The vibrational energy, \(E_v(v)\) of a level is calculated according to Equation \ref{eqn:vibrationalEnergy}, while the rotational energy, \(E_r(v,J)\) is calculated according to Equation \ref{eqn:rotationalEnergy}.
+
+\begin{align}
+  E_v(v) &= \omega_e \left(v+\frac{1}{2}\right) - \omega_ex_e \left(v+\frac{1}{2}\right)^2 + \omega_ey_e \left(v+\frac{1}{2}\right)^3 - \omega_ez_e \left(v+\frac{1}{2}\right)^4
+  \label{eqn:vibrationalEnergy}\\
+  E_r(v, J) &= \left\{B_e - \alpha_e \left(v+\frac{1}{2}\right)\right\}J(J+1) - \left\{D_e + \beta_e \left(v+\frac{1}{2}\right)\right\}J^2(J+1)^2
+  \label{eqn:rotationalEnergy}
+\end{align}
+
+The spectroscopic constants in Equations \ref{eqn:vibrationalEnergy} and \ref{eqn:rotationalEnergy} can be found in literature\cite{1995-zachwieja}.
+
+The rovibrational partition function, \(Q_{rv}\) is a summation over all available vibrational and rotational levels in the particular electronic state.
+For the ground state of the CH molecule, there are five available vibrational quantum numbers, \(v = 0\) to \(v = 4\).
+The \(B^2\Sigma^-\leftarrow X^2\Pi\) transition of the CH system is governed by Hund's Case b and hence, the appropriate rotational quantum number to use is \(N\).
+Each vibrational level has twenty-two possible values for \(N\) from \(N = 1\) to \(N = 22\).
+For each rotational quantum number \(N\), there are two possible values of \(J\) given by \(N \pm \frac{1}{2}\).
+
+\subsubsection{Solution}
+
+Substituting Equations \ref{eqn:pumpingRate} and \ref{eqn:boltzmannFraction} into \ref{eqn:twoLevelModel-weak}, and noting that the signal produced is actually integrated over a volume,
+
+\begin{equation}
+  \Phi = \int_V \frac{n A_{10}}{A_{10} + Q_{10}} \frac{I}{c} \sum_j f_j B_j \textcolor{red}{\int_\nu \psi(\nu) \phi_j(\nu) d\nu} dV
+  \label{eqn:twoLevelModel-unsimplified}
+\end{equation}
+
+In Equation \ref{eqn:twoLevelModel-unsimplified}, the absorption integral from Equation \ref{eqn:absorptionIntegral} is highlighted in \textcolor{red}{red}.
+The outer integral is performed in space, over the portion of the flame illuminated by the laser sheet.
+It is possible to rewrite the outer integral as a 1-D integral over the thickness of the flame by replacing the laser intensity, \(I\) with the laser power, \(P\).
+
+\begin{equation}
+  \Phi = \frac{P}{c} \int_x \frac{n A_{10}}{A_{10}+Q_{10}} \sum_j f_j B_j \int_\nu \psi(\nu) \phi_j(\nu) d\nu dx
+  \label{eqn:twoLevelModel}
+\end{equation}
+
+Equation \ref{eqn:twoLevelModel} is thus, the solution to the two-level model in the weak excitation limit.
+Note that the LIF signal varies linearly as the incident laser power (or intensity).
+Consequently, the weak excitation limit is also referred to as the linear regime.
+
+For the sake of completion, the other limit of the two-level model solution occurs when the rate of pumping far exceeds the relaxation rate (\(W_{01} \gg A_{10} + Q_{10}\)).
+This is called the saturated limit and in this limit, the fluorescence signal no longer depends on the intensity of the incident laser beam.
+Operating in this regime is generally not preferred as the saturation criterion is difficult to satisfy simultaneously in the spatial, temporal and spectral domains.
+For this reason, we will restrict our discussion hence forward the linear regime only.
+
+\subsection{Improved Model}
+
+While the two-level model is conceptually simple, applying it to describe complicated systems, such as the CH molecule, results in large errors.\cite{1997-daily}
+Hence, it is worthwhile to investigate a more complicated model that can describe the CH system with higher fidelity.
+
+\input{figures/energyLevels}
+
+Figure \ref{fig:energyLevels} shows the pathways described in Section FIXME.
+An accurate model of the CH system should involve at least five energy levels, namely the \(B^2\Sigma^-\), \(v=0\), \(A^2\Delta\), \(v\)=0,1, and \(X^2\Pi\), \(v\)=0,1 levels.
+The model will need to account for collisional transfers between each of these levels, in addition to spontaneous and stimulated transitions.
+The mathematical solution quickly becomes tedious and complicated.
+Further, it involves several rate coefficients that have not yet been measured experimentally.
+
+Fortunately, this can be significantly simplified.
+Previous studies\cite{1996-luque-c,2000-luque} have indicated that the off-diagonal \(B\rightarrow X\) (0,1) transition plays a relatively minor role accounting for only 3.5\% of the total fluorescence.
+Further, the \(A\rightarrow X\) transitions are known\cite{1996-luque-b} to be strongly diagonal, with little or no interaction\cite{1985-garland-b} between the two states.
+The net result of these two assertions is that we can treat the two \(B\rightarrow A\rightarrow X\) pathways to be disjoint and parallel.
+The resulting pseudo-three-level model is shown in Figure \ref{fig:simplifiedEnergyLevels}.
+
+\input{figures/simplifiedEnergyLevels}
+
+The rates of the various transition processes are indicated in Figure \ref{fig:simplifiedEnergyLevels}.
+\(W_{02}\) is the pumping process that populates the \(B\)(0) state.
+\(Q_{ij}\) are collisional energy transfer processes that transfer CH molecules from the \(i\) level to the \(j\) level.
+The subscripts 0, 1 and 2 represent the electronic energy levels \(X\), \(A\) and \(B\).
+Processes involving the \(A\)(0) state are differentiated from those involving the \(A\)(1) state by a prime (\('\)).
+Finally, \(A_{ij}\) represents the spontaneous emission coefficients between the \(i\) and \(j\) levels.
+
+Applying Equation \ref{eqn:fluorescencePhotons} to this case, we can write an expression for the LIF signal intensity as follows,
+
+\begin{equation}
+  \Phi = ( n_1 A_{10} + n'_1 A'_{10} )V
+  \label{eqn:signalIntensity}
+\end{equation}
+
+Our task is to solve for the values of \(n_1\) and \(n'_1\) in terms of \(n_0\).
+To do this we need to write rate equations describing the variation of the populations of the three upper states with time.
+
+\begin{align}
+  \frac{dn_1}{dt} &= -( A_{10} + Q_{10} + Q_{12} )n_1 + Q_{21} n_2
+  \label{eqn:rates1}\\
+  \frac{dn'_1}{dt} &= -( A'_{10} + Q'_{10} )n'_1 + Q'_{21} n_2
+  \label{eqn:rates2}\\
+  \frac{dn_2}{dt} &= W_{02} n_0 + Q_{12} n_1 - ( A_{20} + Q_{20} + Q_{21} + Q'_{21} )n_2
+  \label{eqn:rates3}
+\end{align}
+
+Under the assumption that the laser excitation time scale is much longer that the collisional time scales, we can set the LHS of Equations \ref{eqn:rates1}--\ref{eqn:rates3} to zero.
+This results in a closed set of linear equations, which can be expressed in matrix form as follows.
 
 \begin{equation}
   \left[
     \begin{matrix}
-      A_{10} + Q_{10} + R_{12} & 0 & -R_{21}\\
-      0 & A'_{10} + Q'_{10} & -R'_{21}\\
-      -R_{12} & 0 & A_{20} + Q_{20} + R_{21} + R'_{21}
+      A_{10} + Q_{10} + Q_{12} & 0 & -Q_{21}\\
+      0 & A'_{10} + Q'_{10} & -Q'_{21}\\
+      -Q_{12} & 0 & A_{20} + Q_{20} + Q_{21} + Q'_{21}
     \end{matrix}
   \right]\left[
     \begin{matrix}
@@ -189,158 +403,44 @@ This set of equations is presented in Equation \ref{eqn:closedForm}.
   \label{eqn:closedForm}
 \end{equation}
 
-The solution to Equation \ref{eqn:closedForm} is shown in Equations \ref{eqn:solution1}--\ref{eqn:solution3}.
+From Equation \ref{eqn:closedForm}, we only need the solutions to \(n_1\) and \(n'_1\).
+These solutions are presented in Equations \ref{eqn:solution1}--\ref{eqn:solution2}.
 
 \begin{align}
-  n_1 &= \frac{ R_{21} }{ ( A_{10} + Q_{10} + R_{12} )( A_{20} + Q_{20} + R_{21} + R'_{21} ) - R_{12}R_{21} }W_{02}n_0
+  n_1 &= n_0W_{02}F
   \label{eqn:solution1}\\
-  n'_1 &= \frac{ ( A_{10} + Q_{10} + R_{12} )R'_{21} }{ ( A'_{10} + Q'_{10} ) ( ( A_{10} + Q_{10} + R_{12} )( A_{20} + Q_{20} + R_{21} + R'_{21} ) - R_{12}R_{21} ) }W_{02}n_0
-  \label{eqn:solution2}\\
-  n_2 &= \frac{ ( A_{10} + Q_{10} + R_{12} ) }{ ( A_{10} + Q_{10} + R_{12} )( A_{20} + Q_{20} + R_{21} + R'_{21} ) - R_{12}R_{21} }W_{02}n_0
-  \label{eqn:solution3}
-\end{align}
+  n'_1 &= n_0W_{02}F'
+  \label{eqn:solution2}
+\end{align}.
 
-These expressions can be further simplified by noting various observations made in studies of the CH system.
-For instance, previous work\cite{1984-cool,1985-garland-b} has reported that the \(B\) state is slightly (about 1.3 times) more prone to quenching compared to the \(A\) state.
-We can thus make the following assumptions.
-
-\begin{gather}
-  Q_{10} = Q'_{10} = Q
-  \label{eqn:quenchingAssumption1}\\
-  Q_{20} = 1.3Q
-  \label{eqn:quenchingAssumption2}
-\end{gather}
-
-Next, it has been reported\cite{2000-luque} that the electronic energy transfer rate from \(B\) to \(A\) state accounts for 0.24 times the total collisional removal from the \(B\) state.
-
-\begin{gather}
-  \frac{ R_{21} + R'_{21} - R_{12} }{ Q_{20} + R_{21} + R'_{21} - R_{12} } = 0.24\\
-  \therefore \frac{ R_{21} + R'_{21} - R_{12} }{ Q } = 0.4105
-  \label{eqn:REquation1}
-\end{gather}
-
-We further know\cite{1985-garland-b, 2000-luque} that the collisional transfer from the \(B(0)\) energy level populates the nearly degenerate \(A(1)\) level about four times faster than the \(A(0)\) level.
-
-\begin{equation}
-  \frac{ R_{21} - R_{12} }{ R'_{21} } = 4
-  \label{eqn:REquation2}
-\end{equation}
-
-Finally, it was observed\cite{1985-garland-b} that the rate of forward transfer from \(B(0)\) to \(A(1)\) is about 1.6 times the reverse process.
-
-\begin{equation}
-  \frac{R_{21}}{R_{12}} = 1.6
-  \label{eqn:REquation3}
-\end{equation}
-
-Collating Equations \ref{eqn:REquation1}--\ref{eqn:REquation3}, we obtain a closed set of linear equations.
-This can be solved to eliminate \(R_{21}\), \(R_{12}\) and \(R'_{21}\) in terms of \(Q\) as shown in Equation \ref{eqn:RSolution}.
-
-\begin{equation}
-  \left[
-    \begin{matrix}
-      R_{21}\\
-      R'_{21}\\
-      R_{12}
-    \end{matrix}
-  \right] = \left[
-    \begin{matrix}
-      5.1966\\
-      0.4872\\
-      3.2479
-    \end{matrix}
-  \right] Q
-  \label{eqn:RSolution}
-\end{equation}
-
-Substituting Equations \ref{eqn:quenchingAssumption1}, \ref{eqn:quenchingAssumption2} and \ref{eqn:RSolution} into Equations \ref{eqn:solution1}--\ref{eqn:solution2} leads to simplified expressions for the populations of the upper electronic states purely as a function of the respective Einstein coefficients and the collisional quenching rate.
-These are presented in the following Equations \ref{eqn:simplifiedSolution1}--\ref{eqn:simplifiedSolution3}.
+The expressions for the respective flourescence yields, \(F\) and \(F'\) are as follows,
 
 \begin{align}
-  n_1 &= \frac{ 5.1966Q }{ ( A_{10} + 4.2479Q )( A_{20} + 6.9838Q ) - 16.8780Q } W_{02}n_0
-  \label{eqn:simplifiedSolution1}\\
-  n'_1 &= \frac{ 0.4872Q( A_{10} + 4.2479Q ) }{ ( A'_{10} + Q ) \left( ( A_{10} + 4.2479Q )( A_{20} + 6.9838Q ) - 16.8780Q \right) } W_{02}n_0
-  \label{eqn:simplifiedSolution2}\\
-  n_2 &= \frac{ ( A_{10} + 4.2479Q ) }{ ( A_{10} + 4.2479Q )( A_{20} + 6.9838Q ) - 16.8780Q } W_{02}n_0
-  \label{eqn:simplifiedSolution3}
+  F &= \frac{ Q_{21} }{ ( A_{10} + Q_{10} + Q_{12} )( A_{20} + Q_{20} + Q_{21} + Q'_{21} ) - Q_{12}Q_{21} }
+  \label{eqn:flourescenceYield1}\\
+  F' &= \frac{ ( A_{10} + Q_{10} + Q_{12} )Q'_{21} }{ ( A'_{10} + Q'_{10} ) ( ( A_{10} + Q_{10} + Q_{12} )( A_{20} + Q_{20} + Q_{21} + Q'_{21} ) - Q_{12}Q_{21} ) }
+  \label{eqn:fluorescenceYield2}
 \end{align}
 
-The quenching rate, \(Q\) of excited CH radicals is calculated by using the quenching cross-sections of various species.
-The quenching cross-sections are measures of the effectiveness of each collision between a given species and an excited CH radical.
-The effectiveness of the collision also depends on the velocity of collision between the two species, \(g_j\) and the abundance of the species, \(n_j\).
-This relationship is formalized in Equation \ref{eqn:quenchingRate}.
+\subsubsection{Solution}
 
-\begin{align}
-  Q & =\sum_j g_j \sigma_j n_j \nonumber \\
-  Q & = \sum_j \sqrt{\frac{ 8kT }{ \pi\mu_j }} \sigma_j \frac{ pN_A }{ RT } X_j
-  \label{eqn:quenchingRate}
-\end{align}
-
-In Equation \ref{eqn:quenchingRate}, \(\mu_j\) represents the reduced mass of the colliding CH-\(j\) molecules,\(p\) is the pressure, \(N_A\) is Avogadro's Number, \(R\) is the Universal Gas Constant, \(T\) is the temperature, and \(X_j\) is the mole fraction of species \(j\).
-The mole fractions of the various species in the flame, as well as the temperature across the flame are obtained from Chemkin simulations.
-The expression for the reduced mass is given in Equation \ref{eqn:reducedMass}.
+Substituting the expressions from Equations \ref{eqn:solution1}--\ref{eqn:solution2} into Equation \ref{eqn:signalIntensity},
 
 \begin{equation}
-  \mu_j = \frac{ m_j m_{CH} }{ m_j + m_{CH} }
-  \label{eqn:reducedMass}
+  \Phi = n_0VW_{02}(F+F')
+  \label{eqn:improvedModel-weak}
 \end{equation}
 
-The quenching cross-sections of various species are obtained from various published papers\cite{1994-chen,1998-tamura,2002-renfro} and are functions of temperature.
-The functional forms used in this study are presented in Table \ref{tab:quenchingCrossSections}.
-
-\input{tables/quenchingCrossSections}
-
-The term \(W_{02}n_0\) in Equations \ref{eqn:simplifiedSolution1}--\ref{eqn:simplifiedSolution3} represents the rate of pumping of the ground state CH radicals.
-The current excitation scheme targets multiple transitions in the R-bandhead.
-The pumping rate for each transition is the product of the number of CH radicals present in the appropriate level, the Einstein absorption coefficient for that energy level, \(B_i\) and the amount of laser energy available at the appropriate frequency, \(E_i\).
-As a result, the term is actually a summation over the individual energy levels.
-Equation \ref{eqn:pumpingRate} presents this symbolically.
-
-\begin{align}
-  W_{02}n_0 &= \sum_i B_i I_i n_i \nonumber \\
-  W_{02}n_0 &= \sum_i B_i \frac{ E_i }{ A_c } \frac{ pN_A X_{CH} }{ RT } f_i
-  \label{eqn:pumpingRate}
-\end{align}
-
-Table \ref{tab:absorptionCoefficients} presents the values of \(B_i\) for the transitions targeted by the current excitation scheme.\cite{1996-luque-c}
-Assuming a Gaussian line shape for the laser, and using the line strengths from LIFBASE, the relative amount of energy absorbed by each transition can be calculated.
-These values are also presented in Table \ref{tab:absorptionCoefficients}.
-
-\input{tables/absorptionCoefficients}
-
-In Equation \ref{eqn:pumpingRate}, \(A_c\) is the area of cross-section of the laser beam and \(f_i\) is the Boltzmann fraction of the population at the energy level \(i\).
-The expression for the Boltzmann fraction at the energy level corresponding to the vibrational quantum number \(v\) and rotational quantum number \(J\) is given in Equation \ref{eqn:BoltzmannFraction}.
+Note the similarity in the form of Equation \ref{eqn:improvedModel-weak} to Equation \ref{eqn:twoLevelModel-weak}.
+Both expressions are composed of two parts---a pumping rate and a fluorescence yield.
+Expanding the pumping rate \(W_{02}\) in a manner identical to Equation \ref{eqn:pumpingRate} and using the absorption integral in Equation \ref{eqn:absorptionIntegral}, we can rewrite Equation \ref{eqn:improvedModel-weak} in a form mirroring Equation \ref{eqn:twoLevelModel}
 
 \begin{equation}
-  f(v,J) = \frac{ \exp{\left(\dfrac{-hcE_v(v)}{kT}\right)} (2J + 1)\exp{\left(\dfrac{-hcE_r(v, J)}{kT}\right)} }{ Q_{rv} }
-  \label{eqn:BoltzmannFraction}
+  \Phi = \frac{P}{c} \int_x n (F+F') \sum_j f_j B_j \int_\nu \psi(\nu) \phi_j(\nu) d\nu dx
+  \label{eqn:improvedModel}
 \end{equation}
 
-The vibrational energy, \(E_v(v)\) of a level is calculated according to Equation \ref{eqn:vibrationalEnergy}, while the rotational energy, \(E_r(v, J)\) is calculated according to Equation \ref{eqn:rotationalEnergy}.
+The expressions for the fluorescence yields, \(F\) and \(F'\), still have many variables that have not been tabulated conveniently in literature.
+As a result, further simplifications will need to be made on the basis of reported experimental observations.
+These simplifications are outside the scope of this chapter and will be introduced in Chapter FIXME 4 along with the results of applying this model to various reactant mixtures.
 
-\begin{align}
-  E_v(v) &= \omega_e \left(v+\frac{1}{2}\right) - \omega_ex_e \left(v+\frac{1}{2}\right)^2 + \omega_ey_e \left(v+\frac{1}{2}\right)^3 - \omega_ez_e \left(v+\frac{1}{2}\right)^4
-  \label{eqn:vibrationalEnergy}\\
-  E_r(v, J) &= \left\{B_e - \alpha_e \left(v+\frac{1}{2}\right)\right\}J(J+1) - \left\{D_e + \beta_e \left(v+\frac{1}{2}\right)\right\}J^2(J+1)^2
-  \label{eqn:rotationalEnergy}
-\end{align}
-
-The spectroscopic constants in Equations \ref{eqn:vibrationalEnergy} and \ref{eqn:rotationalEnergy} are found in literature\cite{1995-zachwieja} and are provided here in Table \ref{tab:spectroscopicConstants}.
-
-\input{tables/spectroscopicConstants}
-
-The rovibrational partition function, \(Q_{rv}\) is a summation over all available vibrational and rotational levels in the particular electronic state.
-For the ground state of the CH molecule, there are five available vibrational quantum numbers, \(v = 0\) to \(v = 4\).
-The CH system falls under Hund's Case b and hence, the appropriate rotational quantum number to use is \(N\).
-Each vibrational level has twenty-two possible values for \(N\) from \(N = 1\) to \(N = 22\).
-For each rotational quantum number \(N\), there are two possible values of \(J\) given by \(N \pm \frac{1}{2}\).
-
-
-\section{Linearity}
-
-In the weak excitation limit, the signal is a function of CH concentration and the rate of collisional quenching of the excited CH radicals.
-In the strong excitation limit, the signal depends only on the CH concentration is unaffected by the quenching of the excited CH species.
-
-It is difficult to ensure that the CH system is saturated spatially, temporally and spectrally at the same time.
-Further, operating with high laser intensities may bleach the energy levels being excited by inducing chemical reactions that destroy the excited CH radicals.
-Hence, it is preferred to operate in the linear regime.

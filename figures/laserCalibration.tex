@@ -24,7 +24,7 @@
 \filldraw [fill=yellow!50!white, draw=black] ( 4, 3.5 ) rectangle ++( 1, 1 );
 
 % Optical fiber
-\draw [thick] ( 4.5, 3.5 ) .. controls +( 1.5, -1.5 ) and +( -0.2, 1 ) .. ++( -0.5, -2.5 );
+\draw [very thick, gray] ( 4.5, 3.5 ) .. controls +( 1.5, -1.5 ) and +( -0.2, 1 ) .. ++( -0.5, -2.5 );
 
 % Labels
 \node at ( 0.5, 5 ) [above] {Laser};
@@ -36,7 +36,7 @@
 
 \end{tikzpicture}
 
-\caption[Schematic of the laser calibration experiment]{The figure above shows the schematic of the experiment performed to calibrate the wavelength of the laser output. The laser output (containing mostly UV, but also a small portion of the fundamental frequency) is glanced off a steel optical post. The scattered light is gathered by a fiber optic cable and sent to a spectrometer. The spectrum is analyzed to track the location of the fundamental frequency with tuner position. The UV peak is not tracked as the spectrometer is not calibrated for that wavelength.}
+\caption[Schematic of the laser calibration experiment]{The figure above shows the schematic of the experiment performed to calibrate the wavelength of the laser output. The laser output (containing mostly UV, but also a small portion of the fundamental frequency) is glanced off a steel optical post. The scattered light is gathered by a fiber optic cable (\textcolor{gray}{gray}) and sent to a spectrometer. The spectrum is analyzed to track the location of the fundamental frequency with tuner position. The UV peak is not tracked as the spectrometer is not calibrated for that wavelength.}
 
 \label{fig:laserCalibration}
 

@@ -150,12 +150,7 @@ The primary goal of this exercise of modeling the CH fluorescence signal intensi
 As such, we are more interested in the order of magnitude of the PLIF signal, rather than the absolute value of it.
 
 The intensity of the CH fluorescence signal may be written as a function of the amount of CH radicals present in the excited state and the probability of spontaneous emission from said state.
-Symbolically, this may be written as shown in Equation \ref{eqn:signalIntensity}.
 
-\begin{equation}
-S=nVA
-\label{eqn:signalIntensity}
-\end{equation}
 
 In Equation \ref{eqn:signalIntensity}, \(S\) is the total number of photons emitted per unit time, \(n\) is the number of excited CH radicals in a unit volume, \(V\) is the volume from which the signal is observed.
 The Einstein coefficient for spontaneous emission, \(A\) represents the probability of spontaneous emission between the two involved energy states.
@@ -175,6 +170,135 @@ As described earlier, an accurate model of the CH system should involve five ene
 Such a model would also have to account for collisional transfers between each of these levels, in addition to spontaneous and stimulated transitions.
 The mathematical solution quickly becomes complicated and tedious.
 Further, it would involve several rate coefficients that have not been measured in experiments done so far.
+
+% Transplanted text. Needs to be integrated into Chapter 4
+
+%  n_2 &= \frac{ ( A_{10} + Q_{10} + Q_{12} ) }{ ( A_{10} + Q_{10} + Q_{12} )( A_{20} + Q_{20} + Q_{21} + Q'_{21} ) - Q_{12}Q_{21} }W_{02}n_0
+
+%The spontaneous emission coefficients, \(A_{10}\), \(A'_{10}\) and \(A_{20}\) are obtained from various published papers\cite{1985-garland-a,1996-luque-b,2005-richmond}.
+%The values used for this analysis are presented in Table \ref{tab:emissionCoefficients}.
+
+%\input{tables/emissionCoefficients}
+
+%Equations \ref{eqn:rates1}--\ref{eqn:rates3} describe the time variation of the number density of CH radicals in each excited state.
+
+%At steady state, the rate of change of the number density is minimal.
+%Under this assumption, the LHS of Equations \ref{eqn:rates1}--\ref{eqn:rates3} can be set to zero.
+%This results in a closed set of linear equations in terms of the populations of the upper states.
+%This set of equations is presented in Equation \ref{eqn:closedForm}.
+
+%These expressions can be further simplified by noting various observations made in studies of the CH system.
+%For instance, previous work\cite{1984-cool,1985-garland-b} has reported that the \(B\) state is slightly (about 1.3 times) more prone to quenching compared to the \(A\) state.
+%We can thus make the following assumptions.
+
+%\begin{gather}
+%  Q_{10} = Q'_{10} = Q
+%  \label{eqn:quenchingAssumption1}\\
+%  Q_{20} = 1.3Q
+%  \label{eqn:quenchingAssumption2}
+%\end{gather}
+
+%Next, it has been reported\cite{2000-luque} that the electronic energy transfer rate from \(B\) to \(A\) state accounts for 0.24 times the total collisional removal from the \(B\) state.
+
+%\begin{gather}
+%  \frac{ R_{21} + R'_{21} - R_{12} }{ Q_{20} + R_{21} + R'_{21} - R_{12} } = 0.24\\
+%  \therefore \frac{ R_{21} + R'_{21} - R_{12} }{ Q } = 0.4105
+%  \label{eqn:REquation1}
+%\end{gather}
+
+%We further know\cite{1985-garland-b, 2000-luque} that the collisional transfer from the \(B(0)\) energy level populates the nearly degenerate \(A(1)\) level about four times faster than the \(A(0)\) level.
+
+%\begin{equation}
+%  \frac{ R_{21} - R_{12} }{ R'_{21} } = 4
+%  \label{eqn:REquation2}
+%\end{equation}
+
+%Finally, it was observed\cite{1985-garland-b} that the rate of forward transfer from \(B(0)\) to \(A(1)\) is about 1.6 times the reverse process.
+
+%\begin{equation}
+%  \frac{R_{21}}{R_{12}} = 1.6
+%  \label{eqn:REquation3}
+%\end{equation}
+
+%Collating Equations \ref{eqn:REquation1}--\ref{eqn:REquation3}, we obtain a closed set of linear equations.
+%This can be solved to eliminate \(R_{21}\), \(R_{12}\) and \(R'_{21}\) in terms of \(Q\) as shown in Equation \ref{eqn:RSolution}.
+
+%\begin{equation}
+%  \left[
+%    \begin{matrix}
+%      R_{21}\\
+%      R'_{21}\\
+%      R_{12}
+%    \end{matrix}
+%  \right] = \left[
+%    \begin{matrix}
+%      5.1966\\
+%      0.4872\\
+%      3.2479
+%    \end{matrix}
+%  \right] Q
+%  \label{eqn:RSolution}
+%\end{equation}
+
+%Substituting Equations \ref{eqn:quenchingAssumption1}, \ref{eqn:quenchingAssumption2} and \ref{eqn:RSolution} into Equations \ref{eqn:solution1}--\ref{eqn:solution2} leads to simplified expressions for the populations of the upper electronic states purely as a function of the respective Einstein coefficients and the collisional quenching rate.
+%These are presented in the following Equations \ref{eqn:simplifiedSolution1}--\ref{eqn:simplifiedSolution3}.
+
+%\begin{align}
+%  n_1 &= \frac{ 5.1966Q }{ ( A_{10} + 4.2479Q )( A_{20} + 6.9838Q ) - 16.8780Q } W_{02}n_0
+%  \label{eqn:simplifiedSolution1}\\
+%  n'_1 &= \frac{ 0.4872Q( A_{10} + 4.2479Q ) }{ ( A'_{10} + Q ) \left( ( A_{10} + 4.2479Q )( A_{20} + 6.9838Q ) - 16.8780Q \right) } W_{02}n_0
+%  \label{eqn:simplifiedSolution2}\\
+%  n_2 &= \frac{ ( A_{10} + 4.2479Q ) }{ ( A_{10} + 4.2479Q )( A_{20} + 6.9838Q ) - 16.8780Q } W_{02}n_0
+%  \label{eqn:simplifiedSolution3}
+%\end{align}
+
+%The quenching rate, \(Q\) of excited CH radicals is calculated by using the quenching cross-sections of various species.
+%The quenching cross-sections are measures of the effectiveness of each collision between a given species and an excited CH radical.
+%The effectiveness of the collision also depends on the velocity of collision between the two species, \(g_j\) and the abundance of the species, \(n_j\).
+%This relationship is formalized in Equation \ref{eqn:quenchingRate}.
+
+%\begin{align}
+%  Q & =\sum_j g_j \sigma_j n_j \nonumber \\
+%  Q & = \sum_j \sqrt{\frac{ 8kT }{ \pi\mu_j }} \sigma_j \frac{ pN_A }{ RT } X_j
+%\end{align}
+
+
+%The quenching cross-sections of various species are obtained from various published papers\cite{1994-chen,1998-tamura,2002-renfro} and are functions of temperature.
+%The functional forms used in this study are presented in Table \ref{tab:quenchingCrossSections}.
+
+%\input{tables/quenchingCrossSections}
+
+%The term \(W_{02}n_0\) in Equations \ref{eqn:simplifiedSolution1}--\ref{eqn:simplifiedSolution3} represents the rate of pumping of the ground state CH radicals.
+%The current excitation scheme targets multiple transitions in the R-bandhead.
+%The pumping rate for each transition is the product of the number of CH radicals present in the appropriate level, the Einstein absorption coefficient for that energy level, \(B_i\) and the amount of laser energy available at the appropriate frequency, \(E_i\).
+%As a result, the term is actually a summation over the individual energy levels.
+
+%Equation \ref{eqn:pumpingRate} presents this symbolically.
+
+%\begin{align}
+%  W_{02}n_0 &= \sum_i B_i I_i n_i \nonumber \\
+%  W_{02}n_0 &= \sum_i B_i \frac{ E_i }{ A_c } \frac{ pN_A X_{CH} }{ RT } f_i
+%\end{align}
+
+%Table \ref{tab:absorptionCoefficients} presents the values of \(B_i\) for the transitions targeted by the current excitation scheme.\cite{1996-luque-c}
+%Assuming a Gaussian line shape for the laser, and using the line strengths from LIFBASE, the relative amount of energy absorbed by each transition can be calculated.
+%These values are also presented in Table \ref{tab:absorptionCoefficients}.
+
+%\input{tables/absorptionCoefficients}
+
+% and are provided here in Table \ref{tab:spectroscopicConstants}.
+%The expression for the Boltzmann fraction at the energy level corresponding to the vibrational quantum number \(v\) and rotational quantum number \(J\) is given in Equation \ref{eqn:BoltzmannFraction}.
+%\input{tables/spectroscopicConstants}
+
+%\section{Linearity}
+
+%In the weak excitation limit, the signal is a function of CH concentration and the rate of collisional quenching of the excited CH radicals.
+%In the strong excitation limit, the signal depends only on the CH concentration is unaffected by the quenching of the excited CH species.
+
+%It is difficult to ensure that the CH system is saturated spatially, temporally and spectrally at the same time.
+%Further, operating with high laser intensities may bleach the energy levels being excited by inducing chemical reactions that destroy the excited CH radicals.
+%Hence, it is preferred to operate in the linear regime.
+
 
 \section{Results}
 

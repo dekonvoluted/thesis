@@ -1,0 +1,40 @@
+\begin{figure}
+
+\centering
+
+\begin{tikzpicture}
+
+% Ground states
+\draw [thick] ( 3, 0 ) -- ++( 4, 0 );
+\node at ( 7, 0 ) [right] {\(X^2\Pi, v = 0\)};
+\draw [thick] ( 3, 1 ) -- ++( 4, 0 );
+\node at ( 7, 1 )  [right] {\(X^2\Pi, v = 1\)};
+
+% First electronic states
+\draw [thick] ( 0, 4 ) -- ++( 3, 0 );
+\node at ( 0, 4 )  [left] {\(A^2\Delta, v = 0\)};
+\draw [thick] ( 0, 5 ) -- ++( 3, 0 );
+\node at ( 0, 5 )  [left] {\(A^2\Delta, v = 1\)};
+
+% Second electronic state
+\draw [thick] ( 7, 5 ) -- ++( 3, 0 );
+\node at ( 10, 5 )  [right] {\(B^2\Sigma^-, v = 0\)};
+
+% Transitions
+\draw [blue, ->] ( 6, 0 ) -- ++( 3, 5 );
+
+\draw [red, ->] ( 6.5, 5 ) -- ++( -3, 0 );
+\draw [red, ->] ( 6.5, 4.75 ) -- ++( -3, -0.75 );
+
+\draw [green, ->] ( 8, 5 ) -- ++( -2.25, -4 );
+\draw [green, ->] ( 1, 4 ) -- ++( 3, -4 );
+\draw [green, ->] ( 1, 5 ) -- ++( 3, -4 );
+
+\end{tikzpicture}
+
+\caption[CH energy level diagram]{Some of the important transitions between energy levels in a CH molecule are shown. The excitation of the CH molecules (\textcolor{blue}{blue}) is followed by collisional energy transfer processes (\textcolor{red}{red}) which populate additional energy levels. Spontaneous emission from some of these energy levels (\textcolor{green}{green}) is collected.}
+
+\label{fig:energyLevels}
+
+\end{figure}
+
