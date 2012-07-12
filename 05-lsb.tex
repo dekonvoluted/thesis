@@ -1,4 +1,5 @@
 \chapter{LSB Flame Characteristics}
+\label{ch:lsb}
 
 % The primary goal is as follows:
 
@@ -22,7 +23,7 @@
 %    Does this provide any insight into the flame behavior at these conditions?
 %    What physical processes may be responsible for that?
 
-In Chapter FIXME 2, we introduced the salient features of the Low Swirl Burner (LSB) flow field and discussed the mechanisms by which the LSB flame is stabilized.
+In Chapter \ref{ch:background}, we introduced the salient features of the Low Swirl Burner (LSB) flow field and discussed the mechanisms by which the LSB flame is stabilized.
 Further, various characteristics of the LSB flame that can be measured from flame images were outlined.
 To recapitulate, these are the flame location, flame shape and the flame structure.
 The first two are quantified by the flame standoff distance, \(X_f\), and the flame angle, \(\theta_f\), respectively.
@@ -35,14 +36,14 @@ The results of these investigations are presented in this chapter.
 
 % SHOULD YOU START BY PRESENTING SOME FLAME IMAGES FOR THE DIFFERENT CONDITIONS SO THAT THE READER CAN SEE WHAT (OR HOW LITTLE) THE  PARAMETERS EFFECT THE FLAME IMAGES? OR POSSIBLY SHOWING SOME APPROPRIATE IMAGES IN EACH SECTION?
 
-\section{Effect of reference velocity}
-\label{sec:refVelEffect}
+\section{Effect of Reference Velocity}
+\label{sec:lsb-effect-of-reference-velocity}
 
 In typical gas turbine applications, varying the loading on the engine does not affect the reference velocity.
 However, since the reference velocity is a design parameter, the effect it has on the flame characteristics has implications for the design of future LSB-based gas turbine engines.
 
 One of the key objectives of this thesis is to investigate how the LSB flame stabilization operates at high pressure conditions.
-The simple model described in Chapter FIXME 2 predicts a self-similar flow field for the LSB at all reference velocities.
+The simple model described in Chapter \ref{ch:background} predicts a self-similar flow field for the LSB at all reference velocities.
 This implies that the reference velocity will have no discernible impact on the flame standoff distance.
 This result is desirable for gas turbine designers, since the flame location and shape can be assumed to be constant.
 Limited testing conducted in published works confirmed this behavior at atmospheric pressure conditions with no preheat.
@@ -67,8 +68,8 @@ While increasing the reference velocity did not affect the turbulent combustion 
 This transition would cause a reduction in \(S_T/S_L\), or at least a lesser increase, and the turbulent flame speed would no longer be expected to increase in step with \(U_0\) and the increased levels of turbulence.
 This would explain the the observed downstream shift of the high pressure LSB flame at high reference velocities.
 
-\section{Effect of preheat temperature}
-\label{sec:preheatEffect}
+\section{Effect of Preheat Temperature}
+\label{sec:lsb-effect-of-preheat-temperature}
 
 The preheat temperature of the reactants is a key flow parameter, especially for gas turbine combustors.
 In general, the rates of most chemical reactions in the flame zone are highly sensitive to the temperature of the reactants.
@@ -87,7 +88,7 @@ The abscissa represents the distance from a point called the virtual origin, \(X
 The virtual origin is defined as the imaginary location where the extrapolated linear axial velocity profile reaches the reference velocity in magnitude.
 The extrapolation is indicated in Figure FIXME by a dashed line.
 
-As noted in Chapter FIXME 2, previous studies\cite{2008-cheng-a} reported that mean axial stretch --- the normalized slope of the linear decay of axial velocity --- at the inlet of the combustor was self-similar, regardless of the Reynolds number, \(Re\) of the operating condition.
+As noted in Chapter \ref{ch:background}, previous studies\cite{2008-cheng-a} reported that mean axial stretch --- the normalized slope of the linear decay of axial velocity --- at the inlet of the combustor was self-similar, regardless of the Reynolds number, \(Re\) of the operating condition.
 Further, it was reported that the velocity decay was steeper for reacting cases compared to non-reacting cases.
 
 % CAN WE RENAME THESE CASES WITH MORE MEANINGFUL NAMES???
@@ -104,15 +105,15 @@ All of this leads to an intuitive result --- the LSB flame behaves more stably a
 % 1) IS THERE NO FLAME IMAGING TO SHOW THAT FLAME MOVES UPSTREAM AS YOU "PREDICT"...
 % 2) IF THE FLAME MOVES UPSTREAM - DOES THAT MAKE IT MORE "STABLE"?
 
-\section{Effect of swirler vane angle}
-\label{sec:vaneAngleEffect}
+\section{Effect of Swirler Vane Angle}
+\label{sec:lsb-effect-of-swirler-vane-angle}
 
-As described in Chapter FIXME 3, the LSB swirlers tested for this study are designed to have the same mass flow splits.
+As described in Chapter \ref{ch:experimental}, the LSB swirlers tested for this study are designed to have the same mass flow splits.
 The \(S_{45^\circ}\) swirler has a higher vane angle, resulting in greater blockage to the flow passing through the annular section.
 In order to compensate for this, the perforated plate covering the central section has slightly smaller holes.
 The net effect retains the same mass flow split as in the \(S_{37^\circ}\) swirler.
 
-Chapter FIXME 2 describes how the swirler vane angle relates to the amount of swirl imparted to the incoming flow.
+Chapter \ref{ch:background} describes how the swirler vane angle relates to the amount of swirl imparted to the incoming flow.
 According to Equation FIXME, a swirler with a higher vane angle will produce greater swirl in the reactants.
 % DOES THAT EXPLANATION DESCRIBE THERE IS NO SWIRL IN THE CENTRAL REGION - IN WHICH CASE YOU MIGHT NOT WANT TO SAY HOW IT EFFECTS THE SWIRL OF THE REACTANTS - BUT INSTEAD THE SWIRL OF THE OUTER REACTANT FLOW?
 Previous work in swirl combustion\cite{1992-chan,1986-starner} has pointed out that increased swirl shortens the flame by enhancing the swirl-induced radial pressure gradients.
@@ -122,15 +123,15 @@ Operated at identical inlet conditions, the \(S_{45^\circ}\) swirler stabilizes 
 
 This result highlights an interesting trade-off for the designers of LSB-based gas turbine engines.
 The \(S_{45^\circ}\) flame is located further upstream and has a more concentrated region of heat release.
-This enhances the strength of the toroidal recirculation zone near the dump plane, which may be powerful enough under certain conditions (as we shall see in Section \ref{sec:eqRatioEffect}) to even cause the flame to attach itself to the lip of the inlet.
+This enhances the strength of the toroidal recirculation zone near the dump plane, which may be powerful enough under certain conditions (as we shall see in Section \ref{sec:lsb-effect-of-equivalence-ratio}) to even cause the flame to attach itself to the lip of the inlet.
 All of this means that the \(S_{45^\circ}\) flame is more stable and will resist perturbations in the incoming flow better than the \(S_{37^\circ}\) flame.
 However, the presence of a strong recirculation zone in the flow field of the \(S_{45^\circ}\) swirler will entrain more hot products and retain them longer near the zone of heat release.
 This is a recipe for the production of thermal \ce{NO_x}.
 While no emission measurements were made as part of this study, it may be reasonably anticipated that the \ce{NO_x} performance of the \(S_{45^\circ}\) swirler will be degraded compared to the \(S_{37^\circ}\) swirler.
 The trade-off for gas turbine engine designers is thus between flame stability and emissions performance.
 
-\section{Effect of equivalence ratio}
-\label{sec:eqRatioEffect}
+\section{Effect of Equivalence Ratio}
+\label{sec:lsb-effect-of-equivalence-ratio}
 
 The LSB is primarily intended for fuel-lean operation in order to utilize its low \ce{NO_x} emission performance.
 As a result, most of the testing was done as close as possible to a target \(\phi\) of 0.56.
@@ -149,27 +150,28 @@ This is particularly observable in the Abel-deconvoluted image.
 The attached region is not as bright as the rest of the flame brush, indicating that the flame may be attaching itself intermittently.
 This intermittent behavior can be confirmed from the instantaneous images where it is visible on some of the acquired images, but not others.
 % ARE YOU GOING TO SHOW THEM??
-This behavior was alluded to in Section \ref{sec:vaneAngleEffect} as being the result of the enhanced toroidal recirculation zone produced by this swirler.
+This behavior was alluded to in Section \ref{sec:lsb-effect-of-swirler-vane-angle} as being the result of the enhanced toroidal recirculation zone produced by this swirler.
 Thus, the intermittent attachment of the flame to the inlet indicates the increased importance of the toroidal recirculation zone in stabilizing the flame.
 
 It should be noted that the reliance on a toroidal recirculation zone to anchor the flame to the inlet is one of the primary flame stabilization mechanisms used by traditional swirl combustors.
 Thus, LSB swirlers with high vane angles tend to behave like traditional swirl combustors at fuel-rich conditions.
 
-\section{Effect of combustor pressure}
+\section{Effect of Combustor Pressure}
+\label{sec:lsb-effect-of-combustor-pressure}
 
 In many gas turbine engines, the combustor pressure varies directly with the loading of the engine.
 Like the preheat temperature, the combustor pressure affects the LSB flame both through the fluid mechanics of the flow and the kinetics of the chemical reactions in the flame.
 The effect of the combustor pressure on the fluid mechanics of the LSB flow field can be captured by its effect on the Reynolds number.
-As noted in Section \ref{sec:preheatEffect}, however, previous work indicated the Reynolds number may not be an important parameter for the LSB, particularly in the near field where the flame stabilization occurs. 
+As noted in Section \ref{sec:lsb-effect-of-preheat-temperature}, however, previous work indicated the Reynolds number may not be an important parameter for the LSB, particularly in the near field where the flame stabilization occurs. 
 On the other hand, the effect of the combustor pressure on reaction rates in the flame is clearly important.
 Increasing the combustor pressure results in a lower laminar flame speed and reduced flame thickness for methane-air flames.
 According to the modified Damk\"ohler model discussed earlier, the reduced laminar flame speed should have little or no effect on the flow field, since the contribution from \(S_L\) in Equation FIXME is vanishingly small, even at the lowest reference velocities of our test conditions.
-However, as suggested by our discussion in Section \ref{sec:refVelEffect}, the validity of the simple model at elevated pressure conditions is questionable.
+However, as suggested by our discussion in Section \ref{sec:lsb-effect-of-reference-velocity}, the validity of the simple model at elevated pressure conditions is questionable.
 
 In order to resolve the uncertainties regarding how the LSB flame responds to combustor pressure, the flame was imaged over a range of operating conditions from 3 to 12 atm.
 For these tests, the reference velocity and the equivalence ratio were held constant.
 However, the temperature of the reactants continues to increase with pressure.
-The reason for this was discussed in Chapter FIXME 3 and is attributable to the reduced heat losses in the connecting pipes at the high flow rates required to pressurize the LSB.
+The reason for this was discussed in Chapter \ref{ch:experimental} and is attributable to the reduced heat losses in the connecting pipes at the high flow rates required to pressurize the LSB.
 The flame location and shape inferred from the flame images are presented in Figure FIXME.
 
 At low to moderate pressures, the flame location is nearly invariant for \(S_{37^\circ}\), but moves upstream for the \(S_{45^\circ}\) cases.
@@ -206,7 +208,9 @@ In light of this, the nearly constant location of the \(S_{37^\circ}\) flame cou
 % Then, if laminar flame speed decreases (with pressure), turbulent flame speed will fall, too.
 % If we transition from broken flamelets or even corrugated flamelets to laminar flamelets, could this be visible in the PLIF images?
 
-\section{Flame structure}
+\section{Flame Structure}
+\label{sec:lsb-flame-structure}
+
 % Focus on PLIF results only.
 % What does the flame do?
 % What insight does that provide into the LSB flame behavior?

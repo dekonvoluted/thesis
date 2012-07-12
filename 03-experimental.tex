@@ -1,9 +1,11 @@
 \chapter{Experimental Methods and Considerations}
+\label{ch:experimental}
 
 The current chapter describes the facilities and apparatus used to study the flame characteristics in a Low Swirl Burner.
 The selection and implementation of diagnostic techniques used in this study are explained, as are data analysis methods used to process the acquired data.
 
-\section{LSB configurations}
+\section{LSB Configurations}
+\label{sec:experimental-lsb-configurations}
 
 Two configurations of the Low Swirl Burner were tested for this study.
 There are referred to in what follows as Configurations A and B.
@@ -20,11 +22,13 @@ The design of the configurations tested, along with that of their respective tes
 \input{tables/swirlerDimensions}
 
 \subsection{Configuration A}
+\label{subsec:lsb-configuration-a}
 
 Preliminary experiments involving velocity field mapping and flame imaging were performed using this configuration.
 The schematic of the high pressure test facility housing this configuration is shown in Figure \ref{fig:testFacilityA}, while the configuration itself is shown in greater detail in Figure \ref{fig:lsbA}.
 
 \subsubsection{Test Facility}
+\label{subsubsec:configuration-a-test-facility}
 
 \input{figures/testFacilityA}
 
@@ -59,6 +63,7 @@ A different diameter orifice is used for each reference velocity condition teste
 The exiting products are finally released to the building exhaust system.
 
 \subsubsection{Low Swirl Burner}
+\label{subsubsec:configuration-a-low-swirl-burner}
 
 \input{figures/lsbA}
 
@@ -75,11 +80,13 @@ The quartz tube is 300 mm (12 in) long and 115 mm (4.5 in) in diameter.
 The thickness of the quartz tube is 2.5 mm (0.1 in).
 
 \subsection{Configuration B}
+\label{subsec:lsb-configuration-b}
 
 This configuration is used to image the flame structure of the LSB flame using CH PLIF.
 A schematic of the flow system of the test facility is shown in Figure \ref{fig:testFacilityB}, while the LSB combustor itself is shown in greater detail in Figure \ref{fig:lsbB}.
 
 \subsubsection{Test Facility}
+\label{subsubsec:configuration-b-test-facility}
 
 \input{figures/testFacilityB}
 
@@ -111,6 +118,7 @@ An adjustable gate valve on the exhaust line provides the back pressure necessar
 The products are vented into the same building exhaust system as Configuration A.
 
 \subsubsection{Low Swirl Burner}
+\label{subsubsec:configuration-b-low-swirl-burner}
 
 \input{figures/lsbB}
 
@@ -131,8 +139,10 @@ Also, as mentioned earlier, the relative mass flow split between the central and
 Finally, the level of turbulence in the central flow can be adjusted by use of a turbulence generator\cite{2011-marshall} located upstream in the plenum chamber.
 
 \section{Diagnostics}
+\label{sec:experimental-diagnostics}
 
 \subsection{Laser Doppler Velocimetry}
+\label{subsec:experimental-laser-doppler-velocimetry}
 
 \input{figures/ldvSetup}
 
@@ -160,8 +170,8 @@ At high pressure conditions, the reacting LSB flow field produces sharp refracti
 This causes strong beam steering effects making it very difficult for the laser beams to reliably intersect within such a small measurement volume.
 The long distance traveled by the beams in the test rig further exacerbate this problem, making LDV data nearly impossible to acquire at such conditions.
 
-\subsection{CH* chemiluminescence}
-\label{sec:chemiluminescence}
+\subsection{CH* Chemiluminescence}
+\label{subsec:experimental-ch-chemiluminescence}
 
 The LSB flame is imaged using one of two 16-bit intensified CCD cameras---PI Acton 1024\(\times\)256 or 512\(\times\)512 pixels---with a 28 mm f/2.8 camera lens.
 CH* chemiluminescence is filtered using a bandpass filter centered on 430 nm with a FWHM of 10 nm.
@@ -175,6 +185,7 @@ Third, the emitted light can be gathered with high quantum efficiency by the int
 Particularly, the quantum efficiency of the 18 mm Gen III HB filmless intensifier used by the 512\(\times\)512 camera is about 45\% at 430 nm, compared to about 10\% at 310 nm, where OH* chemiluminescence peaks.
 
 \subsubsection{Image Processing}
+\label{subsubsec:chemiluminescence-image-processing}
 
 \input{figures/sampleFlameImages}
 
@@ -217,6 +228,7 @@ The second limitation of the Abel deconvolution technique stems from the high in
 Due to this, any study of the flame brush thickness at the flame stabilization point---a metric of considerable importance---is all but impossible using this tomographic technique.
 
 \subsection{CH Planar Laser-Induced Fluorescence}
+\label{subsec:experimental-ch-planar-laser-induced-fluorescence}
 
 \input{figures/laser}
 
@@ -250,16 +262,16 @@ When convoluted with itself, the new standard deviation is \(\sqrt{\sigma^2 + \s
 Thus, the new linewidth is 150 \(\times\sqrt{2}\) = 212 GHz or 7.07 cm\(^{-1}\).
 In wavelengths, this represents a spread of about 1.06 \AA.
 
-\subsubsection{Imaging system}
-\label{sec:imagingsystem}
+\subsubsection{Imaging System}
+\label{subsubsec:plif-imaging-system}
 
 All LIF imaging is performed with an intensified PI Acton 512\(\times\)512 camera.
 The intensified camera is equipped with an 18 mm Gen III HB filmless intensifier with a quantum efficiency of about 45\% in the 420--440 nm range.
 The lens is chosen depending on imaging requirements of each experiment.
 In all cases, elastic scattering from the laser beam is attenuated by a 3 mm thick GG 420 Schott Glass filter.
 
-\subsubsection{Laminar Flame setup}
-\label{sec:laminarflamesetup}
+\subsubsection{Laminar Flame Setup}
+\label{subsubsec:plif-laminar-flame-setup}
 
 Preliminary experiments to evaluate the CH PLIF technique are performed on a laminar flame.
 The choice of a laminar flame as the subject allows us to neglect effects of strain and turbulence on the flame.
@@ -271,6 +283,7 @@ The natural gas flow rate is metered using a Matheson FM 1050 602 rotameter with
 This flowmeter is calibrated using a Sensidyne Gilibrator 2 bubble flow meter system.
 
 \subsubsection{Laser Wavelength Calibration}
+\label{subsubsec:plif-laser-wavelength-calibration}
 
 \input{figures/laserCalibration}
 
