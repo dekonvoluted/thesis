@@ -2,12 +2,13 @@
 
 # GNUPLOT script
 # PLIF spectrum vs LIFBASE calculation
+# CH PLIF/Experiments/2012-06-02
 
 set terminal epslatex color
 set output 'chPLIFSpectrumPlot.tex'
 
 set xlabel '\(\lambda\), nm'
-set ylabel 'Signal'
+set ylabel 'Signal, arbitrary units'
 set xrange [375:475]
 set yrange [0:130]
 unset ytics

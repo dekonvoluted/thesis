@@ -33,13 +33,14 @@
 \label{sec:chplif-preliminary-experiments}
 
 The CH PLIF imaging system was evaluated for use in imaging hydrocarbon flames by performing two preliminary experiments.
-First, an excitation scan was performed to locate the optimal wavelength to excite the CH radicals in a typical hydrocarbon flame.
-The variation in this optimal wavelength with temperature and pressure was calculated and found to be within acceptable bounds.
+First, an excitation scan was performed to confirm the location of the optimal wavelength to excite the CH radicals in a typical hydrocarbon flame.
 Second, a test of the linearity of the LIF signal with respect to the incident laser intensity was performed.
 The setup and results of these experiments are described in the following subsections.
 
 \subsection{Excitation Scan}
 \label{subsec:prelim-excitation-scan}
+
+\input{figures/excitationScan}
 
 An excitation scan is performed by tuning the output of the alexandrite laser from \(\lambda\) = 387.077 nm to 387.260 nm.
 This serves two purposes.
@@ -47,16 +48,17 @@ First, it locates the optimal wavelength to excite the CH radicals that results 
 Second, the variation of the signal intensity can be compared with simulated profiles from LIFBASE or other spectroscopic calculations and our estimation of the laser linewidth can be validated.
 The laser linewidth is an integral parameter and appears in the absorption integral used by the models developed in Chapter \ref{ch:background}.
 
-A schematic of the excitation scan experiment is shown in Figure FIXME.
+A schematic of the excitation scan experiment is shown in Figure \ref{fig:excitationScan}.
 The intensified PI Acton 512\(\times\)512 camera described in Section \ref{subsec:experimental-ch-chemiluminescence} is used to image a premixed, laminar methane-air flame operating at close to stoichiometric conditions.
 The laminar flame is stabilized on the Bunsen burner described in Section \ref{subsubsec:plif-laminar-flame-setup}.
 The alexandrite laser is operated at a power of 16 mJ/pulse in the second harmonic.
 The sheet forming optics consist of a +50 mm cylindrical lens and a +250 mm spherical lens placed 300 mm apart.
-The optics form the beam into a collimated sheet about 25 mm (1 in) tall, focused to a thickness on the order of 100 \(\mu\)m at the flame location.
+The optics form the beam into a collimated sheet about 25 mm (1 in) tall, focused to a thickness on the order of 250 \(\mu\)m at the flame location.
 The sheet passes through the center of the flame and the edges of the sheet are blocked by razor blades to prevent reflections from the burner from saturating the camera.
 
 The induced fluorescence in the flame sheet is imaged perpendicularly by the intensified camera using an 85 mm f/1.8 Nikon AF Nikkor lens.
-This gives a magnification of approximately 62 \(\mu\)m/pixel.
+A 3 mm thick 50 mm\(\times\)50 mm square GG 420 Schott glass filter is used to reject elastic scattering at the excitation wavelength.
+This setup gives a magnification of approximately 62 \(\mu\)m/pixel.
 The camera is triggered by the flash lamp sync signal from the laser system and the intensifier is gated over 300 ns, encompassing the 70 ns laser pulse.
 The long gate width gives the intensifier enough time to prepare to receive the fluorescence, preventing signal loss due to irising.
 The gate width is still short enough that minimal flame chemiluminescence or ambient lighting is recorded in the images.
