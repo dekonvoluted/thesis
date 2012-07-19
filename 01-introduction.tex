@@ -23,34 +23,98 @@
 
 % 4. Summary of goals/Objectives of this thesis
 
+The need to reduce pollutant emissions, particularly the oxides of nitrogen, \ce{NO_x}, is driven by increasing ecological awareness and stringent government regulations.
+This spurs efforts in the gas turbine industry to seek cleaner, more environment-friendly combustion concepts.
+Several mechanisms have been identified to explain the production of \ce{NO_x} in hydrocarbon-air combustion systems.
+Of these, the thermal \ce{NO_x} mechanism discovered by Zel'dovich, is a prominent source of \ce{NO_x} production at the high temperature conditions encountered in typical combustors.
+The amount of thermal \ce{NO_x} produced scales exponentially with the adiabatic flame temperature.
+
+Efforts to reduce the flame temperature have led low \ce{NO_x} gas turbines to adopt one of two options---Lean Premixed (LP) operation, or Rich-Quench-Lean (RQL) operation.
+Of these, RQL combustion suffers from sooting issues during the rich combustion step and the requirement of a second mixing event during the quenching step.
+Incomplete mixing can result in stoichiometric combustion in localized pockets within the combustor.
+LP combustion, on the other hand, is conceptually simpler and avoids the formation of such high temperature zones.
+Further, it entails operating at low equivalence ratios, reducing the temperature in the combustion zone.
+In practice, 1800 K is considered a limiting value for the flame temperature, ensuring that the thermal \ce{NO_x} production is constrained to a minimum.
+
+Operating a combustor at such lean conditions results in weaker combustion processes that are highly susceptible to perturbations and results in combustor instabilities or even flame blow off.
+This highlights the requirement for robust flame stabilization techniques that can sustain combustion at ultra-lean conditions.
+In their most basic form, flame stabilization techniques work by making the local reactant velocity and the local flame speed equal.
+In the context of lean flames, the risk is of the slowly propagating flames to be blown off by the high velocity reactant stream.
+Consequently, flame stabilization in gas turbine combustion is brought about either by reducing the local reactant velocity (e.g. by using bluff body flame holders), by boosting the local flame velocity (e.g. by enhancing product recirculation), or by providing continual ignition to the flame (e.g. by using pilot flames).
+
+Swirl-stabilized combustion is a widely used flame stabilization technique in gas turbines applications.\cite{1974-syred}
+It primarily functions by inducing recirculation zones in the flow field that transport heat and radicals from the products into the reactants.
+This enhances the flame propagation velocity by increasing reaction rates within the flame, resulting in robust flame stabilization.
+However, the recirculation zones increase the peak residence times of the products and cause more thermal \ce{NO_x} to be produced in the combustor.
+Nevertheless, swirl-stabilized combustors are ubiquitously employed today in land-based gas turbines used for power generation.
+
+More recent research\cite{1995-bedat} on the Low Swirl Burner (LSB) has identified a potential solution for this problem.
+The LSB anchors a lifted flame, reducing the need for high swirl in the flow field.
+The lifted, V-shaped flame is stabilized by aerodynamic means which allows for robust operation even at low equivalence ratios.
+This weakens the recirculation zones and eliminates pockets of high residence times, resulting in significantly reduced \ce{NO_x} emissions compared to a similar high-swirl design.\cite{2005-johnson}
+
 \section{Motivation}
 
-The need to reduce pollutant emissions, particularly the oxides of nitrogen, \ce{NO_x}, in order to meet increasingly stringent government regulations spurs efforts in the gas turbine industry to seek cleaner, more environment-friendly combustion concepts.
-The production rate of \ce{NO_x} is highly temperature dependent and fuel-lean, premixed combustion is a widely employed technique to keep the adiabatic flame temperature under 1800 K.
-However, operating a combustor at such lean conditions results in eaker combustion processes that are highly susceptible to perturbations and combustor instabilities.
-This highlights the requirements for robust flame stabilization techniques to sustain combustion at ultra-lean conditions.
-The Low Swirl Burner (LSB) design addresses these requirements by providing a low \ce{NO_x} combustor that can operate stably at lean equivalence ratios.
+By comparison to atmospheric pressure experiments, high pressure experimental testing of combustion systems is fraught with difficulties.
+This is reflected in the comparatively smaller subset of papers that report experimental results from high pressure tests.
+The primary source of these difficulties stems from the need for complicated testing facilities to reach and maintain high pressures.
+The inherently limited access afforded by pressure vessels makes intrusive methods of data gathering nearly impossible.
+As a result, any need for spatially resolved data other than temperature and pressure measurements has to be met by optical diagnostics.
 
-% Transplanted text introducing/literature surveying CH PLIF
-In typical hydrocarbon-air flames, CH is produced and destroyed rapidly by fast two-body reactions, confining it to the thin heat release zone of the flame.
-This has led to the widespread use of using CH as a marker species for the flame front.\cite{2005-vagelopoulos}
-CH is formed during the breakup of hydrocarbon fuel molecules\cite{2010-kohler} and is also known to play an important role in the production of prompt \ce{NO_x}.\cite{1971-fenimore}
-Hence, it is a minor species of considerable importance to combustion research.
+In the context of LSB research, these difficulties have confined much of the published experimental results to ambient conditions.
+The eventual application of this technology in gas turbine engines requires high quality data acquired at high pressure conditions.
+Ideally, such data will map the velocity field and heat release in the LSB and study their variation with flow conditions.
+Since the LSB relies on the velocity field to stabilize its flame, its flame characteristics hold information pertinent to both the velocity field and the heat release distribution within the combustor.
+This allows a passive diagnostic such as recording the flame chemiluminescence to be used even at high pressure conditions to observe and record usable data about the LSB flame characteristics.
+Such data, acquired at conditions closer to real world gas turbine combustor operating conditions is of particular interest to the gas turbine industry.
 
-This study primarily utilizes CH PLIF as a flame visualization technique.
-Broadly speaking, flame visualiation techniques could be grouped into two categories: techniques that convey spatially integrated information about the flame and techniques that resolve the information spatially.
-Schlieren or chemiluminescence imaging of flames fall in the former category, providing line-of-sight averaged information about the flame.
-Planar LIF or typical implementations of Rayleigh/Raman scattering are examples of the second category.
+The primary flame characteristic of interest is the flame standoff distance, defined as the distance from the flame stabilization point to the inlet of the LSB.
+This metric is useful is gauging the stability of the flame and the need for control systems to closely monitor its tendency to flashblack or blow-off.
+The standoff distance also relates to the heat load experienced by the injector and consequently affects how often the mechanical components of the LSB will required to be replaced in operation.
+Finally, a systemic variation in the location of the flame over a range of flow parameters may indicate potential problems operating the combustor at previously untested conditions.
 
+Quantifying the shape of the flame can complement the information gleaned from the flame standoff measurements.
+In case of the V-shaped LSB flame, this can be conveniently obtained by measuring the angle of the flame cone.
+Changes in the flame angle affect the length of the flame, which is a design consideration for sizing LSB combustors in gas turbines.
+
+The profile of the flame chemiluminescence along the length of the combustion zone is representative of the local heat release at those locations.
+A uniform heat release profile is preferred so as to avoid thermally stressing the combustor at the hot spots.
+Further, since \ce{NO_x} production rates are so strongly dependent on temperature, the heat release profile can help forecast emissions performance issues of the combustor, particularly when augmented by knowledge of the local flow velocity (and hence, residence time).
+Finally, the heat release map could be incorporated into n-\(\tau\) models to predict the onset of thermo-acoustic instabilities in the combustor.
+
+The primary goal of this research work is to study the flame characteristics of the LSB, such as its location and shape, as a means to learn more about the combustor operation at high pressure conditions.
+
+In case of lean hydrocarbon flames, the primary sources of flame chemiluminescence are OH* (\(A^2\Sigma^+\rightarrow X^2\Pi\) bands, 310 nm), CH* (\(A^2\Delta\rightarrow X^2\Pi\) bands, 430 nm, \(B^2\Sigma^-\rightarrow X^2\Pi\) bands, 390 nm), \ce{C2}* (\(d^3\Pi\rightarrow a^3\Pi\) Swan bands, 470 nm, 550 nm) and the \ce{CO2}* (band continuum, 320--500 nm).
+Of these, CH* chemiluminescence has several advantages that make it suitable for this particular study.
+First, collection of CH* chemiluminescence is less affected by blackbody radiation from the walls of the combustor, compared to longer wavelength emissions from a species like \ce{C2}*.
+Its narrow bandwidth allows one to use a bandpass filter to collect signals from only the wavelengths of interest, further minimizing interference from other light sources.
+Using such a narrow bandpass filter for a broad band emitter like \ce{CO2}* would result in loss of most of the available signal.
+CH* chemiluminescence occurs in the visible wavelengths and does not require expensive UV lenses to acquire---as would be necessary to image OH* chemiluminescence, for instance.
+In the LSB, where the flame is highly turbulent, the intensity of CH* chemiluminescence cannot be reliably used as a measure of the absolute heat release.\cite{1998-najm}
+However, the spatial distribution of the CH* chemiluminescence signal still serves as a heat release map of the combustor.
+For all these reasons, CH* chemiluminescence is a suitable technique to image the LSB flame.
+
+Ultimately, the amount of information that can be gathered by imaging the flame chemiluminescence is limited by its spatial resolution.
+Since chemiluminescence imaging is integrated over the line of sight, studying the flame brush or the flame structure is beyond its capabilities.
+A planar imaging technique such as Planar Laser-Induced Fluorescence (PLIF) is better suited for such applications.
+
+In hydrocarbon flames, species accessible to PLIF are generally minor species in the flame.
 PLIF studies of hydrocarbon flames have hitherto focused on the OH radical.
-OH is produced in the flame zone and destroyed by relatively slow three-body reactions, causing it to persist and be transported away from the flame and into the product zone.\cite{1990-barlow}
+However, OH is produced in the flame zone and destroyed by relatively slow three-body reactions, causing it to persist and be transported away from the flame and into the product zone.\cite{1990-barlow}
 As a result, it does not serve as a direct marker of the flame front.
 Instead, the location of the flame is inferred from the sharp gradient in the OH signal as the reactants are converted into products.
 
-Due to the persistence of OH in the products, OH PLIF is somewhat less suited to studying flows with high product recirculation.
-In such flows, the presence of OH both in the reactants and in the products weakens the gradient at the flame.
-Further, OH radicals can be transported transverse to the flame, making it difficult to detect local flame extinctions.
-Nevertheless, researchers have been able to use OH PLIF to study such flames,\cite{1999-kaminski,2005-hult} particularly when the images are enhanced by nonlinear filtering techniques.\cite{2000-malm,2001-abu-gharbieh}
+The persistence of OH in the products makes OH PLIF somewhat less suited to studying flames in flows with high product recirculation.
+In such flows, the presence of OH in both the reactants and the products weakens the gradient at the flame.
+Further, since OH radicals could be transported transverse to the flame, its presence or absence serves as an unreliable indicator of local flame extinctions.
+Nevertheless, researchers have been able to use OH PLIF successfully\cite{1999-kaminski,2005-hult} to study such flames, particularly when the images are enhanced by nonlinear filtering techniques.\cite{2000-malm,2001-abu-gharbieh}
+
+This study utilizes CH PLIF as the flame visualization technique.
+CH is produced and destroyed rapidly by fast two-body reactions, confining it to the thin heat release zone of the flame.
+This has led to the widespread use of using CH as a marker species for the flame front.\cite{2005-vagelopoulos}
+CH is formed during the breakup of hydrocarbon fuel molecules\cite{2010-kohler} and is also known to play an important role in the production of prompt \ce{NO_x}.\cite{1971-fenimore}
+Hence, it is a minor species of considerable importance to combustion research.
+This leads us to the second motivation for this study---to examine the use of CH PLIF as a flame imaging technique in combustion systems and further, to use it to image and study the LSB flame.
 
 Recent studies\cite{1998-najm} have indicated that the species HCO is a superior indicator of heat release in hydrocarbon flames when compared to CH or OH.
 The HCO LIF signal has been demonstrated to correlate well with the heat release rate, with little dependence on equivalence ratio or strain rate.
@@ -58,12 +122,12 @@ The last factor, in particular, has been shown to quench the CH PLIF signal\cite
 Unfortunately, the signal levels from HCO LIF are very poor\cite{1998-najm,1998-paul} and are unsuitable for single-shot investigation of hydrocarbon flames.
 To overcome this, one study\cite{1998-paul} proposed a simultaneous LIF investigation of \ce{CH2O} and OH with the reasoning that the formation rate of HCO is governed directly by the product of the concentration of these two intermediates.
 This method has been used in a number of investigations, despite being experimentally cumbersome.
-A later implementation\cite{2009-kiefer} recently demonstrated single-shot HCO PLIF with moderate signal-to-noise ratios by utilizing a novel excitation scheme.
+A more recent implementation\cite{2009-kiefer} has demonstrated single-shot HCO PLIF with moderate signal-to-noise ratios by utilizing a novel excitation scheme.
+Follow up studies using this technique are awaited.
 
+\section{Literature Review}
 
-item Nearly resonant PLIF. Excite A(0,0) band, observe A(0,0).
-item Excite B(0,0), observe A(0,0)
-  subitem Excite Q lines.
-  subitem Excite R lines / bandhead.
+\subsection{Low Swirl Burner}
 
+\subsection{CH PLIF}
 
