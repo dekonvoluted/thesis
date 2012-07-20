@@ -31,7 +31,6 @@ The de-excitation may take the molecule back to the original ground state or to 
 The choice of the spectral and temporal properties of the excitation photon and the spontaneously emitted photon, together constitute the excitation scheme.
 
 The excitation scheme chosen for this study follows the work done by Li et al.\cite{2007-li-a} who used a ring-cavity, pulsed alexandrite laser to provide excitation in the vicinity of the R-bandhead of the CH \(B^2\Sigma^- \leftarrow X^2\Pi\) (0,0) system.
-The relevant simulated and measured spectra are shown in Figure \ref{fig:chPLIFSpectrum}.
 This bandhead is found at about 387.2 nm and represents transitions from a ground state rotational quantum number of \(N''=7\).
 Alexandrite lasers have relatively large bandwidths (a few cm\(^{-1}\) is not uncommon) and hence make it possible to excite several of the neighboring transitions near the bandhead.
 From simulations described later in this work, it is found that CH molecules in the ground state \(X^2\Pi\), \(v''=0\) with rotational quantum numbers \(N''\) between 5--9 account for virtually all the absorption that takes place.
@@ -46,8 +45,6 @@ At this point, the following possibilities exist for the excited molecule:
   \item The molecule can experience stimulated emission in the presence of another photon of the appropriate frequency and return to any of the lower energy states.
   \item The molecule can experience further excitation either by absorbing a photon or through collisional means and can react chemically.
 \end{enumerate}
-
-\input{figures/chPLIFSpectrum}
 
 Now, let us examine these potential pathways in greater detail.
 The first pathway pertains to relaxation.
@@ -92,6 +89,15 @@ It is this electronic energy transfer mechanism that enables our excitation sche
 Having now populated the \(A^2\Delta\) states, the resulting spontaneous emission from the \(A^2\Delta\rightarrow X^2\Pi\) (0,0) and (1,1) transitions can be easily observed between 420--440 nm.
 A small portion of the fluorescence in this wavelength range also occurs from the \(B^2\Sigma^-\rightarrow X^2\Pi\), (0,1) transition.
 Since these emission wavelengths are at least 30 nm away from the excitation wavelength, a simple glass filter is sufficient to suppress any elastic scattering from the laser beam.
+
+\input{figures/chPLIFSpectrum}
+
+The relevant simulated and measured spectra are shown in Figure \ref{fig:chPLIFSpectrum}.
+The simulated spectra are from LIFBASE for a 1 atm, thermalized CH system at 1800 K.
+Experimental data is acquired from a laminar flame (see Section \ref{subsubsec:plif-laminar-flame-setup}) excited by an alexandrite laser beam (see Section \ref{subsec:experimental-ch-planar-laser-induced-fluorescence}) and collected using a fiber optic cable.
+The fiber optic cable was aligned with the 100 \(\mu\)m wide slit of a 0.3 m, f/4 SpectraPro 300i spectrometer and the collected light is diffracted using a 600 lines/mm grating.
+The resulting spectrum was accumulated by a PI-MAX 512 intensified camera (see Section \ref{subsubsec:plif-imaging-system}) over 1000 gates of 300 ns each.
+The resolution of the LIFBASE simulation is set to match that of the spectrometer (about 0.3 nm).
 
 \section{CH PLIF Signal Modeling}
 \label{sec:background-chplif-signal-modeling}

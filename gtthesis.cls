@@ -57,7 +57,7 @@
 %%%%%%%%%%%%%%%%%%
 \RequirePackage{fixltx2e} % Patches for LaTeX2e
 \RequirePackage[right]{lineno} % Draft mode option to number lines
-\RequirePackage[intoc]{nomencl}
+\RequirePackage[intoc]{nomencl} % Nomenclature
   \makenomenclature
 %\RequirePackage[colorlinks,linkcolor=black,citecolor=black]{hyperref} % Links within document
 \RequirePackage[colorlinks]{hyperref} % Colored links. 
@@ -68,6 +68,8 @@
     pdfauthor={\@author}
   }
 }
+\RequirePackage[noadjust]{cite} % Compact an ordered list of citations (1,2,3 -> 1--3)
+
 \renewcommand{\contentsname}{Table of Contents} % default: "Contents"
 \setcounter{tocdepth}{3} % Show subsubsections in table of contents
 \renewcommand{\bibname}{References} % default: "Bibliography"

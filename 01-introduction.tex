@@ -1,21 +1,6 @@
 \chapter{Introduction}
 \label{ch:introduction}
 
-% This chapter should provide the motivation for the work done on this thesis.
-
-% 1. Motivation
-% Motivate the problem at hand - low emissions, balanced with stability
-% LSB is known to work well at atmospheric pressure.
-% Applications of the LSB are at high pressure.
-% Important to know how the flame behaves at those conditions.
-% Chemiluminescence is effective somewhat
-% A planar imaging technique is needed, like CH PLIF.
-
-% 2. Literature Survey - LSB
-% History of the low swirl burner
-% Original intent, evolution of the LSB design.
-% Key discoveries, etc.
-
 % 3. Literature Survey - CH PLIF
 % Advantages over other planar techniques
 % Early work done by researchers
@@ -42,7 +27,7 @@ In their most basic form, flame stabilization techniques work by making the loca
 In the context of lean flames, the risk is of the slowly propagating flames to be blown off by the high velocity reactant stream.
 Consequently, flame stabilization in gas turbine combustion is brought about either by reducing the local reactant velocity (e.g. by using bluff body flame holders), by boosting the local flame velocity (e.g. by enhancing product recirculation), or by providing continual ignition to the flame (e.g. by using pilot flames).
 
-Swirl-stabilized combustion is a widely used flame stabilization technique in gas turbines applications.\cite{1974-syred}
+Swirl-stabilized combustion is a widely used flame stabilization technique in gas turbines applications.\cite{1974-syred,1977-lilley}
 It primarily functions by inducing recirculation zones in the flow field that transport heat and radicals from the products into the reactants.
 This enhances the flame propagation velocity by increasing reaction rates within the flame, resulting in robust flame stabilization.
 However, the recirculation zones increase the peak residence times of the products and cause more thermal \ce{NO_x} to be produced in the combustor.
@@ -51,7 +36,7 @@ Nevertheless, swirl-stabilized combustors are ubiquitously employed today in lan
 More recent research\cite{1995-bedat} on the Low Swirl Burner (LSB) has identified a potential solution for this problem.
 The LSB anchors a lifted flame, reducing the need for high swirl in the flow field.
 The lifted, V-shaped flame is stabilized by aerodynamic means which allows for robust operation even at low equivalence ratios.
-This weakens the recirculation zones and eliminates pockets of high residence times, resulting in significantly reduced \ce{NO_x} emissions compared to a similar high-swirl design.\cite{2005-johnson}
+This weakens the recirculation zones and eliminates pockets of high residence times, resulting in significantly reduced \ce{NO_x} emissions compared to a similar high-swirl design.
 
 \section{Motivation}
 
@@ -88,7 +73,7 @@ In case of lean hydrocarbon flames, the primary sources of flame chemiluminescen
 Of these, CH* chemiluminescence has several advantages that make it suitable for this particular study.
 First, collection of CH* chemiluminescence is less affected by blackbody radiation from the walls of the combustor, compared to longer wavelength emissions from a species like \ce{C2}*.
 Its narrow bandwidth allows one to use a bandpass filter to collect signals from only the wavelengths of interest, further minimizing interference from other light sources.
-Using such a narrow bandpass filter for a broad band emitter like \ce{CO2}* would result in loss of most of the available signal.
+Using such a narrow bandpass filter for a broad band emitter like \ce{CO2}* would result in rejecting most of the available signal.
 CH* chemiluminescence occurs in the visible wavelengths and does not require expensive UV lenses to acquire---as would be necessary to image OH* chemiluminescence, for instance.
 In the LSB, where the flame is highly turbulent, the intensity of CH* chemiluminescence cannot be reliably used as a measure of the absolute heat release.\cite{1998-najm}
 However, the spatial distribution of the CH* chemiluminescence signal still serves as a heat release map of the combustor.
@@ -129,5 +114,20 @@ Follow up studies using this technique are awaited.
 
 \subsection{Low Swirl Burner}
 
+The LSB is a relatively new combustion technology and as such has a brief history.
+Initial interest in low swirl combustion was primarily motivated by its ability to stabilize a freely propagating turbulent flame.\cite{1992-chan}
+As a result, initial designs of the LSB (which at the time used tangential jets to produce swirl) were pursued as test beds for studying 1-D, planar turbulent flames.\cite{1995-bedat,1995-cheng}
+Several subsequent studies\cite{2000-plessing,2001-shepherd,2002-cheng,2002-shepherd,2004-kortschik,2005-degoey,2007-bell} utilized this behavior and investigated fundamental turbulent flame structure and propagation in the jet LSB.
+Simultaneously, the discovery of its low \ce{NO_x} emissions prompted interest in commercial applications of the LSB, such as in industrial furnaces and boilers.\cite{1998-yegian,2000-cheng,2002-littlejohn}
+
+The current form of the LSB (as used in this thesis) using vanes to generate swirl was originally modified from a typical production swirl injector used in gas turbine combustors.\cite{2005-johnson}
+The \ce{NO_x} emissions performance of this modified injector---now called the Low Swirl Injector (LSI)---was almost 50\% lower than the older ``High'' Swirl Injector (HSI).
+Subsequent studies investigated the velocity field\cite{2006-cheng} and flame structure\cite{2007-petersson} of the LSB at atmospheric conditions and verified good emissions performance in a closed high pressure testing facility.\cite{2006-nazeer}
+
+More recent work has tended to focus on the use of various fuels such as hydrogen mixtures\cite{2008-cheng-b} with and without dilution\cite{2007-littlejohn}, landfill gas\cite{2008-cheng-a,2009-cheng} and syngas\cite{2010-littlejohn}.
+
 \subsection{CH PLIF}
+
+Historically, CH was the first species to be detected using LIF in a flame.\cite{1973-barnes}
+
 
