@@ -250,6 +250,83 @@ During experiments, this shift contributes negligibly towards increasing the LIF
 Returning back to Equations \ref{eqn:twoLevelModel} and \ref{eqn:improvedModel}, we need spectroscopic constants of the \(X^2\Pi\), \(v=0\) energy level in order to calculate the Boltzmann fractions, \(f_j\).
 These constants have been determined by Zachwieja et al.\cite{1995-zachwieja} and are tabulated in Table \ref{tab:spectroscopicConstants}.
 
+% Text dump from Chapter 2
+Next, FIXME, we discuss broadening mechanisms and the analytical expression for the absorption integral.
+
+Consider now, each term in the above integral.
+The laser lineshape function, \(\psi(\nu)\), can be modeled as a Gaussian profile without any loss of generality.
+The linewidth of the alexandrite laser, when operated in broadband mode, is of the order of a few wavenumbers.
+The effect of line broadening mechanisms, such as natural broadening, inhomogeneous broadening, etc that are commonly encountered in solid state lasers are negligible in comparison and hence, do not affect the lineshape appreciably.
+
+\begin{equation}
+  \psi(\nu) = \frac{1}{\sigma_l\sqrt{2\pi}} \exp{\left(-\dfrac{(\nu-\nu_l)^2}{2\sigma_l^2}\right)}
+  \label{eqn:laserLineShape}
+\end{equation}
+
+The mean of the lineshape profile, \(\nu_l\), is set by tuning the center wavelength of the laser.
+The Full Width at Half Max (FWHM) of the laser, \(\Delta\nu_l\), is prescribed by the manufacturer and can be used to calculate the standard deviation of the Gaussian as follows.
+
+\begin{equation}
+  \sigma_l = \frac{\Delta\nu_l}{2 \sqrt{ 2 \ln{2} } }
+\end{equation}
+
+The lineshape of the absorption line being excited, on the other hand, is primarily dictated by mechanisms associated with gas-phase media---collisional broadening and Doppler broadening being the most important ones.
+Collisional broadening is a homogeneous mechanism and produces a Lorentzian broadened lineshape.
+The FWHM of the Lorentzian profile is related to the thermodynamic conditions by the following empirical formula.
+
+\begin{equation}
+  \Delta\nu_c = 0.1 \left(\frac{p}{p_0}\right) \left(\frac{T_0}{T}\right)^{0.6}
+  \label{eqn:collisionalBroadening}
+\end{equation}
+
+In Equation \ref{eqn:collisionalBroadening}, \(p_0\) and \(T_0\) represent standard conditions of pressure and temperature (101325 Pa and 300 K) respectively.
+By contrast, Doppler broadening is an inhomogenous mechanism that results in a Gaussian lineshape.
+Its effect depends on the frequency (wavenumber) of the line being broadened, \(\nu_a\), and on the molecule's velocity.
+The FWHM of the resulting broadened lineshape is given by,
+
+\begin{equation}
+  \Delta\nu_d = \nu_a \frac{\sqrt{ \ln 2 } }{c} \sqrt{\frac{8kT}{m_{CH}}}
+  \label{eqn:dopplerBroadening}
+\end{equation}
+
+The combined effect of these two broadening mechanisms can be calculated by convoluting the two broadened lineshapes.
+FIXME: Note that this assumption is fine if the dominant broadening mechanism is Doppler broadening.
+However, in combustion systems, particularly at pressure, the dominant mechanism is collisional broadening, making the curve much closer to a Lorentzian shape.
+In this case, a Lorentzian convoluted with a Gaussian results in a Voigt profile.
+Lorentzian profiles have more area in the ``wings'' of the curve than Gaussian profiles.
+However, since the maximum broadening of the absorption lines is smaller than the linewidth of the laser beam, this should not affect our results too much.
+FIXME: Perhaps a test using a Voigt profile vs a Gaussian profile to model absorption?
+
+In order to simplify the calculations, we assume that the collision-broadened Lorentzian profile is reasonably approximated by a Gaussian profile with the same FWHM.
+Now, the convolution of the two profiles results in another Gaussian, with the same mean and a FWHM given by,
+
+\begin{equation}
+  \Delta\nu_a = \sqrt{ { \Delta\nu_c }^2 + { \Delta\nu_d }^2 }
+  \label{eqn:broadening}
+\end{equation}
+
+Thus, the Gaussian lineshape of the broadened absorption line can be written as,
+
+\begin{equation}
+  \phi(\nu) = \frac{1}{\sigma_a\sqrt{2\pi}} \exp{\left(-\dfrac{(\nu-\nu_a)^2}{2\sigma_a^2}\right)}
+  \label{eqn:absorptionLineShape}
+\end{equation}
+
+In Equation \ref{eqn:absorptionLineShape}, \(\nu_a\) is the frequency (wavenumber) of the absorption peak being excited.
+The standard deviation of the lineshape, \(\sigma_a\), is related to the broadened FWHM, \(\Delta\nu_a\), by the following equation.
+
+\begin{equation}
+  \sigma_a = \frac{\Delta\nu_a}{2 \sqrt{ 2 \ln{2} } }
+\end{equation}
+
+With the above information, the integral in Equation \ref{eqn:pumpingRate} can be solved analytically as follows.
+
+\begin{equation}
+  \int \psi(\nu) \phi(\nu) d\nu = \frac{1}{\sqrt{2\pi ( \sigma_a^2 + \sigma_l^2 )}} \exp{\left(-\frac{ (\nu_l - \nu_a )^2 }{2 ( \sigma_a^2 + \sigma_l^2 )}\right)}
+  \label{eqn:absorptionIntegral}
+\end{equation}
+
+
 
 This formulation of the signal intensity implicitly makes the following assumptions.
 \begin{enumerate}
