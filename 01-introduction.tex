@@ -14,6 +14,8 @@ Several mechanisms have been identified to explain the production of \ce{NO_x} i
 Of these, the thermal \ce{NO_x} mechanism discovered by Zel'dovich, is a prominent source of \ce{NO_x} production at the high temperature conditions encountered in typical combustors.
 The amount of thermal \ce{NO_x} produced scales exponentially with the adiabatic flame temperature.
 
+%CAREFUL - GROUND POWER SYSTEMS DO NOT USE RQL AS FAR AS I KNOW - AND NO AIRCRAFT SYSTEMS USE LP - SO YOU ARE MIXING AIRCRAFT AND GROUND SYSTEM APPROACHES...PERHAPS INSTEAD OF EXPLAINING RQL PROBLEMS - YOU CAN JUST EXPLAIN WHY GROUND POWER FOLKS HAVE MOVED TOWARD NEARLY PREMIXED OPERATION....
+ 
 Efforts to reduce the flame temperature have led low \ce{NO_x} gas turbines to adopt one of two options---Lean Premixed (LP) operation, or Rich-Quench-Lean (RQL) operation.
 Of these, RQL combustion suffers from sooting issues during the rich combustion step and the requirement of a second mixing event during the quenching step.
 Incomplete mixing can result in stoichiometric combustion in localized pockets within the combustor.
@@ -36,7 +38,7 @@ Nevertheless, swirl-stabilized combustors are ubiquitously employed today in lan
 More recent research\cite{1995-bedat} on the Low Swirl Burner (LSB) has identified a potential solution for this problem.
 The LSB anchors a lifted flame, reducing the need for high swirl in the flow field.
 The lifted, V-shaped flame is stabilized by aerodynamic means which allows for robust operation even at low equivalence ratios.
-This weakens the recirculation zones and eliminates pockets of high residence times, resulting in significantly reduced \ce{NO_x} emissions compared to a similar high-swirl design.
+This weakens the recirculation zones and eliminates pockets of high residence times, resulting in the potential for significantly reduced \ce{NO_x} emissions compared to a similar high-swirl design.
 
 \section{Motivation}
 
@@ -83,7 +85,7 @@ Since chemiluminescence imaging is integrated over the line of sight, studying t
 A planar imaging technique such as Planar Laser-Induced Fluorescence (PLIF) is better suited for such applications.
 
 In hydrocarbon flames, species accessible to PLIF are generally minor species in the flame.
-PLIF studies of hydrocarbon flames have hitherto focused on the OH radical.
+PLIF studies of hydrocarbon flames have hitherto focused on the hydroxyl, OH, radical.
 However, OH is produced in the flame zone and destroyed by relatively slow three-body reactions, causing it to persist and be transported away from the flame and into the product zone.\cite{1990-barlow}
 As a result, it does not serve as a direct marker of the flame front.
 Instead, the location of the flame is inferred from the sharp gradient in the OH signal as the reactants are converted into products.
@@ -103,15 +105,15 @@ This leads us to the second motivation for this study---to examine the use of CH
 The use of CH PLIF to study lean hydrocarbon flames has been difficult in the past due to several issues.
 First, the concentration of the CH species in hydrocarbon flames rapidly declines with equivalence ratio, making high quality imaging of the flame front at lean conditions challenging.
 Further, the implementation techniques in the past have suffered from a host of problems ranging from elastic scattering interference to saturation issues leading to diminished signal-to-noise ratios.
-However, a recent implementation by Li et al.\cite{2007-li-a} has managed to overcome these issues and has been demonstrated to image lean flames with good fidelity.
+However, a recent implementation by Li et al.\cite{2007-li-a} has managed to overcome these issues and has been demonstrated to image moderately lean flames with good fidelity.
 
-Recent studies\cite{1998-najm} have indicated that the species HCO is a superior indicator of heat release in hydrocarbon flames when compared to CH or OH.
+Recent studies\cite{1998-najm} have indicated that the formyl species HCO is a superior indicator of heat release in hydrocarbon flames when compared to CH or OH.
 The HCO LIF signal has been demonstrated to correlate well with the heat release rate, with little dependence on equivalence ratio or strain rate.
 The last factor, in particular, has been shown to quench the CH PLIF signal\cite{2008-kiefer} in highly strained flames, even when the flame itself is not extinguished.
 Unfortunately, the signal levels from HCO LIF are very poor\cite{1998-najm,1998-paul} and are unsuitable for single-shot investigation of hydrocarbon flames.
-To overcome this, one study\cite{1998-paul} proposed a simultaneous LIF investigation of \ce{CH2O} and OH with the reasoning that the formation rate of HCO is governed directly by the product of the concentration of these two intermediates.
+To overcome this, one study\cite{1998-paul} proposed a simultaneous LIF investigation of formaldehyde, \ce{CH2O}, and OH with the reasoning that the formation rate of HCO is governed directly by the product of the concentration of these two intermediates.
 This method has been used in a number of investigations,\cite{2006-ayoola} despite being experimentally cumbersome.
-A more recent implementation\cite{2009-kiefer} has demonstrated single-shot HCO PLIF with moderate signal-to-noise ratios by utilizing a novel excitation scheme.
+A more recent implementation\cite{2009-kiefer}, published after the initiation of the present effort, has demonstrated single-shot HCO PLIF with moderate signal-to-noise ratios by utilizing a novel excitation scheme.
 Follow up studies applying this technique in other hydrocarbon flames are awaited.
 
 \section{Literature Review}
@@ -126,7 +128,7 @@ Simultaneously, the discovery of its low \ce{NO_x} emissions prompted interest i
 
 The current form of the LSB (as used in this thesis) using vanes to generate swirl was originally modified from a typical production swirl injector used in gas turbine combustors.
 The results of testing this new design were published by Johnson et al.\cite{2005-johnson}
-The design elements of the new injector---now called the Low Swirl Injector (LSI)---were tweaked in an atmospheric pressure test rig using LBO and flame location as the criteria.
+The design elements of the new injector---now called the Low Swirl Injector (LSI)---were tuned in an atmospheric pressure test rig using LBO and flame location as the criteria.
 The atmospheric tests were conducted with preheated reactants at up to 650 K.
 The more interesting results from the work came from high pressure, high preheat tests (15 atm, 700 K) in a test rig with limited optical access.
 The researchers measured a dramatic (50\%) reduction in the \ce{NO_x} emissions by switching from the original (``High'' Swirl Injector) to the new low swirl design.
@@ -134,16 +136,16 @@ The emissions performance was also noted by Nazeer et al.\cite{2006-nazeer}
 
 Subsequent studies by Cheng et al.\cite{2006-cheng,2008-cheng-a} explored the characteristic velocity field in the LSB using PIV and discovered self-similar behavior that implied that the flame location was unaffected by the mass flow rate of the reactants.
 This led to further insights into the flame stabilization mechanism used by the LSB.
-These results will be revisited in Chapter \ref{ch:background} in finer detail.
+These results will be revisited in Chapter \ref{ch:background} in greater detail.
 
-The effects of using an enclosure to contain the combustion zone were explored by Cheng et al.\cite{2008-cheng-c} who found scaling criteria for minimizing the effect of the enclosure on the flame stabilization location.
-
+The effects of using an enclosure to contain the combustion zone were explored by Cheng et al.\cite{2008-cheng-c} who found scaling criteria for minimizing the effect of the enclosure on the flame stabilization location. 
 More recent work has tended to focus on the use of various fuels such as hydrogen mixtures\cite{2008-cheng-b} with and without dilution\cite{2007-littlejohn}, landfill gas\cite{2008-cheng-a,2009-cheng} and syngas\cite{2010-littlejohn}.
 
 Relatively little research has focused on the flame location and other characteristics and studied their variation at gas turbine relevant conditions.
 Notably, Petersson et al.\cite{2007-petersson} used a different modified version of the LSB that had fewer vanes compared to the one tested by Cheng and co-workers, and used a bevy of techniques to study the turbulent flame.
 In particular, they used OH PLIF to image a non-preheated, atmospheric flame at low flow rates.
 While their motivation was to develop a detailed database to compare and validate LES models, it remains one of the few works that shows the structure of the LSB flame with good spatial resolution.
+% DID THEY LEARN ANYTHING USEFUL - SHOULD YOU SUMMARIZE?
 
 \subsection{CH PLIF Implementations}
 
@@ -155,14 +157,14 @@ Further, the short pulsewidth and narrow spectral bandwidths of the excitation s
 Namazian et al.\cite{1986-namazian} and Schefer et al.\cite{1994-schefer} had better success at overcoming interference issues by exciting the \(A-X\) (0,0) band, but observing fluorescence from the (0,1) band.
 Another similarly non-resonant technique was proposed by Paul et al.\cite{1994-paul} who excited the \(A^2\Delta\leftarrow X^2\Pi\) (1,0) band and observed resulting fluorescence from the (1,1) and (0,0) bands.
 These approaches provide good separation between the excitation and emission wavelengths, but are hampered by the spectroscopic properties of the CH system---which will be explored further in Section \ref{sec:background-ch-plif-physical-description}---which disfavor radiative transitions in the non-diagonal (0,1) or (1,0) bands.
-Further, Namazian et al.'s scheme suffers from interference due to Raman scattering of the excitation beam due to the fuel species overlapping the (0,1) band.
+Further, Namazian et al.'s scheme suffers from interference due to Raman scattering of the excitation beam by the fuel species, which overlaps the (0,1) band fluorescence.
 
 Carter and several others\cite{1998-carter,1999-watson,2000-watson,2000-donbar,2000-han,2002-kothnur,2003-han-a,2003-han-b,2003-sutton} pumped the \(B^2\Sigma^-\leftarrow X^2\Pi\) (0,0) band and utilized fast electronic transfer from the \(B^2\Sigma^-\), \(v=0\) to populate the \(A^2\Delta\), \(v=0,1\) levels.
 This way, they could observe the strong emission from \(A^2\Delta\rightarrow X^2\Pi\) (1,1) and (0,0) bands.
 This method overcame the interference issues by providing sufficient spacing between the excitation and emission wavelengths, but suffered from saturation issues due to the short pulsewidth of the excitation sources.
 Further, at high laser irradiance, the group recorded noticeable interference from fuel LIF.
 
-Li et al.\cite{2007-li-a,2007-li-b,2007-kiefer} investigated using an alexandrite laser\cite{2004-li} to improve upon the previous excitation scheme by targeting the R-bandhead of the \(B^2\Sigma^-\leftarrow X^2\Pi\) (0,0) transition with a long pulsed excitation beam.
+Li et al.\cite{2007-li-a,2007-li-b,2007-kiefer} investigated the use of an alexandrite laser\cite{2004-li} to improve upon the previous excitation scheme by targeting the R-bandhead of the \(B^2\Sigma^-\leftarrow X^2\Pi\) (0,0) transition with an excitation beam having a much longer pulse duration than Nd:YAG pumped dye lasers.
 This excitation scheme offers several advantages over previous implementations.
 First, it inherits the large spacing between the excitation and emission wavelengths and reduced interference issues from Carter et al.'s implementation.
 Next, by using a long pulsed laser beam, it overcomes saturation issues.
