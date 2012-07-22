@@ -14,13 +14,12 @@ Several mechanisms have been identified to explain the production of \ce{NO_x} i
 Of these, the thermal \ce{NO_x} mechanism discovered by Zel'dovich, is a prominent source of \ce{NO_x} production at the high temperature conditions encountered in typical combustors.
 The amount of thermal \ce{NO_x} produced scales exponentially with the adiabatic flame temperature.
 
-Efforts to reduce the flame temperature have led low \ce{NO_x} gas turbines to adopt one of two options---Lean Premixed (LP) operation, or Rich-Quench-Lean (RQL) operation.
+Efforts to reduce the flame temperature have led low \ce{NO_x} gas turbine manufacturers to adopt one of two options---Lean Premixed (LP) operation, or Rich-Quench-Lean (RQL) operation.
 Of these, RQL combustion suffers from sooting issues during the rich combustion step and the requirement of a second mixing event during the quenching step.
 Incomplete mixing can result in stoichiometric combustion in localized pockets within the combustor.
 LP combustion, on the other hand, is conceptually simpler and avoids the formation of such high temperature zones.
 Further, it entails operating at low equivalence ratios, reducing the temperature in the combustion zone.
 In practice, 1800 K is considered a limiting value for the flame temperature, ensuring that the thermal \ce{NO_x} production is constrained to a minimum.
-
 Operating a combustor at such lean conditions results in weaker combustion processes that are highly susceptible to perturbations and results in combustor instabilities or even flame blow off.
 This highlights the requirement for robust flame stabilization techniques that can sustain combustion at ultra-lean conditions.
 In their most basic form, flame stabilization techniques work by making the local reactant velocity and the local flame speed equal.
@@ -30,7 +29,7 @@ Consequently, flame stabilization in gas turbine combustion is brought about eit
 Swirl-stabilized combustion is a widely used flame stabilization technique in gas turbine applications.\cite{1974-syred,1977-lilley}
 It primarily functions by inducing recirculation zones in the flow field that transport heat and radicals from the products into the reactants.
 This enhances the flame propagation velocity by increasing reaction rates within the flame, resulting in robust flame stabilization.
-However, the recirculation zones increase the peak residence times of the products and cause more thermal \ce{NO_x} to be produced in the combustor.
+However, the recirculation zones are associated with high peak residence times for hot combustion products and are sites of themal \ce{NO_x} production in the combustor.
 Nevertheless, swirl-stabilized combustors are ubiquitously employed today in land-based gas turbines used for power generation.
 
 More recent research\cite{1995-bedat} on the Low Swirl Burner (LSB) has identified a potential solution for this problem.
@@ -41,7 +40,7 @@ This weakens the recirculation zones and eliminates pockets of high residence ti
 \section{Motivation}
 
 By comparison to atmospheric pressure experiments, high pressure experimental testing of combustion systems is fraught with difficulties.
-This is reflected in the comparatively smaller subset of papers that report experimental results from high pressure tests.
+This is reflected in the comparatively smaller subset of publications that report experimental results from high pressure tests.
 The primary source of these difficulties stems from the need for complicated testing facilities to reach and maintain high pressures.
 The inherently limited access afforded by pressure vessels makes intrusive methods of data gathering nearly impossible.
 As a result, any need for spatially resolved data other than temperature and pressure measurements has to be met by optical diagnostics.
@@ -51,11 +50,11 @@ The eventual application of this technology in gas turbine engines requires high
 Ideally, such data will map the velocity field and heat release in the LSB and study their variation with flow conditions.
 Since the LSB relies on the velocity field to stabilize its flame, its flame characteristics hold information pertinent to both the velocity field and the heat release distribution within the combustor.
 This allows a passive diagnostic such as recording the flame chemiluminescence to be used even at high pressure conditions to observe and record usable data about the LSB flame characteristics.
-Such data, acquired at conditions closer to real world gas turbine combustor operating conditions is of particular interest to the gas turbine industry.
+Such data, acquired at conditions closer to real world gas turbine combustor operating conditions is of particular interest to the gas turbine industry as it can be used for designing better, more robust combustors with low \ce{NO_x} emissions.
 
 The primary flame characteristic of interest is the flame standoff distance, defined as the distance from the flame stabilization point to the inlet of the LSB.
 This metric is useful is gauging the stability of the flame and the need for control systems to closely monitor its tendency to flashblack or blow-off.
-The standoff distance also relates to the heat load experienced by the injector and consequently affects how often the mechanical components of the LSB will required to be replaced in operation.
+The standoff distance also relates to the heat load experienced by the injector and consequently affects how often the mechanical components of the LSB will require to be replaced in operation.
 Finally, a systemic variation in the location of the flame over a range of flow parameters may indicate potential problems operating the combustor at previously untested conditions.
 
 Quantifying the shape of the flame can complement the information gleaned from the flame standoff measurements.
@@ -74,7 +73,7 @@ Of these, CH* chemiluminescence has several advantages that make it suitable for
 First, collection of CH* chemiluminescence is less affected by blackbody radiation from the walls of the combustor, compared to longer wavelength emissions from a species like \ce{C2}*.
 Its narrow bandwidth allows one to use a bandpass filter to collect signals from only the wavelengths of interest, further minimizing interference from other light sources.
 Using such a narrow bandpass filter for a broad band emitter like \ce{CO2}* would result in rejecting most of the available signal.
-CH* chemiluminescence occurs in the visible wavelengths and does not require expensive UV lenses to acquire---as would be necessary to image OH* chemiluminescence, for instance.
+CH* chemiluminescence occurs in the visible wavelengths and does not require expensive UV lenses or imaging systems with high quantum efficiencies in UV to record it---as would be needed to image OH* chemiluminescence, for instance.
 In typical LSB operation, where the flame is not expected to operate near extinction, CH* chemiluminescence can serve as a reliable indicator of heat release in the combustor.
 For all these reasons, CH* chemiluminescence is a suitable technique to image the LSB flame.
 
@@ -122,7 +121,7 @@ The LSB is a relatively new combustion technology and as such has a brief histor
 Initial interest in low swirl combustion was primarily motivated by its ability to stabilize a freely propagating turbulent flame.\cite{1992-chan}
 As a result, initial designs of the LSB (which at the time used tangential jets to produce swirl) were pursued by B{\'edat} and Cheng\cite{1995-bedat,1995-cheng} as test beds for studying 1-D, planar turbulent flames.
 Several subsequent studies\cite{2000-plessing,2001-shepherd,2002-cheng,2002-shepherd,2004-kortschik,2005-degoey,2007-bell} utilized this behavior and investigated fundamental turbulent flame structure and propagation in the jet LSB.
-Simultaneously, the discovery of its low \ce{NO_x} emissions prompted interest in commercial applications of the LSB, such as in industrial furnaces and boilers.\cite{1998-yegian,2000-cheng,2002-littlejohn}
+Simultaneously, the discovery of its ability to achieve low \ce{NO_x} emissions prompted interest in commercial applications of the LSB, such as in industrial furnaces and boilers.\cite{1998-yegian,2000-cheng,2002-littlejohn}
 
 The current form of the LSB (as used in this thesis) using vanes to generate swirl was originally modified from a typical production swirl injector used in gas turbine combustors.
 The results of testing this new design were published by Johnson et al.\cite{2005-johnson}
