@@ -1,24 +1,155 @@
 \chapter{Background}
 \label{ch:background}
 
-% This chapter provides the background necessary to follow the discussion to come.
+\section{LSB Reacting Flow Field}
 
-% 1. LSB - salient features of the flow field
-% axial velocity profile -> linear velocity decrease
-% recirculation bubble
-% weak toroidal recirculation zone
-% transverse velocity profiles, flow features
-% Use reacting case only
+This section will discuss the salient features of the LSB flow field that will play an important part in the discussions to follow in this thesis.
 
-% 2. LSB - Physics of flame stabilization
-% Describe how it works.
-% Describe the original model
-% Expected variation with flow parameters
-% VELOCITY, temperature, pressure, equivalence ratio?
+As discussed in Section \ref{subsec:literature-review-lsb}, there have been multiple variations of the LSB design used by researchers in the past.
+Broadly, they can be classified into jet-LSB and vane-LSB, based on the means used to produce the weak swirl in the flow field.
+This study reports findings relating to the vane-LSB design, and hence, our discussion will also pertain to the vane-LSB.
 
-\section{LSB Flow Field}
+\input{figures/swirler}
 
-\section{LSB Flame Stabilization}
+The vane-LSB---or simply \emph{LSB} from here on---uses a vaned swirler
+with a central open section.
+A typical design of such a swirler is shown in Figure \ref{fig:swirler}.
+The swirler splits the flow into two streams, imparting swirl only to the outer annular flow.
+A perforated plate covers the open central section of the swirler and controls the relative mass flow split between the central unswirled flow and the annular swirling flow.
+The swirler is located at the head of a constant area nozzle which abruptly expands into the combustion zone.
+
+\subsection{Role of swirl and recirculation zones}
+
+The amount of swirl present in the resulting flow is characterized by a theoretical swirl number, \(S\), which represents the ratio of angular momentum to axial momentum in the flow field.
+Cheng et al.\cite{2000-cheng} and later, Littlejohn et al.\cite{2002-littlejohn} reduced this to the following equation.
+
+\begin{equation}
+S = \frac{2}{3} \tan \alpha \frac{ 1 - R^3 }{ 1 - R^2 + \left[ M^2\left( \dfrac{1}{R^2} - 1 \right)^2 \right]R^2}
+\label{eqn:theoreticalSwirlNumber}
+\end{equation}
+
+In Equation \ref{eqn:theoreticalSwirlNumber}, \(R\) is the ratio of the diameter of the central section to the outer diameter of the swirler.
+Similarly, \(M\) is the ratio of the mass flow rate through the central portion to the mass flow rate through the outer (vaned) portion of the swirler.
+Finally, \(\alpha\) is the angle of the vanes of the swirler.
+
+Along with the recess length of the swirler, the theoretical swirl number was identified to be a key parameter that determines the LSB operating regime.\cite{2002-littlejohn}
+Typical values of \(S\) in low swirl combustion range from 0.4--0.6.
+
+\input{figures/recirculationZones}
+
+Figure \ref{fig:recirculationZones} shows the locations of the notable recirculation zones in the LSB flow field.
+The toroidal recirculation zone forms near the inlet, while the central recirculation zone forms within a recirculation bubble along the centerline.
+In conventional swirl combustion, the function of the swirl is to induce these recirculation zones that help stabilize the flame by causing a feedback of heat and radicals from the products into the reactants.
+In particular, the toroidal recirculation zone traps hot combustion products and continually ignites the reactants at the base of the flame.\cite{2005-johnson}
+
+In the LSB flow field, these recirculation zones are not only much weaker, but also, do not play any part in the stabilization of the flame.
+Instead, the LSB flame is a freely propagating turbulent flame that is stabilized by the divergent flow coming from the inlet nozzle.
+The function of the swirl in the LSB flow field is merely to enhance this divergence.
+This purely aerodynamic means of stabilizing the flame differentiates the LSB regime from conventional swirl combustion.
+
+\subsection{Axial velocity profile and self-similarity}
+\label{subsec:lsb-axial-velocity-profile}
+
+The mean axial velocity profile along the centerline of the LSB exhibits a characteristic linear profile in the near field of the inlet.
+Two features can be associated with this profile.
+First, extrapolating the velocity profile to the point upstream where the axial velocity equals the reference velocity, we obtain the location of the virtual origin.
+The virtual origin represents the point upstream where the divergence seemingly originates from.
+Second, we can measure the slope of the linear region of the axial velocity profile and obtain the axial stretch rate.
+
+Cheng et al.\cite{2006-cheng,2008-cheng-a} investigated these two parameters using a non-preheated setup at atmospheric pressure.
+They found that the virtual origin for reacting LSB flow fields asymptotically decreases at low/moderate Reynolds numbers, while the mean axial stretch rate is nearly independent of the same parameter.
+This means that at moderately increasing Reynolds numbers, the divergent flow structure shifts upstream into the injector, eventually ceasing this motion for high Reynolds number values (above 70,000).
+
+Since this shift does not affect the slope of the velocity profile, the researchers plotted the mean axial velocity profiles for different operating conditions, shifted to have a common virtual origin.
+Further, the velocity profiles were normalized by the mass-averaged inlet velocity (called the reference velocity).
+The resultant plot showed that the linear section of the divergent flow was self-similar at all the velocities tested.
+This self-similarity of the mean axial velocity profile was used to explain other observations regarding the flame characteristics which we will discuss shortly.
+
+\subsection{Flame stabilization mechanism}
+\label{subsec:lsb-flame-stabilization-mechanism}
+
+The flame stabilization mechanism in the LSB is purely aerodynamic.
+The turbulent flame is not anchored in the sense of an attached flame, but freely propagates into the reactants.
+Conventionally, attached flames are preferred in combustion systems as lifted flames are associated with unstable/undesirable characteristics like blow off.
+However, the LSB flame is robustly stabilized and not prone to blow off.
+
+The location where the LSB flame is stabilized is marked by the equilibrium condition for flame stabilization---the local reactant velocity, \(U\) equals the local turbulent flame propagation velocity, \(S_T\).
+The decrease in the local reactant velocity along the centerline of the combustor is accompanied by an increase in the local turbulence level.
+In other words, along the axis of the combustor, at the location where the flame is stabilized, the reactant velocity is decreasing, while the turbulent flame propagation velocity (which scales with the local turbulence) is increasing.
+
+This sets up a stable equilibrium for the flame.
+Small perturbations causing the flame to move upstream are offset by the increased reactant velocity, while similar perturbations downstream are counteracted by the increased turbulent flame speed.
+This is the mechanism behind the robust stabilization of the LSB flame.
+
+\subsection{Effect of Flow Parameters on Flame Characteristics}
+
+The operating conditions of the LSB combustor are fully described by four fundamental flow parameters; the combustor pressure, \(p\), the combustor temperature, \(T\), the mixture equivalence ratio, \(\phi\), and the reference velocity, \(U_0\).
+The reference velocity represents the mass-averaged velocity of the reactants entering the LSB and is defined after Cheng et al.\cite{2000-cheng} as follows.
+
+\begin{equation}
+U_0 = \frac{ \left( \dfrac{ \dot{m}_{air} }{ \rho_{air} } \right) + \left( \dfrac{ \dot{m}_{fuel} }{ \rho_{fuel} }\right) }{ \dfrac{\pi d_s^2 }{4} }
+\label{eqn:referenceVelocity}
+\end{equation}
+
+In this section, we will discuss the effect each of these flow parameters has on the location and shape of the LSB flame.
+
+\subsubsection{Reference Velocity}
+
+As described earlier in Section \ref{subsec:lsb-flame-stabilization-mechanism}, the LSB flame is stabilized where the local reactant velocity and turbulent flame speed are equal.
+
+Unlike the laminar flame speed, \(S_L\), the turbulent flame speed is not uniquely determined by the reactant composition and thermodynamic conditions.
+Instead, it is a function of the flow characteristics and the burner geometry as well.
+
+A simple model proposed by Damk{\"o}ohler treats the turbulent flame as a wrinkled laminar flame.
+The presence of these wrinkles vastly increases the surface area of the flame, increasing the rate at which the reactants can be consumed through the flame.
+The size of these wrinkles can be related to the rms of the local reactant velocity, \(u'\).
+Expressed mathematically, this leads to Equation \ref{eqn:damkohlerModel}.
+
+\begin{equation}
+\frac{ S_T }{ S_L } = 1 + \frac{ u' }{ S_L }
+\label{eqn:damkohlerModel}
+\end{equation}
+
+Cheng et al.\cite{2002-cheng,2009-cheng,2010-littlejohn} observed that the slope of this linear relationship was dependent on the fuel mixture being used.
+This idea is encapsulated in Equation \ref{eqn:chengModel} that presents a modified version of Equation \ref{eqn:damkohlerModel}.
+
+\begin{equation}
+\frac{ S_T }{ S_L } = 1 + K \frac{ u' }{ S_L }
+\label{eqn:chengModel}
+\end{equation}
+
+The constant \(K\) has a value of around 1.73 for methane-air mixtures and a somewhat higher value (3.15) for hydrogen-air mixtures,\cite{2009-cheng} indicating that the turbulent flame speed is affected strongly by the thermo-diffusive properties of the fuel.
+
+In order to predict the expected effect of increasing the reference velocity, consider the following analysis at the flame standoff location where \(U\)=\(S_T\).
+
+\begin{align}
+\frac{ S_T }{ S_L } &= 1 + K \frac{ u' }{ S_L } \nonumber \\
+S_T &= S_L + K u' \nonumber \\
+\implies U &= S_L + K u' \nonumber \\
+U_0 - \frac{ dU }{ dx } ( X_f - X_0 ) &= S_L + K u' \nonumber \\
+\therefore X_f &= X_0 + \frac{1 - \left( \dfrac{ S_L }{ U_0 } + K\dfrac{ u' }{ U_0 } \right) }{ \dfrac{ dU }{ dx } }
+\label{eqn:flameImmobility}
+\end{align}
+
+Consider the terms on the RHS of Equation \ref{eqn:flameImmobility}.
+As discussed in Section \ref{subsec:lsb-axial-velocity-profile}, the virtual origin location is invariant for moderate to high values of reference velocity.
+In the same section, we also discussed how the slope of the velocity profile, \(\dfrac{ dU }{ dx }\), is also invariant with reference velocity.
+In the numerator of the second term, the local turbulence intensity, \(\dfrac{ u' }{ U_0 }\), can also be expected to be a constant, since \(u'\) should scale with the reference velocity in the same manner as long as the burner geometry doesn't change.
+That leaves only the term \(\dfrac{ S_L }{ U_0 }\) as a function of \(U_0\).
+Typically, the laminar flame speeds are an order of magnitude lower (\(\approx O(1)\) m/s) than the reference velocities at which the LSBs are operated (\(\approx O(10)\) m/s).
+As a result, this term is vanishingly small, leaving the RHS independent of \(U_0\).
+In other words, the flame location, \(X_f\) is expected to be invariant with the reference velocity at which the LSB is operated.
+
+% Flame angle
+% Flame structure
+
+\subsubsection{Preheat Temperature}
+
+\subsubsection{Swirler Vane Angle}
+
+\subsubsection{Equivalence Ratio}
+
+\subsubsection{Combustor Pressure}
 
 \section{CH PLIF Signal Modeling}
 \label{sec:background-chplif-signal-modeling}

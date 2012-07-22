@@ -1,0 +1,62 @@
+\begin{figure}
+
+\centering
+
+\begin{tikzpicture}
+
+\draw [thin, dashed] ( -3, 0 ) -- ++( 11, 0 );
+\draw [thin, dashed] ( 0, -2.5 ) -- ++( 0, 5 );
+
+% Top view
+% Perforated plate
+\draw [red] ( 0, 0 ) circle ( 2.6416/2 );
+
+\draw [red] ( 0, 0 ) circle ( 0.28194/2 );
+\foreach \theta in { 0, 45, ..., 360 }
+  \draw [red] ( \theta : 0.508 ) circle ( 0.28194/2 );
+\foreach \theta in { 0, 22.5, ..., 360 }
+  \draw [red] ( \theta : 0.9525 ) circle ( 0.28321/2 );
+
+% Outer edge
+\draw ( 0, 0 ) circle ( 3.8/2 );
+\draw ( 0, 0 ) circle ( 1.85 );
+
+% Vanes
+\foreach \theta in { 0, 22.5, ..., 360 } {
+  \draw [blue] ( \theta - 2.5 : 1.3208 ) -- ( \theta - 2.5 : 1.85 );
+  \draw [blue] ( \theta + 2.5 : 1.3208 ) -- ( \theta + 2.5 : 1.85 );
+}
+
+% Side View
+% Inner edge
+\draw ( 5 - 1.9, -1.3208 ) rectangle ++( 3.8, 2.6416 );
+\draw [pattern = north west lines] ( 5 - 1.9, -1.3208 ) rectangle ++( 3.8, 0.05 );
+\draw [pattern = north west lines] ( 5 - 1.9, 1.3208 ) rectangle ++( 3.8, -0.05 );
+
+% Outer edge
+\draw [pattern = north west lines] ( 5 - 1.3208, 1.9 ) rectangle ++( 2.6416, -0.05 );
+\draw ( 5 - 1.3208, 1.85 ) rectangle ++( 2.6416, -1.85 + 1.3208 );
+\draw [pattern = north west lines] ( 5 - 1.3208, -1.9 ) rectangle ++( 2.6416, 0.05 );
+\draw ( 5 - 1.3208, -1.85 ) rectangle ++( 2.6416, 1.85 - 1.3208 );
+
+% Vanes
+\draw [blue] ( 4, -1.85 ) rectangle ++( 2, 1.85 - 1.3208 );
+\draw [blue] ( 4, 1.85 ) rectangle ++( 2, -1.85 + 1.3208 );
+
+% Perforated plate
+\draw [red] ( 5 - 1.9, -1.3208 ) rectangle ++( -0.127, 2.6416 );
+\draw [red, pattern = north east lines, pattern color=red] ( 5 - 1.9, -1.3208 ) rectangle ++( -0.127, 0.226695 );
+\draw [red, pattern = north east lines, pattern color=red] ( 5 - 1.9, -0.810895 ) rectangle ++( -0.127, 0.161925 );
+\draw [red, pattern = north east lines, pattern color=red] ( 5 - 1.9, -0.14097 ) rectangle ++( -0.127, -0.22606 );
+\draw [red, pattern = north east lines, pattern color=red] ( 5 - 1.9, 0.14097 ) rectangle ++( -0.127, 0.22606 );
+\draw [red, pattern = north east lines, pattern color=red] ( 5 - 1.9, 0.810895 ) rectangle ++( -0.127, -0.161925 );
+\draw [red, pattern = north east lines, pattern color=red] ( 5 - 1.9, 1.3208 ) rectangle ++( -0.127, -0.226695 );
+
+\end{tikzpicture}
+
+\caption[Schematic of a vaned swirler]{The figure shows a top and side cross-sectional view of the vaned swirler design used in this study. The perforated plate used to control the relative mass flow split is highlighted in \textcolor{red}{red}, while the vanes used to generate swirl are highlighted in \textcolor{blue}{blue}.}
+
+\label{fig:swirler}
+
+\end{figure}
+
