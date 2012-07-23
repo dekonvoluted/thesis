@@ -1,13 +1,6 @@
 \chapter{Introduction}
 \label{ch:introduction}
 
-% 3. Literature Survey - CH PLIF
-% Advantages over other planar techniques
-% Early work done by researchers
-% Recent advances in LIF
-
-% 4. Summary of goals/Objectives of this thesis
-
 The need to reduce pollutant emissions, particularly the oxides of nitrogen, \ce{NO_x}, is driven by increasing ecological awareness and stringent government regulations.
 This spurs efforts in the gas turbine industry to seek cleaner, more environment-friendly combustion concepts.
 Several mechanisms have been identified to explain the production of \ce{NO_x} in hydrocarbon-air combustion systems.
@@ -15,12 +8,13 @@ Of these, the thermal \ce{NO_x} mechanism discovered by Zel'dovich, is a promine
 The amount of thermal \ce{NO_x} produced scales exponentially with the adiabatic flame temperature.
 
 Efforts to reduce the flame temperature have led low \ce{NO_x} gas turbine manufacturers to adopt one of two options---Lean Premixed (LP) operation, or Rich-Quench-Lean (RQL) operation.
-%CAREFUL - GROUND POWER SYSTEMS DO NOT USE RQL AS FAR AS I KNOW - AND NO AIRCRAFT SYSTEMS USE LP - SO YOU ARE MIXING AIRCRAFT AND GROUND SYSTEM APPROACHES...PERHAPS INSTEAD OF EXPLAINING RQL PROBLEMS - YOU CAN JUST EXPLAIN WHY GROUND POWER FOLKS HAVE MOVED TOWARD NEARLY PREMIXED OPERATION....
 Of these, RQL combustion suffers from sooting issues during the rich combustion step and the requirement of a second mixing event during the quenching step.
 Incomplete mixing can result in stoichiometric combustion in localized pockets within the combustor.
 LP combustion, on the other hand, is conceptually simpler and avoids the formation of such high temperature zones.
 Further, it entails operating at low equivalence ratios, reducing the temperature in the combustion zone.
-In practice, 1800 K is considered a limiting value for the flame temperature, ensuring that the thermal \ce{NO_x} production is constrained to a minimum.
+As a result, most ground-based gas turbines used for power generation implement LP combustion.
+
+In practice, 1800 K is considered a limiting value for the flame temperature, ensuring that the thermal \ce{NO_x} production is constrained to a minimum.\cite{1996-glassman}
 Operating a combustor at such lean conditions results in weaker combustion processes that are highly susceptible to perturbations and results in combustor instabilities or even flame blow off.
 This highlights the requirement for robust flame stabilization techniques that can sustain combustion at ultra-lean conditions.
 In their most basic form, flame stabilization techniques work by making the local reactant velocity and the local flame speed equal.
@@ -142,9 +136,10 @@ More recent work has tended to focus on the use of various fuels such as hydroge
 
 Relatively little research has focused on the flame location and other characteristics and studied their variation at gas turbine relevant conditions.
 Notably, Petersson et al.\cite{2007-petersson} used a different modified version of the LSB that had fewer vanes compared to the one tested by Cheng and co-workers, and used a bevy of techniques to study the turbulent flame.
-In particular, they used OH PLIF to image a non-preheated, atmospheric flame at low flow rates.
-While their motivation was to develop a detailed database to compare and validate LES models, it remains one of the few works that shows the structure of the LSB flame with good spatial resolution.
-% DID THEY LEARN ANYTHING USEFUL - SHOULD YOU SUMMARIZE?
+Although their test conditions and burner geometry were different, their results were consistent with other results published by Cheng et al.
+Of particular interest to this discussion are their OH PLIF images of a non-preheated, atmospheric flame at low flow rates.
+Using these images, they extracted mean reaction progress variable contours for the flame.
+While their motivation was to develop a detailed database to compare and validate LES models, it remains one of the few works that affords us a look at the structure of the LSB flame with good spatial resolution.
 
 \subsection{CH PLIF Implementations}
 
@@ -171,4 +166,8 @@ In fact, the researchers note that the pulsewidth is long enough to allow the sa
 This aspect of the implementation is further enhanced if the laser is operated in multimode, with a large spectral bandwidth, allowing the laser to target several lines near the R-bandhead.
 The resultant improvement in signal-to-noise makes this technique suitable to study even low equivalence ratio hydrocarbon flames.
 This is the excitation scheme that is used in this study.
+
+\section{Objectives}
+
+
 
