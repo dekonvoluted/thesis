@@ -2,6 +2,13 @@
 \label{ch:background}
 
 % TODO: Introduction paragraph summarizing contents of this chapter
+% TODO: Reference for Damköhler's model
+% TODO: Reference for Borghi diagram
+% TODO: Move some of the LSB discussion to Chapter 5
+
+This is a two-part chapter.
+The first section focuses on the LSB and discusses the current understanding of factors affecting the LSB reacting flow field.
+The second section explores efforts to model the CH PLIF signal intensity as a function of local composition and thermodynamic conditions in a flame.
 
 \section{LSB Reacting Flow Field}
 
@@ -107,7 +114,6 @@ Unlike the laminar flame speed, \(S_L\), the turbulent flame speed is not unique
 Instead, it is a function of the flow characteristics and the burner geometry as well.
 
 A simple model proposed by Damk{\"o}hler\cite{1996-glassman} treats the turbulent flame as a wrinkled laminar flame.
-% TODO: Reference Damkohler's paper instead of Glassman.
 The presence of these wrinkles vastly increases the surface area of the flame, increasing the rate at which the reactants can be consumed through the flame.
 The size of these wrinkles can be related to the rms of the local reactant velocity, \(u'\).
 Expressed mathematically, this leads to Equation \ref{eqn:damkohlerModel}.
@@ -158,7 +164,6 @@ Increasing the reference velocity does not affect any of these factors and thus,
 Finally, the effect of the reference velocity on the structure of the turbulent flame should be considered.
 Depending on the characteristics of the flame structure, the operation point can be placed on a Borghi diagram, as shown in Figure \ref{fig:borghiDiagram}
 The Borghi diagram is a phase diagram used to classify and delineate regimes of premixed turbulent combustion.
-% TODO: Reference for the Borghi diagram? 1985-borghi?
 The diagram uses non-dimensional properties of the reacting mixture and turbulence-related parameters to describe the structure of the flame.
 It is useful to examine the effect of various parameters on the flame structure by examining the tendency of the operating point to shift on the Borghi diagram.
 
@@ -566,8 +571,7 @@ The vibrational energy, \(E_v(v)\) of a level is calculated according to Equatio
   \label{eqn:rotationalEnergy}
 \end{align}
 
-The \(B^2\Sigma^-\leftarrow X^2\Pi\) transition of the CH system is governed by Hund's Case b and hence, the appropriate rotational quantum number to use is \(N\).
-% TODO: Reference for Hund's case b for CH B-X
+The ground state, \(X^2\Pi\), of the CH system is conforms to Hund's Case b\cite{1987-bernath} and hence, the appropriate rotational quantum number to use is \(N\).
 For each rotational quantum number \(N\), there are two possible values of \(J\) given by \(N \pm \frac{1}{2}\).
 The rovibrational partition function, \(Q_{rv}\) is a summation over all available vibrational and rotational levels in the \(X^2\Pi\) state.
 In practice, this summation over the vibrational states may be truncated at \(v=4\) and the summation over the rotational states may be truncated at \(N''=22\) with negligible loss in accuracy.
