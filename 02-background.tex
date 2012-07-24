@@ -1,14 +1,14 @@
 \chapter{Background}
 \label{ch:background}
 
-% YOU NEED AN INTRODUCTORY PARAGRAPH SUMMARIZINS WHAT IS IN THIS CHAPTER
+% TODO: Introduction paragraph summarizing contents of this chapter
 
 \section{LSB Reacting Flow Field}
 
 This section describes the salient features of the LSB flow field that will play an important part in the discussions to follow in this thesis.
 As discussed in Section \ref{subsec:literature-review-lsb}, there have been multiple variations of the LSB design used by researchers in the past.
 Broadly, they can be classified into jet-LSB and vane-LSB, based on the means used to produce the weak swirl in the flow field.
-This thesis, and thus the following background material, focus on the vane-LSB design.
+This thesis, and thus the following background material, focuses on the vane-LSB design.
 
 \input{figures/swirler}
 
@@ -17,9 +17,10 @@ with a central open section.
 A typical design of such a swirler is shown in Figure \ref{fig:swirler}.
 The swirler splits the flow into two streams, imparting swirl only to the outer annular flow.
 A perforated plate covers the open central section of the swirler and controls the relative mass flow split between the central unswirled flow and the annular swirling flow.
-The swirler flow and the central flow remain separated for a short distance downstream of the swirler, with this distance called the swirler recess length.
-The swirler is located at the head of a constant area nozzle which abruptly expands into the combustion zone. 
-%CHECK THE ABOVE DEFN OF RECESS LENGTH
+The swirled flow and the central flow are allowed to mix after passing the swirler in a constant area nozzle.
+The length of this constant area nozzle is called the swirler recess length and is typically about one or two swirler (outer) diameters.
+The flow leaves the constant area nozzle and abruptly expands into the combustion zone.
+
 \subsection{Role of swirl and recirculation zones}
 
 The amount of swirl present in the resulting flow is characterized by a theoretical swirl number, \(S\), which represents the ratio of angular momentum to axial momentum in the flow field.
@@ -52,16 +53,16 @@ This purely aerodynamic means of stabilizing the flame differentiates the LSB re
 \subsection{Axial velocity profile and self-similarity}
 \label{subsec:lsb-axial-velocity-profile}
 
-The mean axial velocity profile along the centerline of the LSB has been found to exhibit a characteristic linear profile in the near field of the inlet.
-% PROVIDE REFERENCE
-Two parameters can be used to characterize with this profile.
+The mean axial velocity profile along the centerline of the LSB has been found\cite{2006-cheng,2008-cheng-a} to exhibit a characteristic linear profile in the near field of the inlet.
+Two parameters can be used to characterize this linear profile.
 First, extrapolating the velocity profile to the point upstream where the axial velocity equals the reference velocity, one can obtain the location of the virtual origin.
 The virtual origin represents the point upstream from which the divergence seemingly originates.
-The second parameter is the the axial stretch rate, which is the slope of the linear region of the axial velocity profile.
+The second parameter is the axial stretch rate, which is the slope of the linear region of the axial velocity profile.
 
 Cheng et al.\cite{2006-cheng,2008-cheng-a} investigated these two parameters using a non-preheated setup at atmospheric pressure.
-They found that the virtual origin for reacting LSB flow fields asymptotically decreases at low/moderate Reynolds numbers, while the mean axial stretch rate is nearly independent of the same parameter.
-This means that at moderately increasing Reynolds numbers, the divergent flow structure shifts upstream into the injector. This upstream shift ceases for high Reynolds numbers (above 70,000).
+They found that the virtual origin for reacting LSB flow fields asymptotically translates upstream at low/moderate Reynolds numbers, while the mean axial stretch rate is nearly independent of the same parameter.
+This means that at moderately increasing Reynolds numbers, the divergent flow structure shifts upstream into the injector.
+This upstream shift ceases for high Reynolds numbers (above 70,000).
 
 Since this shift does not affect the slope of the velocity profile, the researchers plotted the mean axial velocity profiles for different operating conditions, shifted to have a common virtual origin.
 Further, the velocity profiles were normalized by the mass-averaged inlet velocity (called the reference velocity).
@@ -76,8 +77,7 @@ This self-similarity of the mean axial velocity profile was used to explain othe
 The flame stabilization mechanism in the LSB is purely aerodynamic.
 The turbulent flame is not anchored in the sense of an attached flame, but freely propagates into the reactants.
 Conventionally, attached flames are preferred in combustion systems as lifted flames are associated with unstable/undesirable characteristics like blow off.
-However, previous studies indicate the LSB flame is robustly stabilized and not prone to blow off.
-% ADD REFERENCE
+However, previous studies\cite{2005-johnson} indicate the LSB flame is robustly stabilized and not prone to blow off.
 
 The location where the LSB flame is stabilized is found from the equilibrium condition for flame stabilization---the local reactant velocity, \(U\) equals the local turbulent flame propagation velocity, \(S_T\).
 In the LSB, the decrease in the local reactant velocity along the centerline of the combustor is accompanied by an increase in the local turbulence level.
@@ -90,14 +90,13 @@ This is the mechanism behind the robust stabilization of the LSB flame.
 \subsection{Effect of Flow Parameters on Flame Characteristics}
 
 The operating conditions of the LSB combustor are fully described by four fundamental flow parameters; the combustor pressure, \(p\), the combustor temperature, \(T\), the mixture equivalence ratio, \(\phi\), and the reference velocity, \(U_0\).
-The reference velocity represents the mass-averaged velocity of the reactants entering the LSB and is defined after Cheng et al.\cite{2000-cheng} as follows.
+The reference velocity represents the mass-averaged velocity of the reactants entering the LSB and is defined after Cheng et al.\cite{2000-cheng} as a function of several variables such as the mass flow rates of the air and fuel, \(\dot{m}\), their densities at the swirler, \(\rho\) and the area of the swirler calculated from its outer diameter, \(d_s\).
 
 \begin{equation}
 U_0 = \frac{ \left( \dfrac{ \dot{m}_{air} }{ \rho_{air} } \right) + \left( \dfrac{ \dot{m}_{fuel} }{ \rho_{fuel} }\right) }{ \dfrac{\pi d_s^2 }{4} }
 \label{eqn:referenceVelocity}
 \end{equation}
 
-%DEFINE ds AND THE OTHER TERMS
 This section desribes the effect each of these flow parameters has on the location and shape of the LSB flame.
 
 \subsubsection{Reference Velocity}
@@ -108,7 +107,7 @@ Unlike the laminar flame speed, \(S_L\), the turbulent flame speed is not unique
 Instead, it is a function of the flow characteristics and the burner geometry as well.
 
 A simple model proposed by Damk{\"o}hler\cite{1996-glassman} treats the turbulent flame as a wrinkled laminar flame.
-%SHOULDN'T YOU REFERENCE DAMKOHLER AND NOT GLASSMAN?
+% TODO: Reference Damkohler's paper instead of Glassman.
 The presence of these wrinkles vastly increases the surface area of the flame, increasing the rate at which the reactants can be consumed through the flame.
 The size of these wrinkles can be related to the rms of the local reactant velocity, \(u'\).
 Expressed mathematically, this leads to Equation \ref{eqn:damkohlerModel}.
@@ -143,10 +142,10 @@ Consider the terms on the RHS of Equation \ref{eqn:flameImmobility}.
 As described in Section \ref{subsec:lsb-axial-velocity-profile}, the virtual origin location is invariant for moderate to high values of reference velocity.
 In the same section, the slope of the velocity profile, \(\dfrac{ dU }{ dx }\), was also noted as being invariant with reference velocity.
 In the numerator of the second term, the local turbulence intensity, \(\dfrac{ u' }{ U_0 }\), can also be expected to be a constant, since \(u'\) should scale with the reference velocity in the same manner as long as the burner geometry does not change.
+In the moderate to intense turbulence environment in the LSB, this value is of the order of unity.\cite{2008-cheng-a}
 That leaves only the term \(\dfrac{ S_L }{ U_0 }\) as a function of \(U_0\).
-Typically, the laminar flame speeds are an order of magnitude lower (\(\approx O(1)\) m/s) than the reference velocities at which the LSBs are operated (\(\approx O(10)\) m/s).
-%BUT YOU CAN ONLY IGNORE THIS TERM IF u'/Uo IS NOT ALSO SMALL - ??? typically u'/Uo is <0.1 ??? 
-As a result, this term is vanishingly small, leaving the RHS independent of \(U_0\).
+Typically, the laminar flame speeds are at least an order of magnitude lower (\(\approx O(1)\) m/s) than the reference velocities at which the LSBs are operated (\(\approx O(10)\) m/s).
+As a result, this term is a vanishingly small portion of the sum, leaving the entire RHS independent of \(U_0\).
 In other words, the flame location, \(X_f\) is expected to be invariant with the reference velocity at which the LSB is operated.
 
 Now, consider the effect of increasing the reference velocity on the angle of the flame cone.
@@ -158,8 +157,14 @@ Increasing the reference velocity does not affect any of these factors and thus,
 
 Finally, the effect of the reference velocity on the structure of the turbulent flame should be considered.
 Depending on the characteristics of the flame structure, the operation point can be placed on a Borghi diagram, as shown in Figure \ref{fig:borghiDiagram}
+The Borghi diagram is a phase diagram used to classify and delineate regimes of premixed turbulent combustion.
+% TODO: Reference for the Borghi diagram? 1985-borghi?
+The diagram uses non-dimensional properties of the reacting mixture and turbulence-related parameters to describe the structure of the flame.
 It is useful to examine the effect of various parameters on the flame structure by examining the tendency of the operating point to shift on the Borghi diagram.
-To do so, the key parameters to be considered are the rms velocity, \(u'\), the laminar flame speed, \(S_L\), the integral length scale of the flow, \(L\), and the flame thickness, \(\delta_f\).
+
+Several versions of the Borghi diagram exist that use different variables to plot the combustion regimes.
+In the current study, we use a diagram based on \(\dfrac{ u' }{ S_L }\) and \(dfrac{ L }{ \delta_f }\).
+The key parameters to be considered are the rms velocity, \(u'\), the laminar flame speed, \(S_L\), the integral length scale of the flow, \(L\), and the flame thickness, \(\delta_f\).
 
 Increasing the reference velocity will be accompanied with a concomitant increase in the level of turbulence in the flow, but it changes none of the other parameters.
 As a result, the operating point will traverse vertically on the Borghi diagram.
@@ -259,9 +264,9 @@ The mathematical treatment is not particularly complicated and is covered in det
 Here, we shall merely remark that the functional form of the solution has two limiting cases.
 The limits are decided by the relative magnitudes of the pumping rate, \(W_{01}\), which depends on the laser intensity and the radiative transition probability, and the relaxation rate in the absence of an external field, which is given by the sum of the spontaneous emission and collisional quenching rate, \(A_{10} + Q_{10}\).
 The pumping rate is the rate at which the upper energy level is populated through stimulated absorption from the lower level.
-The relaxation of the molecules to the lower energy state occurs either through spontaneous emission  of a photon or energy transfer to other molecules through inelastic collisions.
+The relaxation of the molecules to the lower energy state occurs either through spontaneous emission of a photon or energy transfer to other molecules through inelastic collisions.
 
-When the pumping rate is far lower compared to the relaxation processes (\(W_{01}\ll A_{10}+Q_{10}\)), the solution tends to the weak excitation limit.
+When the pumping rate is far lower compared to the relaxation processes (\(W_{01} \ll A_{10} + Q_{10}\)), the solution tends to the weak excitation limit.
 In this limit, the functional form of the solution is shown in Equation \ref{eqn:twoLevelModel-weak}
 
 \begin{equation}
@@ -351,7 +356,8 @@ Consequently, the weak excitation limit is also referred to as the linear regime
 
 For the sake of completion, we will briefly mention the other limit of the two-level model solution that occurs when the rate of pumping far exceeds the relaxation rate (\(W_{01} \gg A_{10} + Q_{10}\)).
 This is called the saturated limit and in this limit, the fluorescence signal ceases to change with the intensity of the incident laser beam.
-Operating in this regime has one major advantage for quantitative LIF measurements, the measured fluorescence signal is nearly independent of the collisional quenching rate, a parameter that can change signficantly throughout the combustion. However, there are drawbacks to operating in this regime.
+Operating in this regime has one major advantage for quantitative LIF measurements; the measured fluorescence signal is nearly independent of the collisional quenching rate, a parameter that can change significantly throughout the combustion.
+However, there are several drawbacks to operating in this regime.
 First, the magnitude of the LIF signal per unit incident laser intensity tends to be the maximum in the linear regime.
 Once the variation ceases to be linear (even before nearing the saturation limit), we get diminishing returns for increasing the laser power.
 For measurements with low signal-to-noise ratio, which is often the case for PLIF imaging, this is a significant drawback.
@@ -363,7 +369,7 @@ For these reasons, we will restrict our discussion hence forward the linear regi
 
 In this section, we will examine the limitations of trying to apply the two-level model to describe the CH PLIF process.
 
-Laser-Induced Fluoresence is a multi-step process.
+Laser-Induced Fluorescence is a multi-step process.
 First, the marker species absorbs a photon and transitions from a lower energy state to a higher one.
 This is followed by several physical processes, of which only one pathway leads to the spontaneous de-excitation of the excited molecule, accompanied by the release of a photon.
 The de-excitation can---but does not need to---take the molecule back to the original state.
@@ -405,7 +411,6 @@ The third option is for the CH molecule to experience stimulated emission in the
 It is highly unlikely that the apposite photon would have a frequency other than the excitation laser.
 The rate of stimulated emission induced by the excitation laser beam is proportional to the Einstein absorption coefficient for the transition.
 Other photons that can induce stimulated emission could originate from spontaneous emission or CH* chemiluminescence, however they would be negligible in intensity compared to the laser.
-In part, this is due to the spatial distribution of CH in a typical flame.
 
 The fourth option is for the molecule to experience further excitation by absorbing multiple photons or through collisions with other energetic molecules in the system.
 Since most available photons do not match any transitions from the \(B^2\Sigma^-\), \(v=0\) state, it is unlikely to experience multi-photon excitation.
@@ -446,12 +451,11 @@ Fortunately, this can be significantly simplified.
 Previous studies\cite{1996-luque-c,2000-luque} have indicated that the off-diagonal \(B\rightarrow X\) (0,1) transition plays a relatively minor role accounting for only 3.5\% of the total fluorescence.
 Further, the radiative \(A\rightarrow X\) transitions are known\cite{1996-luque-b} to be strongly diagonal, with little or no interaction\cite{1985-garland-b} between the two states.
 The net result of these two assertions is that we can treat the two \(B\rightarrow A\rightarrow X\) pathways to be disjoint and parallel.
-The resulting pseudo-three-level model is shown in Figure \ref{fig:simplifiedEnergyLevels}.
-%WHY DO YOU CALL THIS A PSEUDO THREE LEVEL SYSTEM INSTEAD OF CALLING IT A FOUR LEVEL SYSTEM?
+The resulting model involving four energy levels is shown in Figure \ref{fig:simplifiedEnergyLevels}.
 
 \input{figures/simplifiedEnergyLevels}
 
-According to this model, the lower state of the CH system is treated as a single pool from which CH molecules are excited to which they return.
+According to this model, the lower state of the CH system is treated as a single pool from which CH molecules are excited from or de-excited to.
 This not only neglects the rotational manifold, but also the vibrational manifold of the ground state.
 This assumption would be valid as long as most of the CH molecules occupy the \(v=0\) state and the fraction of molecules in the \(v=1\) state can be safely neglected.
 At flame temperatures of about 2200 K, this assumption is somewhat questionable as only about 83\% of the ground state CH molecules occupy the \(v=0\) level and as much as 14\% are found at the \(v=1\) state.
@@ -461,7 +465,7 @@ The rates of the various transition processes are indicated in Figure \ref{fig:s
 \(W_{02}\) is the pumping process that populates the \(B\)(0) state.
 \(Q_{ij}\) are collisional energy transfer processes that transfer CH molecules from the \(i\) level to the \(j\) level.
 The subscripts 0, 1 and 2 represent the electronic energy levels \(X\), \(A\) and \(B\).
-Processes involving the \(A\)(v=0) state are differentiated from those involving the \(A\)(v=1) state by a prime (\('\)).
+Processes involving the \(A\)(\(v=0\)) state are differentiated from those involving the \(A\)(\(v=1\)) state by a prime (\('\)).
 Finally, \(A_{ij}\) represents the spontaneous emission coefficients between the \(i\) and \(j\) levels.
 
 Applying Equation \ref{eqn:fluorescencePhotons} to this case, we can write an expression for the LIF signal intensity as follows,
@@ -509,7 +513,7 @@ This results in a closed set of linear equations, which can be expressed in matr
   \label{eqn:closedForm}
 \end{equation}
 
->From Equation \ref{eqn:closedForm}, we only need the solutions to \(n_1\) and \(n'_1\).
+From Equation \ref{eqn:closedForm}, we only need the solutions to \(n_1\) and \(n'_1\).
 Substituting the solutions directly into Equation \ref{eqn:signalIntensity}, we can write the solution in the following form to mirror the expression in Equation \ref{eqn:twoLevelModel-weak}.
 
 \begin{equation}
@@ -563,7 +567,7 @@ The vibrational energy, \(E_v(v)\) of a level is calculated according to Equatio
 \end{align}
 
 The \(B^2\Sigma^-\leftarrow X^2\Pi\) transition of the CH system is governed by Hund's Case b and hence, the appropriate rotational quantum number to use is \(N\).
-%YOU NEED A REFERENCE FOR THE ABOVE SENTENCE
+% TODO: Reference for Hund's case b for CH B-X
 For each rotational quantum number \(N\), there are two possible values of \(J\) given by \(N \pm \frac{1}{2}\).
 The rovibrational partition function, \(Q_{rv}\) is a summation over all available vibrational and rotational levels in the \(X^2\Pi\) state.
 In practice, this summation over the vibrational states may be truncated at \(v=4\) and the summation over the rotational states may be truncated at \(N''=22\) with negligible loss in accuracy.
