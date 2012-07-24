@@ -215,26 +215,75 @@ In light of this, the nearly constant location of the \(S_{37^\circ}\) flame cou
 % What does the flame do?
 % What insight does that provide into the LSB flame behavior?
 
+% Text dump from Chapter 2
+\subsection{Effect of Flow Parameters on Flame Characteristics}
 
-% Planned series of experiments to visualize the flame structure for one swirler (vane angle 40 degrees)
-% Total of 10 cases
-% All CH4 + air
-% 300 K, 1 atm, 30 m/s, 0.70 (cold)
-% 500 K, 1 atm, 30 m/s, 0.70 (baseline)
-% 500 K, 1 atm, 30 m/s, 0.80 (rich)
-% 500 K, 1 atm, 30 m/s, 0.60 (lean)
-% 500 K, 1 atm, 20 m/s, 0.70 (slow)
-% 500 K, 1 atm, 40 m/s, 0.70 (fast)
-% 500 K, 1 atm, 30 m/s, 0.70, high/low turbulence
-% 500 K, x atm, 30 m/s, 0.70
-% Some high pressure cases would be nice.
-% We'll keep it open for fuels. CH4 + H2 + air, CO + H2 + CH4 + air, perhaps.
-% Cases cover:
-% Effect of temperature
-% Effect of equivalence ratio
-% Effect of velocity
-% Effect of turbulence intensity
-% Effect of pressure
-% Potentially, effect of fuels.
+The operating conditions of the LSB combustor are fully described by four fundamental flow parameters; the combustor pressure, \(p\), the combustor temperature, \(T\), the mixture equivalence ratio, \(\phi\), and the reference velocity, \(U_0\).
+The reference velocity represents the mass-averaged velocity of the reactants entering the LSB and is defined after Cheng et al.\cite{2000-cheng} as a function of several variables such as the mass flow rates of the air and fuel, \(\dot{m}\), their densities at the swirler, \(\rho\) and the area of the swirler calculated from its outer diameter, \(d_s\).
 
+\begin{equation}
+U_0 = \frac{ \left( \dfrac{ \dot{m}_{air} }{ \rho_{air} } \right) + \left( \dfrac{ \dot{m}_{fuel} }{ \rho_{fuel} }\right) }{ \dfrac{\pi d_s^2 }{4} }
+\label{eqn:referenceVelocity}
+\end{equation}
+
+This section desribes the effect each of these flow parameters has on the location and shape of the LSB flame.
+
+\subsubsection{Preheat Temperature}
+
+Now, let us consider the effect of increasing the preheat temperature on the flame location, shape and structure.
+As discussed earlier, the flame standoff distance is decided by the local reactant velocity and the local turbulent flame speed.
+Increasing the preheat temperature impacts these parameters in two ways.
+First, the higher temperature increases the kinematic viscosity of the flow.
+The mechanism that transports the axial momentum in the radial direction and causes the flow to diverge is driven by viscosity.
+Enhanced viscous effects will result in a steeper decrease in the axial velocity.
+This also causes an increased production of turbulent kinetic energy.
+Second, global reaction rates increase with temperature, causing the laminar flame speed to increase.
+The net result of the increased turbulence and laminar flame speed is that the turbulent flame propagates faster.
+As a result of this, the flame will be expected to stabilize closer to the inlet of the LSB.
+
+The effect on the flame shape is harder to predict.
+The increased divergence will drive more axial momentum into the shear layer, increasing the local velocity of the reactants.
+At the same time, the increased \(u'\) and \(S_L\) drive up the turbulent flame speed.
+This may either increase or decrease the angle of the flame.
+
+Finally, we return to the Borghi diagram to consider the effect of a higher preheat temperature on the flame structure.
+The rapid rise of \(S_L\) with temperature will dominate the change in the ordinate of the operating point, causing the operating point to move down.
+On the X-axis, the flame thickness slightly decreases with temperature, driving the point to the right.
+The net down-and-right movement of the operating condition drives the flame regime closer to wrinkled flamelets.
+
+\subsubsection{Swirler Vane Angle}
+
+The swirler vane angle directly affects the amount of swirl present in the flow field.
+Since the LSB utilizes swirl to enhance the divergence of the flow near the inlet, an increased vane angle will result in a sharper deceleration of the reactants and a more upstream stabilization location of the turbulent flame.
+This is corroborated by past research\cite{1986-starner} which reported shorter, wider (higher flame angle) flames when the amount of swirl in a combustor was increased.
+Increasing the swirl does not affect any other parameters in the flow and is hence not expected to have a significant effect on the flame structure.
+
+\subsubsection{Equivalence Ratio}
+
+Operating the LSB with a richer (or more specifically, a less lean) fuel-air mixture can significantly increase the net heat release in the combustor .
+While the velocity flowfield is unaffected by changing the reactant composition (except in response to the heat release), the turbulent flame speed is enhanced.
+Thus, increasing the equivalence ratio will cause the flame to move upstream and stabilize closer to the inlet.
+The response of the flame angle to this change is not immediately discernible.
+
+On the Borghi diagram, the increase in \(S_L\) and decrease in flame thickness caused by the richer mixture will drive the operating point down and to the right, towards the wrinkled flamelets regime.
+
+\subsubsection{Combustor Pressure}
+
+Finally, the effect of increasing the combustor pressure on the flame characteristics is of much pertinence it is likely to be varied in gas turbine engines to change the loading/power output.
+Researchers\cite{1998-kobayashi,2002-kobayashi-b} have observed that the effect of the combustor pressure on the turbulent flame speed is minimal, causing a slight drop in the turbulent flame speed at high pressures.
+Griebel et al.\cite{2007-griebel} attribute this behavior to the fact that the decrease in \(S_L\) with pressure is compensated for by broadening of the turbulence spectrum, resulting in a higher turbulent flame surface area.
+Higher pressures also decrease the kinematic viscosity of the reactant flow, causes a somewhat less efficient divergence at the inlet of the LSB.
+The net effect of the two is expected to cause the flame to stabilize slightly further downstream from the inlet of the LSB.
+
+This has repercussions for the gas turbine designers as a flame stabilized further away from the inlet is likelier to be blown off due to perturbations.
+In practice, operating at high combustor pressure also causes increased preheat temperatures and the two effects should counteract each other.
+The slight decrease in the turbulent flame speed should cause the flame angle to decrease by a small amount.
+
+Finally, it is interesting to examine this on a Borghi diagram to deduce any changes in the flame structure that might result.
+Kobayashi et al.\cite{1997-kobayashi} report that the increasing pressure causes a weak drop in \(u'\), reaching a minimum around 10 atm.
+This drop, though, is expected to be dominated by the fall in laminar flame speed with pressure, causing the \(u'/S_L\) factor to increase with pressure.
+On the X-axis, the integral length scale is very nearly unaffected by the pressure change, but the flame thickness decreases rapidly.
+Thus, pressure causes the operating point to move up and to the right on the diagram.
+At most, this can cause the turbulent regime to change from wrinkled laminar flamelets to corrugated flames.
+In the absence of a drastic change in the turbulent flame, the only observable effect is likely to be an increase in the fine structure of the wrinkles in the flame due to the broadened turbulence spectrum.
 

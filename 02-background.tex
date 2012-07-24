@@ -1,11 +1,6 @@
 \chapter{Background}
 \label{ch:background}
 
-% TODO: Introduction paragraph summarizing contents of this chapter
-% TODO: Reference for Damköhler's model
-% TODO: Reference for Borghi diagram
-% TODO: Move some of the LSB discussion to Chapter 5
-
 This is a two-part chapter.
 The first section focuses on the LSB and discusses the current understanding of factors affecting the LSB reacting flow field.
 The second section explores efforts to model the CH PLIF signal intensity as a function of local composition and thermodynamic conditions in a flame.
@@ -104,16 +99,18 @@ U_0 = \frac{ \left( \dfrac{ \dot{m}_{air} }{ \rho_{air} } \right) + \left( \dfra
 \label{eqn:referenceVelocity}
 \end{equation}
 
-This section desribes the effect each of these flow parameters has on the location and shape of the LSB flame.
+In this section, we will briefly discuss the effect of flow parameters have on the flame characteristics of interest.
+By way of an example, and as a means to introduce a few basic concepts, the following discussion will examine the effect of increasing the reference velocity on the flame location, shape and structure.
+In-depth discussion of the dependence of each flame characteristic on all the flow parameters of interest will be deferred till Chapter \ref{ch:lsb}.
 
-\subsubsection{Reference Velocity}
+\subsubsection{Effect on Flame Standoff Distance}
 
 As described earlier in Section \ref{subsec:lsb-flame-stabilization-mechanism}, the LSB flame is stabilized where the local reactant velocity and turbulent flame speed are equal.
 
 Unlike the laminar flame speed, \(S_L\), the turbulent flame speed is not uniquely determined by the reactant composition and thermodynamic conditions.
-Instead, it is a function of the flow characteristics and the burner geometry as well.
+Instead, it is a function of the flow characteristics and the burner geometry.
 
-A simple model proposed by Damk{\"o}hler\cite{1996-glassman} treats the turbulent flame as a wrinkled laminar flame.
+A simple model proposed by Damk{\"o}hler\cite{1940-damkohler} treats the turbulent flame as a wrinkled laminar flame.
 The presence of these wrinkles vastly increases the surface area of the flame, increasing the rate at which the reactants can be consumed through the flame.
 The size of these wrinkles can be related to the rms of the local reactant velocity, \(u'\).
 Expressed mathematically, this leads to Equation \ref{eqn:damkohlerModel}.
@@ -154,86 +151,32 @@ Typically, the laminar flame speeds are at least an order of magnitude lower (\(
 As a result, this term is a vanishingly small portion of the sum, leaving the entire RHS independent of \(U_0\).
 In other words, the flame location, \(X_f\) is expected to be invariant with the reference velocity at which the LSB is operated.
 
+\subsection{Effect on Flame Shape}
+
 Now, consider the effect of increasing the reference velocity on the angle of the flame cone.
 Again, the stabilization condition is equality between the local velocity and the turbulent flame speed.
 However, along the flame cone, the reactant velocities are much higher and the flame propagation can only occur at an angle to the reactant velocity.
 Increasing the reference velocity does not affect any of these factors and thus, the flame angle can also be expected to be unchanged at higher reference velocities.
 
+\subsection{Effect on Flame Structure}
+
 \input{figures/borghiDiagram}
 
 Finally, the effect of the reference velocity on the structure of the turbulent flame should be considered.
 Depending on the characteristics of the flame structure, the operation point can be placed on a Borghi diagram, as shown in Figure \ref{fig:borghiDiagram}
-The Borghi diagram is a phase diagram used to classify and delineate regimes of premixed turbulent combustion.
-The diagram uses non-dimensional properties of the reacting mixture and turbulence-related parameters to describe the structure of the flame.
+The Borghi diagram\cite{1985-borghi} is a phase diagram used to classify and delineate regimes of premixed turbulent combustion.
+The double-log plot is drawn using properties of the reacting mixture and its turbulence-related quantities.
+It is partitioned into various regimes by different straight lines representing the locus of non-dimensional parameters.
 It is useful to examine the effect of various parameters on the flame structure by examining the tendency of the operating point to shift on the Borghi diagram.
 
 Several versions of the Borghi diagram exist that use different variables to plot the combustion regimes.
 In the current study, we use a diagram based on \(\dfrac{ u' }{ S_L }\) and \(\dfrac{ L }{ \delta_f }\).
-The key parameters to be considered are the rms velocity, \(u'\), the laminar flame speed, \(S_L\), the integral length scale of the flow, \(L\), and the flame thickness, \(\delta_f\).
+The key parameters to be considered here are the rms velocity, \(u'\), the laminar flame speed, \(S_L\), the integral length scale of the flow, \(L\), and the flame thickness, \(\delta_f\).
 
 Increasing the reference velocity will be accompanied with a concomitant increase in the level of turbulence in the flow, but it changes none of the other parameters.
 As a result, the operating point will traverse vertically on the Borghi diagram.
 If the LSB operates in the wrinkled flamelets regime to begin with, at very high reference velocities, it may be expected to cross over into the corrugated flamelets regime.
 This will be marked by the formation of holes and pockets in the flame sheet.
-
-\subsubsection{Preheat Temperature}
-
-Now, let us consider the effect of increasing the preheat temperature on the flame location, shape and structure.
-As discussed earlier, the flame standoff distance is decided by the local reactant velocity and the local turbulent flame speed.
-Increasing the preheat temperature impacts these parameters in two ways.
-First, the higher temperature increases the kinematic viscosity of the flow.
-The mechanism that transports the axial momentum in the radial direction and causes the flow to diverge is driven by viscosity.
-Enhanced viscous effects will result in a steeper decrease in the axial velocity.
-This also causes an increased production of turbulent kinetic energy.
-Second, global reaction rates increase with temperature, causing the laminar flame speed to increase.
-The net result of the increased turbulence and laminar flame speed is that the turbulent flame propagates faster.
-As a result of this, the flame will be expected to stabilize closer to the inlet of the LSB.
-
-The effect on the flame shape is harder to predict.
-The increased divergence will drive more axial momentum into the shear layer, increasing the local velocity of the reactants.
-At the same time, the increased \(u'\) and \(S_L\) drive up the turbulent flame speed.
-This may either increase or decrease the angle of the flame.
-
-Finally, we return to the Borghi diagram to consider the effect of a higher preheat temperature on the flame structure.
-The rapid rise of \(S_L\) with temperature will dominate the change in the ordinate of the operating point, causing the operating point to move down.
-On the X-axis, the flame thickness slightly decreases with temperature, driving the point to the right.
-The net down-and-right movement of the operating condition drives the flame regime closer to wrinkled flamelets.
-
-\subsubsection{Swirler Vane Angle}
-
-The swirler vane angle directly affects the amount of swirl present in the flow field.
-Since the LSB utilizes swirl to enhance the divergence of the flow near the inlet, an increased vane angle will result in a sharper deceleration of the reactants and a more upstream stabilization location of the turbulent flame.
-This is corroborated by past research\cite{1986-starner} which reported shorter, wider (higher flame angle) flames when the amount of swirl in a combustor was increased.
-Increasing the swirl does not affect any other parameters in the flow and is hence not expected to have a significant effect on the flame structure.
-
-\subsubsection{Equivalence Ratio}
-
-Operating the LSB with a richer (or more specifically, a less lean) fuel-air mixture can significantly increase the net heat release in the combustor .
-While the velocity flowfield is unaffected by changing the reactant composition (except in response to the heat release), the turbulent flame speed is enhanced.
-Thus, increasing the equivalence ratio will cause the flame to move upstream and stabilize closer to the inlet.
-The response of the flame angle to this change is not immediately discernible.
-
-On the Borghi diagram, the increase in \(S_L\) and decrease in flame thickness caused by the richer mixture will drive the operating point down and to the right, towards the wrinkled flamelets regime.
-
-\subsubsection{Combustor Pressure}
-
-Finally, the effect of increasing the combustor pressure on the flame characteristics is of much pertinence it is likely to be varied in gas turbine engines to change the loading/power output.
-Researchers\cite{1998-kobayashi,2002-kobayashi-b} have observed that the effect of the combustor pressure on the turbulent flame speed is minimal, causing a slight drop in the turbulent flame speed at high pressures.
-Griebel et al.\cite{2007-griebel} attribute this behavior to the fact that the decrease in \(S_L\) with pressure is compensated for by broadening of the turbulence spectrum, resulting in a higher turbulent flame surface area.
-Higher pressures also decrease the kinematic viscosity of the reactant flow, causes a somewhat less efficient divergence at the inlet of the LSB.
-The net effect of the two is expected to cause the flame to stabilize slightly further downstream from the inlet of the LSB.
-
-This has repercussions for the gas turbine designers as a flame stabilized further away from the inlet is likelier to be blown off due to perturbations.
-In practice, operating at high combustor pressure also causes increased preheat temperatures and the two effects should counteract each other.
-The slight decrease in the turbulent flame speed should cause the flame angle to decrease by a small amount.
-
-Finally, it is interesting to examine this on a Borghi diagram to deduce any changes in the flame structure that might result.
-Kobayashi et al.\cite{1997-kobayashi} report that the increasing pressure causes a weak drop in \(u'\), reaching a minimum around 10 atm.
-This drop, though, is expected to be dominated by the fall in laminar flame speed with pressure, causing the \(u'/S_L\) factor to increase with pressure.
-On the X-axis, the integral length scale is very nearly unaffected by the pressure change, but the flame thickness decreases rapidly.
-Thus, pressure causes the operating point to move up and to the right on the diagram.
-At most, this can cause the turbulent regime to change from wrinkled laminar flamelets to corrugated flames.
-In the absence of a drastic change in the turbulent flame, the only observable effect is likely to be an increase in the fine structure of the wrinkles in the flame due to the broadened turbulence spectrum.
 
 \section{CH PLIF Signal Modeling}
 \label{sec:background-chplif-signal-modeling}
