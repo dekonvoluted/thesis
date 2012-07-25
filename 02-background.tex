@@ -62,7 +62,7 @@ The virtual origin represents the point upstream from which the divergence seemi
 The second parameter is the axial stretch rate, which is the slope of the linear region of the axial velocity profile.
 
 Cheng et al.\cite{2006-cheng,2008-cheng-a} investigated these two parameters using a non-preheated setup at atmospheric pressure.
-They found that the virtual origin for reacting LSB flow fields asymptotically translates upstream at low/moderate Reynolds numbers, while the mean axial stretch rate is nearly independent of the same parameter.
+They found that the virtual origin for reacting LSB flow fields asymptotically translates upstream at low/moderate Reynolds numbers, while the mean axial stretch rate, when normalized by the reference velocity, is nearly independent of the same parameter.
 This means that at moderately increasing Reynolds numbers, the divergent flow structure shifts upstream into the injector.
 This upstream shift ceases for high Reynolds numbers (above 70,000).
 
@@ -137,13 +137,13 @@ In order to predict the expected effect of increasing the reference velocity, co
 S_T &= S_L + K u' \nonumber \\
 \implies U &= S_L + K u' \nonumber \\
 U_0 - \frac{ dU }{ dx } ( X_f - X_0 ) &= S_L + K u' \nonumber \\
-\therefore X_f &= X_0 + \frac{1 - \left( \dfrac{ S_L }{ U_0 } + K\dfrac{ u' }{ U_0 } \right) }{ \dfrac{ dU }{ dx } }
+  \therefore X_f &= X_0 + \frac{1 - \left( \dfrac{ S_L }{ U_0 } + K\dfrac{ u' }{ U_0 } \right) }{ \dfrac{ 1 }{ U_0 } \dfrac{ dU }{ dx } }
 \label{eqn:flameImmobility}
 \end{align}
 
 Consider the terms on the RHS of Equation \ref{eqn:flameImmobility}.
 As described in Section \ref{subsec:lsb-axial-velocity-profile}, the virtual origin location is invariant for moderate to high values of reference velocity.
-In the same section, the slope of the velocity profile, \(\dfrac{ dU }{ dx }\), was also noted as being invariant with reference velocity.
+In the same section, the normalized slope of the velocity profile, \(\dfrac{ 1 }{ U_0 } \dfrac{ dU }{ dx }\), was also noted as being invariant with reference velocity.
 In the numerator of the second term, the local turbulence intensity, \(\dfrac{ u' }{ U_0 }\), can also be expected to be a constant, since \(u'\) should scale with the reference velocity in the same manner as long as the burner geometry does not change.
 The turbulence intensity, \(\dfrac{ u' }{ U_0 }\) in the LSB increases from the inlet along the centerline reaching values on the order of 0.1--1.0 near the flame standoff location.\cite{2008-cheng-a}
 That leaves only the term \(\dfrac{ S_L }{ U_0 }\) as a function of \(U_0\).
