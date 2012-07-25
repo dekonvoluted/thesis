@@ -63,9 +63,9 @@
 \RequirePackage[colorlinks]{hyperref} % Colored links. 
 \AtBeginDocument{
   \hypersetup{
-    pdfstartview={FitH},
-    pdftitle={\@title},
-    pdfauthor={\@author}
+    pdfstartview={FitB},%
+    pdftitle={\@title},%
+    pdfauthor={\@author}%
   }
 }
 \RequirePackage[noadjust]{cite} % Compact an ordered list of citations (1,2,3 -> 1--3)
