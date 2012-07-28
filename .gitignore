@@ -13,4 +13,12 @@ figures/sampleCenterlineIntensity.tex
 figures/chPLIFSpectrumPlot.tex
 figures/chB-XAbsorptionPlot.tex
 figures/chRKRPlot.tex
+figures/referenceVelocityAnglePlot.tex
+figures/referenceVelocityDistancePlot.tex
+figures/referenceVelocityHighVelPLIFEdge.tex
+figures/referenceVelocityHighVelPLIFHistogram.tex
+figures/referenceVelocityHighVelPLIFImage.tex
+figures/referenceVelocityLowVelPLIFEdge.tex
+figures/referenceVelocityLowVelPLIFHistogram.tex
+figures/referenceVelocityLowVelPLIFImage.tex
 
