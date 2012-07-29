@@ -204,36 +204,37 @@ In the limit, this behavior causes the LSB to behave like a conventional swirl-s
 \section{Effect of Equivalence Ratio}
 \label{sec:lsb-effect-of-equivalence-ratio}
 
+\input{figures/equivalenceRatioResults}
+\input{figures/frameSequence}
+\input{figures/equivalenceRatioPLIFResults}
+
 The LSB is primarily intended for fuel-lean operation in order to utilize its low \ce{NO_x} emission performance.
-As a result, most of the testing was done as close as possible to a target \(\phi\) of 0.56.
+As a result, most of the high pressure testing was done as close as possible to a target \(\phi\) of 0.56.
 Limited testing was carried out at 12 atm for two off-target conditions: a slightly richer (\(\phi \approx 0.58\)) and a slightly leaner (\(\phi \approx 0.53\)) mixture, in order to explore the sensitivity of the LSB flame to limited changes in equivalence ratio.
 The \(S_{45^\circ}\) swirler was used for these tests.
-The corresponding averaged and Abel-deconvoluted flame images are presented in Figure FIXME.
+The corresponding averaged and Abel-deconvoluted flame images are presented in Figure \ref{fig:equivalenceRatioResults}.
  
 Two characteristics of the flame are immediately obvious from these images.
 First, the zone of heat release, marked by the region from which CH* chemiluminescence is observed, is increasingly compact at fuel-rich conditions.
-Virtually all other flame images acquired at a leaner condition show a long flame, with the heat release distributed over the entire visible area of the combustor.
-The compactness of the heat release zone indicates potentially poor \ce{NO_x} performance at these conditions.
-% HMMM - SLIGHTLY RICHER WOULD ALWAYS RAISE NOX - YOU NEED TO EXPLAIN WHAT YOU MEAN HERE - IF YOU ARE TALKING ABOUT LONGER HIGH T RESIDENCE TIMES, WHAT LEVEL OF FRACTIONAL INCREASE ARE WE TALKING ABOUT??
+Virtually all other flame images acquired at leaner conditions show a long flame, with the heat release distributed over the entire visible area of the combustor.
+As discussed in the previous section, a compact heat release zone near the inlet results in strong recirculation features and potentially poor \ce{NO_x} performance, even accounting for the higher equivalence ratio.
 
 Second, the fuel-rich flame brush can be observed to wrap around and anchor itself on the dump plane.
 This is particularly observable in the Abel-deconvoluted image.
 The attached region is not as bright as the rest of the flame brush, indicating that the flame may be attaching itself intermittently.
 This intermittent behavior can be confirmed from the instantaneous images where it is visible on some of the acquired images, but not others.
-% ARE YOU GOING TO SHOW THEM??
-This behavior was alluded to in Section \ref{sec:lsb-effect-of-swirler-vane-angle} as being the result of the enhanced toroidal recirculation zone produced by this swirler.
+A sequence of such images are shown in Figure \ref{fig:frameSequence}.
+This behavior was alluded to in Section \ref{sec:lsb-effect-of-swirl} as being the result of the enhanced toroidal recirculation zone produced by this swirler.
 Thus, the intermittent attachment of the flame to the inlet indicates the increased importance of the toroidal recirculation zone in stabilizing the flame.
 
 It should be noted that the reliance on a toroidal recirculation zone to anchor the flame to the inlet is one of the primary flame stabilization mechanisms used by traditional swirl combustors.
 Thus, LSB swirlers with high vane angles tend to behave like traditional swirl combustors at fuel-rich conditions.
 
-% Text dump from Chapter 2
-Operating the LSB with a richer (or more specifically, a less lean) fuel-air mixture can significantly increase the net heat release in the combustor .
-While the velocity flow field is unaffected by changing the reactant composition (except in response to the heat release), the turbulent flame speed is enhanced.
-Thus, increasing the equivalence ratio will cause the flame to move upstream and stabilize closer to the inlet.
-The response of the flame angle to this change is not immediately discernible.
-
-On the Borghi diagram, the increase in \(S_L\) and decrease in flame thickness caused by the richer mixture will drive the operating point down and to the right, towards the wrinkled flamelets regime.
+In order to explore the flame structure of a richer flame, LSB Configuration B was operated at \(\phi\) values of 0.90 and 1.05 and imaged using CH PLIF.
+These images are presented in Figure \ref{fig:equivalenceRatioPLIFResults}.
+On the Borghi diagram, increasing \(\phi\) causes a higher \(S_L\) and reduces \(\delta_f\).
+This moves the operating point down and to the right, taking it closer to a wrinkled flame regime.
+This is reflected in the histogram where the richer flame is seen to be less wrinkled.
 
 \section{Effect of Combustor Pressure}
 \label{sec:lsb-effect-of-combustor-pressure}
