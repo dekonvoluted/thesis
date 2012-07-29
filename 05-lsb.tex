@@ -160,36 +160,46 @@ On the Y-axis, the exponential dependence of \(S_L\) on temperature will decreas
 The net down-and-right movement of the operating point drives the flame regime away from broken flamelets and closer towards wrinkled flames.
 Since our flame structure data was already in the wrinkled flame regime, this change could not be imaged by CH PLIF.
 
-\section{Effect of Swirler Vane Angle}
-\label{sec:lsb-effect-of-swirler-vane-angle}
+\section{Effect of Swirl}
+\label{sec:lsb-effect-of-swirl}
 
-As described in Chapter \ref{ch:experimental}, the LSB swirlers tested for this study are designed to have the same mass flow splits.
-The \(S_{45^\circ}\) swirler has a higher vane angle, resulting in greater blockage to the flow passing through the annular section.
-In order to compensate for this, the perforated plate covering the central section has slightly smaller holes.
-The net effect retains the same mass flow split as in the \(S_{37^\circ}\) swirler.
+\input{tables/swirlCases}
+\input{figures/swirlPLIFResults}
 
-Chapter \ref{ch:background} describes how the swirler vane angle relates to the amount of swirl imparted to the incoming flow.
-According to Equation FIXME, a swirler with a higher vane angle will produce greater swirl in the reactants.
-% DOES THAT EXPLANATION DESCRIBE THERE IS NO SWIRL IN THE CENTRAL REGION - IN WHICH CASE YOU MIGHT NOT WANT TO SAY HOW IT EFFECTS THE SWIRL OF THE REACTANTS - BUT INSTEAD THE SWIRL OF THE OUTER REACTANT FLOW?
-Previous work in swirl combustion\cite{1992-chan,1986-starner} has pointed out that increased swirl shortens the flame by enhancing the swirl-induced radial pressure gradients.
-% YOU WILL NEED TO EXPLAIN HOW THIS IS RELEVANT HERE - AS THE CENTRAL REGION IS NO SWIRL?
-The data acquired in the present investigation is in agreement with this observation.
-Operated at identical inlet conditions, the \(S_{45^\circ}\) swirler stabilizes a flame closer to the dump plane and with a larger flame angle compared to the \(S_{37^\circ}\) swirler.
+As described in Chapter \ref{ch:background}, the amount of swirl in the LSB flow field is quantified by a swirl number as defined in Equation \ref{eqn:theoreticalSwirlNumber}.
+Even though there is no tangential momentum in the core of the LSB flow field where the flame is stabilized, the swirl still exerts influence on the flame characteristics.
+
+The LSB utilizes swirl to enhance the divergence of the flow near the inlet.
+Consequently, an increased swirl number results in a sharper deceleration of the reactants and a more upstream stabilization point for the turbulent flame.
+This is corroborated by past research\cite{1986-starner,1992-chan} which reporter shorter, wider (higher flame cone angle) flames when the amount of swirl in a combustor was increased.
+
+The results of the present investigation are in agreement with this observation.
+Operated at identical inlet conditions, the \(S_{45^\circ}\) swirler stabilizes a flame closer to the inlet and with a larger flame angle compared to the \(S_{37^\circ}\) swirler.
 
 This result highlights an interesting trade-off for the designers of LSB-based gas turbine engines.
-The \(S_{45^\circ}\) flame is located further upstream and has a more concentrated region of heat release.
-This enhances the strength of the toroidal recirculation zone near the dump plane, which may be powerful enough under certain conditions (as we shall see in Section \ref{sec:lsb-effect-of-equivalence-ratio}) to even cause the flame to attach itself to the lip of the inlet.
-All of this means that the \(S_{45^\circ}\) flame is more stable and will resist perturbations in the incoming flow better than the \(S_{37^\circ}\) flame.
-However, the presence of a strong recirculation zone in the flow field of the \(S_{45^\circ}\) swirler will entrain more hot products and retain them longer near the zone of heat release.
+The \(S_{45^\circ}\) flame is located in a sharply decelerating flow field and as we discussed in Section \ref{sec:lsb-effect-of-preheat-temperature}, this results in a more stable flame resistant to perturbations in the flow field.
+Simultaneously, the presence of the concentrated heat release near the inlet increases the strength of the toroidal recirculation zone present there.
+As we shall see in Section \ref{sec:lsb-effect-of-equivalence-ratio}, this recirculation zone can become powerful enough to even cause the flame to attach itself to the lip of the inlet.
+Such a strong recirculation zone entrains hot products and retains them longer near the zone of heat release.
 This is a recipe for the production of thermal \ce{NO_x}.
 While no emission measurements were made as part of this study, it may be reasonably anticipated that the \ce{NO_x} performance of the \(S_{45^\circ}\) swirler will be degraded compared to the \(S_{37^\circ}\) swirler.
 The trade-off for gas turbine engine designers is thus between flame stability and emissions performance.
 
-% Text dump from Chapter 2
-The swirler vane angle directly affects the amount of swirl present in the flow field.
-Since the LSB utilizes swirl to enhance the divergence of the flow near the inlet, an increased vane angle will result in a sharper deceleration of the reactants and a more upstream stabilization location of the turbulent flame.
-This is corroborated by past research\cite{1986-starner} which reported shorter, wider (higher flame angle) flames when the amount of swirl in a combustor was increased.
-Increasing the swirl does not affect any other parameters in the flow and is hence not expected to have a significant effect on the flame structure.
+In Configuration A, the theoretical swirl number of the flow field is varied by switching out the swirlers.
+The mass flow split of each swirler is estimated from the blockage of the perforated plates covering the central portion of the swirler.
+On the other hand, Configuration B not only allows precise knowledge of this mass flow split, but also allows one to vary it in operation.
+This offers an alternate way to study the effect of swirl by changing the mass flow split.
+Figure \ref{fig:swirlPLIFResults} shows CH PLIF images of the flame sheet for a low and high swirl case.
+Also shown are the corresponding histograms measuring the statistics of the edge pixels in the central one-fourth of the flame.
+The test conditions for these two cases are presented in Table \ref{tab:swirlCases}.
+
+The results of this investigation show that the flame position is strongly affected by changing the swirl number in this manner.
+The reduced flow of reactants through the central portion, coupled with the enhanced divergence induced by the increased swirl flow causes the flame to shift much further upstream.
+The reduction in the local reactant velocity also decreases the local turbulence level and accounts for a less convoluted flame sheet.
+
+To conclude, changing the amount of swirl in the LSB flow field affects the flame stabilization point and the flame cone angle.
+This is primarily the effect of swirl changing the divergence of the core flow.
+In the limit, this behavior causes the LSB to behave like a conventional swirl-stabilized combustor.
 
 \section{Effect of Equivalence Ratio}
 \label{sec:lsb-effect-of-equivalence-ratio}
@@ -199,7 +209,7 @@ As a result, most of the testing was done as close as possible to a target \(\ph
 Limited testing was carried out at 12 atm for two off-target conditions: a slightly richer (\(\phi \approx 0.58\)) and a slightly leaner (\(\phi \approx 0.53\)) mixture, in order to explore the sensitivity of the LSB flame to limited changes in equivalence ratio.
 The \(S_{45^\circ}\) swirler was used for these tests.
 The corresponding averaged and Abel-deconvoluted flame images are presented in Figure FIXME.
-
+ 
 Two characteristics of the flame are immediately obvious from these images.
 First, the zone of heat release, marked by the region from which CH* chemiluminescence is observed, is increasingly compact at fuel-rich conditions.
 Virtually all other flame images acquired at a leaner condition show a long flame, with the heat release distributed over the entire visible area of the combustor.
