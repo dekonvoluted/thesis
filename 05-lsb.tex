@@ -80,7 +80,7 @@ Since increasing the reference velocity traverses the operating point along the 
 One way to ascertain the regimes in which the LSB is operated is to image the flame sheet and observe the flame structure.
 To that end, the LSB (Configuration B) was tested at atmospheric pressure with preheat temperatures ranging from 300 K to 440 K.
 Two of these conditions are relevant to this discussion and their operating parameters are presented in Table \ref{tab:referenceVelocityCases}.
-In order to prevent flame blowoff, the equivalence ratio had to be increased to 0.9.
+In order to prevent flame blow-off, the equivalence ratio had to be increased to 0.9.
 The resulting flame illuminated by an 80 mm tall, 250 \(\mu\)m thick laser sheet from the alexandrite laser and imaged using the PI-MAX 512\(\times\)512 intensified camera equipped with a 50 mm, f/1.4 lens.
 The camera was gated to 300 ns centered on the 70 ns laser pulse.
 The laser was operated at 10 Hz and the pulse energy was measured to be about 14 mJ for the low velocity case and about 17 mJ for the high velocity case.
@@ -103,61 +103,62 @@ Such a transition would cause \(S_T\) to increase at a reduced rate with \(u'\) 
 \section{Effect of Preheat Temperature}
 \label{sec:lsb-effect-of-preheat-temperature}
 
-The preheat temperature of the reactants is a key flow parameter, especially for gas turbine combustors.
-In general, the rates of most chemical reactions in the flame zone are highly sensitive to the temperature of the reactants.
-For the LSB in particular, the temperature of the incoming flow directly affects its viscosity and consequently, the velocity field in the flame stabilization region.
-Thus, studying the effect of the preheat temperature on the LSB flame and flow field is important.
+\input{tables/temperatureCases}
+\input{figures/temperatureLDVResults}
+\input{figures/temperatureLDVTransverse}
+
+Next, we consider the effect of increasing the preheat temperature on the flame location, shape and structure.
+The preheat temperature of the reactants is an important flow parameter for gas turbine applications and impacts the reacting flow field in the LSB in two ways.
+First, a higher preheat temperature increases the kinematic viscosity of the flow.
+The mechanism that transports the axial momentum in the radial direction and causes the flow to diverge is driven by viscous effects.
+Enhanced viscous effects will result in a steeper decrease in the axial velocity.
+Simultaneously, this causes an increased production of turbulent kinetic energy.
+Second, global reaction rates increase with temperature, causing the laminar flame speed to increase.
+The net result of the increased turbulence and laminar flame speed is that the turbulent flame propagates faster.
+As a result of the steeper velocity decay and the increased turbulent flame speed, the flame will be expected to stabilize closer to the inlet of the LSB.
 
 In order to explore this in greater detail, the velocity field of the combustor was mapped using Laser Doppler Velocimetry (LDV).
 The conditions were chosen to study the effect of increasing the preheat temperature on both reacting and non-reacting LSB flow fields.
 Further, the study includes both low and high reference velocity cases.
-The relevant flow parameters relating to these tests are presented in Table FIXME.
+The relevant flow parameters relating to these tests are presented in Table \ref{tab:temperatureCases}.
+The test cases are named CN (Cold, Non-reacting), HN (Hot, Non-reacting) and HR (Hot, Reacting) based on their preheat and presence of a flame.
 All LDV tests were limited to atmospheric pressure conditions.
-Implementing the LDV technique at elevated pressures proved difficult due to beam steering issues, coupled with impractical turn-around times between the successive runs that would be required to obtain sufficent LDV data points for analysis.
+Implementing the LDV technique at elevated pressures proved difficult due to beam steering issues, coupled with impractical turn-around times between the successive runs that would be required to obtain sufficient LDV data points for analysis.
 
-The normalized centerline mean and rms axial velocity profiles for the three cases are presented in Figure FIXME.
-The abscissa represents the distance from a point called the virtual origin, \(X_0\).
-The virtual origin is defined as the imaginary location where the extrapolated linear axial velocity profile reaches the reference velocity in magnitude.
-The extrapolation is indicated in Figure FIXME by a dashed line.
+The normalized centerline mean and rms axial velocity profiles for the three cases are presented in Figure \ref{fig:temperatureLDVResults}.
+The abscissa represents the distance from the virtual origin as defined in Section \ref{subsec:lsb-axial-velocity-profile}.
 
-As noted in Chapter \ref{ch:background}, previous studies\cite{2008-cheng-a} reported that mean axial stretch --- the normalized slope of the linear decay of axial velocity --- at the inlet of the combustor was self-similar, regardless of the Reynolds number, \(Re\) of the operating condition.
-Further, it was reported that the velocity decay was steeper for reacting cases compared to non-reacting cases.
-
-% CAN WE RENAME THESE CASES WITH MORE MEANINGFUL NAMES???
-The results presented in Figure FIXME however, show that even though Cases 1 and 2 have similar \(Re\), their mean velocity profiles have very different slopes.
-Further, the reacting and non-reacting cases (both at preheated conditions) have similarly steep slopes.
+The results show that increasing the preheat temperature causes the normalized velocity slope to increase.
+As noted in Chapter \ref{ch:background}, Cheng et al.\cite{2008-cheng-a} reported that this slope is unaffected by the Reynolds number, \(Re\), of the operating condition.
+The results in Figure \ref{fig:temperatureLDVResults} however, show that even though the cases CN and HN have similar \(Re\), their mean velocity profiles have very different slopes.
 This indicates that the mean axial stretch in the near field of the LSB flow field is a stronger function of the preheat temperature than \(Re\).
-The presence of preheat results in increased viscosity that enhances the momentum transport in the radial direction.
-This causes the velocity decay to be steep for preheated cases, compared to cases without preheat.
 
-Assuming that \(S_T\) is constant, these results suggest that at higher preheat temperatures, the flame would stabilize closer to the dump plane because of the faster velocity decay and reduced local flow velocities.
-In fact, a faster velocity decay would produce greater \(u'\) values and increase \(S_T\), further causing the flame location to shift upstream.
-Furthermore, in view of the steep velocity profile, it may be anticipated that any changes in the stabilization location caused by perturbations in the local flow field (and hence, the local turbulent flame propagation velocity) are likely to be of diminished magnitude in the presence of preheat.
-All of this leads to an intuitive result --- the LSB flame behaves more stably at high preheat conditions.
-% 1) IS THERE NO FLAME IMAGING TO SHOW THAT FLAME MOVES UPSTREAM AS YOU "PREDICT"...
-% 2) IF THE FLAME MOVES UPSTREAM - DOES THAT MAKE IT MORE "STABLE"?
+Even assuming that \(S_T\) is constant, these results suggest that at higher preheat temperatures, the flame would stabilize closer to the dump plane because of the faster reactant velocity decay.
+In fact, the faster velocity decay produces a higher \(u'\) and would increase \(S_T\), further causing the flame standoff location to shift upstream.
+This affects the stability of the flame in two ways.
+First, the flame is closer to the inlet, resulting in more effective heat transfer from the flame zone into the reactants.
+Second, the steeper profiles of \(U\) and \(S_T\) limit any movement of the flame in response to perturbations in the local flow field.
+These two characteristics of the preheated flame lead to an intuitive result---the LSB flame behaves more stably at high preheat conditions.
 
-% Text dump from Chapter 2
-Now, let us consider the effect of increasing the preheat temperature on the flame location, shape and structure.
-As discussed earlier, the flame standoff distance is decided by the local reactant velocity and the local turbulent flame speed.
-Increasing the preheat temperature impacts these parameters in two ways.
-First, the higher temperature increases the kinematic viscosity of the flow.
-The mechanism that transports the axial momentum in the radial direction and causes the flow to diverge is driven by viscosity.
-Enhanced viscous effects will result in a steeper decrease in the axial velocity.
-This also causes an increased production of turbulent kinetic energy.
-Second, global reaction rates increase with temperature, causing the laminar flame speed to increase.
-The net result of the increased turbulence and laminar flame speed is that the turbulent flame propagates faster.
-As a result of this, the flame will be expected to stabilize closer to the inlet of the LSB.
-
-The effect on the flame shape is harder to predict.
-The increased divergence will drive more axial momentum into the shear layer, increasing the local velocity of the reactants.
+The effect of increasing the preheat temperature on the flame cone angle is harder to predict.
+The increased divergence drives more axial momentum into the shear layer, increasing the local velocity of the reactants.
 At the same time, the increased \(u'\) and \(S_L\) drive up the turbulent flame speed.
-This may either increase or decrease the angle of the flame.
+The competing effects of the two parameters on the flame angle can be explored by propagating a change in the parameters as follows.
+
+\begin{align}
+  U \sin \theta_f &= S_T \nonumber \\
+  \therefore \frac{ \delta \sin \theta_f }{ \sin \theta_f } &= \frac{ \delta S_T }{ S_T } - \frac{ \delta U }{ U }
+\end{align}
+
+Figure \ref{fig:temperatureLDVTransverse} shows LDV results for the axial velocity measured 15 mm downstream of the inlet.
+These measurements are taken from two orthogonal traverses across the flow field and show the profiles for the CN and HN cases.
+While the increased momentum transport has certainly thickened the shear layer, the peak axial velocity remains the same for the two cases.
+As a result, changes in the turbulent flame speed would be expected to dominate and cause the flame angle to increase.
 
 Finally, we return to the Borghi diagram to consider the effect of a higher preheat temperature on the flame structure.
-The rapid rise of \(S_L\) with temperature will dominate the change in the ordinate of the operating point, causing the operating point to move down.
-On the X-axis, the flame thickness slightly decreases with temperature, driving the point to the right.
-The net down-and-right movement of the operating condition drives the flame regime closer to wrinkled flamelets.
+On the Y-axis, the exponential dependence of \(S_L\) on temperature will decrease the ordinate of the operating point, while on the X-axis, a slight decrease in the flame thickness will move the point to the right.
+The net down-and-right movement of the operating point drives the flame regime away from broken flamelets and closer towards wrinkled flames.
+Since our flame structure data was already in the wrinkled flame regime, this change could not be imaged by CH PLIF.
 
 \section{Effect of Swirler Vane Angle}
 \label{sec:lsb-effect-of-swirler-vane-angle}
@@ -218,7 +219,7 @@ Thus, LSB swirlers with high vane angles tend to behave like traditional swirl c
 
 % Text dump from Chapter 2
 Operating the LSB with a richer (or more specifically, a less lean) fuel-air mixture can significantly increase the net heat release in the combustor .
-While the velocity flowfield is unaffected by changing the reactant composition (except in response to the heat release), the turbulent flame speed is enhanced.
+While the velocity flow field is unaffected by changing the reactant composition (except in response to the heat release), the turbulent flame speed is enhanced.
 Thus, increasing the equivalence ratio will cause the flame to move upstream and stabilize closer to the inlet.
 The response of the flame angle to this change is not immediately discernible.
 
