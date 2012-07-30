@@ -1,28 +1,6 @@
 \chapter{LSB Flame Characteristics}
 \label{ch:lsb}
 
-% The primary goal is as follows:
-
-% Investigate the behavior of the LSB at GT conditions.
-%  a. Flame characteristics and behavior with velocity at high pressure conditions.
-%  b. Behavior with respect to other flow and geometric parameters.
-%  c. Flame structure at high pressure conditions. Requires CH PLIF.
-
-% Key questions:
-% a. At atmospheric pressure, the flame standoff distance does not vary at all with increasing velocity.
-%    Is this still true when approaching closer to gas turbine operating conditions?
-%    What does that say about the model used to explain this behavior?
-
-% b. If velocity has no effect on the flame characteristics, what about other flow parameters?
-%    What effect does the preheat temperature have on the flame?
-%    What happens to the flame at very high pressures?
-%    How does the flame look at rich and lean operating conditions?
-%    Does changing the swirler have an effect on the flame?
-
-% c. How does the flame structure look at low and high pressure conditions?
-%    Does this provide any insight into the flame behavior at these conditions?
-%    What physical processes may be responsible for that?
-
 Chapter \ref{ch:background} introduced the salient features of the LSB flow field and discussed the mechanisms that enable the LSB to stabilize a flame.
 Four flow parameters were introduced that sufficiently describe an operating condition of the LSB---the combustor pressure, \(p\), the preheat temperature, \(T\), the reference velocity, \(U_0\), and the equivalence ratio of the premixed reactants, \(\phi\).
 The angle of the swirler vanes, \(\alpha\)---a geometric parameter---was also identified as a variable of interest.
@@ -73,7 +51,7 @@ This indicates potential limitations to the simple flame stabilization model tha
 A possible explanation for this observation could be gleaned from considering the effect that increasing the reference velocity has on the turbulent combustion regime in which the LSB combustor operates.
 Previous studies have operated the LSB in regimes where Equation \ref{eqn:chengModel} predicts the variation of the turbulent flame speed with \(u'\) with reasonably fidelity.
 The arguments behind the formulation of Equation \ref{eqn:chengModel} assume that a turbulent flame can be treated as a distorted/wrinkled laminar flame in the presence of large scale, low intensity turbulence.
-This assumption is largely true in the wrinkled flamelet regime and may even be extended apply to a mildly corrugated flame.
+This assumption is largely true in the wrinkled flame regime and may even be extended apply to a mildly corrugated flame.
 However, as we approach large \(\dfrac{ u' }{ S_L }\) values and operate in the thin reaction zone---where most gas turbine combustors operate---the flame bears little resemblance to a wrinkled laminar sheet.
 Since increasing the reference velocity traverses the operating point along the vertical axis of the Borghi diagram, it can cause the turbulent combustion regime to change at high values of \(\dfrac{ u' }{ S_L }\), resulting in the ``bending effect'' in the \(\dfrac{ S_T }{ S_L }\) vs \(\dfrac{ u' }{ S_L }\) diagram.
 
@@ -87,7 +65,7 @@ The laser was operated at 10 Hz and the pulse energy was measured to be about 14
 A sample frame from each dataset is shown in Figure \ref{fig:referenceVelocityPLIFResults}. 
 
 Both the low and high velocity cases show an essentially unbroken flame sheet that is characterized by wrinkles.
-This is consistent with the operating regime being in the laminar flamelets region of the Borghi diagram.
+This is consistent with the operating regime being in the wrinkled laminar flame region of the Borghi diagram.
 The level of wrinkling in these images can be estimated by gathering statistics on the number of pixels that are found on edges of intensity gradients.
 In order for the statistics to be affected only by the level of wrinkling and not by the movement of the flame, the statistics are gathered only from the middle quarter of the flame where the flame sheet is nearly planar.
 The edges and corresponding histograms from this investigation are also presented in Figure \ref{fig:referenceVelocityPLIFResults}.
