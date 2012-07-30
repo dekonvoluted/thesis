@@ -41,6 +41,8 @@ The setup and results of these experiments are described in the following subsec
 \label{subsec:prelim-excitation-scan}
 
 \input{figures/excitationScan}
+\input{figures/excitationScanFlame}
+\input{figures/excitationScanResults}
 
 An excitation scan is performed by tuning the output of the alexandrite laser from \(\lambda\) = 387.077 nm to 387.260 nm.
 This serves two purposes.
@@ -64,11 +66,11 @@ The long gate width gives the intensifier enough time to prepare to receive the 
 The gate width is still short enough that minimal flame chemiluminescence or ambient lighting is recorded in the images.
 100 instantaneous images are acquired for each excitation wavelength to acquire a good estimate of the mean fluorescence signal, \(\mu_{sig}\).
 
-Figure FIXME shows a sample CH PLIF image from this dataset.
+Figure \ref{fig:excitationScanFlame} shows a sample CH PLIF image from this dataset.
 The images are background-corrected by subtracting the laser scattering (recorded without the flame).
 The fluorescence signal is calculated from these images using three alternate approaches.
 
-In Method I, two ``windows'' are identified that include the straight sections of the laminar flame.
+In Method I, two windows are identified that include the straight sections of the laminar flame.
 The average fluorescence signal in each frame is calculated by taking the average of all the emitting pixels in the two windows.
 A pixel is designated as an emitting pixel if its intensity exceeds the standard deviation of a typical background pixel by at least a factor of five.
 The average of this value over all the frames is designated as the mean fluorescence signal, \(\mu_{sig}\).
@@ -76,32 +78,38 @@ In Method II, the intensity of the pixels is integrated over a straight line con
 The straight line is chosen along the beam so that the beam intensity does not vary along the integration path.
 The integration is performed on the left and right arms of the flame, giving two readings per frame.
 The mean of these values over all the frames is recorded as the mean fluorescence signal, \(\mu_{sig}\).
-In Method III, the midpoints of the straight lines from Method II are located and the average of their intensities, over all the frames is recorded as the mean fluorescence signal, \(\mu_{sig}\).
-The regions of interest for each of these methods is highlighted in Figure FIXME.
+In Method III, the midpoints of the flame along the straight lines from Method II are located and the average of their intensities, over all the frames is recorded as the mean fluorescence signal, \(\mu_{sig}\).
+The regions of interest for each of these methods are highlighted in Figure \ref{fig:excitationScanFlame}.
 
-The result of this investigation is shown in Figure FIXME.
+The result of this investigation is shown in Figure \ref{fig:excitationScanResults}.
 The calculated mean fluorescence signals from the three methods are plotted against a LIFBASE simulation of the absorption spectrum of the CH \(B-X\) transition.
 The profiles are appropriately scaled to match the LIFBASE simulation at the maximum value and at the minimum value.
 The LIFBASE simulation is performed for a thermalized system at 1800 K, at atmospheric pressure.
 Further, the instrument linewidth is specified to be the same as our estimate of the laser linewidth (1.06 \AA).
 
-The profiles of the calculated and scaled mean fluorescence signals are observed to agree extremely well with the LIFBASE simulation result.
-The discrepancies between the three methods is minimal.
+The line and midpoint methods use fewer pixels to calculate the mean and show minor deviations from the predicted results.
+The window method uses more pixels and shows much smoother agreement with the simulated profile.
+In general, the agreement between the measurements and the calculations is excellent.
+The agreement is in fact so good that a minor adjustment to the calibration of the laser wavelength could be made using these results.
 
 The results indicate that the optimal excitation wavelength, corresponding to the highest mean fluorescence signal, is about 387.2 nm.
 For the rest of the experiments performed in this work, the laser is operated at this wavelength.
-The results also help verify that the calibration of the micrometer is accurate and the wavelengths are precisely adjustable.
+The results also help fine tune the calibration of the micrometer over this small region of the spectrum.
 Finally, the results validate that our estimated laser linewith, 1.06 \AA, is accurate.
 This value can now be used in subsequent calculations of the LIF signal levels.
 
 \subsection{Linearity Test}
 \label{subsec:prelim-linearity-test}
 
+\input{figures/linearityTest}
+\input{figures/linearityResults}
+
 As explained in Chapter \ref{ch:background}, the variation of the fluorescence signal with the excitation laser intensity exhibits a saturation curve.
-For reasons mentioned in that discussion, we prefer to operate in the weak excitation limit.
-Further, the models developed in Chapter \ref{ch:background} for calculating the signal are intended to be used in the linear regime.
+For reasons mentioned in that discussion, we prefer to operate in the weak excitation limit where the fluorescence signal scales linearly with the input laser energy.
+Further, the models developed in Section \ref{sec:background-chplif-signal-modeling} use fluorescence yield expressions that are only valid in the linear regime.
 Hence, an experiment is performed to verify the linearity of the system response at the intensities at which the flames are imaged for this work.
-The schematic of the setup is shown in Figure FIXME.
+
+The schematic of the setup is shown in Figure \ref{fig:linearityTest}.
 The laser is tuned to the optimal wavelength as determined in Section \ref{subsec:prelim-excitation-scan}, and operated at 10 Hz.
 The frequency-doubled beam is directed at a steady, laminar, methane-air Bunsen flame operating at a slightly rich stoichiometry.
 The edges of the beam are clipped by an aperture to produce a sharp edge and to avoid unnecessary reflections from the burner.
@@ -115,20 +123,19 @@ For each case, a corresponding laser scattering image is also recorded for estim
 The flame chemiluminescence and ambient background are also recorded for the same purpose.
 
 For this experiment, varying the intensity of the laser beam by changing the flash lamp voltage or even the Q-switch timing is not preferred as either would alter the pulse width of the beam.
-Instead, quartz disks and blocks of varying thickness are introduced into the beam to produce an intensity loss, while preserving all other characteristics of the beam.
+Instead, beam intensity attenuators---quartz disks and blocks of varying thickness---are introduced into the beam to produce an intensity loss, while preserving all other characteristics of the beam.
 The quartz elements decrease the intensity of the laser beam through reflection, scattering and absorption.
-The stray reflections and scattering from the quartz elements are contained by enclosing the elements in a box and preventing these from being recorded by the camera.
+The stray reflections and scattering from the quartz elements are kept from contaminating the flame image by using a screen.
 In this manner, the laser power is varied from 10 mJ/pulse to 0.5 mJ/pulse and back.
 
 The acquired images are background-corrected and the intensity is conditionally averaged over pixels with a non-zero intensity in the region where the fluorescence occurs.
-The average fluorescence intensity values thus obtained are plotted against the corresponding laser intensity and shown in Figure FIXME.
-A sample image highlighting the region of interest is also shown alongside.
+The average fluorescence intensity values thus obtained are plotted against the corresponding laser intensity and shown in Figure \ref{fig:linearityResults}.
 
 The LIF signal is observed to increase monotonically with increasing laser intensity.
 At the lower intensities, the variation is very nearly linear, with marginal scatter and only one significant outlier.
-At intensities above 1 J/cm\(^2\) however, there is significant scatter in the data and the linear trend obtained from the low intensity cases cannot be reliably extended over this region.
-
-The results indicate that as long as the intensity of the laser sheet is kept below 1 J/cm\(^2\), the assumption of operating in the linear regime is valid.
+At intensities above 1 J/cm\(^2\) however, there is significant scatter in the data and any linear trends from the low intensity cases cannot be reliably extended over this region.
+Figure \ref{fig:linearityResults} shows a linear fit over the low intensity points that indicates that as long as the intensity of the laser sheet is kept below 1 J/cm\(^2\), the assumption of operating in the linear regime is valid.
+All CH PLIF images that were acquired for this study were acquired at laser intensities below this threshold.
 
 \section{Fluorescence Signal Modeling}
 \label{sec:chplif-fluorescence-signal-modeling}

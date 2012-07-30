@@ -1,0 +1,61 @@
+\begin{figure}
+
+\centering
+
+\begin{tikzpicture}
+
+% Laser
+\filldraw [fill=blue!50!white, draw=blue] ( 0, 5 ) rectangle ++( 1, -4 );
+\filldraw [black] ( 0, 1 ) rectangle ++( 1, -1 );
+
+% Beam
+\draw [very thick, blue] ( 1, 0.5 ) -- ++( 9, 0 );
+
+% Laminar burner
+\draw ( 8.375, -1 ) -- ++( 0, 1 ) -- ++( 0.25, 0 ) -- ++( 0, -1 );
+
+% Flame
+\draw [red] ( 8.375, 0.125 ) -- ++( 0.125, 0.75 ) -- ++( 0.125, -0.75 );
+\draw [red] ( 8.4, 0.125 ) -- ++( 0.1, 0.7 ) -- ++( 0.1, -0.7 );
+
+% Screen
+\draw [pattern = north east lines] ( 6.5, 0.6 ) rectangle ++( 0.1, 2.5 );
+\draw [pattern = north east lines] ( 6.5, 0.4 ) rectangle ++( 0.1, -1 );
+
+% Attenuators
+\draw [fill = blue!35!white, draw = black] ( 2, 0.75 ) -- ++( 0.4, 1 ) -- ++( 0.1, 0 ) -- ++( -0.4, -1 ) --cycle;
+\draw [fill = blue!35!white, draw = black] ( 2.25, 0.75 ) -- ++( 0.4, 1 ) -- ++( 0.1, 0 ) -- ++( -0.4, -1 ) --cycle;
+\draw [fill = blue!35!white, draw = black] ( 2.5, 0.25 ) -- ++( 0.4, 1 ) -- ++( 0.1, 0 ) -- ++( -0.4, -1 ) --cycle;
+\draw [fill = blue!35!white, draw = black] ( 3, 0.75 ) -- ++( 0.4, 1 ) -- ++( 0.1, 0 ) -- ++( -0.4, -1 ) --cycle;
+
+% Camera
+\filldraw [fill=black!50!white, draw=black] ( 8, 4.5 ) rectangle ++( 1, -2 );
+\filldraw [fill=black!50!white, draw=black] ( 8.25, 2.5 ) -- ++( 0, -0.1 ) -- ++( -0.1, -0.1 ) -- ++( 0, -0.7 ) -- ++( 0.1, -0.1 ) -- ++( 0.5, 0 ) -- ++( 0.1, 0.1 ) -- ++( 0, 0.7 ) -- ++( -0.1, 0.1 ) -- ++ ( 0, 0.1 ) -- cycle;
+
+% Filter
+\filldraw [fill=yellow, draw=black] ( 8.25, 1.25 ) rectangle ++( 0.5, 0.1 );
+
+% Computer
+\filldraw [black] ( 6, 4 ) rectangle ++( 1, 0.75 );
+\filldraw [white]( 6.1, 4.1 ) rectangle ++( 0.8, 0.55 );
+\draw ( 6, 3.85 ) -- ++( 1, 0 ) -- ++( 0.25, -0.35 ) -- ++( -1.5, 0 ) -- cycle;
+
+\draw ( 7, 4 ) -- ++( 1, 0 );
+
+% Labels
+\node at ( 0.5, 5 ) [above] {Laser};
+\node at ( 3, 2 ) [above] {Attenuators};
+\node at ( 6.5, -0.75 ) [below] {Screen};
+\node at ( 6.5, 4.75 ) [above] {Computer};
+\node at ( 9, 3.5 ) [right] {Camera};
+\node at ( 9, 1.25 ) [right] {Filter};
+\node at ( 8.5, -1 ) [below] {Burner};
+
+\end{tikzpicture}
+
+\caption[Schematic of the linearity experiment]{FIXME. A 3 mm GG 420 filter is used to reject elastic scattering.}
+
+\label{fig:linearityTest}
+
+\end{figure}
+
