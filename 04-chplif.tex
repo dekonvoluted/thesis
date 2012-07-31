@@ -137,101 +137,133 @@ At intensities above 1 J/cm\(^2\) however, there is significant scatter in the d
 Figure \ref{fig:linearityResults} shows a linear fit over the low intensity points that indicates that as long as the intensity of the laser sheet is kept below 1 J/cm\(^2\), the assumption of operating in the linear regime is valid.
 All CH PLIF images that were acquired for this study were acquired at laser intensities below this threshold.
 
+\subsection{LIF Emission Spectrum}
+
+\input{figures/chPLIFSpectrum}
+
+The CH LIF spectrum is recorded experimentally.
+This serves two purposes.
+First, by verifying that the recorded spectrum matches the calculated one from LIFBASE, we can be reasonably sure of the source of the emission.
+Second, other sources of emission of comparable or greater intensity, if any, can be located on the spectrum.
+If such sources are discovered, they need to be blocked using filters.
+
+The experiment is again performed on the laminar flame set up, operating a methane-air flame at an equivalence ratio slightly richer than stoichiometry.
+The CH layer in the laminar flame is excited by an unrefracted beam from the alexandrite laser.
+The resulting emissions are collected using a fiber optic cable.
+No filter is used to block any wavelengths for this experiment.
+The fiber optic cable is aligned with a 100 \(\mu\)m wide slit of a 0.3 m, f/4 SpectraPro 300i spectrometer which separates the light into its spectrum using a 600 lines/mm grating.
+The spectrum is imaged using the PI-MAX 512\(\times\)512 camera and accumulated over 1000 gates of 300 ns each.
+The flame chemiluminescence background collected using identical gates is found to be negligible.
+
+The portion of the measured spectrum is shown in Figure \ref{fig:chPLIFSpectrum}.
+The simulated spectrum is from LIFBASE for a 1 atm, thermalized CH system at 1800 K.
+The resolution of the simulation is set to match that of the spectrometer (about 0.3 nm).
+The peaks agree well with the simulated result.
+Further, no other emissions of comparable intensity are found up to 520 nm.
+
 \section{Fluorescence Signal Modeling}
 \label{sec:chplif-fluorescence-signal-modeling}
 
 Chapter \ref{ch:background} presented analysis of LIF signal calculation as a function of thermodynamic conditions and the local composition in a flame.
 Expressions derived using a basic model (Equation \ref{eqn:twoLevelModel}) and a more complex model (Equation \ref{eqn:improvedModel}) were presented.
 The expressions rely on knowledge of several physical values and specific spectroscopic constants pertaining to the CH system.
+This section lists several of these constants along with further simplifications that need to be made in order to computationally evaluate the predicted signal through a flame.
+
+\subsection{Fluorescence Yield}
+\label{subsec:modeling-fluorescence-yield}
+
+The fluorescence yield expressions in Equations \ref{eqn:fluorescenceYield1-unsimplified}--\ref{eqn:fluorescenceYield2-unsimplified} are in terms of the Einstein coefficients of spontaneous emission, \(A_{ij}\) and the rates of collisional quenching, \(Q_{ij}\).
+The values for the Einstein spontaneous emission coefficients used in this study are collated from literature\cite{1985-garland-a,1996-luque-b} and tabulated in Table \ref{tab:emissionCoefficients}.
 
 \input{tables/emissionCoefficients}
 
-The basic model requires us to know the Einstein coefficient for spontaneous emission from the ``upper'' state to the ``lower'' state.
-For this, we assume that the ``upper'' state has the same properties as the \(A^2\Delta\), \(v = 0\) state.
-The improved model, needs the emission coefficients for the \(B^2\Sigma^-\), \(v = 0\) and \(A^2\Delta\), \(v =\) 0, 1 states.
-These are tabulated from sources in literature\cite{1985-garland-a,1996-luque-b} FIXME in Table \ref{tab:emissionCoefficients}.
+The quenching rates between various energy levels are harder to calculate.
+As shown in Equation \ref{eqn:quenchingRate}, the rates calculated as a function of the local composition, thermodynamic conditions and the quenching cross-section, \(\sigma_i\), of the colliding species.
+CH is a minor species in typical hydrocarbon flames, with its concentration rarely exceeding a few ppm.
+Consequently, most of its collisions will occur with the major species in the flame.
+Thus, it is only required to know the quenching cross-sections of major species to estimate the collisional quenching rate within acceptable uncertainty.
+
+Quenching cross-sections are typically functions of temperature, but vary little with pressure.
+Several researchers have reported experimentally measured collisional cross-sections for many species in hydrocarbon-air flames, modeling their temperature dependence over an increasingly wide range of temperatures\cite{1983-nokes,1983-tabares,1984-cool,1984-nokes,1985-garland-a,1985-garland-b,1986-garland,1987-garland,1988-heinrich,1988-rensberger,1991-heard,1991-kenner,1992-chen,1992-cooper,1993-chen,1994-chen,1995-heinrich,1998-chen,1998-tamura,2000-cerezo,2000-luque,2002-renfro} relevant to combustion.
+Of these, the current study uses functional forms for several species in methane-air flames from Tamura et al.\cite{1998-tamura}, some of which were updated by Renfro et al.\cite{2002-renfro}.
+Quenching cross-sections for higher alkanes are taken from Chen et al.\cite{1992-chen,1993-chen,1994-chen}
+These functional forms are tabulated in Table \ref{tab:quenchingCrossSections}.
 
 \input{tables/quenchingCrossSections}
 
-Next, to calculate the fluorescence yield for the basic model, we need to know the quenching cross-sections of major species found in the flames of interest.
-These cross sections are curve-fitted from several experiments performed over varying ranges of temperature.
-The functional forms of these cross-sections are presented in Table \ref{tab:quenchingCrossSections}.
+The fluorescence yield expressions also involve several collisional transfer rates between the energy levels of interest.
+There have been efforts\cite{2000-randall,2005-richmond} to measure and/or model these rates, but the energy level models used for these studies is more complicated and cannot be easily reconciled with our model of the CH system.
+Hence, it is preferable to make some simplifying assumptions so that these collisional transfer rates can be reduced in terms of known quenching rates.
 
-The fluorescence yield expressions for the complex model require the rates of collisional transfer between several energy levels.
-There have been efforts to measure and model these rates, but the energy level model used for these studies is more complicated and cannot be easily reconciled with our simplified model.
-Hence, it would be preferable to make some simplifying assumptions so that the collisional rates can be reduced in terms of the quenching rate.
-
-Previous work has reported that the rate of quenching does not appreciably vary over the vibrational manifold, but excited CH molecules in the \(B^2\Sigma^-\) electronic state are approximately 30\% more likely to be quenched than molecules in the \(A^2\Delta\) states.
-This allows us to eliminate \(Q'_{10}\) and \(Q_{20}\) as follows.
+Cool et al.\cite{1984-cool} and Garland et al.\cite{1985-garland-b} report that excited CH molecules in the \(B^2\Sigma^-\) electronic state are about 30\% more likely to be quenched than molecules in the \(A^2\Delta\) states.
+The researchers observe that the quenching rates do not vary appreciably over the vibrational manifold.
+This observation lets us make the following assumptions eliminating \(Q'_{10}\) and \(Q_{20}\) in terms of \(Q_{10}\).
 
 \begin{gather}
-  Q'_{10} = Q_{10} = Q
-  \label{eqn:quenchingAssumption1}\\
-  Q_{20} = 1.3Q
-  \label{eqn:quenchingAssumption2}
+  Q'_{10} = Q_{10} = Q \nonumber \\
+  Q_{20} = 1.3 Q
+  \label{eqn:quenchingAssumption}
 \end{gather}
 
-Our next assumption is based on work by Luque et al.\cite{2000-luque} FIXME who reported that the rate of transfer following the \(B^2\Sigma^-\rightarrow A^2\Delta\) (0,1) transition accounts for almost 24\% of the collisional removal of CH from the upper electronic state.
+Next, Garland et al.\cite{1985-garland-b} and later, Luque et al.\cite{2000-luque} report that the rate of transfer following the \(B^2\Sigma^-\rightarrow A^2\Delta\) (0,1) transition accounts for almost 24\% of the collisional removal of CH from the upper electronic state.
 This allows us to formulate one more equation as shown below.
 
 \begin{gather}
-  \frac{ Q_{21} + Q'_{21} - Q_{12} }{ Q_{20} + Q_{21} + Q'_{21} - Q_{12} } = 0.24\\
-  \therefore \frac{ R_{21} + R'_{21} - R_{12} }{ Q } = 0.4105
+  \frac{ Q_{21} + Q'_{21} - Q_{12} }{ Q_{20} + Q_{21} + Q'_{21} - Q_{12} } = 0.24 \nonumber \\
+  \therefore \frac{ Q_{21} + Q'_{21} - Q_{12} }{ Q } = 0.4105
   \label{eqn:QEquation1}
 \end{gather}
 
-Next, using the reported results from the same authors\cite{2000-luque} FIXME, we know that the number of CH molecules following the \(B^2\Sigma^-\rightarrow A^2\Delta\) (0,1) transition is four times as much as the number following the \(B^2\Sigma^-\rightarrow A^2\Delta\) (0,0) transition.
+The same authors also report that the collisional transfer from \(B^2\Sigma^-\), \(v = 1\) populates the \(A^2\Delta\), \(v = 1\) level four times faster than the \(A^2\Delta\), \(v = 0\) level.
 
 \begin{equation}
   \frac{ Q_{21} - Q_{12} }{ Q'_{21} } = 4
   \label{eqn:QEquation2}
 \end{equation}
 
-Finally, Garland et al.\cite{1985-garland-b} FIXME reported that the rate of the forward transfer along the \(B^2\Sigma^-\rightarrow A^2\Delta\) (0,1) transition is about 60\% faster than the reverse process.
+Finally, Garland et al.\cite{1985-garland-b} note that the rate of forward transfer in the \(B^2\Sigma\rightarrow A^2\Delta\) (0,1) transition is about 60\% faster than the reverse process.
 
 \begin{equation}
   \frac{Q_{21}}{Q_{12}} = 1.6
   \label{eqn:QEquation3}
 \end{equation}
 
-This gives us the third equation forming a closed, linear set of equations in terms of \(Q_{21}\), \(Q_{12}\) and \(Q'_{21}\) that can be written out in matrix form and solved.
-Equation \ref{eqn:QSolution} presents the solution.
+Equations \ref{eqn:QEquation1}--\ref{eqn:QEquation3} form a closed set of linear equations that can be written out in matrix form and solved.
+Equation \ref{eqn:QSolution} presents this solution, eliminating \(Q_{21}\), \(Q'_{21}\) and \(Q_{12}\) in terms of \(Q\).
 
 \begin{equation}
   \left[
     \begin{matrix}
-      R_{21}\\
-      R'_{21}\\
-      R_{12}
+      Q_{21}\\
+      Q'_{21}\\
+      Q_{12}
     \end{matrix}
   \right] = \left[
    \begin{matrix}
-      5.1966\\
-      0.4872\\
-      3.2479
+      0.8758\\
+      0.0821\\
+      0.5474
     \end{matrix}
   \right] Q
   \label{eqn:QSolution}
 \end{equation}
 
-Substituting Equations \ref{eqn:quenchingAssumption1}, \ref{eqn:quenchingAssumption2} and \ref{eqn:QSolution} into Equations \ref{eqn:fluorescenceYield1-unsimplified}--\ref{eqn:fluorescenceYield2-unsimplified} leads to simplified expressions for the two fluorescence yields.
-More importantly, they are now functionally dependent on only the Einstein coefficients and the rate of collisional quenching.
+Substituting Equations \ref{eqn:quenchingAssumption} and \ref{eqn:QSolution} into Equations \ref{eqn:fluorescenceYield1-unsimplified}--\ref{eqn:fluorescenceYield2-unsimplified} leads to simplified expressions for the two fluorescence yields as shown in Equations \ref{eqn:fluorescenceYield1}--\ref{eqn:fluorescenceYield2}.
+More importantly, they are now functionally dependent on only the Einstein coefficients and the rates of collisional quenching from \(A^2\Delta\rightarrow X^2\Pi\), which are known.
 
 \begin{align}
-  Y_1 &= \frac{ 5.1966Q }{ ( A_{10} + 4.2479Q )( A_{20} + 6.9838Q ) - 16.8780Q }
+  Y_1 &= \frac{ 0.8758 A_{10} Q }{ ( A_{10} + 1.5474 Q )( A_{20} + 2.2579 Q ) - 0.4794 Q^2 }
   \label{eqn:fluorescenceYield1}\\
-  Y'_1 &= \frac{ 0.4872Q( A_{10} + 4.2479Q ) }{ ( A'_{10} + Q ) \left( ( A_{10} + 4.2479Q )( A_{20} + 6.9838Q ) - 16.8780Q \right) }
+  Y'_1 &= \frac{ 0.0821 ( A_{10} + 1.5474 Q ) A'_{10} Q }{ ( A'_{10} + Q ) \left( ( A_{10} + 1.5474 Q )( A_{20} + 2.2579 Q ) - 0.4794 Q^2 \right) }
   \label{eqn:fluorescenceYield2}
 \end{align}
 
-\input{tables/absorptionLines}
+The final unknowns are the number densities of the major species in the flame zone.
+The profile of the local mole fraction of the various species through a 1-D, freely propagating, laminar flame can be obtained from Chemkin calculations using the Flame-Speed Calculator reactor model.
+Results presented in this chapter cover laminar flames burning a range of reactant mixtures at various inlet conditions.
+Additional results are presented for strained, laminar, methane-air flames which are calculated using the Opposed flow flame reactor model.
 
-The calculation of the quenching rate also requires us to know the number density of the major species in the flame zone.
-The profile of the local mole fractions of various species through a 1-D, freely propagating, laminar flame was obtained from CHEMKIN solutions using the Flame-Speed Calculator reactor model.
-Results are presented in this chapter for laminar flames using a variety of reactant mixtures and inlet conditions.
-Additional results for strained laminar methane-air flames are calculated using the Opposed flow flame reactor model.
-
-The CHEMKIN results provide mole fractions, which can be used to solve for the number density of each species using the following equation.
+The Chemkin results provide mole fractions and thermodynamic conditions, which can be used to solve for the number density using the following equation.
 
 \begin{equation}
   n_i = \frac{pN_AX_i}{RT}
@@ -240,45 +272,48 @@ The CHEMKIN results provide mole fractions, which can be used to solve for the n
 
 In Equation \ref{eqn:numberDensity}, \(N_A\) is Avogadro's number, \(X_i\) is the mole fraction of species \(i\), \(R\) is the universal gas constant and \(p\), \(T\) are the local pressure and temperature in the flame.
 
-Next, in order to calculate the absorption integral, we require the Einstein B-coefficients, along with the line positions of the transitions excited by the laser.
-These are taken from FIXME and tabulated in Table \ref{tab:absorptionLines}.
-Using these values, it is possible to calculate the optimal laser wavelength that results in the highest value of the absorption integral.
-The optimal laser wavelength is not a constant value and depends on the temperature and pressure at which the CH molecules are present.
-Using a typical value of 1800 K for the temperature in the flame zone, the variation of the optimal laser wavelength can be plotted against combustor pressure.
-As the combustor pressure increases, the absorption lines in the CH \(B^2\Sigma^-\leftarrow X^2\Pi\) (0,0) R-bandhead are increasingly broadened by collisional broadening.
-Absorption lines that are at slightly lower frequencies, but close to the bandhead can now begin to absorb the laser energy.
-This causes the optimal laser wavelength to move slightly towards smaller wavenumbers.
-Figure FIXME shows this variation.
+\subsection{Absorption Integral}
 
-During experiments, this shift contributes negligibly towards increasing the LIF signal and hence, the laser tuner can be left at the optimal location for atmospheric pressure cases.
+The absorption term in Equation \ref{eqn:improvedModel} requires us to calculate the Boltzmann fractions for the energy levels involved and the absorption integral over each transition line being excited by the laser.
+First, we focus on the Boltzmann fraction expression from Equation \ref{eqn:boltzmannDistribution}.
+The vibration energy expression from Equation \ref{eqn:vibrationalEnergy} needs the spectroscopic constants \(\omega_e\), \(\omega_e x_e\), \(\omega_e y_e\) and \(\omega_e ze\).
+Simultaneously, the expression for the rotational energy in Equation \ref{eqn:rotationalEnergy} requires knowing \(B_e\), \(\alpha_e\), \(D_e\) and \(\beta_e\) values for the levels being excited.
+Accurate values of these constants for the \(X^2\Pi\) state are tabulated in Zachwieja's\cite{1995-zachwieja} paper.
+These are tabulated in Table \ref{tab:spectroscopicConstants}.
 
 \input{tables/spectroscopicConstants}
 
-Returning back to Equations \ref{eqn:twoLevelModel} and \ref{eqn:improvedModel}, we need spectroscopic constants of the \(X^2\Pi\), \(v=0\) energy level in order to calculate the Boltzmann fractions, \(f_j\).
-These constants have been determined by Zachwieja et al.\cite{1995-zachwieja} and are tabulated in Table \ref{tab:spectroscopicConstants}.
+Next, we discuss the calculation of the absorption integral, which requires the following;
 
-% Text dump from Chapter 2
-Next, FIXME, we discuss broadening mechanisms and the analytical expression for the absorption integral.
+\begin{itemize}
+  \item line positions in the \(B^2\Sigma^-\leftarrow X^2\Pi\) (0,0) transition that are being excited by the laser,
+  \item Einstein coefficients for stimulated absorption for these transitions,
+  \item Laser center wavelength,
+  \item Laser line shape, and
+  \item Absorption line shapes for each of the excited transitions
+\end{itemize}
 
-Consider now, each term in the above integral.
-The laser lineshape function, \(\psi(\nu)\), can be modeled as a Gaussian profile without any loss of generality.
-The linewidth of the alexandrite laser, when operated in broadband mode, is of the order of a few wavenumbers.
-The effect of line broadening mechanisms, such as natural broadening, inhomogeneous broadening, etc that are commonly encountered in solid state lasers are negligible in comparison and hence, do not affect the lineshape appreciably.
+The line positions in the R-branch of the \(B^2\Sigma^-\leftarrow X^2\Pi\) (0,0) transition along with the respective Einstein B-coefficients are obtained from LIFBASE's database and are tabulated in Table \ref{tab:absorptionLines}.
+
+\input{tables/absorptionLines}.
+
+The linewidth of the alexandrite laser is of the order of a few wavenumbers and its line shape, \(\psi(\nu)\), can be approximated by a Gaussian profile without loss of generality.
+As a result, the effect of line broadening mechanisms such as natural broadening, inhomogeneous broadening, etc that are commonly encountered in solid state lasers are negligible in comparison and do not affect the line shape appreciably.
 
 \begin{equation}
   \psi(\nu) = \frac{1}{\sigma_l\sqrt{2\pi}} \exp{\left(-\dfrac{(\nu-\nu_l)^2}{2\sigma_l^2}\right)}
   \label{eqn:laserLineShape}
 \end{equation}
 
-The mean of the lineshape profile, \(\nu_l\), is set by tuning the center wavelength of the laser.
-The Full Width at Half Max (FWHM) of the laser, \(\Delta\nu_l\), is prescribed by the manufacturer and can be used to calculate the standard deviation of the Gaussian as follows.
+The mean of the line shape profile, \(\nu_l\), is set by tuning the center wavelength of the laser.
+The Full Width at Half Max (FWHM) of the laser, \(\Delta\nu_l\), is known to us and can be used to calculate the standard deviation of the Gaussian as follows.
 
 \begin{equation}
   \sigma_l = \frac{\Delta\nu_l}{2 \sqrt{ 2 \ln{2} } }
 \end{equation}
 
-The lineshape of the absorption line being excited, on the other hand, is primarily dictated by mechanisms associated with gas-phase media---collisional broadening and Doppler broadening being the most important ones.
-Collisional broadening is a homogeneous mechanism and produces a Lorentzian broadened lineshape.
+The line shape of the absorption line being excited, on the other hand, is primarily dictated by mechanisms associated with gas-phase media---collisional broadening and Doppler broadening being the most important ones.
+Collisional broadening is a homogeneous mechanism and produces a Lorentzian broadened line shape.
 The FWHM of the Lorentzian profile is related to the thermodynamic conditions by the following empirical formula.
 
 \begin{equation}
@@ -287,32 +322,39 @@ The FWHM of the Lorentzian profile is related to the thermodynamic conditions by
 \end{equation}
 
 In Equation \ref{eqn:collisionalBroadening}, \(p_0\) and \(T_0\) represent standard conditions of pressure and temperature (101325 Pa and 300 K) respectively.
-By contrast, Doppler broadening is an inhomogenous mechanism that results in a Gaussian lineshape.
+By contrast, Doppler broadening is an inhomogeneous mechanism that results in a Gaussian line shape.
 Its effect depends on the frequency (wavenumber) of the line being broadened, \(\nu_a\), and on the molecule's velocity.
-The FWHM of the resulting broadened lineshape is given by,
+The FWHM of the resulting broadened line shape is given by,
 
 \begin{equation}
   \Delta\nu_d = \nu_a \frac{\sqrt{ \ln 2 } }{c} \sqrt{\frac{8kT}{m_{CH}}}
   \label{eqn:dopplerBroadening}
 \end{equation}
 
-The combined effect of these two broadening mechanisms can be calculated by convoluting the two broadened lineshapes.
-FIXME: Note that this assumption is fine if the dominant broadening mechanism is Doppler broadening.
-However, in combustion systems, particularly at pressure, the dominant mechanism is collisional broadening, making the curve much closer to a Lorentzian shape.
+The combined effect of these two broadening mechanisms can be calculated by convoluting the two broadened line shapes.
 In this case, a Lorentzian convoluted with a Gaussian results in a Voigt profile.
-Lorentzian profiles have more area in the ``wings'' of the curve than Gaussian profiles.
-However, since the maximum broadening of the absorption lines is smaller than the linewidth of the laser beam, this should not affect our results too much.
-FIXME: Perhaps a test using a Voigt profile vs a Gaussian profile to model absorption?
+The computational expense of the convolution that needs to be performed for each absorption line at each point along the flame is prohibitively high.
+Further, the absorption integral needs to be evaluated by multiplying the Voigt profile with the Gaussian profile of the laser.
+In order to simplify this without losing too much accuracy, we replace the collision broadened Lorentzian with a Gaussian of equal FWHM.
+The convoluted profile is now a Gaussian, too and the product of two Gaussians can be easily integrated to get the absorption integral.
 
-In order to simplify the calculations, we assume that the collision-broadened Lorentzian profile is reasonably approximated by a Gaussian profile with the same FWHM.
-Now, the convolution of the two profiles results in another Gaussian, with the same mean and a FWHM given by,
+The limits of this assumption leading to replacing the Voigt profile with a Gaussian profile need to be stated.
+If the dominant broadening mechanism were Doppler broadening, the resulting Voigt profile would approximate a Gaussian much closer.
+However, in combustion systems, particularly at pressure, the dominant line broadening mechanism is in fact, collisional broadening.
+Hence, the resulting Voigt shape is expected to be much closer to a Lorentzian shape.
+Lorentzian profiles differ from Gaussian profiles by having a shorter peak and relatively more area in the ``wings'' of the curve.
+In the absorption integral, this would lead to increased absorption of the laser energy by transitions near the edge of the laser line shape.
+Fortunately, when the laser line position is tuned to optimally excite the R-bandhead spanning the lines \(N''=5\) to \(N''=9\), the next nearest transition (\(N''=4\)) is far enough away that even with increased absorption, contribution from these lines remains insignificant even at very high pressures.
+
+Returning to the calculation of the absorption integral, we now replace the collision-broadened Lorentzian profile by a Gaussian profile with the same FWHM.
+Now, the convolution of the collision-broadened and Doppler-broadened line shapes results in another Gaussian with the same mean and a new FWHM given by,
 
 \begin{equation}
   \Delta\nu_a = \sqrt{ { \Delta\nu_c }^2 + { \Delta\nu_d }^2 }
   \label{eqn:broadening}
 \end{equation}
 
-Thus, the Gaussian lineshape of the broadened absorption line can be written as,
+Thus, the Gaussian line shape of the broadened absorption line can be written as,
 
 \begin{equation}
   \phi(\nu) = \frac{1}{\sigma_a\sqrt{2\pi}} \exp{\left(-\dfrac{(\nu-\nu_a)^2}{2\sigma_a^2}\right)}
@@ -333,124 +375,11 @@ With the above information, the integral in Equation \ref{eqn:pumpingRate} can b
   \label{eqn:absorptionIntegral}
 \end{equation}
 
-
-
-This formulation of the signal intensity implicitly makes the following assumptions.
-\begin{enumerate}
-\item The fluorescence emission is predicted at steady state.
-\item The collection volume is optically thin and an emitted photon is not reabsorbed within the flame itself.
-This is a reasonable assumption to make, since the flame thickness and the thickness of the laser sheet are both typically quite small.
-\end{enumerate}
-
-% Transplanted text. Needs to be integrated into Chapter 4
-
-%  n_2 &= \frac{ ( A_{10} + Q_{10} + Q_{12} ) }{ ( A_{10} + Q_{10} + Q_{12} )( A_{20} + Q_{20} + Q_{21} + Q'_{21} ) - Q_{12}Q_{21} }W_{02}n_0
-
-%The spontaneous emission coefficients, \(A_{10}\), \(A'_{10}\) and \(A_{20}\) are obtained from various published papers\cite{1985-garland-a,1996-luque-b,2005-richmond}.
-%The values used for this analysis are presented in Table \ref{tab:emissionCoefficients}.
-
-
-%Equations \ref{eqn:rates1}--\ref{eqn:rates3} describe the time variation of the number density of CH radicals in each excited state.
-
-%At steady state, the rate of change of the number density is minimal.
-%Under this assumption, the LHS of Equations \ref{eqn:rates1}--\ref{eqn:rates3} can be set to zero.
-%This results in a closed set of linear equations in terms of the populations of the upper states.
-%This set of equations is presented in Equation \ref{eqn:closedForm}.
-
-%These expressions can be further simplified by noting various observations made in studies of the CH system.
-%For instance, previous work\cite{1984-cool,1985-garland-b} has reported that the \(B\) state is slightly (about 1.3 times) more prone to quenching compared to the \(A\) state.
-%We can thus make the following assumptions.
-
-
-%Next, it has been reported\cite{2000-luque} that the electronic energy transfer rate from \(B\) to \(A\) state accounts for 0.24 times the total collisional removal from the \(B\) state.
-
-
-%We further know\cite{1985-garland-b, 2000-luque} that the collisional transfer from the \(B(0)\) energy level populates the nearly degenerate \(A(1)\) level about four times faster than the \(A(0)\) level.
-
-
-%Finally, it was observed\cite{1985-garland-b} that the rate of forward transfer from \(B(0)\) to \(A(1)\) is about 1.6 times the reverse process.
-
-
-
-%Collating Equations \ref{eqn:REquation1}--\ref{eqn:REquation3}, we obtain a closed set of linear equations.
-%This can be solved to eliminate \(R_{21}\), \(R_{12}\) and \(R'_{21}\) in terms of \(Q\) as shown in Equation \ref{eqn:RSolution}.
-
-%\begin{equation}
-%  \left[
-%    \begin{matrix}
-%      R_{21}\\
-%      R'_{21}\\
-%      R_{12}
-%    \end{matrix}
-%  \right] = \left[
-%    \begin{matrix}
-%      5.1966\\
-%      0.4872\\
-%      3.2479
-%    \end{matrix}
-%  \right] Q
-%  \label{eqn:RSolution}
-%\end{equation}
-
-%Substituting Equations \ref{eqn:quenchingAssumption1}, \ref{eqn:quenchingAssumption2} and \ref{eqn:RSolution} into Equations \ref{eqn:solution1}--\ref{eqn:solution2} leads to simplified expressions for the populations of the upper electronic states purely as a function of the respective Einstein coefficients and the collisional quenching rate.
-%These are presented in the following Equations \ref{eqn:simplifiedSolution1}--\ref{eqn:simplifiedSolution3}.
-
-%\begin{align}
-%  n_1 &= \frac{ 5.1966Q }{ ( A_{10} + 4.2479Q )( A_{20} + 6.9838Q ) - 16.8780Q } W_{02}n_0
-%  \label{eqn:simplifiedSolution1}\\
-%  n'_1 &= \frac{ 0.4872Q( A_{10} + 4.2479Q ) }{ ( A'_{10} + Q ) \left( ( A_{10} + 4.2479Q )( A_{20} + 6.9838Q ) - 16.8780Q \right) } W_{02}n_0
-%  \label{eqn:simplifiedSolution2}\\
-%  n_2 &= \frac{ ( A_{10} + 4.2479Q ) }{ ( A_{10} + 4.2479Q )( A_{20} + 6.9838Q ) - 16.8780Q } W_{02}n_0
-%  \label{eqn:simplifiedSolution3}
-%\end{align}
-
-%The quenching rate, \(Q\) of excited CH radicals is calculated by using the quenching cross-sections of various species.
-%The quenching cross-sections are measures of the effectiveness of each collision between a given species and an excited CH radical.
-%The effectiveness of the collision also depends on the velocity of collision between the two species, \(g_j\) and the abundance of the species, \(n_j\).
-%This relationship is formalized in Equation \ref{eqn:quenchingRate}.
-
-%\begin{align}
-%  Q & =\sum_j g_j \sigma_j n_j \nonumber \\
-%  Q & = \sum_j \sqrt{\frac{ 8kT }{ \pi\mu_j }} \sigma_j \frac{ pN_A }{ RT } X_j
-%\end{align}
-
-
-%The quenching cross-sections of various species are obtained from various published papers\cite{1994-chen,1998-tamura,2002-renfro} and are functions of temperature.
-%The functional forms used in this study are presented in Table \ref{tab:quenchingCrossSections}.
-
-%\input{tables/quenchingCrossSections}
-
-%The term \(W_{02}n_0\) in Equations \ref{eqn:simplifiedSolution1}--\ref{eqn:simplifiedSolution3} represents the rate of pumping of the ground state CH radicals.
-%The current excitation scheme targets multiple transitions in the R-bandhead.
-%The pumping rate for each transition is the product of the number of CH radicals present in the appropriate level, the Einstein absorption coefficient for that energy level, \(B_i\) and the amount of laser energy available at the appropriate frequency, \(E_i\).
-%As a result, the term is actually a summation over the individual energy levels.
-
-%Equation \ref{eqn:pumpingRate} presents this symbolically.
-
-%\begin{align}
-%  W_{02}n_0 &= \sum_i B_i I_i n_i \nonumber \\
-%  W_{02}n_0 &= \sum_i B_i \frac{ E_i }{ A_c } \frac{ pN_A X_{CH} }{ RT } f_i
-%\end{align}
-
-%Table \ref{tab:absorptionCoefficients} presents the values of \(B_i\) for the transitions targeted by the current excitation scheme.\cite{1996-luque-c}
-%Assuming a Gaussian line shape for the laser, and using the line strengths from LIFBASE, the relative amount of energy absorbed by each transition can be calculated.
-%These values are also presented in Table \ref{tab:absorptionCoefficients}.
-
-
-
-% and are provided here in Table \ref{tab:spectroscopicConstants}.
-%The expression for the Boltzmann fraction at the energy level corresponding to the vibrational quantum number \(v\) and rotational quantum number \(J\) is given in Equation \ref{eqn:BoltzmannFraction}.
-%\input{tables/spectroscopicConstants}
-
-%\section{Linearity}
-
-%In the weak excitation limit, the signal is a function of CH concentration and the rate of collisional quenching of the excited CH radicals.
-%In the strong excitation limit, the signal depends only on the CH concentration is unaffected by the quenching of the excited CH species.
-
-%It is difficult to ensure that the CH system is saturated spatially, temporally and spectrally at the same time.
-%Further, operating with high laser intensities may bleach the energy levels being excited by inducing chemical reactions that destroy the excited CH radicals.
-%Hence, it is preferred to operate in the linear regime.
-
+Having discussed the means to calculate the absorption integral in a cost-effective manner, it is now possible to calculate the optimal laser location that results in the highest value of the absorption integral for a given temperature and pressure.
+The resulting value depends on both the pressure and the temperature at the flame.
+The optimal laser wavelength is found to steadily increase with pressure.
+With temperature, the value initially decreases, reaching a minimum around 1800 K and then increases again.
+However, these variations are so small (less than 0.0003 nm) over the range of temperatures and pressures encountered in combustion that we may optimize the wavelength using an atmospheric flame and leave it untouched while imaging flames at pressure and/or with preheat.
 
 \section{Results}
 
