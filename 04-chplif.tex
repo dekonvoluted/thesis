@@ -456,7 +456,7 @@ Beyond 6 atm, the range of applicability of CH PLIF remains poor and is confined
 
 \input{figures/01-700}
 
-\subsubsection{\ce{C1}-\ce{C3} flames}
+\subsubsection{Higher-order alkane flames}
 
 Now, we turn our attention to higher-order alkane-air flames.
 Our interest in these fuels is motivated by two reasons.
@@ -508,9 +508,15 @@ This limits the applicability of CH PLIF to study these flames.
 
 \subsection{Strained Flames}
 
-In order to study the effect of strain of the LIF signal, a laminar flame is simulated in a opposed flow and the strain rate is slowly increased to extinction.
-The separation between the two jets is 2 cm.
+In order to study the effect of strain rate on the LIF signal, a non-preheated, atmospheric pressure, laminar methane-air flame is simulated in a opposed flow and the flow rate is slowly increased till extinction.
+The separation between the two flow inlets in the simulation is 2 cm.
+The system is solved using the Opposed flow flame reactor model in Chemkin.
+The simulation is carried out for two equivalence ratios and the results are plotted in Figure \ref{fig:strain}.
 
-%Strained laminar flames
-% 2.4 Strain effects on a methane + air flame
+\input{figures/strain}
+
+The LIF signal increases slightly due to stretch effects and upon encountering extinction, decreases, exhibiting hysteresis.
+This behavior mirrors the variation of the flame temperature for \(Le<1\) flows where increasing stretch results in an elevated flame temperature.
+
+% Summary of Results
 
