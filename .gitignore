@@ -42,4 +42,15 @@ figures/pressureDistancePlot.tex
 figures/excitationScanFlameImage.tex
 figures/excitationScanResultsPlot.tex
 figures/linearityResultsPlot.tex
-
+figures/01-300-plot.tex
+figures/01-500-plot.tex
+figures/01-700-plot.tex
+figures/c1c2c3-plot.tex
+figures/c1c3-plot.tex
+figures/c1c3-t-plot.tex
+figures/chPLIFSignalExperimentPlot.tex
+figures/gri-sd-delxf-plot.tex
+figures/gri-sd-sl-plot.tex
+figures/gri-sd-t-plot.tex
+figures/gri-sd-xch-plot.tex
+      

@@ -295,7 +295,7 @@ Next, we discuss the calculation of the absorption integral, which requires the 
 
 The line positions in the R-branch of the \(B^2\Sigma^-\leftarrow X^2\Pi\) (0,0) transition along with the respective Einstein B-coefficients are obtained from LIFBASE's database and are tabulated in Table \ref{tab:absorptionLines}.
 
-\input{tables/absorptionLines}.
+\input{tables/absorptionLines}
 
 The linewidth of the alexandrite laser is of the order of a few wavenumbers and its line shape, \(\psi(\nu)\), can be approximated by a Gaussian profile without loss of generality.
 As a result, the effect of line broadening mechanisms such as natural broadening, inhomogeneous broadening, etc that are commonly encountered in solid state lasers are negligible in comparison and do not affect the line shape appreciably.
@@ -381,7 +381,139 @@ The optimal laser wavelength is found to steadily increase with pressure.
 With temperature, the value initially decreases, reaching a minimum around 1800 K and then increases again.
 However, these variations are so small (less than 0.0003 nm) over the range of temperatures and pressures encountered in combustion that we may optimize the wavelength using an atmospheric flame and leave it untouched while imaging flames at pressure and/or with preheat.
 
+\section{Chemkin modeling}
+
+To restate the goals of this exercise, the aim is to predict the intensity of the LIF signal across operating conditions to test the feasibility of using CH PLIF as a technique to visualize the flame sheet in a combustor.
+While the primary reactant mixture of interest is methane-air, the analysis can be extended to other alkane-air mixtures and even syngase-alkane-air mixtures.
+The choice of the kinetics model to calculate the species profiles across flames is thus decided by how well it applies to all the reacting mixtures being considered.
+
+GRI Mech is a chemical kinetics mechanism that uses 53 chemical species and 325 reactions to accurately simulate natural gas-air combustion with emphasis on pollutant formation.
+As CH is a key species in the formation of \ce{NO_x}, several CH data sets are used as optimization targets for fine tuning the mechanism.
+Berg et al.\cite{2000-berg} report that the results agree well near stoichiometry, but are too low for lean flames and too high for rich flames.
+Since GRI Mech is developed to solve methane-air problems, its applicability to higher-order alkanes is not well validated.
+As a result, only the methane-air case is solved using GRI Mech in this study.
+
+For specialized application to higher-order combustion, USC's \ce{C1}-\ce{C3} mechanism builds upon a CO-\ce{H2} chemistry base and seeks to optimize more than 250 parameters to sufficiently cover \ce{C3} chemistry, at the expense of decreased accuracy for \ce{C1} and \ce{C2} cases.
+On the other hand, their Syngas mechanism extends GRI Mech to cover \ce{H2}-CO mixtures, retaining its limitations for \ce{C3}-alkane mixtures.
+USC also publishes the USC Mech version II which is specifically targeted at \ce{H2}-CO-\ce{C1}--\ce{C4} compounds that draws upon several models including GRI Mech.
+It uses 111 species and 784 reactions to model the chemistry, making it computationally expensive to use over a large parametric sweep.
+
+USCD's San Diego Mechanism is designed with a more minimalist intent of simulating combustion using the least number of species and reaction rate parameters.
+Subsequent updates to the mechanism have extended its applicability to an increasing number of combustion and detonation processes.
+The 2011-11-22 release uses 235 reactions, with additional data available for extending it to cover heptane and even JP10 chemistry.
+Due to its wide applicability, low computational cost and good accuracy, most of the results presented in this chapter use this mechanism.
+
 \section{Results}
 
-Comparison of CH concentration predicted by GRI Mech and San Diego mechanisms for methane.
+In this section, the CH signal intensity model is applied to predict the LIF photon count in a few selected reactant mixtures.
+
+\subsection{Unstrained Laminar Flames}
+
+% Explanation of why we choose to restrict our attention to only unstrained flames first.
+
+\subsubsection{Methane-air flames}
+
+We begin by validating the predictions from two mechanisms---GRI Mech 3.0 and San Diego---against experimental data acquired from a non-preheated, atmospheric, methane-air Bunsen flame.
+The laminar flame setup from Section \ref{subsubsec:plif-laminar-flame-setup} is used for this purpose.
+The laser beam is formed into a 25 mm tall sheet bisecting the laminar flame and is imaged perpendicularly using the intensified PI-MAX 512\(\times\)512 camera with a 50 mm f/1.4 lens.
+The images are background-corrected and averaged over a window encompassing the PLIF signal from the flame sheet.
+The experiment is repeated over a range of equivalence ratios ranging from 1.55 on the rich side to 0.82 on the lean side, below which the unpiloted Bunsen flame could not be stabilized.
+
+The results are compared to the modeled signal intensity from the GRI Mech and San Diego results for a 1-D, freely propagating laminar flame.
+The three profiles are normalized and plotted in Figure \ref{fig:chPLIFSignalExperiment}.
+
+\input{figures/chPLIFSignalExperiment}
+
+The maximum signal predicted by both mechanisms agree with the experimental value and is seen to occur at about \(\phi\) = 1.25.
+Further, both methods predict a decrease in the LIF signal as the equivalence ratio increases or decreases away from the maximum.
+This is also in agreement with the experimental results.
+At the low signal levels encountered at both the leanest and richest conditions at which the flame is imaged, the experimental results are seen to diverge from the model predictions.
+At these conditions, the models predict a precipitous drop in the signal levels, while the experimental results show a more gradual drop.
+This could partly be due to insufficient background-correction on the PLIF images, causing the background noise to be relatively high compared to the LIF signal.
+Nevertheless, the systemic profile from the experiments agrees with the model predictions.
+
+We then proceed to compare the predictions from the GRI Mech 3.0 and San Diego mechanisms for an unstrained, freely propagating, 1-D, methane-air laminar flame against each other.
+Figure \ref{fig:gri-sd-xch} shows the calculated CH profile across a stoichiometric flame at atmospheric pressure and three preheat temperatures.
+At these conditions, the San Diego mechanism predicts almost 50\% less CH concentration compared to the GRI Mech 3.0 mechanism.
+Both mechanisms predict the increased CH concentration at higher preheat conditions, along with the thinning of the flame zone.
+Figure \ref{fig:gri-sd-delxf} shows the flame thickness predicted by the two mechanisms which agree quite well, diverging only at rich equivalence ratios.
+The predicted laminar flame speeds and flame temperatures are shown in Figures \ref{fig:gri-sd-sl} and \ref{fig:gri-sd-t} respectively and the differences between the two mechanisms are again quite minimal.
+The results of this investigation indicate that other than the nearly consistent discrepancy of about 50\% in the predicted CH concentration, the results from the two mechanisms scale identically.
+Since we are not concerned with the accurate prediction of the CH concentration, but merely the relative variation across conditions, this discrepancy will not affect our conclusions.
+For the rest of the results, calculations are performed using only the San Diego mechanism.
+
+\input{figures/gri-sd}
+
+Next, we explore the predicted CH LIF signal intensity variation with pressure using the San Diego mechanism.
+Figure \ref{fig:01-300} shows the predicted signal intensities over a range of pressures for a non-preheated case.
+Since this is the condition at which the laminar flame was imaged, the data from the validation experiment is appropriately scaled and plotted as well.
+Two immediate conclusions can be drawn from this plot.
+First, increasing pressure causes the LIF signal to drop rapidly.
+The drop is so fast that linear scale of the Y axis is no longer useful.
+Second, we can establish a threshold level for the signal based on our validation experiment.
+Although the flame was still imaged with a reasonable signal-to-noise ratio at the lowest equivalence ratio in the experimental data, it serves as a good indicator for a conservative estimate of the minimum signal level needed.
+At \(\phi\) = 0.8, the predicted signal count works out to be \(1.75\times10^9\).
+Based on this, we set the threshold at a value of \(1\times10^9\).
+Below this threshold, the flame cannot be imaged at all, or with a very poor signal-to-noise ratio that will make post-processing quite difficult.
+This threshold is indicated on the figure by dashed lines.
+
+Using this threshold, we can reinterpret Figure \ref{fig:01-300}.
+When the pressure is increased to 3 atm, the flame cannot be imaged unless the equivalence ratio is between 0.9--1.3.
+At 6 atm, the range is even narrower and restricts the feasibility of this experiment to between 1.1--1.2.
+With no preheat, the flame cannot be imaged at 9 atm and above.
+
+\input{figures/01-300}
+
+Increasing the preheat temperature to 500 K and plotting using a log scale, Figure \ref{fig:01-500} shows the effect of preheat is beneficial to CH PLIF.
+The range of equivalence ratios at which the flame can be imaged is now broader at all pressures.
+Lean flames at less than 0.7 can now be imaged at atmospheric pressure.
+Going up in pressure, post-stoichiometric flames at 9 atm can now be imaged.
+Simultaneously, the peak signal levels are higher, as well.
+At atmospheric pressure, the peak signal is nearly 50\% higher.
+
+\input{figures/01-500}
+
+Figure \ref{fig:01-700} shows this plot for a preheat temperature of 700 K.
+At this high preheat, ultra lean flames with equivalence ratios of 0.6 can be imaged at atmospheric pressure.
+Beyond 6 atm, the range of applicability of CH PLIF remains poor and is confined only to very rich flames.
+
+\input{figures/01-700}
+
+\subsubsection{\ce{C1}-\ce{C3} flames}
+
+Now, we turn our attention to higher-order alkane-air flames.
+Our interest in these fuels is motivated by two reasons.
+First, these are viable fuels in their own right and are used in several combustion applications.
+Since the combustion reactions in these flames also follow a CH pathway, these flames could be imaged using CH PLIF.
+Second, we are interested in exploring the possibility of using small quantities of these fuels to mix with methane in order to boost the CH LIF signal.
+This could allow us to acquire flame images at leaner equivalence ratios at high pressure conditions.
+We will explore this possibility in this section.
+
+We begin by considering the CH LIF signal from pure alkane-air mixtures burning at atmospheric conditions without preheat.
+Figure \ref{fig:c1c3} shows the variation of the LIF signal with equivalence ratio for these mixtures.
+Again a signal level of \(1\times10^9\) serves as a threshold for the feasibility of acquiring CH PLIF images of these flames.
+We can draw several conclusions from this plot.
+First, the range of equivalence ratios above the signal threshold is indeed wider for the higher alkanes (compared to methane), but not by much.
+Particularly, the differences between the three alkanes at the lean equivalence ratios is minimal.
+Most of the widening occurs at very rich equivalence ratios.
+Second, while the peak CH signal did increase when going from methane to ethane, a similar increase is not seen when going from ethane to propane.
+In fact, the San Diego mechanism actually predicts a slight fall in the peak signal.
+This lack of increase in the CH signal can be traced to the adiabatic flame temperature.
+Figure \ref{fig:c1c3-t} plots the adiabatic flame temperature for these mixtures and shows that the increase in the flame temperature going from ethane to propane is minimal.
+While the CH signal does not correlate with the flame temperature at all conditions, it is strongly affected by it.
+Hence, the CH signal does not vary appreciably between the higher alkanes.
+
+\input{figures/c1c3}
+\input{figures/c1c3-t}
+
+Since the CH signal in ethane- and propane-air flames are not much different from methane-air flames, adding small amounts of these alkanes should not have a very significant effect on the signal.
+This is borne out by Figure \ref{fig:c1c2c3} which plots the signal variation for a 700 K preheat, atmospheric flame with and without higher-order alkane doping.
+
+\input{figures/c1c2c3}
+
+% 2.3 Syngas mixtures
+%     Syngas + C1-C3 alkanes
+%Strained laminar flames
+% 2.4 Strain effects on a methane + air flame
+
 
