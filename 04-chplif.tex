@@ -1,32 +1,6 @@
 \chapter{CH PLIF Signal Modeling and Validation}
 \label{ch:chplif}
 
-% This chapter covers the modeling of the CH PLIF signal and contains the following sections:
-
-% 0. Preliminary experiments
-%   0.1 Excitation scan
-%   0.2 Linearity test
-% 1. Signal modeling
-%     1.1 Constants, assumptions, simplifications
-%     1.2 Comparison of models (GRI, USCv2, Syngas, C1-C3, San Diego, etc.) / CH₄+air results
-% 2. Results
-%   Unstrained, laminar flames
-%     2.1 Methane + air flames
-%         2.1.1 subsection comparison with experiments
-%     2.2 C1-C3 alkanes flames
-%     2.3 Syngas mixtures
-%     2.4 Syngas + C1-C3 alkanes
-%   Strained laminar flames
-%     2.5 Strain effects
-
-% Questions to be answered (from proposal):
-
-% 1. Detailing the development of a CH PLIF system (covered in Chapter 2,3 and here)
-% 2. Demonstration on an atmospheric pressure laminar flame
-% 3. Validate with quenching models
-% 4. Model signal for strained flames
-% 5. Model signal for fuel mixtures
-
 % TODO:Write a short introduction to the chapter to start it off
 
 \section{CH PLIF Preliminary Experiments}
@@ -39,10 +13,6 @@ The setup and results of these experiments are described in the following subsec
 
 \subsection{Excitation Scan}
 \label{subsec:prelim-excitation-scan}
-
-\input{figures/excitationScan}
-\input{figures/excitationScanFlame}
-\input{figures/excitationScanResults}
 
 An excitation scan is performed by tuning the output of the alexandrite laser from \(\lambda\) = 387.077 nm to 387.260 nm.
 This serves two purposes.
@@ -58,6 +28,8 @@ The sheet forming optics consist of a +50 mm cylindrical lens and a +250 mm sphe
 The optics form the beam into a collimated sheet about 25 mm (1 in) tall, focused to a thickness on the order of 250 \(\mu\)m at the flame location.
 The sheet passes through the center of the flame and the edges of the sheet are blocked by razor blades to prevent reflections from the burner from saturating the camera.
 
+\input{figures/excitationScan}
+
 The induced fluorescence in the flame sheet is imaged perpendicularly by the intensified camera using an 85 mm f/1.8 Nikon AF Nikkor lens.
 A 3 mm thick 50 mm\(\times\)50 mm square GG 420 Schott glass filter is used to reject elastic scattering at the excitation wavelength.
 This setup gives a magnification of approximately 62 \(\mu\)m/pixel.
@@ -69,6 +41,8 @@ The gate width is still short enough that minimal flame chemiluminescence or amb
 Figure \ref{fig:excitationScanFlame} shows a sample CH PLIF image from this dataset.
 The images are background-corrected by subtracting the laser scattering (recorded without the flame).
 The fluorescence signal is calculated from these images using three alternate approaches.
+
+\input{figures/excitationScanFlame}
 
 In Method I, two windows are identified that include the straight sections of the laminar flame.
 The average fluorescence signal in each frame is calculated by taking the average of all the emitting pixels in the two windows.
@@ -87,6 +61,8 @@ The profiles are appropriately scaled to match the LIFBASE simulation at the max
 The LIFBASE simulation is performed for a thermalized system at 1800 K, at atmospheric pressure.
 Further, the instrument linewidth is specified to be the same as our estimate of the laser linewidth (1.06 \AA).
 
+\input{figures/excitationScanResults}
+
 The line and midpoint methods use fewer pixels to calculate the mean and show minor deviations from the predicted results.
 The window method uses more pixels and shows much smoother agreement with the simulated profile.
 In general, the agreement between the measurements and the calculations is excellent.
@@ -101,9 +77,6 @@ This value can now be used in subsequent calculations of the LIF signal levels.
 \subsection{Linearity Test}
 \label{subsec:prelim-linearity-test}
 
-\input{figures/linearityTest}
-\input{figures/linearityResults}
-
 As explained in Chapter \ref{ch:background}, the variation of the fluorescence signal with the excitation laser intensity exhibits a saturation curve.
 For reasons mentioned in that discussion, we prefer to operate in the weak excitation limit where the fluorescence signal scales linearly with the input laser energy.
 Further, the models developed in Section \ref{sec:background-chplif-signal-modeling} use fluorescence yield expressions that are only valid in the linear regime.
@@ -114,6 +87,8 @@ The laser is tuned to the optimal wavelength as determined in Section \ref{subse
 The frequency-doubled beam is directed at a steady, laminar, methane-air Bunsen flame operating at a slightly rich stoichiometry.
 The edges of the beam are clipped by an aperture to produce a sharp edge and to avoid unnecessary reflections from the burner.
 No optics are used to refract the beam in any way.
+
+\input{figures/linearityTest}
 
 The flame is imaged by the PI Acton 512\(\times\)512 intensified camera equipped with a 50 mm, f/1.8 AF Nikkor lens.
 Elastic scattering is attenuated by a 3 mm thick GG 420 Schott glass filter.
@@ -131,6 +106,8 @@ In this manner, the laser power is varied from 10 mJ/pulse to 0.5 mJ/pulse and b
 The acquired images are background-corrected and the intensity is conditionally averaged over pixels with a non-zero intensity in the region where the fluorescence occurs.
 The average fluorescence intensity values thus obtained are plotted against the corresponding laser intensity and shown in Figure \ref{fig:linearityResults}.
 
+\input{figures/linearityResults}
+
 The LIF signal is observed to increase monotonically with increasing laser intensity.
 At the lower intensities, the variation is very nearly linear, with marginal scatter and only one significant outlier.
 At intensities above 1 J/cm\(^2\) however, there is significant scatter in the data and any linear trends from the low intensity cases cannot be reliably extended over this region.
@@ -138,8 +115,6 @@ Figure \ref{fig:linearityResults} shows a linear fit over the low intensity poin
 All CH PLIF images that were acquired for this study were acquired at laser intensities below this threshold.
 
 \subsection{LIF Emission Spectrum}
-
-\input{figures/chPLIFSpectrum}
 
 The CH LIF spectrum is recorded experimentally.
 This serves two purposes.
@@ -160,6 +135,8 @@ The simulated spectrum is from LIFBASE for a 1 atm, thermalized CH system at 180
 The resolution of the simulation is set to match that of the spectrometer (about 0.3 nm).
 The peaks agree well with the simulated result.
 Further, no other emissions of comparable intensity are found up to 520 nm.
+
+\input{figures/chPLIFSpectrum}
 
 \section{Fluorescence Signal Modeling}
 \label{sec:chplif-fluorescence-signal-modeling}

@@ -8,7 +8,7 @@ set terminal epslatex color
 set output 'chPLIFSpectrumPlot.tex'
 
 set xlabel '\(\lambda\), nm'
-set ylabel 'Signal, arb. units'
+set ylabel 'Signal, a.u.'
 set xrange [410:450]
 set yrange [0:130]
 

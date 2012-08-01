@@ -20,7 +20,7 @@ f(x) = f0 + f1 * x
 fit f(x) 'linearityResults.dat' using 1:3 index 0:0 via f0, f1
 
 plot \
-'linearityResults.dat' using 1:3 notitle with points pointtype 5 linecolor rgbcolor "#008000", \
+'linearityResults.dat' using 1:3 notitle with points pointtype 5 linecolor 3, \
 '' using 1:3 index 1:1 notitle with points pointtype 5 linecolor 1, \
-f(x) with lines notitle linetype 2 linewidth 5 linecolor rgbcolor "#008000"
+f(x) with lines notitle linetype 2 linewidth 5 linecolor 3
 

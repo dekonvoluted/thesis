@@ -8,7 +8,7 @@ set output "chPLIFSignalExperimentPlot.tex"
 set xrange [0.4:2]
 set yrange [0:1.2]
 set xlabel '\(\phi\)'
-set ylabel 'Signal, a.u.' offset 2
+set ylabel 'LIF Signal' offset 2
 set grid
 
 plot \

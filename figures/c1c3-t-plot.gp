@@ -8,7 +8,7 @@ set output "c1c3-t-plot.tex"
 
 set xrange [0.4:2]
 set xlabel '\(\phi\)'
-set ylabel '\(T\), K' offset 2
+set ylabel '\(T_f\), K' offset 2
 set grid
 
 plot \
