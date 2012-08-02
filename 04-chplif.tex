@@ -1,14 +1,19 @@
 \chapter{CH PLIF Signal Modeling and Validation}
 \label{ch:chplif}
 
-% TODO:Write a short introduction to the chapter to start it off
+This chapter deals with the evaluation of CH PLIF as a diagnostic technique.
+Preliminary experiments to evaluate the optimal use of the CH PLIF imaging system are detailed.
+This is followed by a discussion of some detailed aspects of modeling the LIF signal.
+The results of applying the model to a reference laminar flame are compared with experimental results.
+Finally, the model is used to predict the feasibility of using CH PLIF to study various hydrocarbon flames.
 
 \section{CH PLIF Preliminary Experiments}
 \label{sec:chplif-preliminary-experiments}
 
-The CH PLIF imaging system was evaluated for use in imaging hydrocarbon flames by performing two preliminary experiments.
+The CH PLIF imaging system was evaluated for use in imaging hydrocarbon flames by performing three preliminary experiments.
 First, an excitation scan was performed to confirm the location of the optimal wavelength to excite the CH radicals in a typical hydrocarbon flame.
 Second, a test of the linearity of the LIF signal with respect to the incident laser intensity was performed.
+Finally, a spectrum of the LIF emission was recorded and compared to calculations.
 The setup and results of these experiments are described in the following subsections.
 
 \subsection{Excitation Scan}
@@ -382,11 +387,13 @@ Due to its wide applicability, low computational cost and good accuracy, most of
 
 \section{Results}
 
-In this section, the CH signal intensity model is applied to predict the LIF photon count in a few selected reactant mixtures.
+In this section, the CH signal intensity model is used to predict the LIF photon count emitted by the flame in a few selected reactant mixtures.
 
 \subsection{Unstrained Laminar Flames}
 
-% Explanation of why we choose to restrict our attention to only unstrained flames first.
+The LIF photon count is related to many parameters in a flame.
+It is directly dependent on the temperature profile through a flame, as well as on the concentrations of all major species.
+In order to reduce the complexity of relating the signal to too many parameters at once, we restrict our attention to a simple unstrained, laminar flame and study LIF signal variation with reactant composition and inlet conditions.
 
 \subsubsection{Methane-air flames}
 
@@ -518,5 +525,18 @@ The simulation is carried out for two equivalence ratios and the results are plo
 The LIF signal increases slightly due to stretch effects and upon encountering extinction, decreases, exhibiting hysteresis.
 This behavior mirrors the variation of the flame temperature for \(Le<1\) flows where increasing stretch results in an elevated flame temperature.
 
-% Summary of Results
+\section{Summary of Results}
+
+The following is a summary of the key results from this chapter.
+
+\begin{enumerate}
+  \item The CH PLIF imaging system is tuned to the optimal wavelength and demonstrated on a simple, laminar Bunsen flame.
+  \item The details of computing the signal intensity using the signal model from Chapter \ref{ch:background} are explained.
+  \item The experimental results are compared to modeling results which behave in much the same manner with equivalence ratio.
+  \item The model is used to study the variation of the LIF signal with pressure, temperature and equivalence ratio for a host of reactant mixtures.
+  \item In general, increasing the flame temperature enhances the CH LIF signal, while increasing the combustor pressure decreases it.
+  \item Hydrogen-rich syngas flames can be imaged with CH PLIF if the reactants are doped with a small amount of an alkane.
+    However, this also causes noticeable changes in the flame speed of the reactant mixture.
+  \item Strained flames produce a slightly higher LIF signal as long as the strain rate is not close to extinction.
+\end{enumerate}
 
