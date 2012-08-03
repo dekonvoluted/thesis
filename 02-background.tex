@@ -33,6 +33,11 @@ S = \frac{2}{3} \tan \alpha \frac{ 1 - R^3 }{ 1 - R^2 + \left[ M^2\left( \dfrac{
 \label{eqn:theoreticalSwirlNumber}
 \end{equation}
 
+\nomenclature{\(S\)}{Theoretical swirl number}
+\nomenclature[g]{\(\alpha\)}{Swirler vane angle}
+\nomenclature{\(R\)}{Diameter ratio of the inner and outer sections of the swirler}
+\nomenclature{\(M\)}{Mass flow ratio of the inner and outer regions of the swirler}
+  
 In Equation \ref{eqn:theoreticalSwirlNumber}, \(R\) is the ratio of the diameter of the central section to the outer diameter of the swirler.
 Similarly, \(M\) is the ratio of the mass flow rate through the central portion to the mass flow rate through the outer (vaned) portion of the swirler.
 Finally, \(\alpha\) is the angle of the vanes of the swirler.
@@ -85,6 +90,9 @@ The location where the LSB flame is stabilized is found from the equilibrium con
 In the LSB, the decrease in the local reactant velocity along the centerline of the combustor is accompanied by an increase in the local turbulence level.
 In other words, along the axis of the combustor, at the location where the flame is stabilized, the reactant velocity is decreasing, while the turbulent flame propagation velocity (which scales with the local turbulence) is increasing.
 
+\nomenclature{\(U\)}{Mean local axial velocity of the reactants}
+\nomenclature{\(S_T\)}{Turbulent flame speed}
+
 This sets up a stable equilibrium for the flame as shown in Figure \ref{fig:flameEquilibrium}.
 Small perturbations causing the flame to move upstream are offset by the increased reactant velocity, while similar perturbations downstream are counteracted by the increased turbulent flame speed.
 This is the mechanism behind the robust stabilization of the LSB flame.
@@ -99,6 +107,14 @@ U_0 = \frac{ \left( \dfrac{ \dot{m}_{air} }{ \rho_{air} } \right) + \left( \dfra
 \label{eqn:referenceVelocity}
 \end{equation}
 
+\nomenclature{\(p\)}{Combustor pressure}
+\nomenclature{\(T\)}{Preheat temperature}
+\nomenclature[g]{\(\phi\)}{Equivalence Ratio}
+\nomenclature{\(U_0\)}{Reference velocity}
+\nomenclature{\(\dot{m}\)}{Mass flow rate}
+\nomenclature[g]{\(\rho\)}{Density}
+\nomenclature{\(d_s\)}{Outer diameter of the swirler}
+
 In this section, we will briefly discuss the effect of flow parameters have on the flame characteristics of interest.
 By way of an example, and as a means to introduce a few basic concepts, the following discussion will examine the effect of increasing the reference velocity on the flame location, shape and structure.
 In-depth discussion of the dependence of each flame characteristic on all the flow parameters of interest will be deferred till Chapter \ref{ch:lsb}.
@@ -111,6 +127,8 @@ As described earlier in Section \ref{subsec:lsb-flame-stabilization-mechanism}, 
 Unlike the laminar flame speed, \(S_L\), the turbulent flame speed is not uniquely determined by the reactant composition and thermodynamic conditions.
 Instead, it is a function of the flow characteristics and the burner geometry.
 
+\nomenclature{\(S_L\)}{Laminar flame speed}
+
 A simple model proposed by Damk{\"o}hler\cite{1940-damkohler} treats the turbulent flame as a wrinkled laminar flame.
 The presence of these wrinkles vastly increases the surface area of the flame, increasing the rate at which the reactants can be consumed through the flame.
 The size of these wrinkles can be related to the rms of the local reactant velocity, \(u\).
@@ -121,6 +139,8 @@ Expressed mathematically, this leads to Equation \ref{eqn:damkohlerModel}.
 \label{eqn:damkohlerModel}
 \end{equation}
 
+\nomenclature{\(u\)}{rms of the local axial velocity of the reactants}
+
 Cheng et al.\cite{2002-cheng,2009-cheng,2010-littlejohn} observed that the slope of this linear relationship was dependent on the fuel mixture being used.
 This idea is encapsulated in Equation \ref{eqn:chengModel} that presents a modified version of Equation \ref{eqn:damkohlerModel}.
 
@@ -128,6 +148,8 @@ This idea is encapsulated in Equation \ref{eqn:chengModel} that presents a modif
 \frac{ S_T }{ S_L } = 1 + K \frac{ u }{ S_L }
 \label{eqn:chengModel}
 \end{equation}
+
+\nomenclature{\(K\)}{Linearity constant in the turbulent flame speed model}
 
 The constant \(K\) has a value of around 1.73 for methane-air mixtures and a somewhat higher value---3.15---for hydrogen-air mixtures,\cite{2009-cheng} suggesting that the turbulent flame speed is affected strongly by the thermo-diffusive properties of the fuel.
 
@@ -141,6 +163,9 @@ U_0 - \frac{ dU }{ dx } ( X_f - X_0 ) &= S_L + K u \nonumber \\
   \therefore X_f &= X_0 + \frac{1 - \left( \dfrac{ S_L }{ U_0 } + K\dfrac{ u }{ U_0 } \right) }{ \dfrac{ 1 }{ U_0 } \dfrac{ dU }{ dx } }
 \label{eqn:flameImmobility}
 \end{align}
+
+\nomenclature{\(X_f\)}{Location of the flame standoff point measured from the inlet}
+\nomenclature{\(X_0\)}{Location of the virtual origin measured from the inlet}
 
 Consider the terms on the RHS of Equation \ref{eqn:flameImmobility}.
 As described in Section \ref{subsec:lsb-axial-velocity-profile}, the virtual origin location is invariant for moderate to high values of reference velocity.
@@ -174,6 +199,9 @@ Several versions of the Borghi diagram exist that use different variables to plo
 In the current study, we use a diagram based on \(\dfrac{ u }{ S_L }\) and \(\dfrac{ L }{ \delta_f }\).
 The key parameters to be considered here are the rms velocity, \(u\), the laminar flame speed, \(S_L\), the integral length scale of the flow, \(L\), and the flame thickness, \(\delta_f\).
 
+\nomenclature{\(L\)}{Integral length scale}
+\nomenclature[g]{\(\delta_f\)}{Thickness of the flame}
+
 Increasing the reference velocity will be accompanied with a concomitant increase in the level of turbulence in the flow, but it changes none of the other parameters.
 As a result, the operating point will traverse vertically on the Borghi diagram.
 If the LSB operates in the wrinkled flamelets regime to begin with, at very high reference velocities, it may be expected to cross over into the corrugated flamelets regime.
@@ -196,6 +224,10 @@ In its most basic form, the rate at which fluorescence photons are generated in 
   \label{eqn:fluorescencePhotons}
 \end{equation}
 
+\nomenclature[g]{\(\Phi\)}{Photon counts per second}
+\nomenclature{\(N\)}{Number of fluorescence emitters}
+\nomenclature{\(A_{ij}\)}{Einstein coefficient for spontaneous emission between levels \(i\) and \(j\)}
+
 The fluorescence photons produced are radiated in all directions and only a fraction of these can be recorded by a collection system in an experiment.
 This fraction is determined by the experimental set up, the collection angle, and the efficiency of the optics and the detector used to record the signal.
 For this analysis, however, this fraction is omitted to reduce complexity.
@@ -207,6 +239,9 @@ In a simple two-level model for the fluorescing system, as shown in Figure \ref{
 \begin{equation}
   \Phi = n_1VA_{10}
 \end{equation}
+
+\nomenclature{\(n\)}{Number density of molecules}
+\nomenclature{\(V\)}{Volume}
 
 The population of the upper state, \(n_1\) can be solved for by rate analysis.
 The mathematical treatment is not particularly complicated and is covered in detail by various textbooks and review papers.\cite{1996-eckbreth,1997-daily}
@@ -223,6 +258,9 @@ In this limit, the functional form of the solution is shown in Equation \ref{eqn
   \label{eqn:twoLevelModel-weak}
 \end{equation}
 
+\nomenclature{\(W_{ij}\)}{Rate of pumping of molecules from level \(i\) to level \(j\)}
+\nomenclature{\(Q_{ij}\)}{Rate of collisional quenching of excited molecules from level \(i\) to level \(j\)}
+
 The \(n_0VW_{01}\) term in Equation \ref{eqn:twoLevelModel-weak} represents the number of molecules that are excited to the upper state per second, while the fluorescence yield represents the fraction of these molecules that will produce a LIF signal.
 In typical combustion environments, the fluorescence yield is usually small, since the collisional quenching rate dominates the spontaneous emission rate.
 The rate of collisional quenching of the fluorescing species by another species in the flame is proportional to the frequency of collisions between the two.
@@ -230,11 +268,16 @@ Further, the effectiveness of such collisions is decided by a collision cross-se
 Equation \ref{eqn:quenchingRate} presents the calculation of the collisional quenching rate by summation over all the species, \(i\), in the flame.
 
 \begin{align}
-  Q_{10} &= \sum_i n_i \times \sigma_i \times c_i \nonumber \\
+  Q_{10} &= \sum_i n_i \times \sigma_i \times \bar{c_i} \nonumber \\
   & = \sum_i n_i \sigma_i \sqrt{\frac{8kT}{\pi\mu_i}} \nonumber \\
   & = \sqrt{\frac{8kT}{\pi}} \sum_i \frac{n_i \sigma_i}{\sqrt{\mu_i}}
   \label{eqn:quenchingRate}
 \end{align}
+
+\nomenclature[g]{\(\sigma_i\)}{Collisional quenching cross-section of species \(i\)}
+\nomenclature{\(\bar{c}\)}{Average velocity} 
+\nomenclature{\(k\)}{Boltzmann constant}
+\nomenclature[g]{\(\mu_i\)}{Reduced mass of species \(i\)}
 
 In Equation \ref{eqn:quenchingRate}, \(k\) is the Boltzmann constant, \(T\) is the local temperature, \(n_i\) is the number density of species \(i\) and \(\mu_i\) represents the reduced mass of the colliding molecules, given by Equation \ref{eqn:reducedMass}.
 
@@ -242,6 +285,8 @@ In Equation \ref{eqn:quenchingRate}, \(k\) is the Boltzmann constant, \(T\) is t
   \mu_i = \frac{ m_i m }{ m_i + m }
   \label{eqn:reducedMass}
 \end{equation}
+
+\nomenclature{\(m\)}{Mass}
 
 In Equation \ref{eqn:reducedMass}, \(m\) is the mass of the marker species, while \(m_i\) are the masses of the colliding species.
 Since LIF in combustion primarily targets minor species, by probability, these collisions will almost always occur with major species in the system.
@@ -252,12 +297,18 @@ The values of the local number densities of the major species can be measured by
 \label{subsubsec:basic-model-absorption-integral-calculation}
 
 Let us now briefly examine the first term in Equation \ref{eqn:twoLevelModel-weak} in further detail.
-Let \(\phi(\nu)\) represent the normalized lineshape of the absorption line being excited, such that \(\int \phi(\nu) d\nu = 1\).
+Let \(\phi(\nu)\) represent the normalized line shape of the absorption line being excited, such that \(\int \phi(\nu) d\nu = 1\).
 If \(B_{01}\) is the Einstein coefficient for absorption for the line being excited, the term \(B_{01}\phi(\nu)\) represents the spectral absorptivity of the line at \(\nu\).
 \(B_{01}\) is usually presented in m\(^2\)/Js for LIF applications.
 Similarly, let \(I_\nu\) be the spectral intensity of the incident radiation, which is the intensity (power per area) of the laser beam per spectral interval.
 Let \(\psi(\nu)\) be the normalized spectral profile of the laser lineshape, such that \(I_\nu\) = \(I \psi(\nu)\) and \(\int \psi(\nu) d\nu = 1\).
 \(I_\nu\) is usually given in W/cm\(^2\)/cm\(^{-1}\) for ease of use in laser applications.
+
+\nomenclature[g]{\(\nu\)}{Wavenumber}
+\nomenclature[g]{\(\phi(\nu)\)}{Normalized line shape of an absorption line}
+\nomenclature[g]{\(\psi(\nu)\)}{Normalized line shape of the laser beam}
+\nomenclature{\(B_{ij}\)}{Einstein coefficient for stimulated absorption from level \(i\) to level \(j\)}
+\nomenclature{\(I_\nu\)}{Spectral intensity of the laser beam}
 
 The product of the spectral absorptivity and the spectral intensity integrated over the spectrum, gives the pumping rate, \(W_{01}\), as shown in Equation \ref{eqn:pumpingRate-unsimplified}.
 The factor \(c\) is the speed of light, which brings the units of \(W_{01}\) to s\(^{-1}\).
@@ -266,6 +317,8 @@ The factor \(c\) is the speed of light, which brings the units of \(W_{01}\) to 
   W_{01} = \frac{I}{c} \int \psi(\nu) B_{01}\phi(\nu) d\nu
   \label{eqn:pumpingRate-unsimplified}
 \end{equation}
+
+\nomenclature{\(c\)}{Speed of light in vacuum}
 
 \subsubsection{Population Distribution}
 \label{subsubsec:basic-model-population-distribution}
@@ -277,6 +330,8 @@ In reality, this comprises only a small subset of all the available molecules of
   n_0 = nf_0
   \label{eqn:boltzmannFraction}
 \end{equation}
+
+\nomenclature{\(f_i\)}{Boltzmann fraction of the population at energy level \(i\)}
 
 In Equation \ref{eqn:boltzmannFraction}, \(n\) is the number density of all marker species over all the energy levels, while the fraction, \(f_0\), represents the proportion of the marker species that populates the lower energy level.
 
@@ -290,6 +345,8 @@ Substituting Equations \ref{eqn:pumpingRate-unsimplified} and \ref{eqn:boltzmann
   \label{eqn:twoLevelModel-unsimplified}
 \end{equation}
 
+\nomenclature{\(I\)}{Intensity of the laser beam}
+
 In Equation \ref{eqn:twoLevelModel-unsimplified}, the absorption integral from Equation \ref{eqn:pumpingRate-unsimplified} is highlighted in \textcolor{red}{red}.
 The outer integral is performed in space, over the portion of the flame illuminated by the laser sheet.
 Under the assumption that the laser intensity is uniformly distributed over the sheet thickness, it is possible to rewrite the outer integral as a 1-D integral over the thickness of the flame by replacing the laser intensity, \(I\) with the laser power, \(P\).
@@ -298,6 +355,8 @@ Under the assumption that the laser intensity is uniformly distributed over the 
   \Phi = \frac{P}{c} \int_x \frac{n A_{10}}{A_{10}+Q_{10}} f_0 B_{01} \int_\nu \psi(\nu) \phi_j(\nu) d\nu dx
   \label{eqn:twoLevelModel}
 \end{equation}
+
+\nomenclature{\(P\)}{Power of the laser beam}
 
 Equation \ref{eqn:twoLevelModel} is thus, the solution to the two-level model in the weak excitation limit.
 Note that the LIF signal varies linearly as the incident laser power (or intensity).
@@ -330,10 +389,14 @@ The excitation scheme chosen for this study follows the work done by Li et al.\c
 This bandhead, shown in Figure \ref{fig:chB-XAbsorption}, is found at a wavelength of about 387.2 nm and represents transitions from a ground state rotational quantum number of \(N''=7\).
 When operated in multimode, alexandrite lasers have relatively large bandwidths (a few cm\(^{-1}\) is not uncommon) and hence make it possible to excite several of the neighboring transitions near the bandhead.
 
+\nomenclature{\(N''\)}{Total rotational quantum number (of the lower level)}
+
 \input{figures/chB-XAbsorption}
 
 Upon excitation, these molecules transition to the second electronically excited \(B^2\Sigma^-\) state and populate the lowest vibrational level, (\(v'=0\)).
 At this point, the following possibilities exist for the excited molecule:
+
+\nomenclature{\(v\)}{Vibrational quantum number}
 
 \begin{enumerate}
   \item The molecule can undergo inelastic collisions with other molecules, resulting in relaxation in the rotational, vibrational or electronic manifolds.
@@ -470,6 +533,8 @@ Substituting the solutions directly into Equation \ref{eqn:signalIntensity}, we 
   \label{eqn:improvedModel-weak}
 \end{equation}
 
+\nomenclature{\(Y\)}{Fluorescence yield}
+
 The terms \(Y\) and \(Y'\) in Equation \ref{eqn:improvedModel-weak} are non-dimensional and represent the fluorescence yields from the two \(A^2\Delta\) states.
 The functional expression for the yields is more complex now, as shown in Equations \ref{eqn:fluorescenceYield1-unsimplified}--\ref{eqn:fluorescenceYield2-unsimplified}.
 
@@ -506,6 +571,8 @@ Equation \ref{eqn:boltzmannDistribution} presents the expression for \(f_j\) in 
   \label{eqn:boltzmannDistribution}
 \end{equation}
 
+\nomenclature{\(J\)}{Rotational quantum number}
+
 The vibrational energy, \(E_v(v)\) of a level is calculated according to Equation \ref{eqn:vibrationalEnergy}, while the rotational energy, \(E_r(v,J)\) is calculated according to Equation \ref{eqn:rotationalEnergy}.
 
 \begin{align}
@@ -514,6 +581,9 @@ The vibrational energy, \(E_v(v)\) of a level is calculated according to Equatio
   E_r(v, J) &= \left\{B_e - \alpha_e \left(v+\frac{1}{2}\right)\right\}J(J+1) - \left\{D_e + \beta_e \left(v+\frac{1}{2}\right)\right\}J^2(J+1)^2
   \label{eqn:rotationalEnergy}
 \end{align}
+
+\nomenclature{\(E_v\)}{Vibrational energy}
+\nomenclature{\(E_r\)}{Rotational energy}
 
 The ground state, \(X^2\Pi\), of the CH system is conforms to Hund's Case b\cite{1987-bernath} and hence, the appropriate rotational quantum number to use is \(N\).
 For each rotational quantum number \(N\), there are two possible values of \(J\) given by \(N \pm \frac{1}{2}\).

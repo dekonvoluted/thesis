@@ -25,6 +25,8 @@ First, it locates the optimal wavelength to excite the CH radicals that results 
 Second, the variation of the signal intensity can be compared with simulated profiles from LIFBASE or other spectroscopic calculations and our estimation of the laser linewidth can be validated.
 The laser linewidth is an integral parameter and appears in the absorption integral used by the models developed in Chapter \ref{ch:background}.
 
+\nomenclature[g]{\(\lambda\)}{Wavelength}
+
 A schematic of the excitation scan experiment is shown in Figure \ref{fig:excitationScan}.
 The intensified PI Acton 512\(\times\)512 camera described in Section \ref{subsec:experimental-ch-chemiluminescence} is used to image a premixed, laminar methane-air flame operating at close to stoichiometric conditions.
 The laminar flame is stabilized on the Bunsen burner described in Section \ref{subsubsec:plif-laminar-flame-setup}.
@@ -42,6 +44,8 @@ The camera is triggered by the flash lamp sync signal from the laser system and 
 The long gate width gives the intensifier enough time to prepare to receive the fluorescence, preventing signal loss due to irising.
 The gate width is still short enough that minimal flame chemiluminescence or ambient lighting is recorded in the images.
 100 instantaneous images are acquired for each excitation wavelength to acquire a good estimate of the mean fluorescence signal, \(\mu_{sig}\).
+
+\nomenclature[g]{\(\mu_{sig}\)}{Mean signal level}
 
 Figure \ref{fig:excitationScanFlame} shows a sample CH PLIF image from this dataset.
 The images are background-corrected by subtracting the laser scattering (recorded without the flame).
@@ -254,6 +258,10 @@ The Chemkin results provide mole fractions and thermodynamic conditions, which c
 
 In Equation \ref{eqn:numberDensity}, \(N_A\) is Avogadro's number, \(X_i\) is the mole fraction of species \(i\), \(R\) is the universal gas constant and \(p\), \(T\) are the local pressure and temperature in the flame.
 
+\nomenclature{\(N_A\)}{Avogadro's number}
+\nomenclature{\(X_i\)}{Mole fraction of species \(i\)}
+\nomenclature{\(R\)}{Universal gas constant}
+
 \subsection{Absorption Integral}
 
 The absorption term in Equation \ref{eqn:improvedModel} requires us to calculate the Boltzmann fractions for the energy levels involved and the absorption integral over each transition line being excited by the laser.
@@ -294,6 +302,10 @@ The Full Width at Half Max (FWHM) of the laser, \(\Delta\nu_l\), is known to us 
   \sigma_l = \frac{\Delta\nu_l}{2 \sqrt{ 2 \ln{2} } }
 \end{equation}
 
+\nomenclature[g]{\(\nu_l\)}{Center wavenumber of the laser profile}
+\nomenclature[g]{\(\sigma_l\)}{Linewidth of the laser}
+\nomenclature[g]{\(\Delta\nu_l\)}{Full Width at Half Max of the laser profile}
+
 The line shape of the absorption line being excited, on the other hand, is primarily dictated by mechanisms associated with gas-phase media---collisional broadening and Doppler broadening being the most important ones.
 Collisional broadening is a homogeneous mechanism and produces a Lorentzian broadened line shape.
 The FWHM of the Lorentzian profile is related to the thermodynamic conditions by the following empirical formula.
@@ -302,6 +314,8 @@ The FWHM of the Lorentzian profile is related to the thermodynamic conditions by
   \Delta\nu_c = 0.1 \left(\frac{p}{p_0}\right) \left(\frac{T_0}{T}\right)^{0.6}
   \label{eqn:collisionalBroadening}
 \end{equation}
+
+\nomenclature[g]{\(\Delta\nu_c\)}{Collisionally-broadened Full Width at Half Max}
 
 In Equation \ref{eqn:collisionalBroadening}, \(p_0\) and \(T_0\) represent standard conditions of pressure and temperature (101325 Pa and 300 K) respectively.
 By contrast, Doppler broadening is an inhomogeneous mechanism that results in a Gaussian line shape.
@@ -312,6 +326,9 @@ The FWHM of the resulting broadened line shape is given by,
   \Delta\nu_d = \nu_a \frac{\sqrt{ \ln 2 } }{c} \sqrt{\frac{8kT}{m_{CH}}}
   \label{eqn:dopplerBroadening}
 \end{equation}
+
+\nomenclature[g]{\(\Delta\nu_d\)}{Doppler-broadened Full Width at Half Max}
+\nomenclature[g]{\(\nu_a\)}{Wavenumber of the absorption line}
 
 The combined effect of these two broadening mechanisms can be calculated by convoluting the two broadened line shapes.
 In this case, a Lorentzian convoluted with a Gaussian results in a Voigt profile.
@@ -336,12 +353,16 @@ Now, the convolution of the collision-broadened and Doppler-broadened line shape
   \label{eqn:broadening}
 \end{equation}
 
+\nomenclature[g]{\(\Delta\nu_a\)}{Full Width at Half Max of the broadened absorption line}
+
 Thus, the Gaussian line shape of the broadened absorption line can be written as,
 
 \begin{equation}
   \phi(\nu) = \frac{1}{\sigma_a\sqrt{2\pi}} \exp{\left(-\dfrac{(\nu-\nu_a)^2}{2\sigma_a^2}\right)}
   \label{eqn:absorptionLineShape}
 \end{equation}
+
+\nomenclature[g]{\(\sigma_a\)}{Line width of the broadened absorption line}
 
 In Equation \ref{eqn:absorptionLineShape}, \(\nu_a\) is the frequency (wavenumber) of the absorption peak being excited.
 The standard deviation of the lineshape, \(\sigma_a\), is related to the broadened FWHM, \(\Delta\nu_a\), by the following equation.
@@ -522,8 +543,12 @@ The simulation is carried out for two equivalence ratios and the results are plo
 
 \input{figures/strain}
 
+\nomenclature[g]{\(\kappa\)}{Strain rate}
+
 The LIF signal increases slightly due to stretch effects and upon encountering extinction, decreases, exhibiting hysteresis.
 This behavior mirrors the variation of the flame temperature for \(Le<1\) flows where increasing stretch results in an elevated flame temperature up until extinction when the temperature similarly decreases in a hysteresis curve.
+
+\nomenclature{\(Le\)}{Lewis number}
 
 \section{Summary of Results}
 
