@@ -26,7 +26,7 @@ The following sections examine the results of experimental investigation of the 
 \input{figures/referenceVelocityPLIFResults}
 
 Section \ref{subsubsec:flame-characteristics-standoff} explored how changing the reference velocity is not expected to affect the flame location or the flame shape as the balance between the local reactant velocity and the turbulent flame speed remains unaffected.
-This was further borne out by Equation \ref{eqn:chengModel} which outlines a simple model for the turbulent flame speed as a linear function of \(u'\) and hence, \(U_0\).
+This was further borne out by Equation \ref{eqn:chengModel} which outlines a simple model for the turbulent flame speed as a linear function of \(u\) and hence, \(U_0\).
 Combined with the self-similar velocity field in the LSB, this predicted that the flame shape and location will be constant over a wide range of operating conditions.
 Cheng et al.\cite{2008-cheng-a} reported no significant deviation from this model over the range of conditions at which they tested the LSB design.
 It is worth repeating that these experiments were confined to low flow velocities at atmospheric pressure, non-preheated conditions.
@@ -49,11 +49,11 @@ When the \(S_{45^\circ}\) swirler was tested at higher reference velocities, how
 This indicates potential limitations to the simple flame stabilization model that may not predict the behavior of the LSB flame at elevated pressures and temperatures, particularly at high reference velocities.
 
 A possible explanation for this observation could be gleaned from considering the effect that increasing the reference velocity has on the turbulent combustion regime in which the LSB combustor operates.
-Previous studies have operated the LSB in regimes where Equation \ref{eqn:chengModel} predicts the variation of the turbulent flame speed with \(u'\) with reasonably fidelity.
+Previous studies have operated the LSB in regimes where Equation \ref{eqn:chengModel} predicts the variation of the turbulent flame speed with \(u\) with reasonably fidelity.
 The arguments behind the formulation of Equation \ref{eqn:chengModel} assume that a turbulent flame can be treated as a distorted/wrinkled laminar flame in the presence of large scale, low intensity turbulence.
 This assumption is largely true in the wrinkled flame regime and may even be extended apply to a mildly corrugated flame.
-However, as we approach large \(\dfrac{ u' }{ S_L }\) values and operate in the thin reaction zone---where most gas turbine combustors operate---the flame bears little resemblance to a wrinkled laminar sheet.
-Since increasing the reference velocity traverses the operating point along the vertical axis of the Borghi diagram, it can cause the turbulent combustion regime to change at high values of \(\dfrac{ u' }{ S_L }\), resulting in the ``bending effect'' in the \(\dfrac{ S_T }{ S_L }\) vs \(\dfrac{ u' }{ S_L }\) diagram.
+However, as we approach large \(\dfrac{ u }{ S_L }\) values and operate in the thin reaction zone---where most gas turbine combustors operate---the flame bears little resemblance to a wrinkled laminar sheet.
+Since increasing the reference velocity traverses the operating point along the vertical axis of the Borghi diagram, it can cause the turbulent combustion regime to change at high values of \(\dfrac{ u }{ S_L }\), resulting in the ``bending effect'' in the \(\dfrac{ S_T }{ S_L }\) vs \(\dfrac{ u }{ S_L }\) diagram.
 
 One way to ascertain the regimes in which the LSB is operated is to image the flame sheet and observe the flame structure.
 To that end, the LSB (Configuration B) was tested at atmospheric pressure with preheat temperatures ranging from 300 K to 440 K.
@@ -75,8 +75,8 @@ The instances of disjoint packets of flame are also higher for this case.
 This indicates that the high velocity, high preheat case is approaching the boundary between the laminar wrinkled flame regime and the corrugated flame regime.
 Even accounting for the effects of operating this flame at a leaner equivalence ratio, at elevated pressures, both the laminar flame speed, \(S_L\), and the flame thickness, \(\delta_f\), are diminished.
 This places the operating regime higher (and more to the right) on the Borghi diagram where a large enough reference velocity can push the operating point from the region of corrugated flames into the broken flamelets regime.
-This would have not been possible for similar increases in reference velocity at atmospheric pressure conditions where the corresponding \(\dfrac{ u' }{ S_L }\) values would be too low.
-Such a transition would cause \(S_T\) to increase at a reduced rate with \(u'\) and \(U_0\), resulting in the observed downstream shift of the high pressure LSB flame at high reference velocities.
+This would have not been possible for similar increases in reference velocity at atmospheric pressure conditions where the corresponding \(\dfrac{ u }{ S_L }\) values would be too low.
+Such a transition would cause \(S_T\) to increase at a reduced rate with \(u\) and \(U_0\), resulting in the observed downstream shift of the high pressure LSB flame at high reference velocities.
 
 \section{Effect of Preheat Temperature}
 \label{sec:lsb-effect-of-preheat-temperature}
@@ -112,7 +112,7 @@ The results in Figure \ref{fig:temperatureLDVResults} however, show that even th
 This indicates that the mean axial stretch in the near field of the LSB flow field is a stronger function of the preheat temperature than \(Re\).
 
 Even assuming that \(S_T\) is constant, these results suggest that at higher preheat temperatures, the flame would stabilize closer to the dump plane because of the faster reactant velocity decay.
-In fact, the faster velocity decay produces a higher \(u'\) and would increase \(S_T\), further causing the flame standoff location to shift upstream.
+In fact, the faster velocity decay produces a higher \(u\) and would increase \(S_T\), further causing the flame standoff location to shift upstream.
 This affects the stability of the flame in two ways.
 First, the flame is closer to the inlet, resulting in more effective heat transfer from the flame zone into the reactants.
 Second, the steeper profiles of \(U\) and \(S_T\) limit any movement of the flame in response to perturbations in the local flow field.
@@ -120,7 +120,7 @@ These two characteristics of the preheated flame lead to an intuitive result---t
 
 The effect of increasing the preheat temperature on the flame cone angle is harder to predict.
 The increased divergence drives more axial momentum into the shear layer, increasing the local velocity of the reactants.
-At the same time, the increased \(u'\) and \(S_L\) drive up the turbulent flame speed.
+At the same time, the increased \(u\) and \(S_L\) drive up the turbulent flame speed.
 The competing effects of the two parameters on the flame angle can be explored by propagating a change in the parameters as follows.
 
 \begin{align}
@@ -227,7 +227,7 @@ Like the preheat temperature, the combustor pressure affects the LSB flame both 
 There is some confusion over how to study this effect and what to attribute it to.
 Pressure effects are often tracked using the Reynolds number.
 However, as noted in Sectien \ref{sec:lsb-effect-of-preheat-temperature}, it might not be the right parameter to use in the near field of the inlet.
-According to the turbulent flame speed model from Equation \ref{eqn:chengModel}, at high pressures, the \(S_L\) term is insignificant compared to \(u'\) and thus, the turbulent flame speed should see minimal pressure effects.
+According to the turbulent flame speed model from Equation \ref{eqn:chengModel}, at high pressures, the \(S_L\) term is insignificant compared to \(u\) and thus, the turbulent flame speed should see minimal pressure effects.
 Indeed, Kobayashi et al.\cite{1998-kobayashi,2002-kobayashi-b} have observed precisely this---the turbulent flame speed appears to be independent of the combustor pressure in their Bunsen burner setup.
 While Cheng et al. highlight the diminishing role of \(S_L\), Griebel et al.\cite{2007-griebel} attribute this behavior to the fact that the decrease in laminar flame speed at high pressure is compensated for by the broadening of the turbulence spectrum.
 This results in finer turbulent structures in the flow as pressure increases---an observation also made by Kobayashi\cite{1997-kobayashi}---that cause a higher turbulent flame surface area and keep the turbulent flame speed nearly constant.
@@ -258,8 +258,8 @@ In practice, these may be non-trivial to implement in a gas turbine engine.
 Adding hydrogen to the reactants may be a simpler way to stabilize the high pressure flames.
 
 Finally, it is interesting to examine this on a Borghi diagram to deduce any changes in the flame structure that might result.
-Kobayashi et al.\cite{1997-kobayashi} report that the increasing pressure causes a weak drop in \(u'\), reaching a minimum around 10 atm.
-However, the \(\dfrac{ u' }{ S_L }\) factor would be dominated by the precipitous fall in the laminar flame speed, causing it to in fact increase with pressure.
+Kobayashi et al.\cite{1997-kobayashi} report that the increasing pressure causes a weak drop in \(u\), reaching a minimum around 10 atm.
+However, the \(\dfrac{ u }{ S_L }\) factor would be dominated by the precipitous fall in the laminar flame speed, causing it to in fact increase with pressure.
 On the X-axis, the integral length scale is very nearly unaffected by the pressure change, but the flame thickness decreases rapidly.
 Thus, pressure causes the operating point to move up and to the right on the diagram.
 This motion is unlikely to cause the turbulent combustion regime to change.

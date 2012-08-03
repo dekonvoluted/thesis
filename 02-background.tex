@@ -113,11 +113,11 @@ Instead, it is a function of the flow characteristics and the burner geometry.
 
 A simple model proposed by Damk{\"o}hler\cite{1940-damkohler} treats the turbulent flame as a wrinkled laminar flame.
 The presence of these wrinkles vastly increases the surface area of the flame, increasing the rate at which the reactants can be consumed through the flame.
-The size of these wrinkles can be related to the rms of the local reactant velocity, \(u'\).
+The size of these wrinkles can be related to the rms of the local reactant velocity, \(u\).
 Expressed mathematically, this leads to Equation \ref{eqn:damkohlerModel}.
 
 \begin{equation}
-\frac{ S_T }{ S_L } = 1 + \frac{ u' }{ S_L }
+\frac{ S_T }{ S_L } = 1 + \frac{ u }{ S_L }
 \label{eqn:damkohlerModel}
 \end{equation}
 
@@ -125,7 +125,7 @@ Cheng et al.\cite{2002-cheng,2009-cheng,2010-littlejohn} observed that the slope
 This idea is encapsulated in Equation \ref{eqn:chengModel} that presents a modified version of Equation \ref{eqn:damkohlerModel}.
 
 \begin{equation}
-\frac{ S_T }{ S_L } = 1 + K \frac{ u' }{ S_L }
+\frac{ S_T }{ S_L } = 1 + K \frac{ u }{ S_L }
 \label{eqn:chengModel}
 \end{equation}
 
@@ -134,19 +134,19 @@ The constant \(K\) has a value of around 1.73 for methane-air mixtures and a som
 In order to predict the expected effect of increasing the reference velocity, consider the following analysis at the flame standoff location where \(U\)=\(S_T\).
 
 \begin{align}
-\frac{ S_T }{ S_L } &= 1 + K \frac{ u' }{ S_L } \nonumber \\
-S_T &= S_L + K u' \nonumber \\
-\implies U &= S_L + K u' \nonumber \\
-U_0 - \frac{ dU }{ dx } ( X_f - X_0 ) &= S_L + K u' \nonumber \\
-  \therefore X_f &= X_0 + \frac{1 - \left( \dfrac{ S_L }{ U_0 } + K\dfrac{ u' }{ U_0 } \right) }{ \dfrac{ 1 }{ U_0 } \dfrac{ dU }{ dx } }
+\frac{ S_T }{ S_L } &= 1 + K \frac{ u }{ S_L } \nonumber \\
+S_T &= S_L + K u \nonumber \\
+\implies U &= S_L + K u \nonumber \\
+U_0 - \frac{ dU }{ dx } ( X_f - X_0 ) &= S_L + K u \nonumber \\
+  \therefore X_f &= X_0 + \frac{1 - \left( \dfrac{ S_L }{ U_0 } + K\dfrac{ u }{ U_0 } \right) }{ \dfrac{ 1 }{ U_0 } \dfrac{ dU }{ dx } }
 \label{eqn:flameImmobility}
 \end{align}
 
 Consider the terms on the RHS of Equation \ref{eqn:flameImmobility}.
 As described in Section \ref{subsec:lsb-axial-velocity-profile}, the virtual origin location is invariant for moderate to high values of reference velocity.
 In the same section, the normalized slope of the velocity profile, \(\dfrac{ 1 }{ U_0 } \dfrac{ dU }{ dx }\), was also noted as being invariant with reference velocity.
-In the numerator of the second term, the local turbulence intensity, \(\dfrac{ u' }{ U_0 }\), can also be expected to be a constant, since \(u'\) should scale with the reference velocity in the same manner as long as the burner geometry does not change.
-The turbulence intensity, \(\dfrac{ u' }{ U_0 }\) in the LSB increases from the inlet along the centerline reaching values on the order of 0.1--1.0 near the flame standoff location.\cite{2008-cheng-a}
+In the numerator of the second term, the local turbulence intensity, \(\dfrac{ u }{ U_0 }\), can also be expected to be a constant, since \(u\) should scale with the reference velocity in the same manner as long as the burner geometry does not change.
+The turbulence intensity, \(\dfrac{ u }{ U_0 }\) in the LSB increases from the inlet along the centerline reaching values on the order of 0.1--1.0 near the flame standoff location.\cite{2008-cheng-a}
 That leaves only the term \(\dfrac{ S_L }{ U_0 }\) as a function of \(U_0\).
 Typically, the laminar flame speeds are at least an order of magnitude, if not more, lower (\(\approx O(1)\) m/s) than the reference velocities at which the LSBs are operated (\(\approx O(10)\) m/s).
 As a result, variations in this term are a vanishingly small portion of the sum, leaving the entire RHS independent of \(U_0\).
@@ -171,8 +171,8 @@ It is partitioned into various regimes by different straight lines representing 
 It is useful to examine the effect of various parameters on the flame structure by examining the tendency of the operating point to shift on the Borghi diagram.
 
 Several versions of the Borghi diagram exist that use different variables to plot the combustion regimes.
-In the current study, we use a diagram based on \(\dfrac{ u' }{ S_L }\) and \(\dfrac{ L }{ \delta_f }\).
-The key parameters to be considered here are the rms velocity, \(u'\), the laminar flame speed, \(S_L\), the integral length scale of the flow, \(L\), and the flame thickness, \(\delta_f\).
+In the current study, we use a diagram based on \(\dfrac{ u }{ S_L }\) and \(\dfrac{ L }{ \delta_f }\).
+The key parameters to be considered here are the rms velocity, \(u\), the laminar flame speed, \(S_L\), the integral length scale of the flow, \(L\), and the flame thickness, \(\delta_f\).
 
 Increasing the reference velocity will be accompanied with a concomitant increase in the level of turbulence in the flow, but it changes none of the other parameters.
 As a result, the operating point will traverse vertically on the Borghi diagram.
