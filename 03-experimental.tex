@@ -18,13 +18,13 @@ One of these configurations used swirlers with a perforated plate that had a con
 The perforated plate induces a blockage in the central channel and controls the relative mass flow split between the two portions of the swirler.
 The key dimensions of the swirlers tested are presented in Table \ref{tab:swirlerDimensions}.
 
+\input{tables/swirlerDimensions}
+
 Each configuration is housed in a high pressure testing facility.
 The testing facility consists of an air and fuel supply system, a pressure vessel with adequate optical access and an exhaust system for the products.
 Each testing facility is instrumented to measure temperatures and pressures which are then used to calculate various flow parameters of interest.
 
 The design of the configurations tested, along with that of their respective test facilities are discussed in detail in this section.
-
-\input{tables/swirlerDimensions}
 
 \subsection{Configuration A}
 \label{subsec:lsb-configuration-a}
@@ -70,8 +70,6 @@ The exiting products finally pass through the building exhaust system.
 \subsubsection{Low Swirl Burner}
 \label{subsubsec:configuration-a-low-swirl-burner}
 
-\input{figures/lsbA}
-
 A detailed schematic of the LSB configuration is shown in Figure \ref{fig:lsbA}.
 The premixed, preheated reactants reach the swirler through a converging nozzle that decreases linearly in diameter from the inlet diameter of 102 mm (4 in) to the outer diameter of the swirler, 38 mm (1.5 in).
 At the swirler, the flow splits into two streams---one passing through the central section and another picking up swirl by flowing over the vanes in the annular region.
@@ -79,6 +77,8 @@ The relative flow split between the two streams is controlled by inducing blocka
 The swirler leads to a constant area nozzle, and is located one diameter upstream of an abrupt area change.
 At the area change, the reactants expand from the 38 mm (1.5 in) diameter nozzle into a 115 mm (4.5 in) diameter combustion zone.
 This expansion ratio is chosen so as to avoid confinement effects on the centerline flame flow field.\cite{1998-yegian}
+
+\input{figures/lsbA}
 
 The main combustion zone begins at the dump plane and is enclosed by a GE 214 quartz tube.
 The quartz tube is 300 mm (12 in) long and 115 mm (4.5 in) in diameter.
@@ -119,8 +119,6 @@ The products are vented into the same building exhaust system as Configuration A
 \subsubsection{Low Swirl Burner}
 \label{subsubsec:configuration-b-low-swirl-burner}
 
-\input{figures/lsbB}
-
 The design of this LSB configuration is presented in Figure \ref{fig:lsbB}.
 As described earlier, the reactants reach the LSB swirler device through two separate streams.
 The core/central stream passes through a plenum chamber that is filled with steel ball bearings before approaching the swirler through a smoothly contoured nozzle with a high contraction ratio.
@@ -128,6 +126,8 @@ The annular/swirl stream reaches the swirler directly through a separate contour
 The contraction ratio is chosen to inhibit the formation of thick boundary layers in the reactant streams.
 The core stream passes through the central portion of the swirler, while the annular stream picks up swirl by passing through the vanes of the swirler.
 The swirler lacks a perforated plate covering the central region as the primary function of the plate---regulating the relative mass flow split---is performed by the test facility itself.
+
+\input{figures/lsbB}
 
 The swirler device is located at the beginning of a constant area nozzle which is 57.2 mm (2.25 in) in length.
 Following this, the reactants expand into the combustion zone.
@@ -143,8 +143,6 @@ Finally, the level of turbulence in the central flow can be adjusted by use of a
 \subsection{Laser Doppler Velocimetry}
 \label{subsec:experimental-laser-doppler-velocimetry}
 
-\input{figures/ldvSetup}
-
 The velocity field of the LSB is mapped using a TSI 3-component LDV system.
 Three wavelengths (514 nm, 488 nm and 476 nm) are separated from the output of a 5 W Argon ion laser by an FBL-3 multicolor beam generator.
 The individual beams are split into two coherent beams, which are then focused to intersect and produce interference fringes within an ellipsoidal measurement volume with dimensions of the order of 100 \(\mu\)m.
@@ -155,6 +153,8 @@ Particles in the flow field crossing the interference fringes scatter the laser 
 The transceiver probes collect this scattered light and each wavelength is detected separately by a PDM-1000-3 three-channel photodetector module.
 The output from the photodetector is processed by an FSA-3500-3 signal processor.
 The resulting three components of the particle/flow velocity are recorded by the FlowSizer software.
+
+\input{figures/ldvSetup}
 
 Since the concentration of particulate matter (primarily dust particles) in the airflow is very low, the flow needs to be artificially seeded to facilitate LDV measurements in a reasonable amount of time.
 The choice of seeding particles to be used and their mean diameter are decided by the characteristics of the flow to be imaged.\cite{1997-melling}
@@ -181,13 +181,13 @@ An additional 100 instantaneous images are acquired with no flame and averaged t
 \subsubsection{Image Processing}
 \label{subsubsec:chemiluminescence-image-processing}
 
-\input{figures/sampleFlameImages}
-
 The acquired flame chemiluminescence images are background-corrected and averaged.
 The resulting mean is the line-of-sight integrated, time-averaged image of the flame.
 Strictly speaking, this is not the same as a real average obtained from a long exposure image as the instantaneous images are obtained through a periodic sampling process and hence, are prone to statistical errors.
 However, the behaviour of the flame can be assumed to be sufficiently random that the mean obtained is adequately representative of the true average.
 Figure \ref{fig:sampleAverageImage} shows a typical mean CH* chemiluminescence image prepared in this manner.
+
+\input{figures/sampleFlameImages}
 
 Even when background-corrected, the walls of the combustor are not at zero intensity in the average chemiluminescence image.
 This is particularly noticeable near the dump plane where there is no flame present and yet the walls are clearly illuminated.
@@ -225,8 +225,6 @@ Due to this, any study of the flame brush thickness at the flame stabilization p
 \subsection{CH Planar Laser-Induced Fluorescence}
 \label{subsec:experimental-ch-planar-laser-induced-fluorescence}
 
-\input{figures/laser}
-
 The CH PLIF setup uses the frequency-doubled output of a Light Age PAL 101 alexandrite laser tuned to \(\lambda \approx 387.2\) nm.
 The design of the laser is shown schematically in Figure \ref{fig:laser}.
 The active medium is a 150 mm (6 in) long, 5 mm (0.197 in) diameter alexandrite rod.
@@ -236,6 +234,8 @@ The tuning element is coupled to a micrometer whose reading relates linearly to 
 The birefringent filter allows the fundamental wavelength to be varied between 720--780 nm, with peak gain at about 755 nm.
 The resonator cavity also contains two Q-switches, which allow the laser to optionally operate in double-pulsed mode.
 For this study, however, only one Q-switch is used and the laser is operated in single-pulsed mode only.
+
+\input{figures/laser}
 
 The diameter of the fundamental beam exiting the output coupler is reduced by a collimating telescope.
 This is done in order to increase the efficiency of conversion of the frequency-doubling crystal.
@@ -280,8 +280,6 @@ This flowmeter is calibrated using a Sensidyne Gilibrator 2 bubble flow meter sy
 \subsubsection{Laser Wavelength Calibration}
 \label{subsubsec:plif-laser-wavelength-calibration}
 
-\input{figures/laserCalibration}
-
 As described earlier, the output wavelength of the PAL 101 alexandrite laser is controlled using a micrometer-coupled birefringent tuning mechanism.
 The wavelength of the laser beam varies linearly with the micrometer reading.
 Initially, the manufacturer-supplied calibration for the micrometer was found to be inaccurate.
@@ -293,17 +291,19 @@ The spectrometer is pre-calibrated using 50 wavelengths in the 400--850 nm range
 The spectrometer is also intensity-corrected over this range using a black body source.
 The estimated error in the resolution of the device is about 0.1 nm (1 \AA).
 
+\input{figures/laserCalibration}
+
 The laser micrometer is traversed from 0.600 in to 0.625 in in steps of 0.001 in.
 The experiment is repeated by traversing the micrometer from 0.625 in back to 0.600 in along the same points to ensure repeatability and estimate the variation due to hysteresis.
 The calibration is performed using at the fundamental wavelength of the laser as the second harmonic wavelength falls outside the spectrometer's range.
 Each spectrum recorded is integrated over 512 ms and averaged over 10 such acquisitions.
 The background-corrected peak of the spectrum is then modeled as a Gaussian and the location of the center of the Gaussian waveform is recorded.
 
-\input{figures/laserCalibrationResults}
-
 The results from this experiment are shown in Figure \ref{fig:laserCalibrationResults}.
 The plot demonstrates that the variation of the second harmonic wavelength (obtained by halving the fundamental wavelength) with the position of the tuner micrometer is linear.
 Further, there is little difference between the measurements taken while increasing and decreasing the micrometer position.
 This indicates that any effects of hysteresis in the micrometer position are minimal.
 The calibration equation relating the micrometer position to the output wavelength is obtained by applying a linear curve fit to the data points on the graph as shown in Figure \ref{fig:laserCalibrationResults}.
+
+\input{figures/laserCalibrationResults}
 

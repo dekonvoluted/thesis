@@ -12,8 +12,6 @@ As discussed in Section \ref{subsec:literature-review-lsb}, there have been mult
 Broadly, they can be classified into jet-LSB and vane-LSB, based on the means used to produce the weak swirl in the flow field.
 This thesis, and thus the following background material, focuses on the vane-LSB design.
 
-\input{figures/swirler}
-
 The vane-LSB---or simply \emph{LSB} from here on---uses a vaned swirler
 with a central open section.
 A typical design of such a swirler is shown in Figure \ref{fig:swirler}.
@@ -22,6 +20,8 @@ A perforated plate covers the open central section of the swirler and controls t
 The swirled flow and the central flow are allowed to mix after passing the swirler in a constant area nozzle.
 The length of this constant area nozzle is called the swirler recess length and is typically about one or two swirler (outer) diameters.
 The flow leaves the constant area nozzle and abruptly expands into the combustion zone.
+
+\input{figures/swirler}
 
 \subsection{Role of swirl and recirculation zones}
 
@@ -45,12 +45,12 @@ Finally, \(\alpha\) is the angle of the vanes of the swirler.
 Along with the recess length of the swirler, the theoretical swirl number was identified to be a key parameter that determines the LSB operating regime.\cite{2002-littlejohn}
 Typical values of \(S\) in low swirl combustion range from 0.4--0.6.
 
-\input{figures/recirculationZones}
-
 Figure \ref{fig:recirculationZones} shows the locations of the notable recirculation zones in the LSB flow field.
 The toroidal recirculation zone (TRZ) forms near the inlet, while the central recirculation zone (CRZ) forms within a recirculation bubble along the centerline.
 In conventional swirl combustion, the function of the swirl is to induce these recirculation zones that help stabilize the flame by causing a feedback of heat and radicals from the products into the reactants.
 In particular, the toroidal recirculation zone traps hot combustion products and continually ignites the reactants at the base of the flame.\cite{2005-johnson}
+
+\input{figures/recirculationZones}
 
 In the LSB flow field, these recirculation zones are not only much weaker, but also, are not intended to play any part in the stabilization of the flame.
 Instead, the LSB flame is a freely propagating turbulent flame that is stabilized by the divergent flow coming from the inlet nozzle.
@@ -79,8 +79,6 @@ This self-similarity of the mean axial velocity profile was used to explain othe
 \subsection{Flame stabilization mechanism}
 \label{subsec:lsb-flame-stabilization-mechanism}
 
-\input{figures/flameEquilibrium}
-
 The flame stabilization mechanism in the LSB is purely aerodynamic.
 The turbulent flame is not anchored in the sense of an attached flame, but freely propagates into the reactants.
 Conventionally, attached flames are preferred in combustion systems as lifted flames are associated with unstable/undesirable characteristics like blow off.
@@ -96,6 +94,8 @@ In other words, along the axis of the combustor, at the location where the flame
 This sets up a stable equilibrium for the flame as shown in Figure \ref{fig:flameEquilibrium}.
 Small perturbations causing the flame to move upstream are offset by the increased reactant velocity, while similar perturbations downstream are counteracted by the increased turbulent flame speed.
 This is the mechanism behind the robust stabilization of the LSB flame.
+
+\input{figures/flameEquilibrium}
 
 \subsection{Effect of Flow Parameters on Flame Characteristics}
 
@@ -186,14 +186,14 @@ Increasing the reference velocity does not affect any of these factors and thus,
 
 \subsubsection{Effect on Flame Structure}
 
-\input{figures/borghiDiagram}
-
 Finally, the effect of the reference velocity on the structure of the turbulent flame should be considered.
 Depending on the characteristics of the flame structure, the operation point can be placed on a Borghi diagram, as shown in Figure \ref{fig:borghiDiagram}.
 The Borghi diagram\cite{1985-borghi} is a phase diagram used to classify and delineate regimes of premixed turbulent combustion.
 The double-log plot is drawn using properties of the reacting mixture and its turbulence-related quantities.
 It is partitioned into various regimes by different straight lines representing the locus of non-dimensional parameters.
 It is useful to examine the effect of various parameters on the flame structure by examining the tendency of the operating point to shift on the Borghi diagram.
+
+\input{figures/borghiDiagram}
 
 Several versions of the Borghi diagram exist that use different variables to plot the combustion regimes.
 In the current study, we use a diagram based on \(\dfrac{ u }{ S_L }\) and \(\dfrac{ L }{ \delta_f }\).
@@ -232,8 +232,6 @@ The fluorescence photons produced are radiated in all directions and only a frac
 This fraction is determined by the experimental set up, the collection angle, and the efficiency of the optics and the detector used to record the signal.
 For this analysis, however, this fraction is omitted to reduce complexity.
 
-\input{figures/twoLevel}
-
 In a simple two-level model for the fluorescing system, as shown in Figure \ref{fig:twoLevel}, Equation \ref{eqn:fluorescencePhotons} may be expanded in terms of the number density of the emitters, \(n\), and the volume in which the fluorescence occurs, \(V\).
 
 \begin{equation}
@@ -242,6 +240,8 @@ In a simple two-level model for the fluorescing system, as shown in Figure \ref{
 
 \nomenclature{\(n\)}{Number density of molecules}
 \nomenclature{\(V\)}{Volume}
+
+\input{figures/twoLevel}
 
 The population of the upper state, \(n_1\) can be solved for by rate analysis.
 The mathematical treatment is not particularly complicated and is covered in detail by various textbooks and review papers.\cite{1996-eckbreth,1997-daily}
@@ -428,8 +428,6 @@ The fourth option is for the molecule to experience further excitation by absorb
 Since most available photons do not match any transitions from the \(B^2\Sigma^-\), \(v=0\) state, it is unlikely to experience multi-photon excitation.
 However, collisional removal of CH molecules from the \(B\) state is certainly possible.
 
-\input{figures/chRKR}
-
 Having listed all the options, let us resume the discussion on the possibility of electronic energy transfer from the excited \(B^2\Sigma^-\), \(v'=0\) state.
 The spacing of the energy levels in the CH system, shown in Figure \ref{fig:chRKR}, is such that the \(B^2\Sigma^-\), \(v'=0\) state is found to be near-degenerate with the \(A^2\Delta\), \(v=1\) energy level.
 Consequently, the \(B^2\Sigma^-\leftrightarrow A^2\Delta\) (0,1) transition is reversible.
@@ -437,6 +435,8 @@ Due to this, collisional population of the \(A^2\Delta\) \(v=0,1\) states from t
 Garland et al.\cite{1985-garland-b} measured that these transfers account for almost a quarter of all collisional depletion of the \(B^2\Sigma^-\), \(v=0\) level.
 Theoretical calculations using overlap integrals between the involved energy levels predict that a majority of these transfers will be along the diagonal (0,0) transition.\cite{2000-luque}.
 Instead, experimental data indicates that the number is closer to a fifth, with almost 80\% of the transfers following the near-degenerate (0,1) pathway.
+
+\input{figures/chRKR}
 
 It is this electronic energy transfer mechanism that enables our excitation scheme to record high quality CH PLIF images.
 Having now populated the \(A^2\Delta\) states, the resulting spontaneous emission from the \(A^2\Delta\rightarrow X^2\Pi\) (0,0) and (1,1) transitions can be easily observed between 420--440 nm.
@@ -450,14 +450,14 @@ While the two-level model is conceptually simple, applying it to describe the co
 Daily\cite{1997-daily} notes, for example, that significant errors can result from using the two-level model to describe even a three-level system.
 Hence, it is worthwhile to investigate a more complicated model that can describe the CH system with higher fidelity.
 
-\input{figures/energyLevels}
-
 Figure \ref{fig:energyLevels} shows the relevant pathways that lead to the fluorescence emission as discussed in Section \ref{subsec:background-ch-plif-process}.
 An accurate model of the CH system should involve at least five energy levels, namely the \(B^2\Sigma^-\), \(v=0\), \(A^2\Delta\), \(v=0,1\), and \(X^2\Pi\), \(v=0,1\) levels.
 The model will need to account for collisional transfers between each of these levels, in addition to spontaneous and stimulated transitions.
 By limiting the model to five levels, we are assuming that the distributions within the rotational manifolds associated with each vibrational level do not play a significant role in altering the net rate of transfer between vibration levels.
 Even for just five levels, the mathematical solution quickly becomes tedious and complicated.
 Further, it involves several rate coefficients that have not yet been measured experimentally.
+
+\input{figures/energyLevels}
 
 Fortunately, this can be significantly simplified.
 Previous studies\cite{1996-luque-c,2000-luque} have indicated that the off-diagonal \(B\rightarrow X\) (0,1) transition plays a relatively minor role accounting for only 3.5\% of the total fluorescence.

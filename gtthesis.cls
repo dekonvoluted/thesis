@@ -59,8 +59,8 @@
 \RequirePackage[right]{lineno} % Draft mode option to number lines
 \RequirePackage[intoc]{nomencl} % Nomenclature
   \makenomenclature
-%\RequirePackage[colorlinks,linkcolor=black,citecolor=black]{hyperref} % Links within document
-\RequirePackage[colorlinks]{hyperref} % Colored links. 
+\RequirePackage[colorlinks,linkcolor=black,citecolor=black]{hyperref} % Links within document
+%\RequirePackage[colorlinks]{hyperref} % Colored links. 
 \AtBeginDocument{
   \hypersetup{
     pdfstartview={FitB},%
