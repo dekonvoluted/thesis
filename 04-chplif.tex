@@ -22,8 +22,7 @@ The setup and results of these experiments are described in the following subsec
 An excitation scan is performed by tuning the output of the alexandrite laser from \(\lambda\) = 387.077 nm to 387.260 nm.
 This serves two purposes.
 First, it locates the optimal wavelength to excite the CH radicals that results in the highest fluorescence yield.
-Second, the variation of the signal intensity can be compared with simulated profiles from LIFBASE or other spectroscopic calculations and our estimation of the laser linewidth can be validated.
-%YOU NEED REFERENCE FOR LIFBASE
+Second, the variation of the signal intensity can be compared with simulated profiles from LIFBASE\cite{1999-luque-a} or other spectroscopic calculations and our estimation of the laser linewidth can be validated.
 The laser linewidth is an integral parameter and appears in the absorption integral used by the models developed in Chapter \ref{ch:background}.
 
 \nomenclature[g]{\(\lambda\)}{Wavelength}
@@ -31,7 +30,6 @@ The laser linewidth is an integral parameter and appears in the absorption integ
 A schematic of the excitation scan experiment is shown in Figure \ref{fig:excitationScan}.
 The intensified PI Acton 512\(\times\)512 camera described in Section \ref{subsec:experimental-ch-chemiluminescence} is used to image a premixed, laminar methane-air flame operating at close to stoichiometric conditions.
 The laminar flame is stabilized on the Bunsen burner described in Section \ref{subsubsec:plif-laminar-flame-setup}.
-%WHY ISN'T THIS IN CHAPTER 3 - DESCRIPTION OF EXPERIMENTAL SETUPS
 The alexandrite laser is operated at a power of 16 mJ/pulse in the second harmonic.
 The sheet forming optics consist of a +50 mm cylindrical lens and a +250 mm spherical lens placed 300 mm apart.
 The optics form the beam into a collimated sheet about 25 mm (1 in) tall, focused to a thickness on the order of 250 \(\mu\)m at the flame location.
@@ -58,14 +56,11 @@ The fluorescence signal is calculated from these images using three alternate ap
 In Method I, two windows are identified that include the straight sections of the laminar flame.
 The average fluorescence signal in each frame is calculated by taking the average of all the emitting pixels in the two windows.
 A pixel is designated as an emitting pixel if its intensity exceeds the standard deviation of a typical background pixel by at least a factor of five.
-The average of this value over all the frames is designated as the mean fluorescence signal, \(\mu_{sig}\).
 In Method II, the intensity of the pixels is integrated over a straight line connecting the inner and outer edges of the flame.
 The straight line is chosen along the beam so that the beam intensity does not vary along the integration path.
 The integration is performed on the left and right arms of the flame, giving two readings per frame.
-The mean of these values over all the frames is recorded as the mean fluorescence signal, \(\mu_{sig}\).
-%YOU NEED TO CHANGE THE NAME OF THE SYMBOL - SAME AS LAST ONE
-In Method III, the midpoints of the flame along the straight lines from Method II are located and the average of their intensities, over all the frames is recorded as the mean fluorescence signal, \(\mu_{sig}\).
-%YOU NEED TO CHANGE THE NAME OF THE SYMBOL - SAME AS LAST ONE
+The integral is averaged over all the frames.
+In Method III, the midpoints of the flame along the straight lines from Method II are located and their intensities are averaged.
 The regions of interest for each of these methods are highlighted in Figure \ref{fig:excitationScanFlame}.
 
 The result of this investigation is shown in Figure \ref{fig:excitationScanResults}.
@@ -84,8 +79,7 @@ The agreement is in fact so good that a minor adjustment to the calibration of t
 The results indicate that the optimal excitation wavelength, corresponding to the highest mean fluorescence signal, is about 387.2 nm.
 For the rest of the experiments performed in this work, the laser is operated at this wavelength.
 The results also help fine tune the calibration of the micrometer over this small region of the spectrum.
-Finally, the results validate that our estimated laser linewith, 1.06 \AA, is accurate.
-%I THOUGHT IT WAS 1.04 ANGSTROMS - AND IF YOU ADJUSTED IT TO 1.06, SHOULD'NT YOU SHOW THE LIFBASE RESULT FOR 1.06 SHOWING THE IMPROVEMENT
+Finally, the results validate that our estimated laser linewidth, 1.06 \AA, is accurate.
 This value is used in subsequent calculations of the LIF signal levels.
 
 \subsection{Linearity Test}
@@ -97,7 +91,6 @@ Further, the models developed in Section \ref{sec:background-chplif-signal-model
 Hence, an experiment is performed to verify the linearity of the system response at the intensities at which the flames are imaged for this work.
 
 The schematic of the setup is shown in Figure \ref{fig:linearityTest}.
-%AGAIN - WHY NOT HAVE SETUP IN CHAPTER 3 
 The laser is tuned to the optimal wavelength as determined in Section \ref{subsec:prelim-excitation-scan}, and operated at 10 Hz.
 The frequency-doubled beam is directed at a steady, laminar, methane-air Bunsen flame operating at a slightly rich stoichiometry.
 The edges of the beam are clipped by an aperture to produce a sharp edge and to avoid unnecessary reflections from the burner.
@@ -147,8 +140,11 @@ The flame chemiluminescence background collected using identical gates is found 
 
 A portion of the measured spectrum is shown in Figure \ref{fig:chPLIFSpectrum}.
 The simulated spectrum is from LIFBASE for a 1 atm, thermalized CH system at 1800 K.
-The resolution of the simulation is set to match the calculated resolution of the spectrometer (about 0.3 nm), based solely on the number of pixels. The actual spectrometer resolution should be degraded due to diffraction effects and imperfections of the grating.
-The peaks agree quite well with the simulated result. Further, no other emissions of comparable intensity are found up to 520 nm, the maximum wavelength detected. Therefore, it can be concluded that in lean hydrocarbon flames (at least at atmospheric pressure), the laser-induced signal in the detection range 410-520 nm should be due primarily to CH LIF.
+The resolution of the simulation is set to match the calculated resolution of the spectrometer (about 0.3 nm), based solely on the number of pixels.
+The actual spectrometer resolution should be degraded due to diffraction effects and imperfections of the grating.
+The peaks agree quite well with the simulated result.
+Further, no other emissions of comparable intensity are found up to 520 nm, the maximum wavelength detected.
+Therefore, it can be concluded that in lean hydrocarbon flames (at least at atmospheric pressure), the laser-induced signal in the detection range 410-520 nm should be due primarily to CH LIF.
 
 \input{figures/chPLIFSpectrum}
 
@@ -219,7 +215,9 @@ Finally, Garland et al.\cite{1985-garland-b} note that the rate of forward trans
   \label{eqn:QEquation3}
 \end{equation}
 
-% WOULDN'T THE RATIO OF THESE TWO ELECTRONIC TRANSFER RATES BE A FUNCTION OF TEMPERATURE? CAN YOU JUST SAY IN GENERAL THE RATIO IS 1.6?
+Garland et al.'s observations in particular are made from experimental data in an atmospheric pressure, methane-air flame in which they estimate the flame temperature to be 2000 K.
+This value is representative of the flame temperatures in most of our cases and hence we assume that we can treat these ratios as constants for our application.
+
 Equations \ref{eqn:QEquation1}--\ref{eqn:QEquation3} form a closed set of linear equations that can be written out in matrix form and solved.
 Equation \ref{eqn:QSolution} presents this solution, eliminating \(Q_{21}\), \(Q'_{21}\) and \(Q_{12}\) in terms of \(Q\).
 
@@ -272,7 +270,7 @@ In Equation \ref{eqn:numberDensity}, \(N_A\) is Avogadro's number, \(X_i\) is th
 
 The absorption term in Equation \ref{eqn:improvedModel} requires us to calculate the Boltzmann fractions for the energy levels involved and the absorption integral over each transition line being excited by the laser.
 First, we focus on the Boltzmann fraction expression from Equation \ref{eqn:boltzmannDistribution}.
-The vibration energy expression from Equation \ref{eqn:vibrationalEnergy} needs the spectroscopic constants \(\omega_e\), \(\omega_e x_e\), \(\omega_e y_e\) and \(\omega_e ze\).
+The vibration energy expression from Equation \ref{eqn:vibrationalEnergy} needs the spectroscopic constants \(\omega_e\), \(\omega_e x_e\), \(\omega_e y_e\) and \(\omega_e z_e\).
 Simultaneously, the expression for the rotational energy in Equation \ref{eqn:rotationalEnergy} requires knowing \(B_e\), \(\alpha_e\), \(D_e\) and \(\beta_e\) values for the levels being excited.
 Accurate values of these constants for the \(X^2\Pi\) state are tabulated in Zachwieja's\cite{1995-zachwieja} paper.
 These are tabulated in Table \ref{tab:spectroscopicConstants}.
@@ -293,10 +291,8 @@ The line positions in the R-branch of the \(B^2\Sigma^-\leftarrow X^2\Pi\) (0,0)
 
 \input{tables/absorptionLines}
 
-The linewidth of the alexandrite laser is of the order of a few wavenumbers and its line shape, \(\psi(\nu)\), can be approximated by a Gaussian profile without loss of generality.
-% HOW CAN YOU PROVE/JUSTIFY THIS STATEMENT - WHY SHOULD IT BE GAUSSIAN?
-As a result, the effect of laser line broadening mechanisms such as natural broadening and inhomogeneous broadening that are commonly encountered in solid state lasers are negligible in comparison and do not affect the line shape appreciably.
-% ARE NEGLIGIBLE IN COMPARISON TO WHAT - UNLESS YOU MEANT MOLECULAR BROADENING AND NOT LASER BROADENING ABOVE - IN WHICH CASE I WOULD SAY YOU NEED TO DEMOSTRATE THIS AT HIGH PRESSURE
+The linewidth of the alexandrite laser is of the order of a few wavenumbers and its line shape, \(\psi(\nu)\), has a Gaussian profile.\cite{2007-li}
+
 \begin{equation}
   \psi(\nu) = \frac{1}{\sigma_l\sqrt{2\pi}} \exp{\left(-\dfrac{(\nu-\nu_l)^2}{2\sigma_l^2}\right)}
   \label{eqn:laserLineShape}
@@ -339,14 +335,15 @@ The FWHM of the resulting broadened line shape is given by,
 
 The combined effect of these two broadening mechanisms can be calculated by convoluting the two broadened line shapes.
 In this case, a Lorentzian convoluted with a Gaussian results in a Voigt profile.
-The computational expense of the convolution that needs to be performed for each absorption line at each point along the flame is prohibitively high.
-%I BELIEVE YOU ARE WRONG - A SERIES SOLUTION FOR THE VOIGT DOES NOT TAKE THAT LONG...PERHAPS YOU SHOULD SAY "is high"
+The computational expense of the convolution that needs to be performed for each absorption line at each point along the flame is high.
 Further, the absorption integral needs to be evaluated by multiplying the Voigt profile with the Gaussian profile of the laser.
 In order to simplify this without losing too much accuracy, we replace the collision broadened Lorentzian with a Gaussian of equal FWHM.
 The convoluted profile is now a Gaussian, too and the product of two Gaussians can be easily integrated to get the absorption integral.
 
 The limits of this assumption leading to replacing the Voigt profile with a Gaussian profile need to be stated.
-If the dominant broadening mechanism were Doppler broadening, the resulting Voigt profile would approximate a Gaussian much closer. For CH LIF, this is a reasonable assumption in the high temperature regions where CH exists, at least at pressures below a few bar. However at high pressure,  collisional broadening is no longer negligile compared to Doppler broadening.
+If the dominant broadening mechanism were Doppler broadening, the resulting Voigt profile would approximate a Gaussian much closer.
+For CH LIF, this is a reasonable assumption in the high temperature regions where CH exists, at least at pressures below a few bar.
+However at high pressure, collisional broadening is no longer negligible compared to Doppler broadening.
 Hence, the resulting Voigt shape will have a reduced peak absorption and relatively more area in the ``wings'' of the curve.
 In the absorption integral, this would lead to increased absorption of the laser energy by transitions near the edge of the laser line shape.
 Fortunately, when the laser line position is tuned to optimally excite the R-bandhead spanning the lines \(N''=5\) to \(N''=9\), the next nearest transition (\(N''=4\)) is far enough away that even with increased absorption, contribution from these lines remains insignificant even at very high pressures.
@@ -387,7 +384,8 @@ With the above information, the integral in Equation \ref{eqn:pumpingRate} can b
 Having discussed the means to calculate the absorption integral in a computationally-efficient manner, it is now possible to calculate the optimal laser location that results in the highest value of the absorption integral for a given temperature and pressure.
 The resulting value depends on both the pressure and the temperature at the flame.
 The optimal laser wavelength determined from these calculations is found to steadily increase with pressure.
-The behavior with temperature is nonmonotonic. The optimum wavelength initially decreases, reaching a minimum around 1800 K and then increases again.
+The behavior with temperature is non-monotonic.
+The optimum wavelength initially decreases, reaching a minimum around 1800 K and then increases again.
 However, these variations are so small (less than 0.0003 nm) over the range of temperatures and pressures encountered in combustion that we may optimize the wavelength using an atmospheric flame and leave it untouched while imaging flames at pressure and/or with preheat.
 
 \section{Chemkin modeling}
@@ -416,8 +414,6 @@ Due to its wide applicability, low computational cost and good accuracy, most of
 
 In this section, the CH signal intensity model is used to predict the LIF signal (or relative photon count) emitted by the flame in a few selected reactant mixtures.
 
-%IN THE FOLLOWING YOU CREATE A THRESHOLD/MINIMUM SIGNAL TO PRODUCE A GOOD SIGNAL - THIS IS BASED ON THE BUNSEN FLAME RESULTS - WHAT LASER INTENSITY WAS USED IN THAT MEASUREMENT - WAS IT ALL THE WAY UP TO THE 1 J/cm2 LEVEL - IF NOT, THEN PRESUMABLY YOU COULD PUSH TO EVEN LEANER CONDITIONS
-
 \subsection{Unstrained Laminar Flames}
 
 The LIF signal is related to many parameters in a flame.
@@ -429,17 +425,16 @@ In order to reduce the complexity of relating the signal to too many parameters 
 We begin by validating the predictions from two mechanisms---GRI Mech 3.0 and San Diego---against experimental data acquired from a non-preheated, atmospheric, methane-air Bunsen flame.
 The laminar flame setup from Section \ref{subsubsec:plif-laminar-flame-setup} is used for this purpose.
 The laser beam is formed into a 25 mm tall sheet bisecting the laminar flame and is imaged perpendicularly using the intensified PI-MAX 512\(\times\)512 camera with a 50 mm f/1.4 lens.
+The sheet thickness was about 250 \(\mu\)m and the laser power averaged about 14 mJ per pulse during the course of the experiment.
 The images are background-corrected and averaged over a window encompassing the PLIF signal from the flame sheet.
 The experiment is repeated over a range of equivalence ratios ranging from 1.55 on the rich side to 0.82 on the lean side, below which the unpiloted Bunsen flame could not be stabilized.
 
-The results are compared to the modeled signal intensity from the GRI Mech and San Diego results for a 1-D, freely propagating laminar flame. 
-%I ADDED THIS NEXT SENTENCE - IS IT CORRECT?
+The results are compared to the modeled signal intensity from the GRI Mech and San Diego results for a 1-D, freely propagating laminar flame.
 The predicted CH PLIF signals are based on a spatial integral across the flame thickness.
 The three profiles are normalized and plotted in Figure \ref{fig:chPLIFSignalExperiment}.
 
 \input{figures/chPLIFSignalExperiment}
 
-%DIDN'T YOU FORCE THE MAXIMUM SIGNAL TO AGREE?
 The equivalence ratio producing the maximum signal predicted by both mechanisms agrees with the experimental value, about \(\phi\) = 1.25.
 Further, both methods predict similar decreases in the LIF signal as the equivalence ratio is varied from the peak, which are also in reasonably good agreement with the experimental results.
 However, at the lower signal levels encountered at both the leanest and richest conditions at which the flame was imaged, the experimental results are seen to diverge from the model predictions.
@@ -455,7 +450,7 @@ Figure \ref{fig:gri-sd-delxf} shows the flame thickness predicted by the two mec
 The predicted laminar flame speeds and flame temperatures are shown in Figures \ref{fig:gri-sd-sl} and \ref{fig:gri-sd-t} respectively and the differences between the two mechanisms are again quite minimal.
 The results of this investigation indicate that other than the nearly consistent discrepancy of about 50\% in the predicted CH concentration, the results from the two mechanisms scale identically.
 Since we are not concerned with the accurate prediction of the CH concentration, but merely the relative variation across conditions, this discrepancy will not affect our conclusions.
-Thus, the San Diego mechanism is used for the remainder of the results.
+Hence, the San Diego mechanism is used for the remainder of the results.
 
 \input{figures/gri-sd}
 
@@ -465,13 +460,18 @@ Since this is the condition at which the laminar flame was imaged, the data from
 Two immediate conclusions can be drawn from this plot.
 First, increasing pressure causes the LIF signal to drop rapidly.
 Second, we can establish a threshold level for a detectable signal based on the validation experiment.
-Although the flame was still imaged with a reasonable signal-to-noise ratio at the lowest equivalence ratio in the experimental data, it serves as a good indicator for a conservative estimate of the minimum signal level needed.
+The signal level for the lowest equivalence ratio case imaged serves as a good, if conservative, estimate of the minimum signal level needed.
 At \(\phi\) = 0.8, the predicted signal count works out to be \(1.75\times10^9\).
 Based on this, we set the threshold at a value of \(1\times10^9\).
-Below this threshold, CH PLIF flame imaging will produce a poor signal-to-noise ratio that will make post-processing quite difficult.
 This threshold is indicated on the figure by dashed lines.
+Below this threshold, CH PLIF flame imaging will produce a poor signal-to-noise ratio that will make post-processing quite difficult.
 
-Using this threshold, we can reinterpret Figure \ref{fig:01-300}.
+In practice, the threshold could be lowered even further due to two reasons.
+First, even at the lowest equivalence ratio case, the signal-to-noise ratio is reasonable enough to discern the flame sheet in instantaneous images.
+Second, the laser intensity for this experiment (about 0.2 J/\(cm^2\)) is limited by the laser power output and could be increased considerably while still remaining in the linear LIF regime.
+Despite this, the conservative threshold estimate is retained as lowering it further does not qualitatively affect our conclusions in this section.
+
+Using this minimum signal threshold, we can reinterpret Figure \ref{fig:01-300}.
 When the pressure is increased to 3 atm, the flame cannot be imaged unless the equivalence ratio is between 0.9--1.3.
 At 6 atm, the range is even narrower and restricts the feasibility of this experiment to between 1.1--1.2.
 With no preheat, the flame cannot be imaged at 9 atm and above.
@@ -513,7 +513,6 @@ Second, while the peak CH signal did increase when going from methane to ethane,
 In fact, the San Diego mechanism actually predicts a slight fall in the peak signal.
 This lack of increase in the CH signal can be traced to the adiabatic flame temperature.
 Figure \ref{fig:c1c3-t} plots the adiabatic flame temperature for these mixtures and shows that the increase in the flame temperature going from ethane to propane is minimal.
-%CHANGE CAPTION OF THIS FIGURE - DO NOT SAY "figure above"
 While the CH signal does not correlate with the flame temperature at all conditions, it is strongly affected by it.
 Hence, the CH signal does not vary appreciably between the higher alkanes.
 
@@ -535,7 +534,7 @@ Figure \ref{fig:syngas-300} shows the signal levels in various non-preheated, at
 The results are quite promising as they indicate that with a high enough \ce{H2} concentration, syngas flames as lean as 0.8 can be imaged above our signal threshold.
 Increasing the preheat temperature to 700 K, Figure \ref{fig:syngas-700} extends this range to an equivalence ratio of 0.6.
 Using a higher order alkane in place of methane lowers this value further, but not significantly.
-% SOMEONE WILL ASK WHY ADDING CH4 TO H2 PRODUCES EVEN MORE CH LIF THAN PURE CH4 - YOU MIGHT WANT TO KNOW THE ANSWER (NEED TO LOOK AT CHEMKIN OUTPUT - IS IT MOSTLY DUE TO INCREASE IN CH CONCENTRATION OR SOMETHING ELSE
+
 \input{figures/syngas-300}
 \input{figures/syngas-700}
 
@@ -558,7 +557,7 @@ The simulation is carried out for two equivalence ratios and the results are plo
 The LIF signal increases with stretch, by about 10\%, until close to the extinction strain.
 Very close to extinction, the CH LIF signals decreases slightly.
 This behavior mirrors the variation of the flame temperature for \(Le<1\) flows where increasing stretch results in an elevated flame temperature.
-Though not indicated in the figure, the signal would decrease preciptiously (to zero on a steady-state basis) above the extinction limit.
+Though not indicated in the figure, the signal would decrease precipitously (to zero on a steady-state basis) above the extinction limit.
 These results suggest that stretch should have little effect on the (spatially integrated) CH LIF signal until extinction begins to occur.
 
 \nomenclature{\(Le\)}{Lewis number}
