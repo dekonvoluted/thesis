@@ -21,9 +21,6 @@ The following sections examine the results of experimental investigation of the 
 \section{Effect of Reference Velocity}
 \label{sec:lsb-effect-of-reference-velocity}
 
-\input{figures/referenceVelocityResults}
-\input{tables/referenceVelocityCases}
-\input{figures/referenceVelocityPLIFResults}
 
 Section \ref{subsubsec:flame-characteristics-standoff} explored how changing the reference velocity is not expected to affect the flame location or the flame shape as the balance between the local reactant velocity and the turbulent flame speed remains unaffected.
 This was further borne out by Equation \ref{eqn:chengModel} which outlines a simple model for the turbulent flame speed as a linear function of \(u\) and hence, \(U_0\).
@@ -42,6 +39,9 @@ The preheat temperature for these tests was about 500 K.
 The measured and calculated flow parameters for these conditions are presented in Table \ref{tab:referenceVelocityCases}.
 The location of the flame was measured from CH* chemiluminescence images and the results are presented in Figure \ref{fig:referenceVelocityResults}.
 
+\input{tables/referenceVelocityCases}
+\input{figures/referenceVelocityResults}
+
 There is essentially no systematic variation in the flame standoff distance or the flame angle for the low velocity, \(S_{37^\circ}\) tests.
 This is in line with Equation \ref{eqn:flameImmobility}'s prediction and confirms its applicability even at elevated pressure and preheat conditions.
 
@@ -53,56 +53,52 @@ Previous studies have operated the LSB in regimes where Equation \ref{eqn:chengM
 The arguments behind the formulation of Equation \ref{eqn:chengModel} assume that a turbulent flame can be treated as a distorted/wrinkled laminar flame in the presence of large scale, low intensity turbulence.
 This assumption is largely true in the wrinkled flame regime and may even be extended apply to a mildly corrugated flame.
 However, as we approach large \(\dfrac{ u }{ S_L }\) values and operate in the thin reaction zone---where most gas turbine combustors operate---the flame bears little resemblance to a wrinkled laminar sheet.
-Since increasing the reference velocity (and thus \(u\)) traverses the operating point along the vertical axis of the Borghi diagram, it can cause the turbulent combustion regime to change at high values of \(\dfrac{ u }{ S_L }\), resulting in the ``bending effect'' in the \(\dfrac{ S_T }{ S_L }\) vs \(\dfrac{ u }{ S_L }\) diagram.
-% YOU NEED REFERENCE FOR bending effect
+Since increasing the reference velocity (and thus \(u\)) traverses the operating point along the vertical axis of the Borghi diagram, it can cause the turbulent combustion regime to change at high values of \(\dfrac{ u }{ S_L }\), resulting in the ``bending effect'' in the \(\dfrac{ S_T }{ S_L }\) vs \(\dfrac{ u }{ S_L }\) diagram.\cite{1996-kobayashi,2006-law}
 
 One way to ascertain the regimes in which the LSB is operated is to image the flame sheet and observe the flame structure.
 To that end, the LSB (Configuration B) was tested at atmospheric pressure with preheat temperatures ranging from 300 to 440 K.
-Two of these conditions are relevant to this discussion and their operating parameters are presented in Table \ref{tab:referenceVelocityCases}.
-% WHAT "TWO OF THESE CONDITIONS" - YOU LIST TWO TEMPERATURES - IS THAT WHAT YOU MEAN?
+Two of these conditions are at temperatures relevant to this discussion and their operating parameters are presented in Table \ref{tab:referenceVelocityCases}.
 In order to prevent flame blow-off, the equivalence ratio had to be increased to 0.9.
 The resulting flame illuminated by an 80 mm tall, 250 \(\mu\)m thick laser sheet from the alexandrite laser and imaged using the PI-MAX 512\(\times\)512 intensified camera equipped with a 50 mm, f/1.4 lens.
 The camera was gated to 300 ns centered on the 70 ns laser pulse.
 The laser was operated at 10 Hz and the pulse energy was measured to be about 14 mJ for the low velocity case and about 17 mJ for the high velocity case.
 A sample frame from each dataset is shown in Figure \ref{fig:referenceVelocityPLIFResults}. 
 
+\input{figures/referenceVelocityPLIFResults}
+
 Both the low and high velocity cases show an essentially unbroken flame sheet that is characterized by wrinkles.
 This is consistent with the operating regime being in the wrinkled laminar flame region of the Borghi diagram.
-The level of wrinkling in these images can be estimated by gathering statistics on the number of pixels that are found on edges of intensity gradients.
-%YOU NEED TO EXPLAIN THIS - BUILD UP TO IT - ARE YOU TRYING TO FIND SOMETHING LIKE THE FLAME AREA?
-In order for the statistics to be affected only by the level of wrinkling and not by the movement of the flame, the statistics are gathered only from the middle quarter of the flame where the flame sheet is nearly planar.
-The edges and corresponding histograms from this investigation are also presented in Figure \ref{fig:referenceVelocityPLIFResults}.
+The level of wrinkling in the flame sheet is representative of the increase in the flame area and hence the turbulent flame speed.
+This can be quantified by detecting the edges of intensity in these images and measuring the integrated length along the edges.
+A simple implementation of this can be done by counting the number of pixels along the intensity edges.
+The edge detection algorithm detects two sharp intensity gradients along the flame sheet---one on the reactants side and one on the product side.
+Consequently, the flame sheet get doubly counted but this does not affect the statistics as twice the number of edge pixels are counted from all the frames.
 
+The flame sheet also exhibits up-down movement from frame to frame, in addition to wrinkling.
+If the statistics are gathered over the entire frame, the up-down motion pollutes the data and the statistics can no longer be attributed to the wrinkling of the flame sheet alone.
+To overcome this, edge pixels are counted only over a quarter of the image width, centered on the average flame axis.
+The detected edges and histograms of the edge pixels are also presented in Figure \ref{fig:referenceVelocityPLIFResults}.
+
+Figure \ref{fig:velocityFrameSequence} shows three consecutive frames each from the low velocity, low preheat case and the high velocity, high preheat case.
 The level of wrinkling is predictably higher for the high velocity, high preheat case.
 The instances of disjoint packets of flame are also higher for this case.
-%YOU ARE JUST STATING THIS - WHERE IS THE PROOF - AT A MINIMUM - YOU NEED TO SHOW A NUMBER OF IMAGES WHERE THIS CAN BE SEEN - OR NOT SEEN (I.E., FOR BOTH CASES)
-This indicates that the high velocity, high preheat case is approaching the boundary between the laminar wrinkled flame regime and the corrugated flame regime.
-Even accounting for the effects of operating this flame at a leaner equivalence ratio, at elevated pressures, both the laminar flame speed, \(S_L\), and the flame thickness, \(\delta_f\), are diminished.
-% YOU ARE COMPARING THE TWO LSB SYSTEMS - IS THIS FAIR - EVEN FOR THE SAME PHI WOULD THEY HAVE THE SAME OTHER FLOW PARAMETERS - IF YOU THINK SO, YOU NEED TO ACKOWLEDGE THE COMPARISON YOU ARE MAKING
-This places the operating regime higher (and more to the right) on the Borghi diagram where a large enough reference velocity can push the operating point from the region of corrugated flames into the broken flamelets regime.
-This would have not been possible for similar increases in reference velocity at atmospheric pressure conditions where the corresponding \(\dfrac{ u }{ S_L }\) values would be too low.
-Such a transition would cause \(S_T\) to increase at a reduced rate with \(u\) and \(U_0\), resulting in the observed downstream shift of the high pressure LSB flame at high reference velocities.
+This can also be seen in the histogram in Figure \ref{fig:referenceVelocityPLIFResults} where the average number of detected edges in the region of interest is higher for the high velocity case.
+The higher instances of finding disjoint packets of flame in high velocity, high preheat case, in particular indicates that the operating point is approaching the boundary between the laminar wrinkled flame regime and the corrugated flame regime.
+
+\input{figures/velocityFrameSequence}
+
+While the two tested LSB configurations A and B are somewhat different geometries, the mechanisms affecting the flame structure at the stabilization point are very similar.
+Further, the size of the largest eddies in the flow---the integral length scale---should be dominated by the geometry of the swirler which is very similar for both configurations.
+As a result, we may even place the operating conditions on the same Borghi diagram and apply what we learnt from the CH PLIF imaging tests to the chemiluminescence cases.
+In spite of the leaner equivalence ratio, the effect of the elevated combustor pressure is expected to diminish both the flame speed, \(S_L\), and the flame thickness, \(\delta_f\), placing the operating regime higher (and to the right) on the Borghi diagram.
+At a sufficiently large reference velocity, the operating point can transition from the corrugated flame regime into the broken flamelets regime.
+Such a transition would not have been possible for a similar increase in reference velocity at atmospheric pressure conditions as the corresponding \(\dfrac{ u }{ S_L }\) values would have been too low.
+Transitioning into the broken flamelets regime would cause \(S_T\) to increase at a reduced rate with \(u\) and \(U_0\), resulting in the observed downstream shift of the high pressure LSB flame at high reference velocities.
 
 \section{Effect of Preheat Temperature}
 \label{sec:lsb-effect-of-preheat-temperature}
 
-\input{tables/temperatureCases}
-\input{figures/temperatureLDVResults}
-\input{figures/temperatureLDVTransverse}
-
-% WHY ARE YOU EXPLAINING WHAT SHOULD HAPPEN AND WHY BEFORE YOU SHOW THE DATA - WHY NOT SHOW THE DATA THEN EXPLAIN WHY THEY MAKE SENSE?
-
-Next, we consider the effect of increasing the preheat temperature on the flame location, shape and structure.
-The preheat temperature of the reactants is an important flow parameter for gas turbine applications and impacts the reacting flow field in the LSB in two ways.
-First, a higher preheat temperature increases the kinematic viscosity of the flow.
-The mechanism that transports the axial momentum in the radial direction and causes the flow to diverge is driven by viscous effects.
-Enhanced viscous effects will result in a steeper decrease in the axial velocity.
-Simultaneously, this causes an increased production of turbulent kinetic energy.
-Second, global reaction rates increase with temperature, causing the laminar flame speed to increase.
-The net result of the increased turbulence and laminar flame speed is that the turbulent flame propagates faster.
-As a result of the steeper velocity decay and the increased turbulent flame speed, the flame will be expected to stabilize closer to the inlet of the LSB.
-
-In order to explore this in greater detail, the velocity field of the combustor was mapped using Laser Doppler Velocimetry (LDV).
+In order to explore the effect of increasing the preheat temperature on the flame location, shape and structure, we begin by mapping the velocity field of the combustor using Laser Doppler Velocimetry (LDV).
 The conditions were chosen to study the effect of increasing the preheat temperature on both reacting and non-reacting LSB flow fields.
 Further, the study includes both low and high reference velocity cases.
 The relevant flow parameters relating to these tests are presented in Table \ref{tab:temperatureCases}.
@@ -110,8 +106,12 @@ The test cases are named CN (Cold, Non-reacting), HN (Hot, Non-reacting) and HR 
 All LDV tests were limited to atmospheric pressure conditions.
 Implementing the LDV technique at elevated pressures proved difficult due to beam steering issues, coupled with impractical turn-around times between the successive runs that would be required to obtain sufficient LDV data points for analysis.
 
+\input{tables/temperatureCases}
+
 The normalized centerline mean and rms axial velocity profiles for the three cases are presented in Figure \ref{fig:temperatureLDVResults}.
 The abscissa represents the distance from the virtual origin as defined in Section \ref{subsec:lsb-axial-velocity-profile}.
+
+\input{figures/temperatureLDVResults}
 
 The results show that increasing the preheat temperature causes the normalized velocity slope to increase.
 As noted in Chapter \ref{ch:background}, Cheng et al.\cite{2008-cheng-a} reported that this slope is unaffected by the Reynolds number, \(Re\), of the operating condition.
@@ -120,6 +120,15 @@ This indicates that the mean axial stretch in the near field of the LSB flow fie
 
 \nomenclature{\(Re\)}{Reynolds number}
 
+The preheat temperature impacts the reacting flow field in the LSB in two ways.
+First, a higher preheat temperature increases the kinematic viscosity of the flow.
+The mechanism that transports the axial momentum in the radial direction and causes the flow to diverge is driven by viscous effects.
+Enhanced viscous effects will result in a steeper decrease in the axial velocity.
+Simultaneously, this causes an increased production of turbulent kinetic energy.
+Second, global reaction rates increase with temperature, causing the laminar flame speed to increase.
+The net result of the increased turbulence and laminar flame speed is that the turbulent flame propagates faster.
+As a result of the steeper velocity decay and the increased turbulent flame speed, the flame will be expected to stabilize closer to the inlet of the LSB.
+
 Even assuming that \(S_T\) is constant, these results suggest that at higher preheat temperatures, the flame would stabilize closer to the dump plane because of the faster reactant velocity decay.
 In fact, the faster velocity decay produces a higher \(u\) and would increase \(S_T\), further causing the flame standoff location to shift upstream.
 This affects the stability of the flame in two ways.
@@ -127,28 +136,34 @@ First, the flame is closer to the inlet, resulting in more effective heat transf
 Second, the steeper profiles of \(U\) and \(S_T\) limit any movement of the flame in response to perturbations in the local flow field.
 These two characteristics of the preheated flame lead to an intuitive result---the LSB flame behaves more stably at high preheat conditions.
 
-%AGAIN WHY PREDICT IT - WHY NOT MEASURE IT AND THEN EXPLAIN IT
-The effect of increasing the preheat temperature on the flame cone angle is harder to predict.
-The increased divergence drives more axial momentum into the shear layer, increasing the local velocity of the reactants.
-At the same time, the increased \(u\) and \(S_L\) drive up the turbulent flame speed.
-The competing effects of the two parameters on the flame angle can be explored by propagating a change in the parameters as follows.
+Next, we consider how the flame cone angle is affected by increasing the preheat temperature of the incoming reactants.
+None of the data sets cover two otherwise identical operating conditions, but at different preheat temperatures.
+As a result, the effect must be postulated using data showing the combined effect of increasing reference velocity and preheat temperature.
+Figure \ref{fig:temperatureLDVTransverse} shows the profiles of mean axial velocity measured 15 mm downstream of the inlet using LDv.
+These measurements are taken from two orthogonal traverses across the flow field and show the profiles for the CN and HN cases.
+The results show that the peak mean axial velocity across the shear layer remains the same regardless of velocity or temperature.
+However, the thickness of the shear layer has increased.
+
+\input{figures/temperatureLDVTransverse}
+
+The angle of the flame cone is decided by the ratio of the mean velocity in the shear layer and the local turbulent speed of the flame.
+We can use this relation and explore the propagation of a change in the parameters as follows.
 
 \begin{align}
   U \sin \theta_f &= S_T \nonumber \\
   \therefore \frac{ \delta \sin \theta_f }{ \sin \theta_f } &= \frac{ \delta S_T }{ S_T } - \frac{ \delta U }{ U }
 \end{align}
 
-Figure \ref{fig:temperatureLDVTransverse} shows LDV results for the axial velocity measured 15 mm downstream of the inlet.
-These measurements are taken from two orthogonal traverses across the flow field and show the profiles for the CN and HN cases.
-While the increased momentum transport has certainly thickened the shear layer, the peak axial velocity remains the same for the two cases.
-As a result, changes in the turbulent flame speed would be expected to dominate and cause the flame angle to increase.
+This shows the competing effects of the \(S_T\) and \(U\) in the shear layer.
+Since our LDV data indicates that the peak mean axial velocity actually decreases slightly, while the turbulent flame speed would continue to increase with preheat temperature.
+The net result of increasing the preheat temperature would thus cause the flame angle to increase.
 
-% WHY NOT ILLUSTRATE THIS GRAPHICALLY - CHAPTER 2 IS ALONG "TIME" AGO
 Finally, we return to the Borghi diagram to consider the effect of a higher preheat temperature on the flame structure.
 On the Y-axis, the exponential dependence of \(S_L\) on temperature will decrease the ordinate of the operating point, while on the X-axis, a slight decrease in the flame thickness will move the point to the right.
-The net down-and-right movement of the operating point drives the flame regime away from broken flamelets and closer towards wrinkled flames.
-Since our flame structure data was already in the wrinkled flame regime, this change could not be imaged by CH PLIF.
-%DO YOU MEAN THAT CH PLIF DOES NOT SHOW OR WOULD NOT SHOW MUCH DIFFERENCE (I.E., ARE YOU SAYING THE CH PLIF IMAGING AGREES WITH YOUR CONCLUSION - OR YOU DID NOT LOOK AT THIS CASE BECAUSE YOU THOUGHT IT USELESS - YOUR TEXT IS CONFUSING
+Figure \ref{fig:temperatureBorghiDiagram} illustrates the direction of movement of such an operating point.
+The down-and-right movement of the operating point drives the flame regime away from broken flamelets and closer towards wrinkled/laminar flames.
+
+\input{figures/temperatureBorghiDiagram}
 
 \section{Effect of Swirl}
 \label{sec:lsb-effect-of-swirl}
