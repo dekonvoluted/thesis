@@ -168,9 +168,6 @@ The down-and-right movement of the operating point drives the flame regime away 
 \section{Effect of Swirl}
 \label{sec:lsb-effect-of-swirl}
 
-\input{tables/swirlCases}
-\input{figures/swirlPLIFResults}
-
 As described in Chapter \ref{ch:background}, the amount of swirl in the LSB flow field is quantified by a swirl number as defined in Equation \ref{eqn:theoreticalSwirlNumber}.
 Even though there is no tangential momentum in the core of the LSB flow field where the flame is stabilized, the swirl still exerts influence on the flame characteristics.
 
@@ -178,11 +175,11 @@ The LSB utilizes swirl to enhance the divergence of the flow near the inlet.
 Consequently, an increased swirl number results in a sharper deceleration of the reactants and a more upstream stabilization point for the turbulent flame.
 This is corroborated by past research\cite{1986-starner,1992-chan} which reporter shorter, wider (higher flame cone angle) flames when the amount of swirl in a combustor was increased.
 
-The results of the present investigation are in agreement with this observation.
-%SHOULDN'T YOU POINT OUT WHAT FIGURE SHOWS THIS?
-Operated at identical inlet conditions, the \(S_{45^\circ}\) swirler stabilizes a flame closer to the inlet and with a larger flame angle compared to the \(S_{37^\circ}\) swirler.
+The results from this investigation are in agreement with this observation.
+The higher flame angle and shorter flame standoff may be seen in results like those presented in Figure \ref{fig:referenceVelocityResults} or Figure \ref{fig:pressureResults}, for example.
+Operated at identical inlet conditions, the \(S_{45^\circ}\) swirler always stabilizes a flame closer to the inlet and with a larger flame angle compared to the \(S_{37^\circ}\) swirler.
 
-This result highlights an interesting trade-off for the designers of LSB-based gas turbine engines.
+This highlights an interesting trade-off for the designers of LSB-based gas turbine engines.
 The \(S_{45^\circ}\) flame is located in a sharply decelerating flow field and as we discussed in Section \ref{sec:lsb-effect-of-preheat-temperature}, this results in a more stable flame, resistant to perturbations in the flow field.
 Simultaneously, the presence of the concentrated heat release near the inlet increases the strength of the toroidal recirculation zone present there.
 As we shall see in Section \ref{sec:lsb-effect-of-equivalence-ratio}, this recirculation zone can become powerful enough to even cause the flame to attach itself to the lip of the inlet.
@@ -199,58 +196,61 @@ Figure \ref{fig:swirlPLIFResults} shows CH PLIF images of the flame sheet for a 
 Also shown are the corresponding histograms measuring the statistics of the edge pixels in the central one-fourth of the flame.
 The test conditions for these two cases are presented in Table \ref{tab:swirlCases}.
 
-The results of this investigation show that the flame position is strongly affected by changing the swirl number in this manner.
+\input{figures/swirlPLIFResults}
+\input{tables/swirlCases}
+
+These results show that the flame position is strongly affected by changing the swirl number in this manner.
 The reduced flow of reactants through the central portion, coupled with the enhanced divergence induced by the increased swirl flow causes the flame to shift much further upstream.
 The reduction in the local reactant velocity also decreases the local turbulence level and accounts for a less convoluted flame sheet.
 
-To conclude, changing the amount of swirl in the LSB flow field affects the flame stabilization point and the flame cone angle.
-This is primarily the effect of swirl changing the divergence of the core flow.
-In the limit, this behavior causes the LSB to behave like a conventional swirl-stabilized combustor.
-%BE MORE SPECIFIC, ARE YOU SAYING IF THE SWIRL NUMBER IS TOO HIGH...AND IN THIS SECTION HAVE YOU PROVEN THIS, ARE YOU PREDICTING THIS,...
+To conclude, the characteristics of the \emph{Low}-Swirl Burner and its flame are the product of its \emph{low} swirl numbers.
+Changing the amount of swirl tends to decrease the flame standoff distance and widen the flame cone angle.
+In the limit, when the core flow velocity is too low, the flame can flash back through the swirler.
 
 \section{Effect of Equivalence Ratio}
 \label{sec:lsb-effect-of-equivalence-ratio}
-
-\input{tables/equivalenceRatioCases}
-\input{figures/equivalenceRatioResults}
-\input{figures/frameSequence}
-\input{figures/equivalenceRatioPLIFResults}
 
 The LSB is primarily intended for fuel-lean operation in order to utilize its low \ce{NO_x} emission performance.
 As a result, most of the high pressure testing was done as close as possible to a target \(\phi\) of 0.56.
 Limited testing was carried out at 12 atm for two off-target conditions: a slightly richer (\(\phi \approx 0.58\)) and a slightly leaner (\(\phi \approx 0.53\)) mixture, in order to explore the sensitivity of the LSB flame to limited changes in equivalence ratio.
 The \(S_{45^\circ}\) swirler was used for these tests.
 The conditions are presented in Table \ref{tab:equivalenceRatioCases}, while the corresponding averaged and Abel-deconvoluted flame images are presented in Figure \ref{fig:equivalenceRatioResults}.
- 
+
+\input{tables/equivalenceRatioCases}
+\input{figures/equivalenceRatioResults}
+
 Two characteristics of the flame are immediately obvious from these images.
 First, the zone of heat release, marked by the region from which CH* chemiluminescence is observed, becomes increasingly compact at fuel-rich conditions.
-Virtually all other flame images acquired at leaner conditions show a long flame, with the heat release distributed over the entire visible area of the combustor.
+Virtually all other flame images acquired at leaner conditions show a long flame like in Figure \ref{fig:leanFlameAverageImage}, with the heat release distributed over the entire visible area of the combustor.
 As discussed in the previous section, a compact heat release zone near the inlet results in strong recirculation features and potentially poor \ce{NO_x} performance, e.g., an even higher \ce{NO_x} increase than would be attributed to just the increase in temperature associated with the higher equivalence ratio.
 
-Second, the flame brush for the richer flame can be observed to wrap around and anchor itself on the dump plane.
-% POINT OUT WHICH FIGURE (5.6 b and d??)
-This is particularly observable in the Abel-deconvoluted image.
-The attached region is not as bright as the rest of the flame brush, indicating that the flame may be attaching itself intermittently.
+Second, the flame brush for the richer flame in Figure \ref{fig:richFlameAverageImage} can be observed to wrap around and anchor itself on the dump plane.
+This is particularly observable in the Abel-deconvoluted image of the same flame in Figure \ref{fig:richFlameAbelImage}.
+The attached region is not as bright as the rest of the flame brush, indicating that the flame may be attaching itself only intermittently.
 This intermittent behavior can be confirmed from the instantaneous images where it is visible on some of the acquired images, but not others.
 This is seen from the sequence of images shown in Figure \ref{fig:frameSequence}.
 This behavior was alluded to in Section \ref{sec:lsb-effect-of-swirl} as being the result of the enhanced toroidal recirculation zone produced by this swirler.
-Thus, the intermittent attachment of the flame to the inlet indicates the increased importance of the toroidal recirculation zone in stabilizing the flame.
+Thus, the intermittent attachment of the flame to the inlet indicates the increased importance of the toroidal recirculation zone in stabilizing the rich flame.
+
+\input{figures/frameSequence}
 
 It should be noted that the reliance on a toroidal recirculation zone to anchor the flame to the inlet is one of the primary flame stabilization mechanisms used by traditional swirl combustors.
-Thus, LSB swirlers with high vane angles tend to behave like traditional swirl combustors at fuel-rich conditions.
+Thus, LSB swirlers with high vane angles tend to behave like traditional swirl combustors at fuel-rich conditions at high pressure.
 
 In order to explore the flame structure of a richer flame, LSB Configuration B was operated at \(\phi\) values of 0.90 and 1.05 and imaged using CH PLIF.
-The conditions are listed in Table \ref{tab:equivalenceRatioCases} and the images are presented in Figure \ref{fig:equivalenceRatioPLIFResults}.
-%FIRST DESCRIBE THE CH PLIF RESULTS IN MORE DETAIL - THIS IS WAY TOO BRIEF - THEN EXPLAIN WHY THEY MAKE SENSE
-On the Borghi diagram, increasing \(\phi\) causes a higher \(S_L\) and reduces \(\delta_f\).
-This moves the operating point down and to the right, taking it closer to a wrinkled flame regime.
-This is reflected in the histogram where the richer flame is seen to be less wrinkled.
+The conditions are listed in Table \ref{tab:equivalenceRatioCases} and the sample instantaneous images from the dataset are presented in Figure \ref{fig:equivalenceRatioPLIFResults}.
+The accompanying histograms show statistics of the number of pixels detected on intensity edges.
+The average length (or number of edge pixels) of the flame sheet is lower at the higher equivalence ratio.
+This implies that the richer flame is less convoluted in the vicinity of the flame stabilization point.
+
+\input{figures/equivalenceRatioPLIFResults}
+
+On the Borghi diagram, increasing the equivalence ratio increases the laminar flame speed, and decreases the flame thickness.
+Neglecting any associated changes in the velocity field, this causes the operating point to move down and to the right on the diagram, much like in Figure \ref{fig:temperatureBorghiDiagram}.
+This change will move the point closer to the wrinkled laminar flame regime, reducing the amount of wrinkling and hence, the length of the flame sheet as demonstrated by the histogram in Figure \ref{fig:equivalenceRatioPLIFResults}
 
 \section{Effect of Combustor Pressure}
 \label{sec:lsb-effect-of-combustor-pressure}
-
-\input{tables/pressureCases}
-\input{figures/pressureResults}
 
 In many gas turbine engines, the combustor pressure varies directly with the loading of the engine.
 Like the preheat temperature, the combustor pressure affects the LSB flame both through the fluid mechanics of the flow (by decreasing the kinematic viscosity) and the flame's chemical kinetics and scalar diffusion (affecting the laminar flame speed and flame thickness).
@@ -261,7 +261,7 @@ However, as noted in Section \ref{sec:lsb-effect-of-preheat-temperature}, it mig
 According to the turbulent flame speed model from Equation \ref{eqn:chengModel}, at high pressures, the \(S_L\) term is insignificant compared to \(u\) and thus, the turbulent flame speed should see minimal pressure effects.
 Indeed, Kobayashi et al.\cite{1998-kobayashi,2002-kobayashi-b} have observed precisely this---the turbulent flame speed appears to be independent of the combustor pressure in their Bunsen burner setup.
 While Cheng et al. highlight the diminishing role of \(S_L\), Griebel et al.\cite{2007-griebel} attribute this behavior to the fact that the decrease in laminar flame speed at high pressure is compensated for by the broadening of the turbulence spectrum.
-This results in finer turbulent structures in the flow as pressure increases---an observation also made by Kobayashi\cite{1997-kobayashi}---that cause a higher turbulent flame surface area and keep the turbulent flame speed njearly constant.
+This results in finer turbulent structures in the flow as pressure increases---an observation also made by Kobayashi\cite{1997-kobayashi}---that cause a higher turbulent flame surface area and keep the turbulent flame speed nearly constant.
 Griebel et al. further note that theoretically, a slight drop in the turbulent flame speed with pressure may be expected.
 
 In order to resolve the uncertainties regarding how the LSB flame responds to combustor pressure, the flame was imaged over a range of operating conditions from 3 to 12 atm.
@@ -269,7 +269,10 @@ For these tests, the reference velocity and the equivalence ratio were held cons
 However, the temperature of the reactants increased somewhat with pressure.
 The reason for this was discussed in Chapter \ref{ch:experimental} and is because of the reduced heat losses in the supply lines at the high flow rates required to pressurize the LSB.
 The experimental conditions are presented in Table \ref{tab:pressureCases}
-The flame location and shape inferred from the flame images are presented in Figure \ref{fig:pressureResults}.
+The flame location and cone angle inferred from the flame images are presented in Figure \ref{fig:pressureResults}.
+
+\input{tables/pressureCases}
+\input{figures/pressureResults}
 
 At low to moderate pressures, the flame location is nearly invariant for \(S_{37^\circ}\), but moves upstream for the \(S_{45^\circ}\) cases.
 This behavior can be explained as follows.
@@ -288,14 +291,13 @@ Increasing the preheat of the reactants could offset this behavior, as can incre
 In practice, these may be non-trivial to implement in a gas turbine engine.
 Adding hydrogen to the reactants may be a simpler way to stabilize the high pressure flames.
 
-Finally, it is interesting to examine this on a Borghi diagram to deduce any changes in the flame structure that might result.
+Finally, it is interesting to consider this on a Borghi diagram to deduce any changes in the flame structure that might result from high pressure operation.
 Kobayashi et al.\cite{1997-kobayashi} report that the increasing pressure causes a weak drop in \(u\), reaching a minimum around 10 atm.
 However, the \(\dfrac{ u }{ S_L }\) factor would be dominated by the precipitous fall in the laminar flame speed, causing it to in fact increase with pressure.
 On the X-axis, the integral length scale is very nearly unaffected by the pressure change, but the flame thickness decreases rapidly.
 Thus, pressure causes the operating point to move up and to the right on the diagram.
 This motion is unlikely to cause the turbulent combustion regime to change.
-In the absence of a drastic change in the turbulent combustion characteristics, the only observable effect is likely to be an increase in the fine structure of the wrinkles in the flame due to the broadened turbulence spectrum.
-% AND NO EVIDENCE TO SUPPORT YOUR THESIS
+Unfortunately, due to the absence of spatially-resolved, high pressure flame structure images, it may only be surmised at this stage that the observable effect of increasing the combustor pressure would be limited to an increase in the fine structure of the wrinkles in the flame sheet.
 
 \section{Summary of Results}
 
@@ -303,10 +305,16 @@ The effect of various flow parameters on the LSB flame characteristics have been
 The key results from this investigation are as follows:
 
 \begin{enumerate}
-  \item Low to moderate reference velocities do not affect the flame at high pressure. High reference velocities cause the flame to shift downstream. The flame becomes more wrinkled due to increased turbulence.
-  \item Preheating the reactants causes the flame to move upstream, but may also strengthen recirculation zones in the combustor. The flame structure is expected to become more wrinkled.
-  \item Swirl---controlled either through the vane angle or through the mass flow split---causes the flame to anchor closer to the inlet and have a larger cone angle. The decreased flow rate through the core reduces wrinkling in the flame structure.
-  \item Richer flames at high pressure and high swirl can change flame shape and behave like attached flames. Equivalence ratio also results in strong combustion and a less wrinkled flame.
-  \item At high pressures, the LSB flame moves downstream. In order to preserve flame stability, this should be countered by increasing the preheat or changing the swirl number, if possible.
+  \item Low to moderate reference velocities do not affect the flame at high pressure.
+    High reference velocities cause the flame to shift downstream.
+    The flame becomes more wrinkled due to increased turbulence.
+  \item Preheating the reactants causes the flame to move upstream, but may also strengthen recirculation zones in the combustor.
+    The flame structure is expected to become more wrinkled.
+  \item Swirl---controlled either through the vane angle or through the mass flow split---causes the flame to anchor closer to the inlet and have a larger cone angle.
+    The decreased flow rate through the core reduces wrinkling in the flame structure.
+  \item Richer flames at high pressure and high swirl can change flame shape and behave like attached flames.
+    Equivalence ratio also results in strong combustion and a less wrinkled flame.
+  \item At high pressures, the LSB flame moves downstream.
+    In order to preserve flame stability, this should be countered by increasing the preheat or changing the swirl number, if possible.
 \end{enumerate}
 
