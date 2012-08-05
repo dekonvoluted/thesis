@@ -10,7 +10,7 @@ Finally, the model is used to predict the feasibility of using the developed CH 
 \section{CH PLIF Preliminary Experiments}
 \label{sec:chplif-preliminary-experiments}
 
-The CH PLIF imaging system described in Chapter 3 was evaluated for use in imaging hydrocarbon flames by performing three preliminary experiments.
+The CH PLIF imaging system described in Chapter \ref{ch:experimental} was evaluated for use in imaging hydrocarbon flames by performing three preliminary experiments.
 First, an excitation scan was performed to confirm the location of the optimal wavelength to excite the CH radicals in a typical hydrocarbon flame.
 Second, a test of the linearity of the LIF signal with respect to the incident laser intensity was performed.
 Finally, a spectrum of the LIF emission was recorded and compared to calculations.
@@ -105,7 +105,7 @@ The LIF signal from the flame is recorded in 300 ns gates and accumulated 150 ti
 For each case, a corresponding laser scattering image is also recorded for estimating the background.
 The flame chemiluminescence and ambient background are also recorded for the same purpose.
 
-For this experiment, varying the intensity of the laser beam by changing the flash lamp voltage or even the Q-switch timing is not preferred as either would alter the pulse width of the beam.
+For this experiment, varying the intensity of the laser beam by changing the flash lamp voltage or even the Q-switch timing is not preferred as either would alter the pulsewidth of the beam.
 Instead, beam intensity attenuators---quartz disks and blocks of varying thickness---are introduced into the beam to produce an intensity loss, while preserving all other characteristics of the beam.
 The quartz elements decrease the intensity of the laser beam through reflection, scattering and absorption.
 The stray reflections and scattering from the quartz elements are kept from contaminating the flame image by using a screen.
@@ -256,7 +256,7 @@ Additional results are presented for strained, laminar, methane-air flames which
 The Chemkin results provide mole fractions and thermodynamic conditions, which can be used to solve for the number density using the following equation.
 
 \begin{equation}
-  n_i = \frac{pN_AX_i}{RT}
+  n_i = \frac{pN_AX_i}{\bar{R}T}
   \label{eqn:numberDensity}
 \end{equation}
 
@@ -264,7 +264,7 @@ In Equation \ref{eqn:numberDensity}, \(N_A\) is Avogadro's number, \(X_i\) is th
 
 \nomenclature{\(N_A\)}{Avogadro's number}
 \nomenclature{\(X_i\)}{Mole fraction of species \(i\)}
-\nomenclature{\(R\)}{Universal gas constant}
+\nomenclature{\(\bar{R}\)}{Universal gas constant}
 
 \subsection{Absorption Integral}
 
@@ -283,22 +283,22 @@ Next, we discuss the calculation of the absorption integral, which requires the 
   \item line positions in the \(B^2\Sigma^-\leftarrow X^2\Pi\) (0,0) transition that are being excited by the laser,
   \item Einstein coefficients for stimulated absorption for these transitions,
   \item Laser center wavelength,
-  \item Laser line shape, and
-  \item Absorption line shapes for each of the excited transitions
+  \item Laser lineshape, and
+  \item Absorption lineshapes for each of the excited transitions
 \end{itemize}
 
 The line positions in the R-branch of the \(B^2\Sigma^-\leftarrow X^2\Pi\) (0,0) transition along with the respective Einstein B-coefficients are obtained from LIFBASE's database and are tabulated in Table \ref{tab:absorptionLines}.
 
 \input{tables/absorptionLines}
 
-The linewidth of the alexandrite laser is of the order of a few wavenumbers and its line shape, \(\psi(\nu)\), has a Gaussian profile.\cite{2007-li-a}
+The linewidth of the alexandrite laser is of the order of a few wavenumbers and its lineshape, \(\psi(\nu)\), has a Gaussian profile.\cite{2007-li-a}
 
 \begin{equation}
   \psi(\nu) = \frac{1}{\sigma_l\sqrt{2\pi}} \exp{\left(-\dfrac{(\nu-\nu_l)^2}{2\sigma_l^2}\right)}
   \label{eqn:laserLineShape}
 \end{equation}
 
-The center position, \(\nu_l\), of the line shape profile is varied by tuning the center wavelength of the laser.
+The center position, \(\nu_l\), of the lineshape profile is varied by tuning the center wavelength of the laser.
 The Full Width at Half Max (FWHM) of the laser, \(\Delta\nu_l\), was determined from the laser excitation scan fits, and can be used to calculate the standard deviation of the Gaussian as follows.
 
 \begin{equation}
@@ -309,8 +309,8 @@ The Full Width at Half Max (FWHM) of the laser, \(\Delta\nu_l\), was determined 
 \nomenclature[g]{\(\sigma_l\)}{Linewidth of the laser}
 \nomenclature[g]{\(\Delta\nu_l\)}{Full Width at Half Max of the laser profile}
 
-The line shape of the absorption line being excited, on the other hand, is primarily dictated by mechanisms associated with gas-phase media---collisional broadening and Doppler broadening being the most important ones.
-Collisional broadening is a homogeneous mechanism and produces a Lorentzian broadened line shape.
+The lineshape of the absorption line being excited, on the other hand, is primarily dictated by mechanisms associated with gas-phase media---collisional broadening and Doppler broadening being the most important ones.
+Collisional broadening is a homogeneous mechanism and produces a Lorentzian broadened lineshape.
 The FWHM of the Lorentzian profile is related to the thermodynamic conditions by the following empirical formula.
 
 \begin{equation}
@@ -321,9 +321,9 @@ The FWHM of the Lorentzian profile is related to the thermodynamic conditions by
 \nomenclature[g]{\(\Delta\nu_c\)}{Collisionally-broadened Full Width at Half Max}
 
 In Equation \ref{eqn:collisionalBroadening}, \(p_0\) and \(T_0\) represent standard conditions of pressure and temperature (101325 Pa and 300 K) respectively.
-By contrast, Doppler broadening is an inhomogeneous mechanism that results in a Gaussian line shape.
+By contrast, Doppler broadening is an inhomogeneous mechanism that results in a Gaussian lineshape.
 Its effect depends on the frequency (wavenumber) of the line being broadened, \(\nu_a\), and on the molecule's velocity.
-The FWHM of the resulting broadened line shape is given by,
+The FWHM of the resulting broadened lineshape is given by,
 
 \begin{equation}
   \Delta\nu_d = \nu_a \frac{\sqrt{ \ln 2 } }{c} \sqrt{\frac{8kT}{m_{CH}}}
@@ -333,7 +333,7 @@ The FWHM of the resulting broadened line shape is given by,
 \nomenclature[g]{\(\Delta\nu_d\)}{Doppler-broadened Full Width at Half Max}
 \nomenclature[g]{\(\nu_a\)}{Wavenumber of the absorption line}
 
-The combined effect of these two broadening mechanisms can be calculated by convoluting the two broadened line shapes.
+The combined effect of these two broadening mechanisms can be calculated by convoluting the two broadened lineshapes.
 In this case, a Lorentzian convoluted with a Gaussian results in a Voigt profile.
 The computational expense of the convolution that needs to be performed for each absorption line at each point along the flame is high.
 Further, the absorption integral needs to be evaluated by multiplying the Voigt profile with the Gaussian profile of the laser.
@@ -345,11 +345,11 @@ If the dominant broadening mechanism were Doppler broadening, the resulting Voig
 For CH LIF, this is a reasonable assumption in the high temperature regions where CH exists, at least at pressures below a few bar.
 However at high pressure, collisional broadening is no longer negligible compared to Doppler broadening.
 Hence, the resulting Voigt shape will have a reduced peak absorption and relatively more area in the ``wings'' of the curve.
-In the absorption integral, this would lead to increased absorption of the laser energy by transitions near the edge of the laser line shape.
+In the absorption integral, this would lead to increased absorption of the laser energy by transitions near the edge of the laser lineshape.
 Fortunately, when the laser line position is tuned to optimally excite the R-bandhead spanning the lines \(N''=5\) to \(N''=9\), the next nearest transition (\(N''=4\)) is far enough away that even with increased absorption, contribution from these lines remains insignificant even at very high pressures.
 
 Returning to the calculation of the absorption integral, we now replace the collision-broadened Lorentzian profile by a Gaussian profile with the same FWHM.
-Now, the convolution of the collision-broadened and Doppler-broadened line shapes results in another Gaussian with the same mean and a new FWHM given by,
+Now, the convolution of the collision-broadened and Doppler-broadened lineshapes results in another Gaussian with the same mean and a new FWHM given by,
 
 \begin{equation}
   \Delta\nu_a = \sqrt{ { \Delta\nu_c }^2 + { \Delta\nu_d }^2 }
@@ -358,7 +358,7 @@ Now, the convolution of the collision-broadened and Doppler-broadened line shape
 
 \nomenclature[g]{\(\Delta\nu_a\)}{Full Width at Half Max of the broadened absorption line}
 
-Thus, the Gaussian line shape of the broadened absorption line can be written as,
+Thus, the Gaussian lineshape of the broadened absorption line can be written as,
 
 \begin{equation}
   \phi(\nu) = \frac{1}{\sigma_a\sqrt{2\pi}} \exp{\left(-\dfrac{(\nu-\nu_a)^2}{2\sigma_a^2}\right)}

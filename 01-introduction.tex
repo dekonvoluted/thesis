@@ -21,7 +21,7 @@ Consequently, flame stabilization in gas turbine combustion is brought about eit
 Swirl-stabilized combustion is a widely used flame stabilization technique in gas turbine applications.\cite{1974-syred,1977-lilley}
 It primarily functions by inducing recirculation zones in the flow field that transport heat and radicals from the products into the reactants.
 This enhances the flame propagation velocity by increasing reaction rates within the flame, resulting in robust flame stabilization.
-However, the recirculation zones are associated with high peak residence times for hot combustion products and are sites of themal \ce{NO_x} production in the combustor.
+However, the recirculation zones are associated with high peak residence times for hot combustion products and are sites of thermal \ce{NO_x} production in the combustor.
 Nevertheless, swirl-stabilized combustors are ubiquitously employed today in land-based gas turbines used for power generation.
 
 More recent research\cite{1995-bedat} on the Low Swirl Burner (LSB) has identified a potential solution for this problem.
@@ -45,7 +45,7 @@ This allows a passive diagnostic such as recording the flame chemiluminescence t
 Such data, acquired at conditions closer to real world gas turbine combustor operating conditions is of particular interest to the gas turbine industry as it can be used for designing better, more robust combustors with low \ce{NO_x} emissions.
 
 The primary flame characteristic of interest is the flame standoff distance, defined as the distance from the flame stabilization point to the inlet of the LSB.
-This metric is useful is gauging the stability of the flame and the need for control systems to closely monitor its tendency to flashblack or blow-off.
+This metric is useful is gauging the stability of the flame and the need for control systems to closely monitor its tendency to flashback or blow off.
 The standoff distance also relates to the heat load experienced by the injector and consequently affects how often the mechanical components of the LSB will require to be replaced in operation.
 Finally, a systemic variation in the location of the flame over a range of flow parameters may indicate potential problems operating the combustor at previously untested conditions.
 
@@ -56,7 +56,7 @@ Changes in the flame angle affect the length of the flame, which is a design con
 The profile of the flame chemiluminescence along the length of the combustion zone is representative of the local heat release at those locations.
 A uniform heat release profile is preferred so as to avoid thermally stressing the combustor at the hot spots.
 Further, since \ce{NO_x} production rates are so strongly dependent on temperature, the heat release profile can help forecast emissions performance issues of the combustor, particularly when augmented by knowledge of the local flow velocity (and hence, residence time).
-Finally, the heat release map could be incorporated into n-\(\tau\) models to predict the onset of thermo-acoustic instabilities in the combustor.
+Finally, the heat release map could be incorporated into \(n-\tau\) models to predict the onset of thermo-acoustic instabilities in the combustor.
 
 The primary goal of this research work is to study the flame characteristics of the LSB, such as its location and shape, as a means to learn more about the combustor operation at high pressure conditions.
 
@@ -133,7 +133,7 @@ More recent work has tended to focus on the use of various fuels such as hydroge
 
 Relatively little research has focused on the flame location and other characteristics and studied their variation at gas turbine relevant conditions.
 Plessing et al.\cite{2000-plessing} and Petersson et al.\cite{2007-petersson} have presented planar images of the LSB flame, but have been confined working with non-preheated, atmospheric flames at low flow rates.
-Of these, Plessing et al. used a jet-LSB design and imaged the resulting flame with OH Laser-Induced Predissociative Fluorescence to calculate turbulent burning velocities.
+Of these, Plessing et al. used a jet-LSB design and imaged the resulting flame with OH Laser-Induced Pre-dissociative Fluorescence (LIPF) to calculate turbulent burning velocities.
 Petersson et al. studied a vane-LSB design that is slightly modified from the one tested by Cheng and co-workers and used a bevy of techniques, including OH PLIF to study the turbulent flame.
 The OH PLIF images were used to extract mean reaction progress variable contours for comparison to and validation of LES models.
 Although their test conditions and burner geometry were different, their results were consistent with the ones published by Cheng et al.
@@ -161,7 +161,7 @@ This excitation scheme offers several advantages over previous implementations.
 First, it inherits the large spacing between the excitation and emission wavelengths and reduced interference issues from Carter et al.'s implementation.
 Next, by using a long pulsed laser beam, it overcomes saturation issues.
 In fact, the researchers note that the pulsewidth is long enough to allow the same CH molecule to go through the excitation-deexcitation sequence several times, boosting signal output.
-This aspect of the implementation is further enhanced if the laser is operated in multimode, with a large spectral bandwidth, allowing the laser to target several lines near the R-bandhead.
+This aspect of the implementation is further enhanced if the laser is operated in multi-mode, with a large spectral bandwidth, allowing the laser to target several lines near the R-bandhead.
 The resultant improvement in signal-to-noise makes this technique suitable to study even low equivalence ratio hydrocarbon flames.
 This is the excitation scheme that is used in this study.
 
@@ -185,5 +185,5 @@ The second half of the chapter discusses the CH PLIF process and explores simple
 Details of the experimental facility and apparatus used to study the LSB and develop the CH PLIF imaging system are presented in Chapter \ref{ch:experimental}.
 Chapter \ref{ch:chplif} presents the results and validation of the CH PLIF signal models developed in this theis.
 Chapter \ref{ch:lsb} presents results and discussion of the flame characteristics of the LSB acquired at high pressure conditions, along with flame structure images acquired at atmospheric conditions using CH PLIF.
-Finally, conclusions drawn from the discussions in Chapters 4--5 and suggestions for future work are presented in Chapter \ref{ch:conclusions}.
+Finally, conclusions drawn from the discussions in Chapters \ref{ch:chplif}--\ref{ch:lsb} and suggestions for future work are presented in Chapter \ref{ch:conclusions}.
 
