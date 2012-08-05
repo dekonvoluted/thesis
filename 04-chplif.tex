@@ -291,7 +291,7 @@ The line positions in the R-branch of the \(B^2\Sigma^-\leftarrow X^2\Pi\) (0,0)
 
 \input{tables/absorptionLines}
 
-The linewidth of the alexandrite laser is of the order of a few wavenumbers and its line shape, \(\psi(\nu)\), has a Gaussian profile.\cite{2007-li}
+The linewidth of the alexandrite laser is of the order of a few wavenumbers and its line shape, \(\psi(\nu)\), has a Gaussian profile.\cite{2007-li-a}
 
 \begin{equation}
   \psi(\nu) = \frac{1}{\sigma_l\sqrt{2\pi}} \exp{\left(-\dfrac{(\nu-\nu_l)^2}{2\sigma_l^2}\right)}
@@ -459,6 +459,9 @@ Figure \ref{fig:01-300} shows the predicted signal intensities as a function of 
 Since this is the condition at which the laminar flame was imaged, the data from the validation experiment is appropriately scaled and plotted as well.
 Two immediate conclusions can be drawn from this plot.
 First, increasing pressure causes the LIF signal to drop rapidly.
+This can be attributed to several causes.
+The Chemkin results show that both the CH number density and the flame thickness are reduced at high pressure conditions.
+Further, the quenching rate is directly proportional to pressure and helps diminish the fluorescence signal as well.
 Second, we can establish a threshold level for a detectable signal based on the validation experiment.
 The signal level for the lowest equivalence ratio case imaged serves as a good, if conservative, estimate of the minimum signal level needed.
 At \(\phi\) = 0.8, the predicted signal count works out to be \(1.75\times10^9\).
@@ -468,7 +471,7 @@ Below this threshold, CH PLIF flame imaging will produce a poor signal-to-noise 
 
 In practice, the threshold could be lowered even further due to two reasons.
 First, even at the lowest equivalence ratio case, the signal-to-noise ratio is reasonable enough to discern the flame sheet in instantaneous images.
-Second, the laser intensity for this experiment (about 0.2 J/\(cm^2\)) is limited by the laser power output and could be increased considerably while still remaining in the linear LIF regime.
+Second, the laser intensity for this experiment (about 0.2 J/cm\(^2\)) is limited by the laser power output and could be increased considerably while still remaining in the linear LIF regime.
 Despite this, the conservative threshold estimate is retained as lowering it further does not qualitatively affect our conclusions in this section.
 
 Using this minimum signal threshold, we can reinterpret Figure \ref{fig:01-300}.
