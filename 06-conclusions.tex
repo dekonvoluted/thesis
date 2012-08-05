@@ -1,15 +1,15 @@
 \chapter{Conclusions}
 \label{ch:conclusions}
 
-\section{Summary of Results}
+The results presented in this thesis cover two areas---development of a CH PLIF system for flame zone imaging and improved understanding of the Low Swirl Burner.
+The following sections summarize the major accomplishments of this thesis relating to each field.
 
-The results presented in this thesis cover two areas---development of a CH PLIF system for flame zone imaging and improved understanding of the Low Swirl Burner .
-The following summarizes the major accomplishments of this thesis relating to each field.
+\section{Summary of CH PLIF Results}
 
 The development and implementation of a CH PLIF imaging system were detailed.
 The results from preliminary work designed to evaluate and study the laser were presented.
 The optimal laser wavelength for exciting CH radicals was determined through an excitation scan, and shown to be essentially the same over a wide range of operating conditions.
-The scaling of the LIF signal with the operating laser intensity was measured by a linearity experiment which confirmed our operation in the linear LIF regime.
+The scaling of the LIF signal with the operating laser intensity was measured to confirm our operation in the linear LIF regime.
 
 Simultaneously, a four-level model was developed that reflected the physical process of CH LIF with higher fidelity than a simple two-level model.
 The model is intended to be a semi-quantitative prediction of the LIF signal levels in hydrocarbon flames with a range of initial conditions and accounts for collisional quenching of excited CH molecules.
@@ -19,7 +19,7 @@ Chemkin simulations of a 1-D, freely propagating laminar flame were used to prov
 The model was subsequently extended to predict the signal variation across pressures and preheat temperatures for a laminar, unstrained methane-air flame.
 The results indicate that the CH LIF signal mostly scales with the flame temperature, although the correlation is not perfect.
 Increasing preheat temperatures tended to elevate the LIF signal, while increasing pressure diminished it.
-By establishing a signal threshold based on the atmospheric pressure Bunsen flame data, it was shown that high signal-to-noise ratio imaging of ultra-lean flames at high pressures is not likely to be possible with the current CH PLIF imaging system, even with typically preheat levels found in gas turbine combustors.
+By establishing a signal threshold based on the atmospheric pressure Bunsen flame data, it was shown that high signal-to-noise ratio imaging of ultra-lean flames at high pressures is not likely to be possible with the current CH PLIF imaging system, even with the typically high preheat levels found in gas turbine combustors.
 
 Going beyond methane-air flames, the signal levels were calculated for ethane-air and propane-air mixtures.
 The increase in signal levels was found to be minor, with the results for ethane-air and propane-air mixtures being almost the same.
@@ -33,7 +33,8 @@ The choice of alkane---methane, ethane or propane---that was used to produce the
 Finally, the effect of straining the 1-D, laminar flame was examined by simulating an opposed flow flame over a range of strain rates.
 The results generally followed the behavior of the maximum flame temperature in such flames, increasing slightly with low strain rates, but dropping as it approached extinction.
 
-%YOU MIGHT WANT TO HAVE SEPARATE SUBSECTIONS FOR CH PLIF AND LSB
+\section{Summary of LSB Results}
+
 On the LSB front, the combustor was tested over a wide range of operating conditions, including high preheat, high pressure tests and the flame was imaged using CH* chemiluminescence.
 The flames were characterized by their standoff distance from the inlet, their cone angles and their structure.
 While the structure of the flames was nearly impossible to study with a line-of-sight integrated technique like flame chemiluminescence imaging, the variation of the standoff distance and flame angle were measured at different operating conditions.
@@ -45,27 +46,40 @@ Varying the amount of swirl in the combustor also stabilized the flame closer to
 The flame shape was shown to be sensitive to equivalence ratio at elevated pressures.
 Rich, high pressure flames tended to partially anchor the flame to the inlet lip.
 Finally, very high pressures were shown to cause the flame to move downstream due to reduced turbulent flame speeds.
-A moderate increase in the preheat temperature was suggested as an option to overcome this effect.
-%YOU DON'T SEEM TO HAVE MADE MUCH OF A CASE ABOUT THE FLAME STRUCTURE OBSERVED IN THE CH PLIF CASE
-The results highlight interesting challenges for gas turbine designers in implementing the LSB in current and future gas turbine engines. 
+Hydrogen-addition to enhance the flame speed was suggested as one option to mitigate this behavior.
+The results highlight interesting challenges for gas turbine combustor designers in implementing the LSB in current and future gas turbine engines.
+
+Supplementing the chemiluminescence results, spatially-resolved CH PLIF data acquired at atmospheric pressure demonstrates the effect of several flow parameters on the flame structure.
+Increasing preheat temperature or the reactant mixture's equivalence ratio is shown to cause the flame sheet to be less wrinkled, while increasing the reference velocity caused the opposite effect.
+The swirl in the flow field---changed by varying the mass flow split through the swirler sections---is shown to strongly affect the flame position and wrinkling due to its direct influence on the core flow velocity profile.
+Increasing the swirl by reducing the core flow caused the flame to rapidly move upstream, while the reduced turbulence caused the flame sheet to be less wrinkled.
 
 \section{Recommendations for Future Work}
 
 There is room for improvement in developing a sensitive technique that can be used to image the flame sheet at very high pressure conditions.
-The results in this thesis demonstrated that CH PLIF is hampered by low concentrations at lean conditions and high quenching rates at pressure.
-%IN CHAPTER 4 - DID YOU EVER INDICATE THE DROP IN SIGNAL WAS DO TO THE HIGH QUENCHING RATES
-A technique like HCO PLIF produces signal levels that are relatively insensitive to equivalence ratio, but would still suffer from signal loss at high pressure due to quenching.
-One way to remedy this is to resort to saturated LIF.
+The results in this thesis demonstrate the limitations of CH PLIF when used to image lean flames at high pressure conditions.
+Some of these limitations are caused by the inherently low CH concentration, as well as the high rates of collisional quenching at these conditions which produce a weak fluorescence signal.
+On the other hand, a higher power excitation beam (while keeping the intensity low enough to avoid breakdown or saturation) or more sensitive optics could definitely extend the range of equivalence ratios at which CH PLIF can be feasibly applied.
+
+The CH LIF signal could be further strengthened by using a multi-pass cell or light traps that cause the incident radiation to make several passes through the measurement volume.
+Since the incident radiation is provided by a pulsed laser, the optics used will need to have high damage thresholds.
+Further, at high pressure conditions, beam steering issues could make it difficult to restrict the laser sheet to a single plane.
+
+A technique like HCO PLIF improves upon some of these limitations by being relatively insensitive to equivalence ratio, but it would still suffer from signal loss at high pressure due to collisional quenching.
+A solution to this problem can be found by resorting to saturated LIF.
 By operating the laser output at high intensity, the output signal is no longer affected by the quenching rate.
-On the other hand, the high fluence of energy associated with saturated LIF is more likely to induce breakdown in the medium at high pressure conditions.
+If the laser intensity is too high, there is danger of inducing breakdown in medium (which is more likely at higher pressures) or causing damage to windows or optics.
 If the saturation intensity for HCO PLIF is above the breakdown threshold, some relief could be obtained by pulse stretching or by multimode excitation---the same techniques that gave the current implementation of CH PLIF its edge.
-% COULD YOU RECOMMEND REFLECTING THE LASER BEAM BACK ON ITSELF TO DOUBLE THE SIGNAL?
 
-Additionally, simultaneous imaging of the reaction zone and the velocity field at high pressure conditions would answer several outstanding question relating to the flame stabilization behavior of the LSB at these conditions.
-Information from velocity mapping of the LSB can be coupled with the location of the flame sheet to bring out local effects of eddy-flame interactions and lead to the development of better models relating turbulent flame speed to other measurables in the flow field.
-In case of the LSB, the velocity field statistics and flame sheet measurements can accurately pinpoint the conditions on the Borghi diagram, leading to a better understanding of the operating regime.
+Most of the outstanding questions regarding the LSB flame stabilization boil down to relating the effect the velocity field and the heat release from the flame have on each other.
+An elegant way to answer these questions is to simultaneously image both the velocity field and the reaction zone at moderate or even high pressure conditions.
+PIV is an excellent diagnostic technique to measure the velocity field, and several reasons have been provided in the current thesis as to why PLIF is an ideal technique to image flame fronts.
+A simultaneous PIV/PLIF map of the combustor would provide enough data to bring out local effects of eddy-flame interactions and lead to the development of better models for relating turbulent flame speed to other measurables in the flow field.
+More specific to the LSB, these results could pinpoint the cause of the observed drop in turbulent flame speed at high pressure or high velocity conditions.
 
-% Simultaneous velocity-reaction zone mapping
-% Combustion dynamics
+This thesis has focused only on the static stability of the LSB combustor, eschewing discussion on the dynamics of the combustor.
+No reproducible dynamic instabilities were encountered during the operation of the LSB combustor during the experiments conducted in this study.
+Nevertheless, gas turbine combustor designers intending to use the LSB will benefit from a more thorough investigation of the combustor, particularly at high pressure, high preheat conditions.
+
 % staged swirl
 
