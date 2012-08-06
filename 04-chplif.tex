@@ -460,7 +460,7 @@ Since this is the condition at which the laminar flame was imaged, the data from
 Two immediate conclusions can be drawn from this plot.
 First, increasing pressure causes the LIF signal to drop rapidly.
 This can be attributed to several causes.
-The Chemkin results show that both the CH number density and the flame thickness are reduced at high pressure conditions.
+The Chemkin results show that both the CH number density and the flame thickness (and therefore the spatially integrated CH density) are reduced at high pressure conditions.
 Further, the quenching rate is directly proportional to pressure and helps diminish the fluorescence signal as well.
 Second, we can establish a threshold level for a detectable signal based on the validation experiment.
 The signal level for the lowest equivalence ratio case imaged serves as a good, if conservative, estimate of the minimum signal level needed.
@@ -470,9 +470,9 @@ This threshold is indicated on the figure by dashed lines.
 Below this threshold, CH PLIF flame imaging will produce a poor signal-to-noise ratio that will make post-processing quite difficult.
 
 In practice, the threshold could be lowered even further due to two reasons.
-First, even at the lowest equivalence ratio case, the signal-to-noise ratio is reasonable enough to discern the flame sheet in instantaneous images.
-Second, the laser intensity for this experiment (about 0.2 J/cm\(^2\)) is limited by the laser power output and could be increased considerably while still remaining in the linear LIF regime.
-Despite this, the conservative threshold estimate is retained as lowering it further does not qualitatively affect our conclusions in this section.
+First, even at the lowest equivalence ratio case tested in the laminar flame, the signal-to-noise ratio is more than sufficient to discern the flame sheet in instantaneous images.
+Second, the laser intensity used for this experiment (about 0.2 J/cm\(^2\)) could be increased by a factor of five, while still remaining in the linear LIF regime (though with a concurrent decrease in size of the imaged region).
+Thus the threshold level used here (\(1\times10^9\)) is a conservative estimate, which might reasonably be lowered by an order of magnitude (\(0.1\times10^9\)). While this would extend the range of applicability described below, it does not qualitatively affect the conclusions in this section.
 
 Using this minimum signal threshold, we can reinterpret Figure \ref{fig:01-300}.
 When the pressure is increased to 3 atm, the flame cannot be imaged unless the equivalence ratio is between 0.9--1.3.
@@ -492,7 +492,7 @@ Going up in pressure, near-stoichiometric rich flames at 9 atm can now be imaged
 
 Figure \ref{fig:01-700} shows this plot for a preheat temperature of 700 K.
 At this high preheat, ultra lean flames with equivalence ratios of 0.6 can be imaged at atmospheric pressure.
-Beyond 6 atm, the range of applicability of CH PLIF remains poor and is confined only to very rich flames.
+Beyond 6 atm, the range of applicability of CH PLIF remains poor and is confined to near stochiometric and moderately rich flames.
 
 \input{figures/01-700}
 
@@ -541,8 +541,8 @@ Using a higher order alkane in place of methane lowers this value further, but n
 \input{figures/syngas-300}
 \input{figures/syngas-700}
 
-While these results indicate the feasibility of using a spatially precise flame imaging technique like CH PLIF to study syngas flames, the addition of a small quantity of alkane does substantially change the properties of the flow.
-While the adiabatic flame temperature of pure hydrogen only decreases by 40 K due to the methane addition, peak flame speeds are reduced by almost 20\%.
+While these results indicate the feasibility of using a spatially precise flame imaging technique like CH PLIF to study syngas flames, the addition of a small quantity of alkane can substantially change the properties of the flame.
+While the adiabatic flame temperature for a pure hydrogen fuel only decreases by 40 K due to the methane addition, peak flame speeds are reduced by almost 20\%.
 This may limit the applicability of CH PLIF to study these flames.
 
 \subsection{Strained Flames}
@@ -560,8 +560,8 @@ The simulation is carried out for two equivalence ratios and the results are plo
 The LIF signal increases with stretch, by about 10\%, until close to the extinction strain.
 Very close to extinction, the CH LIF signals decreases slightly.
 This behavior mirrors the variation of the flame temperature for \(Le<1\) flows where increasing stretch results in an elevated flame temperature.
-Though not indicated in the figure, the signal would decrease precipitously (to zero on a steady-state basis) above the extinction limit.
-These results suggest that stretch should have little effect on the (spatially integrated) CH LIF signal until extinction begins to occur.
+Though not indicated in the figure, the signal would decrease precipitously (to zero on a steady-state basis) beyond the extinction limit.
+These results suggest that stretch should have little effect on the (spatially integrated) CH LIF signal until very close to the point where extinction begins to occur.
 
 \nomenclature{\(Le\)}{Lewis number}
 
@@ -570,10 +570,10 @@ These results suggest that stretch should have little effect on the (spatially i
 The following is a summary of the key results from this chapter.
 
 \begin{enumerate}
-  \item The CH PLIF imaging system is tuned to the optimal wavelength and demonstrated on a simple, laminar Bunsen flame.
-  \item Details of simplifications to the signal intensity model from Chapter \ref{ch:background} based on reported experimental observations are outlined.
-  \item The experimental results from a laminar methane-air Bunsen flame at atmospheric pressure are compared to modeling results which behave in much the same manner with equivalence ratio.
-  \item The model is used to study the variation of the LIF signal with pressure, temperature and equivalence ratio for a host of reactant mixtures.
+  \item The optimal excitation tuning of the CH PLIF imaging system was determined and demonstrated on a simple, laminar Bunsen flame.
+  \item Details of simplifications to the signal intensity model from Chapter \ref{ch:background} based on reported experimental observations were outlined.
+  \item The experimental results from a laminar methane-air Bunsen flame at atmospheric pressure were compared to modeling results, which behave in much the same manner with equivalence ratio.
+  \item The model was used to study the variation of the LIF signal with pressure, temperature and equivalence ratio for a host of reactant mixtures.
   \item In general, increasing the flame temperature enhances the CH LIF signal, while increasing the combustor pressure decreases it.
   \item Hydrogen-rich syngas flames can be imaged with CH PLIF if the reactants are doped with a small amount of an alkane.
     However, this also causes noticeable changes in the flame speed of the reactant mixture.
