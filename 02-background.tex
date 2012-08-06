@@ -172,9 +172,9 @@ In the same section, the normalized slope of the velocity profile, \(\dfrac{ 1 }
 In the numerator of the second term, the local turbulence intensity, \(\dfrac{ u }{ U_0 }\), can also be expected to be a constant, since \(u\) should scale with the reference velocity in the same manner as long as the burner geometry does not change.
 The turbulence intensity, \(\dfrac{ u }{ U_0 }\) in the LSB increases from the inlet along the centerline reaching values on the order of 0.1--1.0 near the flame standoff location.\cite{2008-cheng-a}
 That leaves only the term \(\dfrac{ S_L }{ U_0 }\) as a function of \(U_0\).
-Typically, the laminar flame speeds are at least an order of magnitude, if not more, lower (\(\approx O(1)\) m/s) than the reference velocities at which the LSBs are operated (\(\approx O(10)\) m/s).
-As a result, variations in this term are a vanishingly small portion of the sum, leaving the entire RHS independent of \(U_0\).
-%SAME COMMENT AS LAST TIME - BOTH TERMS IN THE ( ) MAY BE OF THE SAME ORDER (0.1), THEN HOW CAN YOU NEGLECT THE FIRST TERM? ARE YOU REALLY SAYING Xf~Xo+ Uo/(dU/dx)?
+Typically, the laminar flame speeds are at least an order of magnitude, if not more, lower (\(\approx O(0.1)\) m/s) than the reference velocities at which the LSBs are operated (\(\approx O(10)\) m/s).
+Only at high values of preheat does the laminar flame speed for methane-air mixtures reach \(O(1)\) m/s.
+Over most of the operating conditions, this term and any variation in its value are a vanishingly small portion of the sum, leaving the entire RHS independent of \(U_0\).
 In other words, the flame location, \(X_f\) is expected to be invariant with the reference velocity at which the LSB is operated.
 
 \subsubsection{Effect on Flame Shape}
@@ -206,7 +206,6 @@ Increasing the reference velocity will be accompanied with a concomitant increas
 As a result, the operating point will traverse vertically on the Borghi diagram.
 If the LSB operates in the wrinkled flamelets regime to begin with, at very high reference velocities, it may be expected to cross over into the corrugated flamelets regime.
 This will be marked by the formation of holes and pockets in the flame sheet.
-%SO THE READER WILL BE EXPECTING YOU TO POINT THIS OUT IN CHAPTER 5!
 
 \section{CH PLIF Signal Modeling}
 \label{sec:background-chplif-signal-modeling}
@@ -387,7 +386,7 @@ Due to the difficulty of measuring fluorescence signals at the same wavelength a
 The choice of the spectral and temporal properties of the excitation laser source, and of the detected fluorescence emission, constitute the excitation and detection schemes.
 
 The excitation scheme chosen for this study follows the work done by Li et al.\cite{2007-li-a} who used a ring-cavity, pulsed alexandrite laser to provide excitation in the vicinity of the R-bandhead of the CH \(B^2\Sigma^- \leftarrow X^2\Pi\) (0,0) system.
-This bandhead, shown in Figure \ref{fig:chB-XAbsorption}, is found at a frequency of about 25824 cm\(^{-1}\ (or a wavelength of about 387.2 nm) and represents transitions from a ground state rotational quantum number of \(N''=7\).
+This bandhead, shown in Figure \ref{fig:chB-XAbsorption}, is found at a frequency of about 25824 cm\(^{-1}\) (or a wavelength of about 387.2 nm) and represents transitions from a ground state rotational quantum number of \(N''=7\).
 When operated in multimode, alexandrite lasers have relatively large bandwidths (a few cm\(^{-1}\) is not uncommon) and hence make it possible to excite several of the neighboring transitions near the bandhead.
 
 \nomenclature{\(N''\)}{Total rotational quantum number (of the lower level)}
@@ -560,7 +559,7 @@ However, since our excitation scheme targets multiple lines in the R-bandhead, w
 \end{align}
 
 In Equation \ref{eqn:pumpingRate}, the terms \(B_j\) are the absorption coefficients, \(B_{02}\), for each transition being excited, each of which has its own broadened linewidth, \(\phi_j(\nu)\) at the local conditions.
-The discussion of the various sources of line broadening that need to be considered for our case is defered until Chapter \ref{ch:chplif}.
+The discussion of the various sources of line broadening that need to be considered for our case is deferred until Chapter \ref{ch:chplif}.
 
 \subsubsection{Population Distribution}
 \label{subsubsec:improved-model-population-distribution}
