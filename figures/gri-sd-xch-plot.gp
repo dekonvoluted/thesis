@@ -7,6 +7,7 @@ set output "gri-sd-xch-plot.tex"
 
 set size 0.6
 set xrange [49.9:50.4]
+set xtics 0.1
 set xlabel '\(X\), mm'
 set ylabel '\(X_\ce{CH}\), ppm' offset 2
 
