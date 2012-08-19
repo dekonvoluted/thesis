@@ -1,9 +1,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%
-% gtthesis v0.91
+% gtthesis v0.92
 % Karthik Periagaram
 % karthikp@gatech.edu
 %
-% Last Updated 2012/05/09
+% Last Updated 2012/08/19
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%
@@ -16,7 +16,6 @@
 %%%%%%%%%%%%%%
 % Font Options
 %%%%%%%%%%%%%%
-%\RequirePackage{mathptmx} % Use Times font
 \RequirePackage[utf8]{inputenc} % Encoding on input fonts set to UTF-8
 \RequirePackage[T1]{fontenc} % Font encoding set to T1 fonts
 
@@ -43,14 +42,13 @@
   \geometry{top=1in,bottom=1in,left=1.5in,right=1in}
 \raggedbottom % Don't add extra vertical space if the page ends early.
 \pagestyle{plain} % Page number in the middle of footer, no header
-\RequirePackage{setspace} % Double-spaced text
+\RequirePackage{setspace} % Double-spaced text by default
   \doublespacing
 
 %%%%%%%%%%%%%%%%%%%
 % Footnotes Options
 %%%%%%%%%%%%%%%%%%%
 \RequirePackage[hang,flushmargin]{footmisc} % Prevent indenting footnotes
-%\interfootnotelinepenalty=10000 % Use to prevent multi-page footnotes
 
 %%%%%%%%%%%%%%%%%%
 % Document Options
@@ -60,7 +58,7 @@
 \RequirePackage[intoc]{nomencl} % Nomenclature
   \makenomenclature
 \RequirePackage[colorlinks,linkcolor=black,citecolor=black]{hyperref} % Links within document
-%\RequirePackage[colorlinks]{hyperref} % Colored links. 
+%\RequirePackage[colorlinks]{hyperref} % Colored links for draft mode 
 \AtBeginDocument{
   \hypersetup{
     pdfstartview={FitH},

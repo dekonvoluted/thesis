@@ -1,7 +1,6 @@
 \documentclass{gtthesis}
 
 \usepackage{lmodern}
-%\usepackage{mathptmx}
 \usepackage[version=3]{mhchem} % For chemical formulae
 \usepackage{amsmath} % For align, gather environments
 \usepackage{amssymb} % For therefore symbol
@@ -12,21 +11,28 @@
 \usepackage{subcaption} % Provides subfigures
 \graphicspath{{figures/}} % Search for figures in these directories
 
-\usepackage{gtthesis-titlepage}
-\title{Determination of Flame Characteristics in a Low Swirl Burner at Gas Turbine Conditions Through Reaction Zone Imaging}
+\title{Determination of Flame Characteristics in a Low Swirl Burner at Gas Turbine Conditions through Reaction Zone Imaging}
 \author{Karthik Periagaram}
-\date{December 2012}
-\degree{Doctor of Philosophy}
-\department{Guggenheim School of Aerospace Engineering}
+
+% Macros to refer to author, title elsewhere in the document
+\makeatletter
+\let\thetitle\@title
+\let\theauthor\@author
+\makeatother
 
 \begin{document}
 
 % Title Page
 \label{tp}
 \pdfbookmark[1]{Title Page}{tp}
-\maketitle
-
+\input{00-titlepage}
 \pagenumbering{roman}
+
+\label{sig}
+\clearpage
+\phantomsection
+\pdfbookmark[1]{Signatures}{sig}
+\input{00-signatures}
 
 % Table of Contents
 \label{toc}
