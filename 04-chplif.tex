@@ -501,6 +501,7 @@ Beyond 6 atm, the range of applicability of CH PLIF remains poor and is confined
 \input{figures/01-700}
 
 \subsubsection{Higher-Order Alkane Flames}
+\label{subsubsec:unstrained-higher-alkanes}
 
 Now, we turn our attention to higher-order alkane-air flames.
 Our interest in these fuels is motivated by two reasons.
@@ -582,6 +583,33 @@ These results suggest that stretch should have little effect on the (spatially i
 
 \nomenclature{\(Le\)}{Lewis number}
 
+\subsection{Flame Temperature Correlation}
+
+The correlation between the LIF signal and the flame temperature was briefly alluded to in Section \ref{subsubsec:unstrained-higher-alkanes} where it was pointed out that the marginal increase in the LIF signal between methane and the higher order alkanes was mirrored in the change in flame temperature for those cases.
+In this section, we examine this correlation in greater detail.
+
+Figure \ref{fig:temperature-correlation} shows the LIF signal values predicted for data sets simulated at atmospheric pressure conditions.
+The LIF signals are plotted against the flame temperature for unstrained, laminar, methane-air flames at three preheat temperatures.
+In each case, the signal increases exponentially with flame temperature for lean conditions.
+The flame temperature peaks at near-stoichiometric conditions, but the signal levels continue to rise, forming a second branch.
+After the CH signal peaks, both the flame temperature and the LIF signal decrease for the rich cases.
+
+\input{figures/temperature-correlation}
+
+Two observations can be made from Figure \ref{fig:temperature-correlation}.
+First, along the lean and rich branches, the signal behaves approximately as a single-valued function of the flame temperature.
+A leaner condition at higher preheat has almost the same CH LIF signal level as a slightly richer flame at a lower preheat if the flame temperatures are the same.
+Second, this correlation is rather poor between the peak flame temperature (\(\phi\approx 1.0\)) and the peak LIF signal (\(\phi\approx 1.2\)).
+
+The flame temperature can also be varied by changing the strain applied on the flame.
+To observe this effect, Figure \ref{fig:temperature-correlation} also includes the LIF signals from the strained flame cases discussed earlier.
+In case of the opposed flow flame setup, an adiabatic flame temperature cannot be defined.
+As a result, the signals are plotted against the maximum flame temperature for these cases.
+Here, although the maximum flame temperature decreases as the strain rate is increased, the signal levels remain relatively unaffected.
+Notably, when the richer flame is strained close to extinction (\(T\approx\)1800 K), the signal levels are not comparable to the lesser strained, leaner flame with the same maximum flame temperature.
+
+Based on these data sets, it may be concluded that while the LIF signal can be expected to increase with higher flame temperatures as a \emph{rule-of-thumb}, the correlation is not perfect and does not extend to strained flames.
+
 \section{Summary of Results}
 
 The following is a summary of the key results from this chapter.
@@ -595,5 +623,6 @@ The following is a summary of the key results from this chapter.
   \item Hydrogen-rich syngas flames can be imaged with CH PLIF if the reactants are doped with a small amount of an alkane.
     However, this also causes noticeable changes in the flame speed of the reactant mixture.
   \item Strained flames produce a slightly higher LIF signal as long as the strain rate is not close to extinction.
+  \item The dependence of the LIF signal on the flame temperature is more of a heuristic rule than a strict correlation.
 \end{enumerate}
 
