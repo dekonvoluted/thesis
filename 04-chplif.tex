@@ -530,8 +530,9 @@ This is borne out by Figure \ref{fig:c1c2c3}, which shows the signal variation f
 \subsubsection{Syngas Flames}
 
 Syngas (mixtures of CO and \ce{H2}) does not follow a CH pathway when oxidized in air and hence is unsuitable for investigating with CH PLIF.
-As a result, most syngas flames are investigated using OH PLIF.
-However, since syngases are an important emerging class of fuels, it would be interesting to test the feasibility of using CH PLIF if they are doped with a small amount of alkanes to provide a CH pathway. In addition, some applications being investigated by industry include mixing syngas and methane fuels.
+As a result, most syngas flames are investigated using OH PLIF, rather than CH PLIF.
+However, since syngases are an important emerging class of fuels, it would be interesting to test the feasibility of using CH PLIF if they are doped with a small amount of alkanes to provide a CH pathway.
+In addition, some applications being investigated by industry include mixing syngas and methane fuels.
 
 Figure \ref{fig:syngas-300} shows the signal levels in various non-preheated, atmospheric pressure syngas mixtures doped with 5\% methane.
 The results are quite promising as they indicate that with a high enough \ce{H2} concentration, syngas flames as lean as 0.8 can be imaged above our signal threshold.
@@ -540,6 +541,18 @@ Using a higher order alkane in place of methane lowers this value further, but n
 
 \input{figures/syngas-300}
 \input{figures/syngas-700}
+
+Consider the predicted values for the CH LIF signal from a \ce{H2}-\ce{CH4}-air mixture (``100\% \ce{H2}'') in Figure \ref{fig:syngas-700} in comparison to the LIF signals from a pure methane-air mixture.
+It is clear that the addition of a small quantity of methane to hydrogen results in a disproportionate increase in the CH LIF signal.
+To investigate this further, the percentage of methane used to dope a \ce{H2}-air reactant mixture is varied all the way from 0\% (pure \ce{H2}) to 100\% (pure \ce{CH4}).
+The predicted signal levels for these mixtures is shown in Figure \ref{fig:methane-addition}.
+
+\input{figures/methane-addition}
+
+The results show that the CH LIF signal increases rapidly with methane addition, reaching a maximum near 20\% \ce{CH4} addition.
+It is notable that this maximum signal is higher than that from pure \ce{CH4}.
+The rapid increase is attributed to the presence of \ce{H2} in the reacting environment boosting the CH species concentration considerably.
+At higher proportions of \ce{CH4}, the signal gradually diminishes due to the more efficient quenching by \ce{CH4} oxidation products like \ce{CO2} and \ce{CO}.
 
 While these results indicate the feasibility of using a spatially precise flame imaging technique like CH PLIF to study syngas flames, the addition of a small quantity of alkane can substantially change the properties of the flame.
 While the adiabatic flame temperature for a pure hydrogen fuel only decreases by 40 K due to the methane addition, peak flame speeds are reduced by almost 20\%.
