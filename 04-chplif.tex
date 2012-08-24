@@ -460,14 +460,20 @@ Since this is the condition at which the laminar flame was imaged, the data from
 Two immediate conclusions can be drawn from this plot.
 First, increasing pressure causes the LIF signal to drop rapidly.
 This can be attributed to several causes.
-The Chemkin results show that both the CH number density and the flame thickness (and therefore the spatially integrated CH density) are reduced at high pressure conditions.
-Further, the quenching rate is directly proportional to pressure and helps diminish the fluorescence signal as well.
+The Chemkin results show that the mole fraction of CH in the flame is generally lower at higher pressure.
+However, its effect on the CH number density is partially offset by the increased pressure.
+Thus, the CH number density decreases somewhat less drastically with pressure.
+Pressure, on the other hand, also sharply reduces the thickness of the CH layer.
+The net effect of the above lowers the total number of CH molecules available for excitation at high pressure, and hence, the LIF signal.
+The signal loss is further exacerbated by the quenching rate, which increases proportional to the pressure.
 Second, we can establish a threshold level for a detectable signal based on the validation experiment.
 The signal level for the lowest equivalence ratio case imaged serves as a good, if conservative, estimate of the minimum signal level needed.
 At \(\phi\) = 0.8, the predicted signal count works out to be \(1.75\times10^9\).
 Based on this, we set the threshold at a value of \(1\times10^9\).
 This threshold is indicated on the figure by dashed lines.
 Below this threshold, CH PLIF flame imaging will produce a poor signal-to-noise ratio that will make post-processing quite difficult.
+
+\input{figures/01-300}
 
 In practice, the threshold could be lowered even further due to two reasons.
 First, even at the lowest equivalence ratio case tested in the laminar flame, the signal-to-noise ratio is more than sufficient to discern the flame sheet in instantaneous images.
@@ -478,8 +484,6 @@ Using this minimum signal threshold, we can reinterpret Figure \ref{fig:01-300}.
 When the pressure is increased to 3 atm, the flame cannot be imaged unless the equivalence ratio is between 0.9--1.3.
 At 6 atm, the range is even narrower and restricts the feasibility of this experiment to between 1.1--1.2.
 With no preheat, the flame cannot be imaged at 9 atm and above.
-
-\input{figures/01-300}
 
 Increasing the preheat temperature to 500 K and plotting using a log scale, Figure \ref{fig:01-500} shows the effect of preheat is beneficial to CH PLIF.
 Raising the preheat temperature increases the CH LIF signal.
