@@ -9,7 +9,7 @@ set output "temperatureLDVTransversePlot.tex"
 set xrange [-60:60]
 set yrange [-0.2:1.2]
 set xlabel '\(Y\) or \(Z\), mm'
-set ylabel '\(U/U_0\)' offset 2
+set ylabel '\(U/U_0\), \(u/U_0\)' offset 2
 set grid
 
 plot \
