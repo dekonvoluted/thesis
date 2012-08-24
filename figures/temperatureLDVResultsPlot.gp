@@ -13,10 +13,7 @@ set ylabel '\(U/U_0\)' offset 2
 set grid
 
 plot \
-'ldvCN.dat' index 0:0 using ( $1 + 66.006 ):( $7 / 30 ) title 'CN \(U\)' with lines linetype 1 linewidth 3 linecolor 3, \
-'' index 0:0 using ( $1 + 66.006 ):( $10 / 30 ) title '\(u\)' with lines linetype 2 linewidth 3 linecolor 3, \
-'ldvHN.dat' index 0:0 using ( $1 + 30.855 ):( $7 / 75 ) title 'HN \(U\)' with lines linetype 1 linewidth 3 linecolor 2, \
-'' index 0:0 using ( $1 + 30.855 ):( $10 / 75 ) title '\(u\)' with lines linetype 2 linewidth 3 linecolor 2, \
-'ldvHR.dat' index 0:0 using ( $1 + 17.102 ):( $7 / 30 ) title 'HR \(U\)' with lines linetype 1 linewidth 3 linecolor 1, \
-'' index 0:0 using ( $1 + 17.102 ):( $10 / 30 ) title '\(u\)' with lines linetype 2 linewidth 3 linecolor 1
+'ldvCN.dat' index 0:0 using ( $1 + 66.006 ):( $7 / 30 ):( $10 / ( 30 * sqrt( $4 ) ) ) title 'CN \(U\)' with yerrorbars pointtype 7 linetype 1 linewidth 3 linecolor 3, \
+'ldvHN.dat' index 0:0 using ( $1 + 30.855 ):( $7 / 75 ):( $10 / ( 75 * sqrt( $4 ) ) ) title 'HN \(U\)' with yerrorbars pointtype 7 linetype 1 linewidth 3 linecolor 2, \
+'ldvHR.dat' index 0:0 using ( $1 + 17.102 ):( $7 / 30 ):( $10 / ( 30 * sqrt( $4 ) ) ) title 'HR \(U\)' with yerrorbars pointtype 7 linetype 1 linewidth 3 linecolor 1
 

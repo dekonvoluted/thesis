@@ -13,8 +13,8 @@ set ylabel '\(U/U_0\)' offset 2
 set grid
 
 plot \
-'ldvCN.dat' index 1:1 using 2:( $7 / 30 ) title 'CN Y Traverse' with lines linetype 1 linewidth 3 linecolor 3, \
-'' index 2:2 using 3:( $7 / 30 ) title 'Z Traverse' with lines linetype 2 linewidth 3 linecolor 3, \
-'ldvHN.dat' index 1:1 using 2:( $7 / 75 ) title 'HN Y Traverse' with lines linetype 1 linewidth 3 linecolor 2, \
-'' index 2:2 using 3:( $7 / 75 ) title 'Z Traverse' with lines linetype 2 linewidth 3 linecolor 2
+'ldvCN.dat' index 1:1 using 2:( $7 / 30 ):( $10 / ( 30 * sqrt( $4 ) ) ) title 'CN Y Traverse' with yerrorbars pointtype 7 linetype 1 linewidth 3 linecolor 3, \
+'' index 2:2 using 3:( $7 / 30 ):( $10 / ( 30 * sqrt( $4 ) ) ) title 'Z Traverse' with yerrorbars pointtype 6 linetype 1 linewidth 3 linecolor 3, \
+'ldvHN.dat' index 1:1 using 2:( $7 / 75 ):( $10 / ( 75 * sqrt( $4 ) ) ) title 'HN Y Traverse' with yerrorbars pointtype 7 linetype 1 linewidth 3 linecolor 2, \
+'' index 2:2 using 3:( $7 / 75 ):( $10 / ( 75 * sqrt( $4 ) ) ) title 'Z Traverse' with yerrorbars pointtype 6 linetype 1 linewidth 3 linecolor 2
 
