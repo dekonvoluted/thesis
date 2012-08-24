@@ -463,14 +463,20 @@ Since this is the condition at which the laminar flame was imaged, the data from
 Two immediate conclusions can be drawn from this plot.
 First, increasing pressure causes the LIF signal to drop rapidly.
 This can be attributed to several causes.
-The Chemkin results show that both the CH number density and the flame thickness (and therefore the spatially integrated CH density) are reduced at high pressure conditions.
-Further, the quenching rate is directly proportional to pressure and helps diminish the fluorescence signal as well.
+The Chemkin results show that the mole fraction of CH in the flame is generally lower at higher pressure.
+However, its effect on the CH number density is partially offset by the increased pressure.
+Thus, the CH number density decreases somewhat less drastically with pressure.
+Pressure, on the other hand, also sharply reduces the thickness of the CH layer.
+The net effect of the above lowers the total number of CH molecules available for excitation at high pressure, and hence, the LIF signal.
+The signal loss is further exacerbated by the quenching rate, which increases proportional to the pressure.
 Second, we can establish a threshold level for a detectable signal based on the validation experiment.
 The signal level for the lowest equivalence ratio case imaged serves as a good, if conservative, estimate of the minimum signal level needed.
 At \(\phi\) = 0.8, the predicted signal count works out to be \(1.75\times10^9\).
 Based on this, we set the threshold at a value of \(1\times10^9\).
 This threshold is indicated on the figure by dashed lines.
 Below this threshold, CH PLIF flame imaging will produce a poor signal-to-noise ratio that will make post-processing quite difficult.
+
+\input{figures/01-300}
 
 In practice, the threshold could be lowered even further due to two reasons.
 First, even at the lowest equivalence ratio case tested in the laminar flame, the signal-to-noise ratio is more than sufficient to discern the flame sheet in instantaneous images.
@@ -481,8 +487,6 @@ Using this minimum signal threshold, we can reinterpret Figure \ref{fig:01-300}.
 When the pressure is increased to 3 atm, the flame cannot be imaged unless the equivalence ratio is between 0.9--1.3.
 At 6 atm, the range is even narrower and restricts the feasibility of this experiment to between 1.1--1.2.
 With no preheat, the flame cannot be imaged at 9 atm and above.
-
-\input{figures/01-300}
 
 Increasing the preheat temperature to 500 K and plotting using a log scale, Figure \ref{fig:01-500} shows the effect of preheat is beneficial to CH PLIF.
 Raising the preheat temperature increases the CH LIF signal.
@@ -500,6 +504,7 @@ Beyond 6 atm, the range of applicability of CH PLIF remains poor and is confined
 \input{figures/01-700}
 
 \subsubsection{Higher-Order Alkane Flames}
+\label{subsubsec:unstrained-higher-alkanes}
 
 Now, we turn our attention to higher-order alkane-air flames.
 Our interest in these fuels is motivated by two reasons.
@@ -533,8 +538,9 @@ This is borne out by Figure \ref{fig:c1c2c3}, which shows the signal variation f
 \subsubsection{Syngas Flames}
 
 Syngas (mixtures of CO and \ce{H2}) does not follow a CH pathway when oxidized in air and hence is unsuitable for investigating with CH PLIF.
-As a result, most syngas flames are investigated using OH PLIF.
-However, since syngases are an important emerging class of fuels, it would be interesting to test the feasibility of using CH PLIF if they are doped with a small amount of alkanes to provide a CH pathway. In addition, some applications being investigated by industry include mixing syngas and methane fuels.
+As a result, most syngas flames are investigated using OH PLIF, rather than CH PLIF.
+However, since syngases are an important emerging class of fuels, it would be interesting to test the feasibility of using CH PLIF if they are doped with a small amount of alkanes to provide a CH pathway.
+In addition, some applications being investigated by industry include mixing syngas and methane fuels.
 
 Figure \ref{fig:syngas-300} shows the signal levels in various non-preheated, atmospheric pressure syngas mixtures doped with 5\% methane.
 The results are quite promising as they indicate that with a high enough \ce{H2} concentration, syngas flames as lean as 0.8 can be imaged above our signal threshold.
@@ -543,6 +549,18 @@ Using a higher order alkane in place of methane lowers this value further, but n
 
 \input{figures/syngas-300}
 \input{figures/syngas-700}
+
+Consider the predicted values for the CH LIF signal from a \ce{H2}-\ce{CH4}-air mixture (``100\% \ce{H2}'') in Figure \ref{fig:syngas-700} in comparison to the LIF signals from a pure methane-air mixture.
+It is clear that the addition of a small quantity of methane to hydrogen results in a disproportionate increase in the CH LIF signal.
+To investigate this further, the percentage of methane used to dope a \ce{H2}-air reactant mixture is varied all the way from 0\% (pure \ce{H2}) to 100\% (pure \ce{CH4}).
+The predicted signal levels for these mixtures is shown in Figure \ref{fig:methane-addition}.
+
+\input{figures/methane-addition}
+
+The results show that the CH LIF signal increases rapidly with methane addition, reaching a maximum near 20\% \ce{CH4} addition.
+It is notable that this maximum signal is higher than that from pure \ce{CH4}.
+The rapid increase is attributed to the presence of \ce{H2} in the reacting environment boosting the CH species concentration considerably.
+At higher proportions of \ce{CH4}, the signal gradually diminishes due to the more efficient quenching by \ce{CH4} oxidation products like \ce{CO2} and \ce{CO}.
 
 While these results indicate the feasibility of using a spatially precise flame imaging technique like CH PLIF to study syngas flames, the addition of a small quantity of alkane can substantially change the properties of the flame.
 While the adiabatic flame temperature for a pure hydrogen fuel only decreases by 40 K due to the methane addition, peak flame speeds are reduced by almost 20\%.
@@ -568,6 +586,33 @@ These results suggest that stretch should have little effect on the (spatially i
 
 \nomenclature{\(Le\)}{Lewis number}
 
+\subsection{Flame Temperature Correlation}
+
+The correlation between the LIF signal and the flame temperature was briefly alluded to in Section \ref{subsubsec:unstrained-higher-alkanes} where it was pointed out that the marginal increase in the LIF signal between methane and the higher order alkanes was mirrored in the change in flame temperature for those cases.
+In this section, we examine this correlation in greater detail.
+
+Figure \ref{fig:temperature-correlation} shows the LIF signal values predicted for data sets simulated at atmospheric pressure conditions.
+The LIF signals are plotted against the flame temperature for unstrained, laminar, methane-air flames at three preheat temperatures.
+In each case, the signal increases exponentially with flame temperature for lean conditions.
+The flame temperature peaks at near-stoichiometric conditions, but the signal levels continue to rise, forming a second branch.
+After the CH signal peaks, both the flame temperature and the LIF signal decrease for the rich cases.
+
+\input{figures/temperature-correlation}
+
+Two observations can be made from Figure \ref{fig:temperature-correlation}.
+First, along the lean and rich branches, the signal behaves approximately as a single-valued function of the flame temperature.
+A leaner condition at higher preheat has almost the same CH LIF signal level as a slightly richer flame at a lower preheat if the flame temperatures are the same.
+Second, this correlation is rather poor between the peak flame temperature (\(\phi\approx 1.0\)) and the peak LIF signal (\(\phi\approx 1.2\)).
+
+The flame temperature can also be varied by changing the strain applied on the flame.
+To observe this effect, Figure \ref{fig:temperature-correlation} also includes the LIF signals from the strained flame cases discussed earlier.
+In case of the opposed flow flame setup, an adiabatic flame temperature cannot be defined.
+As a result, the signals are plotted against the maximum flame temperature for these cases.
+Here, although the maximum flame temperature decreases as the strain rate is increased, the signal levels remain relatively unaffected.
+Notably, when the richer flame is strained close to extinction (\(T\approx\)1800 K), the signal levels are not comparable to the lesser strained, leaner flame with the same maximum flame temperature.
+
+Based on these data sets, it may be concluded that while the LIF signal can be expected to increase with higher flame temperatures as a \emph{rule-of-thumb}, the correlation is not perfect and does not extend to strained flames.
+
 \section{Summary of Results}
 
 The following is a summary of the key results from this chapter.
@@ -581,5 +626,6 @@ The following is a summary of the key results from this chapter.
   \item Hydrogen-rich syngas flames can be imaged with CH PLIF if the reactants are doped with a small amount of an alkane.
     However, this also causes noticeable changes in the flame speed of the reactant mixture.
   \item Strained flames produce a slightly higher LIF signal as long as the strain rate is not close to extinction.
+  \item The dependence of the LIF signal on the flame temperature is more of a heuristic rule than a strict correlation.
 \end{enumerate}
 
