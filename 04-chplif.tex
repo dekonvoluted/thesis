@@ -449,7 +449,7 @@ Next, we can compare the predictions from the GRI Mech 3.0 and San Diego mechani
 Figure \ref{fig:gri-sd-xch} shows the calculated CH profile across a stoichiometric flame at atmospheric pressure and three preheat temperatures.
 At these conditions, the San Diego mechanism predicts almost 50\% less CH concentration compared to the GRI Mech 3.0 mechanism.
 Both mechanisms predict the increased CH concentration at higher preheat conditions, along with the thinning of the flame zone.
-Figure \ref{fig:gri-sd-delxf} shows the flame thickness predicted by the two mechanisms which agree quite well, diverging only at rich equivalence ratios.
+Figure \ref{fig:gri-sd-delxf} shows the CH layer thickness predicted by the two mechanisms which agree quite well, diverging only at rich equivalence ratios.
 The predicted laminar flame speeds and flame temperatures are shown in Figures \ref{fig:gri-sd-sl} and \ref{fig:gri-sd-t} respectively and the differences between the two mechanisms are again quite minimal.
 The results of this investigation indicate that other than the nearly consistent discrepancy of about 50\% in the predicted CH concentration, the results from the two mechanisms scale identically.
 Since we are not concerned with the accurate prediction of the CH concentration, but merely the relative variation across conditions, this discrepancy will not affect our conclusions.
@@ -460,15 +460,21 @@ Hence, the San Diego mechanism is used for the remainder of the results.
 Next, we explore the predicted CH LIF signal intensity variation with pressure.
 Figure \ref{fig:01-300} shows the predicted signal intensities as a function of equivalence ratio for a range of pressures with non-preheated reactants.
 Since this is the condition at which the laminar flame was imaged, the data from the validation experiment is appropriately scaled and plotted as well.
-Two immediate conclusions can be drawn from this plot.
-First, increasing pressure causes the LIF signal to drop rapidly.
+Two important conclusions can be drawn from this plot.
+One, increasing pressure causes the LIF signal to drop rapidly.
 This can be attributed to several causes.
-The Chemkin results show that the mole fraction of CH in the flame is significantly lower at higher pressures.
-The CH number density also decreases, but not as much due to the higher density increase at higher pressure.
-Pressure, on the other hand, also sharply reduces the thickness of the CH layer.
-The combined influence of the above is to lower the total number of CH molecules available for excitation at high pressure, and hence, the LIF signal.
-The signal loss is further exacerbated by the quenching rate, which increases with pressure.
-Second, we can establish a threshold level for a detectable signal based on the validation experiment.
+First, the Chemkin results show that the mole fraction of CH in the flame drops with pressure.
+% ADD FIGURE # in ( )
+For example, the peak CH mole fraction at a preheat of 300 K drops by nearly two orders of magnitude from 1 to 12 atm (see Figure ....). 
+Thus the peak CH number density drops by nearly one order of magnitude, as the mole fraction drop is partially offset by the overall density increase.
+% ADD same FIGURE # in ( )
+Second, increases in pressure significantly reduce the thickness of the CH layer ( ), by a factor of approximately 5 for the conditions shown.
+Thus when integrated over the flame thickness, the total number of CH molecules available for excitation decreases at high pressure, and hence, the LIF signal also decreases.
+Third, the signal loss is further exacerbated by the quenching rate, which increases nearly linearly with pressure.
+These combined effects, which tend to decrease the CH LIF signal as pressure increases, are partially compensated by the increase in the broadening of the CH absorption lines. 
+Significant spectral portions of the broadband laser do not overlap the absorption lines at 1 atm, but at higher pressues those spectral regions can contribute to the excitation of CH molecules. 
+Another important conclusion that can be drawn from Figure \ref{fig:01-300} is the range of conditions over which the current CH LIF approach can be expected to produce high quality results.
+For example, we can establish a threshold level for a detectable signal based on the validation experiments.
 The signal level for the lowest equivalence ratio case imaged serves as a good, if conservative, estimate of the minimum signal level needed.
 At \(\phi\) = 0.8, the predicted signal count works out to be \(1.75\times10^9\).
 Based on this, we set the threshold at a value of \(1\times10^9\).
@@ -476,6 +482,7 @@ This threshold is indicated on the figure by dashed lines.
 Below this threshold, CH PLIF flame imaging will produce a poor signal-to-noise ratio that will make post-processing quite difficult.
 
 \input{figures/01-300}
+\input{figures/01-060}
 
 In practice, the threshold could be lowered even further due to two reasons.
 First, even at the lowest equivalence ratio case tested in the laminar flame, the signal-to-noise ratio is more than sufficient to discern the flame sheet in instantaneous images.
@@ -599,9 +606,9 @@ After the CH signal peaks, both the flame temperature and the LIF signal decreas
 \input{figures/temperature-correlation}
 
 So for lean mixtures in the unstrained cases, the signal is primarily a function of flame temperature.
-The CH signal is nearly the same whether the mixture is lean with some level of preheat or even leaner with more preheating, as long as both have the same adiabatic flame temperature.
+The CH signal is nearly the same whether the mixture is lean with some level of preheat or even leaner with more preheating, as long as both have the same adiabatic flame temperature. 
 A similar behavior holds for the rich branch, except for near-stoichiometric mixtures.
-For near stoichiometric mixtures, the correlation is rather poor between the peak flame temperature (\(\phi\approx 1.0\)) and the peak LIF signal (\(\phi\approx 1.2\)).
+For near stoichiometric mixtures, the correlation is rather poor between the peak flame temperature (\(\phi\approx 1.0\))and the peak LIF signal (\(\phi\approx 1.2\)).
 
 The flame temperature can also be varied by changing the strain on the flame.
 Therefore Figure \ref{fig:temperature-correlation} also includes LIF signals from the strained (opposed flow) flame cases discussed earlier.
@@ -610,7 +617,7 @@ As a result, the signals are plotted against the maximum flame temperature achie
 Although the maximum flame temperature decreases as the strain rate is increased, the signal levels remain relatively constant.
 Notably, when the \(\phi = 0.9\) flame is strained close to extinction (\(T\approx\)1800 K), the signal levels are not comparable to the lesser strained \(\phi = 0.9\) flame with nearly the same maximum flame temperature.
 
-Based on these data sets, it may be concluded that while the LIF signal can be expected to increase with higher flame temperatures as a \emph{rule-of-thumb}, the correlation is not perfect and does not extend to strained flames.
+Based on these data sets, it may be concluded that while the LIF signal can be expected to increase with higher flame temperatures as a \emph{rule-of-thumb}, the correlation is not perfect and does not extend to strained flames. 
 
 
 \section{Summary of Results}
@@ -628,4 +635,3 @@ The following is a summary of the key results from this chapter.
   \item Strained flames produce a slightly higher LIF signal as long as the strain rate is not close to extinction.
   \item The LIF signal for unstrained flames is a strong function of flame temperature, nearly exponential, though it is not correlated to temperature alone.
 \end{enumerate}
-
