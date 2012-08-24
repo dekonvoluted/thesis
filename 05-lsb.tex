@@ -38,6 +38,10 @@ In a parallel series of tests, the \(S_{45^\circ}\) swirler was tested at a pres
 The preheat temperature for these tests was about 500 K.
 The measured and calculated flow parameters for these conditions are presented in Table \ref{tab:referenceVelocityCases}.
 The location of the flame was measured from CH* chemiluminescence images and the results are presented in Figure \ref{fig:referenceVelocityResults}.
+The uncertainty in locating the flame standoff distance from the inflection point in the centerline intensity profile is approximately two pixels or \(\pm\) 1.5 mm.
+Additional errors originating from other experimental issues such as depth of focus, parallax, etc. are not accounted for.
+A similar uncertainty in locating the middle of the flame brush near the centerline and near the edge of the flame is estimated to produce a \(\pm 5^\circ\) error in the flame angle.
+These are shown as error bars in Figure \ref{fig:referenceVelocityResults}.
 
 \input{tables/referenceVelocityCases}
 \input{figures/referenceVelocityResults}
@@ -115,10 +119,18 @@ The abscissa represents the distance from the virtual origin as defined in Secti
 
 The results show that increasing the preheat temperature causes the normalized velocity slope to increase.
 As noted in Chapter \ref{ch:background}, Cheng et al.\cite{2008-cheng-a} reported that this slope is unaffected by the Reynolds number, \(Re\), of the operating condition.
-The results in Figure \ref{fig:temperatureLDVResults} however, show that even though the cases CN and HN have similar \(Re\), their mean velocity profiles have very different slopes.
+The results in Figure \ref{fig:temperatureLDVResults} however, show that even though the cases CN and HN have similar \(Re\), their mean velocity profiles have different slopes.
 This indicates that the mean axial stretch in the near field of the LSB flow field is a stronger function of the preheat temperature than \(Re\).
 
 \nomenclature{\(Re\)}{Reynolds number}
+
+The stronger divergence of the preheated flow field can also be seen in the radial profiles of the mean axial velocity shown in Figures \ref{fig:temperatureLDVTransverse}--\ref{fig:temperatureLDVTransverse3} measured at 15, 35 and 75 mm downstream of the inlet respectively.
+In each of these cases, the preheated profiles show axial velocity peaks that are further away from the centerline.
+Further, the axial velocity peaks are also broader, indicating more efficient transport of axial momentum in the radial direction.
+
+\input{figures/temperatureLDVTransverse}
+\input{figures/temperatureLDVTransverse2}
+\input{figures/temperatureLDVTransverse3}
 
 The preheat temperature impacts the reacting flow field in the LSB in two ways.
 First, a higher preheat temperature increases the kinematic viscosity of the flow.
@@ -138,15 +150,10 @@ These two characteristics of the preheated flame lead to an intuitive result---t
 
 Next, we consider how the flame cone angle is affected by increasing the preheat temperature of the incoming reactants.
 None of the data sets cover two otherwise identical operating conditions, but at different preheat temperatures.
-As a result, the effect must be postulated using data showing the combined effect of increasing reference velocity and preheat temperature.
-Figures \ref{fig:temperatureLDVTransverse} and \ref{fig:temperatureLDVTransverse2} show the profiles of mean axial velocity measured 15 mm and 35 mm downstream of the inlet respectively using LDV.
+As a result, the effect must be determined using data showing the combined effect of increasing reference velocity and preheat temperature.
+Consider again, Figures \ref{fig:temperatureLDVTransverse}--\ref{fig:temperatureLDVTransverse3} that show the profiles of mean axial velocity measured 15, 35 and 75 mm downstream of the inlet respectively.
 These measurements are taken from two orthogonal traverses across the flow field and show the profiles for the CN and HN cases.
-The results show that the peak mean axial velocity across the shear layer remains the same regardless of velocity or temperature.
-However, the thickness of the shear layer has increased.
-
-\input{figures/temperatureLDVTransverse}
-\input{figures/temperatureLDVTransverse2}
-
+The results show that the peak mean axial velocity across the shear layer is similar, but the thickness of the shear layer is increased.
 The angle of the flame cone is decided by the ratio of the mean velocity in the shear layer and the local turbulent speed of the flame.
 We can use this relation and explore the propagation of a change in the parameters as follows.
 
